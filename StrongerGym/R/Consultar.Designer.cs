@@ -61,6 +61,7 @@
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -284,7 +285,7 @@
             this.textBox9.Location = new System.Drawing.Point(430, 89);
             this.textBox9.Name = "textBox9";
             this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(106, 20);
+            this.textBox9.Size = new System.Drawing.Size(160, 20);
             this.textBox9.TabIndex = 7;
             // 
             // label8
@@ -372,11 +373,21 @@
             this.checkBox1.Text = "Activo";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(434, 193);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(93, 13);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Fecha Nacimiento";
+            // 
             // ConsultarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(615, 476);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
@@ -452,5 +463,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label13;
     }
 }
