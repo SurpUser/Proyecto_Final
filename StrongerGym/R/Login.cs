@@ -16,5 +16,13 @@ namespace StrongerGym.R
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            StrongerGymForm sgf = new StrongerGymForm();
+            sgf.Show();
+
+            this.Visible = false;
+        }
     }
 }
