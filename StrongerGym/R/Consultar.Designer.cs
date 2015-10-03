@@ -509,7 +509,6 @@
             this.Name = "ConsultarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Consultar";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ConsultarForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.MiembroFotopictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
