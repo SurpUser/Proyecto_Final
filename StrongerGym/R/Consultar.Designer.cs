@@ -39,8 +39,8 @@
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.FradioButton = new System.Windows.Forms.RadioButton();
             this.HradioButton = new System.Windows.Forms.RadioButton();
+            this.FradioButton = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,8 +49,8 @@
             this.labbel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -94,6 +94,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(162, 89);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(231, 20);
             this.textBox2.TabIndex = 3;
             // 
@@ -101,6 +102,7 @@
             // 
             this.textBox3.Location = new System.Drawing.Point(162, 127);
             this.textBox3.Name = "textBox3";
+            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(231, 20);
             this.textBox3.TabIndex = 3;
             // 
@@ -108,6 +110,7 @@
             // 
             this.textBox4.Location = new System.Drawing.Point(162, 170);
             this.textBox4.Name = "textBox4";
+            this.textBox4.ReadOnly = true;
             this.textBox4.Size = new System.Drawing.Size(231, 20);
             this.textBox4.TabIndex = 3;
             this.textBox4.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -116,6 +119,7 @@
             // 
             this.textBox5.Location = new System.Drawing.Point(19, 107);
             this.textBox5.Name = "textBox5";
+            this.textBox5.ReadOnly = true;
             this.textBox5.Size = new System.Drawing.Size(207, 20);
             this.textBox5.TabIndex = 3;
             // 
@@ -123,6 +127,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(331, 107);
             this.textBox6.Name = "textBox6";
+            this.textBox6.ReadOnly = true;
             this.textBox6.Size = new System.Drawing.Size(207, 20);
             this.textBox6.TabIndex = 3;
             // 
@@ -130,6 +135,7 @@
             // 
             this.textBox7.Location = new System.Drawing.Point(203, 201);
             this.textBox7.Name = "textBox7";
+            this.textBox7.ReadOnly = true;
             this.textBox7.Size = new System.Drawing.Size(63, 20);
             this.textBox7.TabIndex = 3;
             // 
@@ -137,6 +143,7 @@
             // 
             this.textBox8.Location = new System.Drawing.Point(330, 201);
             this.textBox8.Name = "textBox8";
+            this.textBox8.ReadOnly = true;
             this.textBox8.Size = new System.Drawing.Size(63, 20);
             this.textBox8.TabIndex = 3;
             // 
@@ -151,20 +158,10 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sexo";
             // 
-            // FradioButton
-            // 
-            this.FradioButton.AutoSize = true;
-            this.FradioButton.Location = new System.Drawing.Point(146, 19);
-            this.FradioButton.Name = "FradioButton";
-            this.FradioButton.Size = new System.Drawing.Size(51, 17);
-            this.FradioButton.TabIndex = 0;
-            this.FradioButton.TabStop = true;
-            this.FradioButton.Text = "Mujer";
-            this.FradioButton.UseVisualStyleBackColor = true;
-            // 
             // HradioButton
             // 
             this.HradioButton.AutoSize = true;
+            this.HradioButton.Checked = true;
             this.HradioButton.Location = new System.Drawing.Point(32, 19);
             this.HradioButton.Name = "HradioButton";
             this.HradioButton.Size = new System.Drawing.Size(62, 17);
@@ -172,6 +169,16 @@
             this.HradioButton.TabStop = true;
             this.HradioButton.Text = "Hombre";
             this.HradioButton.UseVisualStyleBackColor = true;
+            // 
+            // FradioButton
+            // 
+            this.FradioButton.AutoSize = true;
+            this.FradioButton.Location = new System.Drawing.Point(146, 19);
+            this.FradioButton.Name = "FradioButton";
+            this.FradioButton.Size = new System.Drawing.Size(51, 17);
+            this.FradioButton.TabIndex = 0;
+            this.FradioButton.Text = "Mujer";
+            this.FradioButton.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -251,6 +258,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pago y Factura";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(229, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 13);
+            this.label6.TabIndex = 7;
+            this.label6.Text = "Modalidad de Pago";
+            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -263,19 +279,11 @@
             this.comboBox1.Size = new System.Drawing.Size(223, 21);
             this.comboBox1.TabIndex = 6;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(229, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 13);
-            this.label6.TabIndex = 7;
-            this.label6.Text = "Modalidad de Pago";
-            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(430, 89);
             this.textBox9.Name = "textBox9";
+            this.textBox9.ReadOnly = true;
             this.textBox9.Size = new System.Drawing.Size(106, 20);
             this.textBox9.TabIndex = 7;
             // 
@@ -312,6 +320,7 @@
             // 
             this.textBox10.Location = new System.Drawing.Point(430, 170);
             this.textBox10.Name = "textBox10";
+            this.textBox10.ReadOnly = true;
             this.textBox10.Size = new System.Drawing.Size(160, 20);
             this.textBox10.TabIndex = 3;
             this.textBox10.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
@@ -338,6 +347,7 @@
             // 
             this.textBox11.Location = new System.Drawing.Point(430, 127);
             this.textBox11.Name = "textBox11";
+            this.textBox11.ReadOnly = true;
             this.textBox11.Size = new System.Drawing.Size(160, 20);
             this.textBox11.TabIndex = 11;
             // 
@@ -353,6 +363,8 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBox1.Location = new System.Drawing.Point(480, 256);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(56, 17);
