@@ -17,5 +17,15 @@ namespace StrongerGym.R
             InitializeComponent();
         }
 
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.ShowDialog();
+        }
+
+
+        private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e)
+        {
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
+        }
     }
 }
