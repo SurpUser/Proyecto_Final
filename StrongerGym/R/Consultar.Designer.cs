@@ -1,6 +1,6 @@
-﻿namespace StrongerGym
+﻿namespace StrongerGym.R
 {
-    partial class StrongerGymForm
+    partial class Consultar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,21 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
-            // 
-            // StrongerGymForm
-            // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.components = new System.ComponentModel.Container();
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(702, 454);
-            this.IsMdiContainer = true;
-            this.Name = "StrongerGymForm";
-            this.Text = "StrongerGym";
-            this.ResumeLayout(false);
-
+            this.Text = "Consultar";
         }
 
         #endregion
     }
 }
-

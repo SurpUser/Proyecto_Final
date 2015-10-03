@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace StrongerGym
+namespace StrongerGym.R
 {
-    public partial class StrongerGymForm : Form
+    public partial class Consultar : Form
     {
-        public StrongerGymForm()
+        public Consultar()
         {
             InitializeComponent();
         }
