@@ -16,5 +16,15 @@ namespace StrongerGym.R
         {
             InitializeComponent();
         }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConsultarForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
