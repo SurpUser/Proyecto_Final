@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using StrongerGym.R;
 namespace StrongerGym
 {
     public partial class StrongerGymForm : Form
@@ -15,6 +15,18 @@ namespace StrongerGym
         public StrongerGymForm()
         {
             InitializeComponent();
+        }
+
+        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultarForm c = new ConsultarForm();
+            c.MdiParent = this;
+            c.Show();
         }
     }
 }

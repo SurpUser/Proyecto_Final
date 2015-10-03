@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StrongerGym.R
 {
-    public partial class Consultar : Form
+    public partial class ConsultarForm : Form
     {
-        public Consultar()
+        public ConsultarForm()
         {
             InitializeComponent();
         }
