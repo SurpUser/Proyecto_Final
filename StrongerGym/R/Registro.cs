@@ -27,5 +27,10 @@ namespace StrongerGym.R
         {
             pictureBox1.ImageLocation = openFileDialog1.FileName;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            CodigoRtextBox.Text = "1";
+        }
     }
 }
