@@ -323,7 +323,7 @@
             "Nombre"});
             this.BuscarcomboBox.Location = new System.Drawing.Point(31, 27);
             this.BuscarcomboBox.Name = "BuscarcomboBox";
-            this.BuscarcomboBox.Size = new System.Drawing.Size(119, 21);
+            this.BuscarcomboBox.Size = new System.Drawing.Size(110, 21);
             this.BuscarcomboBox.TabIndex = 9;
             // 
             // label9
