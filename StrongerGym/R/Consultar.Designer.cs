@@ -516,7 +516,7 @@
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.BuscartextBox);
             this.Name = "ConsultarForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar";
             this.Load += new System.EventHandler(this.ConsultarForm_Load);
             this.groupBox1.ResumeLayout(false);

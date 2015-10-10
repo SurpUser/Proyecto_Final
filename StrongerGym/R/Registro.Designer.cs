@@ -371,6 +371,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "RegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
