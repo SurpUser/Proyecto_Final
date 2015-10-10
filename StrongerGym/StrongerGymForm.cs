@@ -35,5 +35,10 @@ namespace StrongerGym
             c.MdiParent = this;
             c.Show();
         }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
