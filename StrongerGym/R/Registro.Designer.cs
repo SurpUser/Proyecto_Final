@@ -31,7 +31,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.CodigoRtextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -89,13 +89,13 @@
             this.label8.TabIndex = 24;
             this.label8.Text = "Codigo";
             // 
-            // textBox9
+            // CodigoRtextBox
             // 
-            this.textBox9.Location = new System.Drawing.Point(411, 90);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.ReadOnly = true;
-            this.textBox9.Size = new System.Drawing.Size(160, 20);
-            this.textBox9.TabIndex = 23;
+            this.CodigoRtextBox.Location = new System.Drawing.Point(411, 90);
+            this.CodigoRtextBox.Name = "CodigoRtextBox";
+            this.CodigoRtextBox.ReadOnly = true;
+            this.CodigoRtextBox.Size = new System.Drawing.Size(160, 20);
+            this.CodigoRtextBox.TabIndex = 23;
             // 
             // label3
             // 
@@ -320,6 +320,7 @@
             this.button1.Text = "Agregar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pictureBox1
             // 
@@ -363,7 +364,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.CodigoRtextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label2);
@@ -384,7 +385,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox CodigoRtextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label2;

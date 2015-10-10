@@ -136,10 +136,16 @@
   <data name="user-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="1443916247_Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1443916247_Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1441466_615720135173929_289418604_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441466_615720135173929_289418604_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1134781-gimnasio-stronger-gym-20140330071511707" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

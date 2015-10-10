@@ -131,6 +131,12 @@
   <ItemGroup>
     <None Include="Resources\1442108773_Gnome-Application-Exit-32.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1441466_615720135173929_289418604_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

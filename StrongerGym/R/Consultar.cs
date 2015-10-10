@@ -34,7 +34,7 @@ namespace StrongerGym.R
 
         private void button1_Click(object sender, EventArgs e)
         {
-            CodigotextBox.Text = "2203";
+            CodigotextBox.Text = "1";
 
             NombretextBox.Text = "Juan Alberto Padilla";
 
@@ -55,6 +55,16 @@ namespace StrongerGym.R
             VencimientotextBox.Text = "04/11/15";
 
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog2.ShowDialog();
+        }
+
+        private void openFileDialog2_FileOk(object sender, CancelEventArgs e)
+        {
+            pictureBox2.ImageLocation = openFileDialog2.FileName;
         }
     }
 }
