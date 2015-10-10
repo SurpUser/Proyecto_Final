@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="R\Registro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R\Registro.Designer.cs">
+      <DependentUpon>Registro.cs</DependentUpon>
+    </Compile>
     <Compile Include="StrongerGymForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,9 @@
     </Compile>
     <EmbeddedResource Include="R\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="R\Registro.resx">
+      <DependentUpon>Registro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StrongerGymForm.resx">
       <DependentUpon>StrongerGymForm.cs</DependentUpon>
@@ -106,6 +115,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\1443916450_Cancel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1442108115_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1442108330_Modify.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1442108658_trash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1442105540_Gnome-Edit-Clear-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1442108773_Gnome-Application-Exit-32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1441466_615720135173929_289418604_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

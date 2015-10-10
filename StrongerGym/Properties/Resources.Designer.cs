@@ -63,6 +63,76 @@ namespace StrongerGym.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1134781_gimnasio_stronger_gym_20140330071511707 {
+            get {
+                object obj = ResourceManager.GetObject("1134781-gimnasio-stronger-gym-20140330071511707", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1441466_615720135173929_289418604_n {
+            get {
+                object obj = ResourceManager.GetObject("1441466_615720135173929_289418604_n", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1442105540_Gnome_Edit_Clear_32 {
+            get {
+                object obj = ResourceManager.GetObject("1442105540_Gnome-Edit-Clear-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1442108115_Add {
+            get {
+                object obj = ResourceManager.GetObject("1442108115_Add", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1442108330_Modify {
+            get {
+                object obj = ResourceManager.GetObject("1442108330_Modify", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1442108658_trash {
+            get {
+                object obj = ResourceManager.GetObject("1442108658_trash", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1442108773_Gnome_Application_Exit_32 {
+            get {
+                object obj = ResourceManager.GetObject("1442108773_Gnome-Application-Exit-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _1443916247_Check {
             get {
                 object obj = ResourceManager.GetObject("1443916247_Check", resourceCulture);

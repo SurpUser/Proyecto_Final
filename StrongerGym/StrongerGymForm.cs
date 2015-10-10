@@ -19,7 +19,9 @@ namespace StrongerGym
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            RegistroForm rf = new RegistroForm();
+            rf.MdiParent = this;
+            rf.Show();
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)

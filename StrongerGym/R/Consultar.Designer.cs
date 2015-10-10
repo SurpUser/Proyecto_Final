@@ -30,7 +30,6 @@
         {
             this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.Consultarbutton = new System.Windows.Forms.Button();
-            this.MiembroFotopictureBox = new System.Windows.Forms.PictureBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.TelefonotextBox = new System.Windows.Forms.TextBox();
@@ -49,6 +48,7 @@
             this.labbel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ActualizarButton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.ModalidadcomboBox = new System.Windows.Forms.ComboBox();
             this.CodigotextBox = new System.Windows.Forms.TextBox();
@@ -63,36 +63,34 @@
             this.ActivocheckBox = new System.Windows.Forms.CheckBox();
             this.label13 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.ActualizarButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.MiembroFotopictureBox)).BeginInit();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // BuscartextBox
             // 
-            this.BuscartextBox.Location = new System.Drawing.Point(165, 27);
+            this.BuscartextBox.Location = new System.Drawing.Point(162, 27);
             this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(309, 20);
+            this.BuscartextBox.Size = new System.Drawing.Size(323, 20);
             this.BuscartextBox.TabIndex = 0;
             // 
             // Consultarbutton
             // 
-            this.Consultarbutton.Location = new System.Drawing.Point(483, 25);
+            this.Consultarbutton.Location = new System.Drawing.Point(505, 24);
             this.Consultarbutton.Name = "Consultarbutton";
             this.Consultarbutton.Size = new System.Drawing.Size(107, 23);
             this.Consultarbutton.TabIndex = 1;
             this.Consultarbutton.Text = "Consultar";
             this.Consultarbutton.UseVisualStyleBackColor = true;
             this.Consultarbutton.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // MiembroFotopictureBox
-            // 
-            this.MiembroFotopictureBox.Location = new System.Drawing.Point(31, 70);
-            this.MiembroFotopictureBox.Name = "MiembroFotopictureBox";
-            this.MiembroFotopictureBox.Size = new System.Drawing.Size(110, 111);
-            this.MiembroFotopictureBox.TabIndex = 2;
-            this.MiembroFotopictureBox.TabStop = false;
             // 
             // NombretextBox
             // 
@@ -263,6 +261,15 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pago y Factura";
             // 
+            // ActualizarButton
+            // 
+            this.ActualizarButton.Location = new System.Drawing.Point(421, 39);
+            this.ActualizarButton.Name = "ActualizarButton";
+            this.ActualizarButton.Size = new System.Drawing.Size(98, 23);
+            this.ActualizarButton.TabIndex = 8;
+            this.ActualizarButton.Text = "Actualizar";
+            this.ActualizarButton.UseVisualStyleBackColor = true;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -289,7 +296,7 @@
             this.CodigotextBox.Location = new System.Drawing.Point(430, 89);
             this.CodigotextBox.Name = "CodigotextBox";
             this.CodigotextBox.ReadOnly = true;
-            this.CodigotextBox.Size = new System.Drawing.Size(160, 20);
+            this.CodigotextBox.Size = new System.Drawing.Size(194, 20);
             this.CodigotextBox.TabIndex = 7;
             // 
             // label8
@@ -309,7 +316,7 @@
             "Nombre"});
             this.BuscarcomboBox.Location = new System.Drawing.Point(31, 27);
             this.BuscarcomboBox.Name = "BuscarcomboBox";
-            this.BuscarcomboBox.Size = new System.Drawing.Size(119, 21);
+            this.BuscarcomboBox.Size = new System.Drawing.Size(110, 21);
             this.BuscarcomboBox.TabIndex = 9;
             // 
             // label9
@@ -326,7 +333,7 @@
             this.CelulartextBox.Location = new System.Drawing.Point(430, 170);
             this.CelulartextBox.Name = "CelulartextBox";
             this.CelulartextBox.ReadOnly = true;
-            this.CelulartextBox.Size = new System.Drawing.Size(160, 20);
+            this.CelulartextBox.Size = new System.Drawing.Size(194, 20);
             this.CelulartextBox.TabIndex = 3;
             this.CelulartextBox.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
@@ -353,7 +360,7 @@
             this.CiudadtextBox.Location = new System.Drawing.Point(430, 127);
             this.CiudadtextBox.Name = "CiudadtextBox";
             this.CiudadtextBox.ReadOnly = true;
-            this.CiudadtextBox.Size = new System.Drawing.Size(160, 20);
+            this.CiudadtextBox.Size = new System.Drawing.Size(194, 20);
             this.CiudadtextBox.TabIndex = 11;
             // 
             // label12
@@ -391,24 +398,97 @@
             this.dateTimePicker1.CustomFormat = "dd/MM/yyyy";
             this.dateTimePicker1.Location = new System.Drawing.Point(430, 209);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(160, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(195, 20);
             this.dateTimePicker1.TabIndex = 16;
             this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
-            // ActualizarButton
+            // button5
             // 
-            this.ActualizarButton.Location = new System.Drawing.Point(421, 39);
-            this.ActualizarButton.Name = "ActualizarButton";
-            this.ActualizarButton.Size = new System.Drawing.Size(98, 23);
-            this.ActualizarButton.TabIndex = 8;
-            this.ActualizarButton.Text = "Actualizar";
-            this.ActualizarButton.UseVisualStyleBackColor = true;
+            this.button5.Image = global::StrongerGym.Properties.Resources._1442108773_Gnome_Application_Exit_32;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(505, 487);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(85, 47);
+            this.button5.TabIndex = 52;
+            this.button5.Text = "Salir";
+            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::StrongerGym.Properties.Resources._1442105540_Gnome_Edit_Clear_32;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(388, 487);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(85, 47);
+            this.button4.TabIndex = 51;
+            this.button4.Text = "Limpiar";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(274, 487);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(85, 47);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "Eliminar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Image = global::StrongerGym.Properties.Resources._1442108330_Modify;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(151, 487);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(85, 47);
+            this.button2.TabIndex = 49;
+            this.button2.Text = "Modificar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(31, 487);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(85, 47);
+            this.button1.TabIndex = 48;
+            this.button1.Text = "Agregar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox2.Location = new System.Drawing.Point(31, 70);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(110, 111);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 53;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.FileName = "openFileDialog2";
+            this.openFileDialog2.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog2_FileOk);
             // 
             // ConsultarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(615, 476);
+            this.ClientSize = new System.Drawing.Size(641, 555);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.button5);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.ActivocheckBox);
@@ -433,19 +513,17 @@
             this.Controls.Add(this.TelefonotextBox);
             this.Controls.Add(this.DirecciontextBox);
             this.Controls.Add(this.NombretextBox);
-            this.Controls.Add(this.MiembroFotopictureBox);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.BuscartextBox);
             this.Name = "ConsultarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "Consultar";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.ConsultarForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.MiembroFotopictureBox)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -455,7 +533,6 @@
 
         private System.Windows.Forms.TextBox BuscartextBox;
         private System.Windows.Forms.Button Consultarbutton;
-        private System.Windows.Forms.PictureBox MiembroFotopictureBox;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.TextBox TelefonotextBox;
@@ -489,5 +566,12 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button ActualizarButton;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
     }
 }
