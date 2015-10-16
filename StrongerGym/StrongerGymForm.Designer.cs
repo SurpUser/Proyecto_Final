@@ -39,6 +39,7 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,6 +61,7 @@
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registrarToolStripMenuItem,
+            this.configuracionToolStripMenuItem,
             this.salirToolStripMenuItem,
             this.salirToolStripMenuItem1});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
@@ -98,14 +100,14 @@
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // carnetToolStripMenuItem
             // 
             this.carnetToolStripMenuItem.Name = "carnetToolStripMenuItem";
-            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.carnetToolStripMenuItem.Text = "Carnet";
             // 
             // informacionToolStripMenuItem
@@ -125,6 +127,12 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // configuracionToolStripMenuItem
+            // 
+            this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configuracionToolStripMenuItem.Text = "Configuracion";
             // 
             // StrongerGymForm
             // 
@@ -159,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem carnetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ayudaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
     }
 }
 
