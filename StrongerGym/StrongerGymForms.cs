@@ -19,9 +19,7 @@ namespace StrongerGym
 
         private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RegistroForm rf = new RegistroForm();
-            rf.MdiParent = this;
-            rf.Show();
+
         }
 
         private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,6 +43,20 @@ namespace StrongerGym
         {
             ConfiguracoinForm configuracion = new ConfiguracoinForm();
             configuracion.ShowDialog();
+        }
+
+        private void carnetToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CarnetForm carnet = new CarnetForm();
+            carnet.MdiParent = this;
+            carnet.Show();
+        }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroForm rf = new RegistroForm();
+            rf.MdiParent = this;
+            rf.Show();
         }
     }
 }

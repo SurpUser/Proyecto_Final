@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="R\CarnetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="R\CarnetForm.Designer.cs">
+      <DependentUpon>CarnetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="R\ConfiguracoinForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
     <Compile Include="R\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="R\CarnetForm.resx">
+      <DependentUpon>CarnetForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="R\ConfiguracoinForm.resx">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </EmbeddedResource>
