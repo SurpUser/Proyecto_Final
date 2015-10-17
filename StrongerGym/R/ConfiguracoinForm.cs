@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace StrongerGym.R
 {
-    public partial class Configuracoin : Form
+    public partial class ConfiguracoinForm : Form
     {
-        public Configuracoin()
+        public ConfiguracoinForm()
         {
             InitializeComponent();
+        }
+
+        private void Configuracoin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
