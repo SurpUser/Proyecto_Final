@@ -40,5 +40,11 @@ namespace StrongerGym
         {
 
         }
+
+        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfiguracoinForm configuracion = new ConfiguracoinForm();
+            configuracion.ShowDialog();
+        }
     }
 }

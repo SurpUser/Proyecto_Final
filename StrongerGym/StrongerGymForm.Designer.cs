@@ -80,6 +80,7 @@
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
+            this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
