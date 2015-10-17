@@ -1,6 +1,6 @@
 ﻿namespace StrongerGym.R
 {
-    partial class Login
+    partial class LoginForm
     {
         /// <summary>
         /// Required designer variable.

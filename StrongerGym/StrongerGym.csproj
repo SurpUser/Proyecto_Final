@@ -52,43 +52,43 @@
     <Compile Include="R\ConfiguracoinForm.Designer.cs">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="R\Registro.cs">
+    <Compile Include="R\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\Registro.Designer.cs">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <Compile Include="R\RegistroForm.Designer.cs">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StrongerGymForm.cs">
+    <Compile Include="StrongerGymForms.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StrongerGymForm.Designer.cs">
-      <DependentUpon>StrongerGymForm.cs</DependentUpon>
+    <Compile Include="StrongerGymForms.Designer.cs">
+      <DependentUpon>StrongerGymForms.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="R\Consultar.cs">
+    <Compile Include="R\ConsultarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\Consultar.Designer.cs">
-      <DependentUpon>Consultar.cs</DependentUpon>
+    <Compile Include="R\ConsultarForm.Designer.cs">
+      <DependentUpon>ConsultarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="R\Login.cs">
+    <Compile Include="R\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\Login.Designer.cs">
-      <DependentUpon>Login.cs</DependentUpon>
+    <Compile Include="R\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="R\ConfiguracoinForm.resx">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R\Login.resx">
-      <DependentUpon>Login.cs</DependentUpon>
+    <EmbeddedResource Include="R\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R\Registro.resx">
-      <DependentUpon>Registro.cs</DependentUpon>
+    <EmbeddedResource Include="R\RegistroForm.resx">
+      <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StrongerGymForm.resx">
-      <DependentUpon>StrongerGymForm.cs</DependentUpon>
+    <EmbeddedResource Include="StrongerGymForms.resx">
+      <DependentUpon>StrongerGymForms.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,8 +100,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="R\Consultar.resx">
-      <DependentUpon>Consultar.cs</DependentUpon>
+    <EmbeddedResource Include="R\ConsultarForm.resx">
+      <DependentUpon>ConsultarForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

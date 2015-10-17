@@ -10,16 +10,16 @@ using System.Windows.Forms;
 
 namespace StrongerGym.R
 {
-    public partial class Login : Form
+    public partial class LoginForm : Form
     {
-        public Login()
+        public LoginForm()
         {
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StrongerGymForm sgf = new StrongerGymForm();
+            StrongerGymForms sgf = new StrongerGymForms();
             sgf.Show();
 
             this.Visible = false;

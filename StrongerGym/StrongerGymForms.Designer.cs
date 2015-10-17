@@ -1,6 +1,6 @@
 ﻿namespace StrongerGym
 {
-    partial class StrongerGymForm
+    partial class StrongerGymForms
     {
         /// <summary>
         /// Required designer variable.
