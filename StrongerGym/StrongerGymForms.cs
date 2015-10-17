@@ -58,5 +58,10 @@ namespace StrongerGym
             rf.MdiParent = this;
             rf.Show();
         }
+
+        private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

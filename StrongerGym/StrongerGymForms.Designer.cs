@@ -34,12 +34,12 @@
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.miembrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.carnetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registrarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +97,13 @@
             this.miembrosToolStripMenuItem.Size = new System.Drawing.Size(73, 20);
             this.miembrosToolStripMenuItem.Text = "Miembros";
             // 
+            // registrarToolStripMenuItem1
+            // 
+            this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
+            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registrarToolStripMenuItem1.Text = "Registrar";
+            this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
+            // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
@@ -116,6 +123,7 @@
             this.informacionToolStripMenuItem.Name = "informacionToolStripMenuItem";
             this.informacionToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.informacionToolStripMenuItem.Text = "Informacion";
+            this.informacionToolStripMenuItem.Click += new System.EventHandler(this.informacionToolStripMenuItem_Click);
             // 
             // ayudaToolStripMenuItem
             // 
@@ -128,13 +136,6 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
-            // 
-            // registrarToolStripMenuItem1
-            // 
-            this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
-            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.registrarToolStripMenuItem1.Text = "Registrar";
-            this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
             // 
             // StrongerGymForms
             // 
