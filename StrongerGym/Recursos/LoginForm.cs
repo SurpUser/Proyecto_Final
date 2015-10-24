@@ -12,6 +12,7 @@ namespace StrongerGym.R
 {
     public partial class LoginForm : Form
     {
+        int intentos = 0;
         public LoginForm()
         {
             InitializeComponent();
@@ -19,10 +20,21 @@ namespace StrongerGym.R
 
         private void button1_Click(object sender, EventArgs e)
         {
-            StrongerGymForms sgf = new StrongerGymForms();
-            sgf.Show();
+            if (UsuariotextBox.Text == "Admin" && ContrasenatextBox.Text == "1234")
+            {
+                this.Visible = false;
+                StrongerGymForms sgf = new StrongerGymForms();
+                sgf.Show();             
+            }
+            else
+            {
+                intentos++;
+                if (intentos >= 3)
+                    this.Close();
+                MessageBox.Show("Usuario Incorrecto");
+            }           
 
-            this.Visible = false;
+            
         }
     }
 }

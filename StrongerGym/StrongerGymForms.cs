@@ -36,7 +36,9 @@ namespace StrongerGym
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
+            LoginForm Login = new LoginForm();
+            Login.Show();
         }
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
