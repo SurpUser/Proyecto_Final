@@ -46,22 +46,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="R\CarnetForm.cs">
+    <Compile Include="Recursos\CarnetForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\CarnetForm.Designer.cs">
+    <Compile Include="Recursos\CarnetForm.Designer.cs">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="R\ConfiguracoinForm.cs">
+    <Compile Include="Recursos\ConfiguracoinForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\ConfiguracoinForm.Designer.cs">
+    <Compile Include="Recursos\ConfiguracoinForm.Designer.cs">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="R\RegistroForm.cs">
+    <Compile Include="Recursos\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\RegistroForm.Designer.cs">
+    <Compile Include="Recursos\RegistroForm.Designer.cs">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="StrongerGymForms.cs">
@@ -72,28 +72,28 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="R\ConsultarForm.cs">
+    <Compile Include="Recursos\ConsultarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\ConsultarForm.Designer.cs">
+    <Compile Include="Recursos\ConsultarForm.Designer.cs">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="R\LoginForm.cs">
+    <Compile Include="Recursos\LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="R\LoginForm.Designer.cs">
+    <Compile Include="Recursos\LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="R\CarnetForm.resx">
+    <EmbeddedResource Include="Recursos\CarnetForm.resx">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R\ConfiguracoinForm.resx">
+    <EmbeddedResource Include="Recursos\ConfiguracoinForm.resx">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R\LoginForm.resx">
+    <EmbeddedResource Include="Recursos\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="R\RegistroForm.resx">
+    <EmbeddedResource Include="Recursos\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StrongerGymForms.resx">
@@ -109,7 +109,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="R\ConsultarForm.resx">
+    <EmbeddedResource Include="Recursos\ConsultarForm.resx">
       <DependentUpon>ConsultarForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
