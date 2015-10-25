@@ -67,6 +67,7 @@
             // 
             this.ContrasenatextBox.Location = new System.Drawing.Point(206, 109);
             this.ContrasenatextBox.Name = "ContrasenatextBox";
+            this.ContrasenatextBox.PasswordChar = '*';
             this.ContrasenatextBox.Size = new System.Drawing.Size(186, 20);
             this.ContrasenatextBox.TabIndex = 3;
             // 
@@ -81,6 +82,7 @@
             this.button2.Text = "Cancelar";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // pictureBox1
             // 

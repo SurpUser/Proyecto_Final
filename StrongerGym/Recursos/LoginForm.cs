@@ -7,12 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using BLL;
 namespace StrongerGym.R
 {
     public partial class LoginForm : Form
     {
         int intentos = 0;
+        Usuarios usuario = new Usuarios();
         public LoginForm()
         {
             InitializeComponent();
@@ -20,21 +21,35 @@ namespace StrongerGym.R
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (UsuariotextBox.Text == "Admin" && ContrasenatextBox.Text == "1234")
+            if (UsuariotextBox.Text.Length > 0 && ContrasenatextBox.Text.Length > 0)
             {
-                this.Visible = false;
-                StrongerGymForms sgf = new StrongerGymForms();
-                sgf.Show();             
+                usuario.Nombre = UsuariotextBox.Text;
+                usuario.Contrasena = ContrasenatextBox.Text;
+                if (usuario.Buscar(1))
+                {
+                    this.Visible = false;
+                    StrongerGymForms sgf = new StrongerGymForms();
+                    sgf.Show();
+                }
+                else
+                {
+                    intentos++;
+                    if (intentos >= 3)
+                        this.Close();
+                    MessageBox.Show("Usuario Incorrecto " + intentos + "\n Intentos Incorrectos.");
+                }
             }
             else
             {
-                intentos++;
-                if (intentos >= 3)
-                    this.Close();
-                MessageBox.Show("Usuario Incorrecto");
-            }           
-
+                MessageBox.Show("Faltan Campos.");
+            }
+                    
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
