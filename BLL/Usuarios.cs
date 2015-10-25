@@ -52,7 +52,25 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = conexion.ObtenerDatos(String.Format("select IdUsuario from Usuarios where Nombre = '{0}' And Contrasena = '{1}'",this.Nombre,this.Contrasena));
+                if (dt.Rows.Count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
