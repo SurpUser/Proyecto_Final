@@ -29,7 +29,7 @@ namespace BLL
         public override bool Insertar()
         {
             try
-            
+            { 
 
                 return conexion.Ejecutar(String.Format("Insert into Usuarios(Nombre,Contrasena,FechaInicio,Area)"+
                     " Values('{0}','{1}','{2}','{3}')",this.Nombre,this.Contrasena,this.FechaInicio,this.Area));
