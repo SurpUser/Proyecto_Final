@@ -64,6 +64,12 @@
     <Compile Include="Recursos\RegistroForm.Designer.cs">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recursos\RegistroUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recursos\RegistroUsuarioForm.Designer.cs">
+      <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StrongerGymForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Recursos\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\RegistroUsuarioForm.resx">
+      <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StrongerGymForms.resx">
       <DependentUpon>StrongerGymForms.cs</DependentUpon>

@@ -8,6 +8,7 @@ using System.Data;
 
 namespace DAL
 {
+    //base de datos sql ROOT-PC\\SURPUSER y DARLENISM\\SQLEXPRESS
     public class ConexionDB
     {
         private SqlConnection con;
@@ -15,7 +16,7 @@ namespace DAL
 
         public ConexionDB()
         {
-            con = new SqlConnection("Data Source=ROOT-PC\\SURPUSER;Initial Catalog=StrongerDB;Integrated Security=True");
+            con = new SqlConnection("Data Source=DARLENISM\\SQLEXPRESS;Initial Catalog=StrongerDB;Integrated Security=True");
             Cmd = new SqlCommand();
         }
 
