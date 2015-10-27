@@ -25,7 +25,7 @@ namespace StrongerGym.R
             {
                 usuario.Nombre = UsuariotextBox.Text;
                 usuario.Contrasena = ContrasenatextBox.Text;
-                if (usuario.Buscar(1))
+                if (usuario.InicioSesion())
                 {
                     this.Visible = false;
                     StrongerGymForms sgf = new StrongerGymForms();

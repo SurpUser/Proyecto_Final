@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StrongerGym.R;
+using StrongerGym.Recursos;
 namespace StrongerGym
 {
     public partial class StrongerGymForms : Form
@@ -64,6 +65,20 @@ namespace StrongerGym
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoginForm login = new LoginForm();
+            login.Close();
+            this.Close();
+
+        }
+
+        private void registroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            RegistroUsuarioForm registro = new RegistroUsuarioForm();
+            registro.Show();
         }
     }
 }

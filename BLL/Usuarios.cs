@@ -44,7 +44,15 @@ namespace BLL
 
         public override bool Editar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return conexion.Ejecutar(String.Format("update Usuarios set Nombre = '{0}' , Contrasena='{1}', Area = '{2}' where IdUsuario = {3}",this.Nombre,this.Contrasena,this.Area,this.IdUsuario));               
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public override bool Eliminar()
@@ -52,12 +60,12 @@ namespace BLL
             throw new NotImplementedException();
         }
 
-        public override bool Buscar(int IdBuscado)
+        public bool InicioSesion()
         {
             DataTable dt = new DataTable();
             try
             {
-                dt = conexion.ObtenerDatos(String.Format("select IdUsuario from Usuarios where Nombre = '{0}' And Contrasena = '{1}'",this.Nombre,this.Contrasena));
+                dt = conexion.ObtenerDatos(String.Format("select IdUsuario from Usuarios where Nombre = '{0}' And Contrasena = '{1}'", this.Nombre, this.Contrasena));
                 if (dt.Rows.Count > 0)
                 {
                     return true;
@@ -66,12 +74,29 @@ namespace BLL
                 {
                     return false;
                 }
-                
+
             }
             catch (Exception)
             {
 
                 throw;
+            }
+        }
+        public override bool Buscar(int IdBuscado)
+        {
+            DataTable bt = new DataTable();
+            try
+            {
+                bt = conexion.ObtenerDatos(String.Format("select * from Usuarios where IdUsuario = {0}", IdBuscado));
+                this.Nombre = bt.Rows[0]["Nombre"].ToString();
+                this.FechaInicio = bt.Rows[0]["FechaInicio"].ToString();
+                this.Area = bt.Rows[0]["Area"].ToString();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
 

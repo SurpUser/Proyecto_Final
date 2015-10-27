@@ -57,9 +57,9 @@
             this.LoginportadapictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.user_icon;
             this.LoginportadapictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.LoginportadapictureBox.InitialImage = null;
-            this.LoginportadapictureBox.Location = new System.Drawing.Point(22, 49);
+            this.LoginportadapictureBox.Location = new System.Drawing.Point(12, 20);
             this.LoginportadapictureBox.Name = "LoginportadapictureBox";
-            this.LoginportadapictureBox.Size = new System.Drawing.Size(133, 158);
+            this.LoginportadapictureBox.Size = new System.Drawing.Size(143, 187);
             this.LoginportadapictureBox.TabIndex = 1;
             this.LoginportadapictureBox.TabStop = false;
             // 
@@ -122,9 +122,9 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1443916247_Check;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(254, 228);
+            this.Guardarbutton.Location = new System.Drawing.Point(254, 217);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(85, 33);
+            this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
             this.Guardarbutton.TabIndex = 5;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -134,9 +134,9 @@
             // Buscarbutton
             // 
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(345, 228);
+            this.Buscarbutton.Location = new System.Drawing.Point(345, 217);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(85, 33);
+            this.Buscarbutton.Size = new System.Drawing.Size(88, 44);
             this.Buscarbutton.TabIndex = 5;
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -147,9 +147,9 @@
             // 
             this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(163, 228);
+            this.Nuevobutton.Location = new System.Drawing.Point(167, 217);
             this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(85, 33);
+            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 5;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
