@@ -29,82 +29,72 @@
         private void InitializeComponent()
         {
             this.NombretextBox = new System.Windows.Forms.TextBox();
-            this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
             this.ContrasenatextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.AreacomboBox = new System.Windows.Forms.ComboBox();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
             this.IdUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.FechaIniciomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(179, 75);
+            this.NombretextBox.Location = new System.Drawing.Point(259, 71);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(241, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(266, 20);
             this.NombretextBox.TabIndex = 0;
-            // 
-            // LoginportadapictureBox
-            // 
-            this.LoginportadapictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.user_icon;
-            this.LoginportadapictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.LoginportadapictureBox.InitialImage = null;
-            this.LoginportadapictureBox.Location = new System.Drawing.Point(12, 20);
-            this.LoginportadapictureBox.Name = "LoginportadapictureBox";
-            this.LoginportadapictureBox.Size = new System.Drawing.Size(143, 187);
-            this.LoginportadapictureBox.TabIndex = 1;
-            this.LoginportadapictureBox.TabStop = false;
             // 
             // ContrasenatextBox
             // 
-            this.ContrasenatextBox.Location = new System.Drawing.Point(179, 113);
+            this.ContrasenatextBox.Location = new System.Drawing.Point(259, 109);
             this.ContrasenatextBox.Name = "ContrasenatextBox";
-            this.ContrasenatextBox.Size = new System.Drawing.Size(241, 20);
+            this.ContrasenatextBox.Size = new System.Drawing.Size(266, 20);
             this.ContrasenatextBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(179, 59);
+            this.label1.Location = new System.Drawing.Point(259, 55);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Nombre";
+            this.label1.Text = "Nombre:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(179, 98);
+            this.label2.Location = new System.Drawing.Point(259, 94);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 13);
+            this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Contraseña";
+            this.label2.Text = "Contraseña:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(179, 134);
+            this.label3.Location = new System.Drawing.Point(259, 130);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(80, 13);
+            this.label3.Size = new System.Drawing.Size(83, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Fecha de Inicio";
+            this.label3.Text = "Fecha de Inicio:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(179, 173);
+            this.label4.Location = new System.Drawing.Point(259, 169);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(29, 13);
+            this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 3;
-            this.label4.Text = "Area";
+            this.label4.Text = "Area:";
             // 
             // AreacomboBox
             // 
@@ -113,32 +103,57 @@
             this.AreacomboBox.Items.AddRange(new object[] {
             "Administrativo",
             "Limitado"});
-            this.AreacomboBox.Location = new System.Drawing.Point(179, 190);
+            this.AreacomboBox.Location = new System.Drawing.Point(259, 186);
             this.AreacomboBox.Name = "AreacomboBox";
-            this.AreacomboBox.Size = new System.Drawing.Size(241, 21);
+            this.AreacomboBox.Size = new System.Drawing.Size(266, 21);
             this.AreacomboBox.TabIndex = 4;
             // 
-            // Guardarbutton
+            // IdUsuariotextBox
             // 
-            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1443916247_Check;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(254, 217);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
-            this.Guardarbutton.TabIndex = 5;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            this.IdUsuariotextBox.Location = new System.Drawing.Point(259, 32);
+            this.IdUsuariotextBox.Name = "IdUsuariotextBox";
+            this.IdUsuariotextBox.Size = new System.Drawing.Size(227, 20);
+            this.IdUsuariotextBox.TabIndex = 6;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(259, 16);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "IdUsuario:";
+            // 
+            // FechaIniciomaskedTextBox
+            // 
+            this.FechaIniciomaskedTextBox.Location = new System.Drawing.Point(259, 146);
+            this.FechaIniciomaskedTextBox.Mask = "00/00/0000";
+            this.FechaIniciomaskedTextBox.Name = "FechaIniciomaskedTextBox";
+            this.FechaIniciomaskedTextBox.ReadOnly = true;
+            this.FechaIniciomaskedTextBox.Size = new System.Drawing.Size(266, 20);
+            this.FechaIniciomaskedTextBox.TabIndex = 7;
+            this.FechaIniciomaskedTextBox.ValidatingType = typeof(System.DateTime);
+            // 
+            // button1
+            // 
+            this.button1.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(444, 220);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(81, 44);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Eliminar";
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // Buscarbutton
             // 
+            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(345, 217);
+            this.Buscarbutton.Location = new System.Drawing.Point(492, 20);
             this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(88, 44);
+            this.Buscarbutton.Size = new System.Drawing.Size(33, 32);
             this.Buscarbutton.TabIndex = 5;
-            this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
@@ -147,7 +162,7 @@
             // 
             this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(167, 217);
+            this.Nuevobutton.Location = new System.Drawing.Point(259, 220);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 5;
@@ -156,37 +171,36 @@
             this.Nuevobutton.UseVisualStyleBackColor = true;
             this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
-            // IdUsuariotextBox
+            // Guardarbutton
             // 
-            this.IdUsuariotextBox.Location = new System.Drawing.Point(179, 36);
-            this.IdUsuariotextBox.Name = "IdUsuariotextBox";
-            this.IdUsuariotextBox.Size = new System.Drawing.Size(80, 20);
-            this.IdUsuariotextBox.TabIndex = 6;
+            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(346, 220);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
+            this.Guardarbutton.TabIndex = 5;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // label5
+            // LoginportadapictureBox
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(179, 20);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(16, 13);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Id";
-            // 
-            // FechaIniciomaskedTextBox
-            // 
-            this.FechaIniciomaskedTextBox.Location = new System.Drawing.Point(179, 150);
-            this.FechaIniciomaskedTextBox.Mask = "00/00/0000";
-            this.FechaIniciomaskedTextBox.Name = "FechaIniciomaskedTextBox";
-            this.FechaIniciomaskedTextBox.ReadOnly = true;
-            this.FechaIniciomaskedTextBox.Size = new System.Drawing.Size(241, 20);
-            this.FechaIniciomaskedTextBox.TabIndex = 7;
-            this.FechaIniciomaskedTextBox.ValidatingType = typeof(System.DateTime);
+            this.LoginportadapictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.user_icon;
+            this.LoginportadapictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.LoginportadapictureBox.InitialImage = null;
+            this.LoginportadapictureBox.Location = new System.Drawing.Point(12, 20);
+            this.LoginportadapictureBox.Name = "LoginportadapictureBox";
+            this.LoginportadapictureBox.Size = new System.Drawing.Size(229, 244);
+            this.LoginportadapictureBox.TabIndex = 1;
+            this.LoginportadapictureBox.TabStop = false;
             // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 276);
+            this.ClientSize = new System.Drawing.Size(559, 276);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.FechaIniciomaskedTextBox);
             this.Controls.Add(this.IdUsuariotextBox);
             this.Controls.Add(this.Buscarbutton);
@@ -225,5 +239,6 @@
         private System.Windows.Forms.TextBox IdUsuariotextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox FechaIniciomaskedTextBox;
+        private System.Windows.Forms.Button button1;
     }
 }

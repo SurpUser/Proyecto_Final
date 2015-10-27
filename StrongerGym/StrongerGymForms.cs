@@ -75,10 +75,16 @@ namespace StrongerGym
 
         }
 
-        private void registroUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registroUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RegistroUsuarioForm registro = new RegistroUsuarioForm();
-            registro.Show();
+            registro.ShowDialog();
+        }
+
+        private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConsultaUsuarioForm usuario = new ConsultaUsuarioForm();
+            usuario.ShowDialog();
         }
     }
 }

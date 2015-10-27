@@ -58,6 +58,12 @@
     <Compile Include="Recursos\ConfiguracoinForm.Designer.cs">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Recursos\ConsultaUsuarioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Recursos\ConsultaUsuarioForm.Designer.cs">
+      <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Recursos\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Recursos\ConfiguracoinForm.resx">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Recursos\ConsultaUsuarioForm.resx">
+      <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Recursos\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -172,6 +181,15 @@
       <Project>{efb5fe7d-76f9-4714-9921-a3b53d7b4d8d}</Project>
       <Name>BLL</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1444608937_Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1444609073_search_magnifying_glass_find.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1445977332_search_magnifying_glass_find.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

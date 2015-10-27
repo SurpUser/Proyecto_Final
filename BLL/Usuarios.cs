@@ -104,7 +104,7 @@ namespace BLL
         {
             try
             {
-                return conexion.ObtenerDatos("Select "+Campos +" From Usuarios "+Condicion +" "+Orden);
+                return conexion.ObtenerDatos("Select "+Campos +" From Usuarios where "+Condicion +" "+Orden);
             }
             catch (Exception)
             {
