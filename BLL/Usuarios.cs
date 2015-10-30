@@ -57,7 +57,15 @@ namespace BLL
 
         public override bool Eliminar()
         {
-            throw new NotImplementedException();
+            try
+            {
+                return conexion.Ejecutar(String.Format("delete from Usuarios where IdUsuario = {0}",this.IdUsuario));
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
         }
 
         public bool InicioSesion()
