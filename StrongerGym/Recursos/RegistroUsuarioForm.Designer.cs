@@ -38,7 +38,7 @@
             this.IdUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.FechaIniciomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -134,17 +134,18 @@
             this.FechaIniciomaskedTextBox.TabIndex = 7;
             this.FechaIniciomaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
-            // button1
+            // Eliminarbutton
             // 
-            this.button1.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(444, 220);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 44);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Eliminar";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.Location = new System.Drawing.Point(444, 220);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(81, 44);
+            this.Eliminarbutton.TabIndex = 8;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Buscarbutton
             // 
@@ -200,7 +201,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 276);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.FechaIniciomaskedTextBox);
             this.Controls.Add(this.IdUsuariotextBox);
             this.Controls.Add(this.Buscarbutton);
@@ -239,6 +240,6 @@
         private System.Windows.Forms.TextBox IdUsuariotextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox FechaIniciomaskedTextBox;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Eliminarbutton;
     }
 }
