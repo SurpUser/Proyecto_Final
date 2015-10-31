@@ -98,22 +98,21 @@ namespace StrongerGym.Recursos
             }
         }
 
-        private void Eliminarbutton_Click(object sender, EventArgs e)
+        private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
             try
             {
                 usuario.IdUsuario = Convert.ToInt32(IdUsuariotextBox.Text);
                 if (usuario.Eliminar())
                 {
-                    MessageBox.Show("Eliminado Correctamente.","Eliminar");
+                    MessageBox.Show("Eliminado Correctamente.", "Eliminar");
                 }
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Error al Eliminar","Eliminar");
+                MessageBox.Show("Error al Eliminar", "Eliminar");
             }
-            
         }
     }
 }
