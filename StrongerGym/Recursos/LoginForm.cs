@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL;
 namespace StrongerGym.R
 {
+    //Login y usuario
     public partial class LoginForm : Form
     {
         int intentos = 0;

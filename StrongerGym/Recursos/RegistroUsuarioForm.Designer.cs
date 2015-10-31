@@ -37,12 +37,12 @@
             this.AreacomboBox = new System.Windows.Forms.ComboBox();
             this.IdUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.FechaIniciomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
+            this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -124,16 +124,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "IdUsuario:";
             // 
-            // FechaIniciomaskedTextBox
-            // 
-            this.FechaIniciomaskedTextBox.Location = new System.Drawing.Point(259, 146);
-            this.FechaIniciomaskedTextBox.Mask = "00/00/0000";
-            this.FechaIniciomaskedTextBox.Name = "FechaIniciomaskedTextBox";
-            this.FechaIniciomaskedTextBox.ReadOnly = true;
-            this.FechaIniciomaskedTextBox.Size = new System.Drawing.Size(266, 20);
-            this.FechaIniciomaskedTextBox.TabIndex = 7;
-            this.FechaIniciomaskedTextBox.ValidatingType = typeof(System.DateTime);
-            // 
             // button1
             // 
             this.button1.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
@@ -195,13 +185,20 @@
             this.LoginportadapictureBox.TabIndex = 1;
             this.LoginportadapictureBox.TabStop = false;
             // 
+            // FechaIniciodateTimePicker
+            // 
+            this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(259, 146);
+            this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
+            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(266, 20);
+            this.FechaIniciodateTimePicker.TabIndex = 9;
+            // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 276);
+            this.Controls.Add(this.FechaIniciodateTimePicker);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.FechaIniciomaskedTextBox);
             this.Controls.Add(this.IdUsuariotextBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -238,7 +235,7 @@
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.TextBox IdUsuariotextBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.MaskedTextBox FechaIniciomaskedTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DateTimePicker FechaIniciodateTimePicker;
     }
 }
