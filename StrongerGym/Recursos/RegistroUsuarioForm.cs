@@ -96,9 +96,6 @@ namespace StrongerGym.Recursos
             {
                 MessageBox.Show("Ingrese un Id.");
             }
-            
-
-
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)

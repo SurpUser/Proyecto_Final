@@ -43,6 +43,7 @@
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
+            this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -134,7 +135,7 @@
             this.FechaIniciomaskedTextBox.TabIndex = 7;
             this.FechaIniciomaskedTextBox.ValidatingType = typeof(System.DateTime);
             // 
-            // Eliminarbutton
+            // button1
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -196,13 +197,19 @@
             this.LoginportadapictureBox.TabIndex = 1;
             this.LoginportadapictureBox.TabStop = false;
             // 
+            // FechaIniciodateTimePicker
+            // 
+            this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(259, 146);
+            this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
+            this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(266, 20);
+            this.FechaIniciodateTimePicker.TabIndex = 9;
+            // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(559, 276);
-            this.Controls.Add(this.Eliminarbutton);
-            this.Controls.Add(this.FechaIniciomaskedTextBox);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.IdUsuariotextBox);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.Nuevobutton);
@@ -240,6 +247,6 @@
         private System.Windows.Forms.TextBox IdUsuariotextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.MaskedTextBox FechaIniciomaskedTextBox;
-        private System.Windows.Forms.Button Eliminarbutton;
+        private System.Windows.Forms.Button button1;
     }
 }
