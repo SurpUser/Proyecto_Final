@@ -40,24 +40,34 @@ namespace StrongerGym.Registros
         {
             
             if (ProteinaIdtextBox.Text.Length == 0)
-            {        
+            {
+                Convertir = 0;
+
                 Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
 
                 proteina.ProteinaId = Convertir;
 
                 proteina.Nombre = NombretextBox.Text;
 
+                Convertir2 = 0;
+
                 Resultado = Double.TryParse(PreciotextBox.Text, out Convertir2);
 
                 proteina.Precio = Convertir2;
+
+                Convertir2 = 0;
 
                 Resultado = Double.TryParse(ITBStextBox.Text, out Convertir2);
 
                 proteina.ITBS = Convertir2;
 
+                Convertir2 = 0;
+
                 Resultado = Int32.TryParse(CantidadtextBox.Text, out Convertir);
 
                 proteina.Cantidad = Convertir;
+
+                Convertir2 = 0;
 
                 Resultado = Double.TryParse(CostotextBox.Text, out Convertir2);
 
@@ -74,23 +84,33 @@ namespace StrongerGym.Registros
             }
             else
             {
+                Convertir = 0;
+
                 Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
 
                 proteina.ProteinaId = Convertir;
 
                 proteina.Nombre = NombretextBox.Text;
 
+                Convertir2 = 0;
+
                 Resultado = Double.TryParse(PreciotextBox.Text, out Convertir2);
 
                 proteina.Precio = Convertir2;
+
+                Convertir2 = 0;
 
                 Resultado = Double.TryParse(ITBStextBox.Text, out Convertir2);
 
                 proteina.ITBS = Convertir2;
 
+                Convertir2 = 0;
+
                 Resultado = Int32.TryParse(CantidadtextBox.Text, out Convertir);
 
                 proteina.Cantidad = Convertir;
+
+                Convertir2 = 0;
 
                 Resultado = Double.TryParse(CostotextBox.Text, out Convertir2);
 
@@ -109,17 +129,27 @@ namespace StrongerGym.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
-
-            proteina.ProteinaId = Convertir;
-
-            if (proteina.Eliminar())
+            try
             {
-                MessageBox.Show("Se elimino correctamente");
+                Convertir = 0;
+
+                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
+
+                proteina.ProteinaId = Convertir;
+
+                if (proteina.Eliminar())
+                {
+                    MessageBox.Show("Se elimino correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("No se elimino");
+                }
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("No se elimino");
+
+                throw ex;
             }
         }
 
