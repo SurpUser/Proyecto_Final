@@ -1,6 +1,6 @@
 ﻿namespace StrongerGym.Registros
 {
-    partial class RegistroProveedoresForm
+    partial class ProteinaRegistrosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -30,13 +30,13 @@
         {
             this.SuspendLayout();
             // 
-            // RegistroProveedoresForm
+            // ProteinaRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(486, 352);
-            this.Name = "RegistroProveedoresForm";
-            this.Text = "RegistroProveedoresForm";
+            this.ClientSize = new System.Drawing.Size(530, 356);
+            this.Name = "ProteinaRegistroForm";
+            this.Text = "ProteinaRegistroForm";
             this.ResumeLayout(false);
 
         }

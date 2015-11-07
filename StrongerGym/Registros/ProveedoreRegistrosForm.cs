@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StrongerGym.Registros
 {
-    public partial class RegistroProveedoresForm : Form
+    public partial class ProveedoreRegistrosForm : Form
     {
-        public RegistroProveedoresForm()
+        public ProveedoreRegistrosForm()
         {
             InitializeComponent();
         }

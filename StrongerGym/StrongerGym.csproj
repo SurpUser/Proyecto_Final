@@ -64,17 +64,23 @@
     <Compile Include="Consultas\ConsultaUsuarioForm.Designer.cs">
       <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\ProteinaRegistrosForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\ProteinaRegistrosForm.Designer.cs">
+      <DependentUpon>ProteinaRegistrosForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registros\RegistroForm.Designer.cs">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroProveedoresForm.cs">
+    <Compile Include="Registros\ProveedoreRegistrosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroProveedoresForm.Designer.cs">
-      <DependentUpon>RegistroProveedoresForm.cs</DependentUpon>
+    <Compile Include="Registros\ProveedoreRegistrosForm.Designer.cs">
+      <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\RegistroUsuarioForm.cs">
       <SubType>Form</SubType>
@@ -114,11 +120,14 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registros\ProteinaRegistrosForm.resx">
+      <DependentUpon>ProteinaRegistrosForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroProveedoresForm.resx">
-      <DependentUpon>RegistroProveedoresForm.cs</DependentUpon>
+    <EmbeddedResource Include="Registros\ProveedoreRegistrosForm.resx">
+      <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroUsuarioForm.resx">
       <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
