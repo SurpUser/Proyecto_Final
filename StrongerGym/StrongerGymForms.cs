@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StrongerGym.R;
 using StrongerGym.Recursos;
+
 namespace StrongerGym
 {
     public partial class StrongerGymForms : Form

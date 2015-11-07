@@ -44,8 +44,8 @@ namespace StrongerGym.Recursos
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
-            this.Eliminarbutton = new Button();
-            this.FechaIniciodateTimePicker = new DateTimePicker();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -105,7 +105,7 @@ namespace StrongerGym.Recursos
             this.AreacomboBox.FormattingEnabled = true;
             this.AreacomboBox.Items.AddRange(new object[] {
             "Administrativo",
-            "Limitado"});
+            "Empleado"});
             this.AreacomboBox.Location = new System.Drawing.Point(259, 186);
             this.AreacomboBox.Name = "AreacomboBox";
             this.AreacomboBox.Size = new System.Drawing.Size(266, 21);
@@ -125,7 +125,7 @@ namespace StrongerGym.Recursos
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 3;
-            this.label5.Text = "IdUsuario:";
+            this.label5.Text = "UsuarioId:";
             // 
             // FechaIniciomaskedTextBox
             // 
