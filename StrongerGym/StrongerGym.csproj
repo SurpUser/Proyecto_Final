@@ -70,6 +70,12 @@
     <Compile Include="Registros\RegistroForm.Designer.cs">
       <DependentUpon>RegistroForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\RegistroProveedoresForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\RegistroProveedoresForm.Designer.cs">
+      <DependentUpon>RegistroProveedoresForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\RegistroUsuarioForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroForm.resx">
       <DependentUpon>RegistroForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\RegistroProveedoresForm.resx">
+      <DependentUpon>RegistroProveedoresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\RegistroUsuarioForm.resx">
       <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
