@@ -18,5 +18,6 @@ namespace BLL
         public abstract bool Buscar(int IdBuscado);
 
         public abstract DataTable Listado(string Campos, string Condicion, string Orden);
+
     }
 }
