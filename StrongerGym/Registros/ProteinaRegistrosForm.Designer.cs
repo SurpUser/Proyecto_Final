@@ -89,7 +89,7 @@
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(346, 271);
+            this.Eliminarbutton.Location = new System.Drawing.Point(389, 271);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
             this.Eliminarbutton.TabIndex = 10;
@@ -115,7 +115,7 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(247, 271);
+            this.Guardarbutton.Location = new System.Drawing.Point(270, 271);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
             this.Guardarbutton.TabIndex = 9;
