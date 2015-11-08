@@ -46,7 +46,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format("update Usuarios set Nombre = '{0}' , Contrasena='{1}', Area = '{2}' where IdUsuario = {3}",this.Nombre,this.Contrasena,this.Area,this.IdUsuario));               
+                return conexion.Ejecutar(String.Format("update Usuarios set Nombre = '{0}' , Contrasena='{1}', Area = '{2}' where UsuarioId = {3}",this.Nombre,this.Contrasena,this.Area,this.IdUsuario));               
             }
             catch (Exception)
             {
@@ -59,7 +59,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format("delete from Usuarios where IdUsuario = {0}",this.IdUsuario));
+                return conexion.Ejecutar(String.Format("delete from Usuarios where UsuarioId = {0}",this.IdUsuario));
             }
             catch (Exception)
             {
@@ -87,7 +87,23 @@ namespace BLL
             catch (Exception)
             {
 
-                throw;
+                return false;
+            }
+        }
+
+        public bool Permisos()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt = conexion.ObtenerDatos(String.Format("select Area from Usuarios where Nombre = '{0}'",this.Nombre));
+                this.Area = dt.Rows[0]["Area"].ToString();
+                return true;
+            }
+            catch (Exception)
+            {
+
+                return false;
             }
         }
         public override bool Buscar(int IdBuscado)
@@ -95,7 +111,7 @@ namespace BLL
             DataTable bt = new DataTable();
             try
             {
-                bt = conexion.ObtenerDatos(String.Format("select * from Usuarios where IdUsuario = {0}", IdBuscado));
+                bt = conexion.ObtenerDatos(String.Format("select * from Usuarios where UsuarioId = {0}", IdBuscado));
                 this.Nombre = bt.Rows[0]["Nombre"].ToString();
                 this.FechaInicio = bt.Rows[0]["FechaInicio"].ToString();
                 this.Area = bt.Rows[0]["Area"].ToString();
