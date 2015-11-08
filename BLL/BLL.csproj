@@ -41,6 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClaseMaestra.cs" />
+    <Compile Include="Proteinas.cs" />
+    <Compile Include="Proveedores.cs" />
     <Compile Include="Usuarios.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -43,6 +43,11 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDeProteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ciudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,6 +78,12 @@
             // 
             // configuracionToolStripMenuItem
             // 
+            this.configuracionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generalToolStripMenuItem,
+            this.proteinasToolStripMenuItem,
+            this.tiposDeProteinasToolStripMenuItem,
+            this.proveedoresToolStripMenuItem,
+            this.ciudadesToolStripMenuItem});
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
@@ -165,6 +176,39 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
+            // generalToolStripMenuItem
+            // 
+            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.generalToolStripMenuItem.Text = "General";
+            this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
+            // 
+            // proteinasToolStripMenuItem
+            // 
+            this.proteinasToolStripMenuItem.Name = "proteinasToolStripMenuItem";
+            this.proteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.proteinasToolStripMenuItem.Text = "Proteinas";
+            this.proteinasToolStripMenuItem.Click += new System.EventHandler(this.proteinasToolStripMenuItem_Click);
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            // 
+            // tiposDeProteinasToolStripMenuItem
+            // 
+            this.tiposDeProteinasToolStripMenuItem.Name = "tiposDeProteinasToolStripMenuItem";
+            this.tiposDeProteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.tiposDeProteinasToolStripMenuItem.Text = "Tipos de Proteinas";
+            // 
+            // ciudadesToolStripMenuItem
+            // 
+            this.ciudadesToolStripMenuItem.Name = "ciudadesToolStripMenuItem";
+            this.ciudadesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.ciudadesToolStripMenuItem.Text = "Ciudades";
+            // 
             // StrongerGymForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,6 +246,11 @@
         private System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proteinasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tiposDeProteinasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
     }
 }
 

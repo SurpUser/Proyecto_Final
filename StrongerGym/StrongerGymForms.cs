@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using StrongerGym.R;
 using StrongerGym.Recursos;
+using StrongerGym.Registros;
 
 namespace StrongerGym
 {
@@ -45,8 +46,7 @@ namespace StrongerGym
 
         private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConfiguracoinForm configuracion = new ConfiguracoinForm();
-            configuracion.ShowDialog();
+            
         }
 
         private void carnetToolStripMenuItem_Click(object sender, EventArgs e)
@@ -94,6 +94,26 @@ namespace StrongerGym
                 Application.Exit();
             }
 
+        }
+
+        private void generalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfiguracoinForm configuracion = new ConfiguracoinForm();
+            configuracion.ShowDialog();
+        }
+
+        private void proteinasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProteinaRegistrosForm proteina = new ProteinaRegistrosForm();
+
+            proteina.ShowDialog();
+        }
+
+        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
+
+            proveedore.ShowDialog();
         }
     }
 }
