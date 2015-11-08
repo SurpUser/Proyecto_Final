@@ -73,7 +73,7 @@ namespace BLL
             DataTable dt = new DataTable();
             try
             {
-                dt = conexion.ObtenerDatos(String.Format("select IdUsuario from Usuarios where Nombre = '{0}' And Contrasena = '{1}'", this.Nombre, this.Contrasena));
+                dt = conexion.ObtenerDatos(String.Format("select UsuarioId from Usuarios where Nombre = '{0}' And Contrasena = '{1}'", this.Nombre, this.Contrasena));
                 if (dt.Rows.Count > 0)
                 {
                     return true;
