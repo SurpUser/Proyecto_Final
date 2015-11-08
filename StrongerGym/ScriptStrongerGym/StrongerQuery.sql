@@ -16,15 +16,15 @@ Nombre varchar(100)
 );
 
 create table Proveedores(
-ProveedorId int primary key identity(1,1),
-CiudadId int References Ciudades(CiudadId),
-NombreEmpresa varchar(50),
-RNC varchar(50),
-Direccion varchar(100),
-Telefono varchar(12),
+ProveedorId int primary key identity(1,1),------------------------
+CiudadId int References Ciudades(CiudadId),----------------------
+NombreEmpresa varchar(50),----------------
+RNC varchar(50),-------------
+Direccion varchar(100),-----------
+Telefono varchar(12),----------------
 Celular varchar(12),
 Email varchar(100),
-NombreRepresentante varchar(50)
+NombreRepresentante varchar(50)--------------------------
 );
 
 create table Clientes(

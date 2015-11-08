@@ -70,11 +70,11 @@
     <Compile Include="Registros\ProteinaRegistrosForm.Designer.cs">
       <DependentUpon>ProteinaRegistrosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroForm.cs">
+    <Compile Include="Registros\ClienteRegistrosForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroForm.Designer.cs">
-      <DependentUpon>RegistroForm.cs</DependentUpon>
+    <Compile Include="Registros\ClienteRegistrosForm.Designer.cs">
+      <DependentUpon>ClienteRegistrosForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\ProveedoreRegistrosForm.cs">
       <SubType>Form</SubType>
@@ -123,8 +123,8 @@
     <EmbeddedResource Include="Registros\ProteinaRegistrosForm.resx">
       <DependentUpon>ProteinaRegistrosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroForm.resx">
-      <DependentUpon>RegistroForm.cs</DependentUpon>
+    <EmbeddedResource Include="Registros\ClienteRegistrosForm.resx">
+      <DependentUpon>ClienteRegistrosForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\ProveedoreRegistrosForm.resx">
       <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
