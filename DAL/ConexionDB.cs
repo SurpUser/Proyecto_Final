@@ -16,6 +16,7 @@ namespace DAL
 
         public ConexionDB()
         {
+
             con = new SqlConnection("Data Source=ROOT-PC\\SURPUSER;Initial Catalog=StrongerDB;Integrated Security=True");
             Cmd = new SqlCommand();
         }
