@@ -59,6 +59,7 @@
             // UsuariotextBox
             // 
             this.UsuariotextBox.Location = new System.Drawing.Point(206, 43);
+            this.UsuariotextBox.MaxLength = 40;
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(186, 20);
             this.UsuariotextBox.TabIndex = 2;
@@ -66,10 +67,12 @@
             // ContrasenatextBox
             // 
             this.ContrasenatextBox.Location = new System.Drawing.Point(206, 109);
+            this.ContrasenatextBox.MaxLength = 30;
             this.ContrasenatextBox.Name = "ContrasenatextBox";
             this.ContrasenatextBox.PasswordChar = '*';
             this.ContrasenatextBox.Size = new System.Drawing.Size(186, 20);
             this.ContrasenatextBox.TabIndex = 3;
+            this.ContrasenatextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenatextBox_KeyDown);
             // 
             // button2
             // 

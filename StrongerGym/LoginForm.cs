@@ -20,7 +20,7 @@ namespace StrongerGym.R
             InitializeComponent();
         }
 
-        private void IniciarButton_Click(object sender, EventArgs e)
+        public void IniciarSesion()
         {
             if (UsuariotextBox.Text.Length > 0 && ContrasenatextBox.Text.Length > 0)
             {
@@ -44,13 +44,24 @@ namespace StrongerGym.R
             {
                 MessageBox.Show("Faltan Campos.");
             }
-                    
-            
+        }
+
+        private void IniciarButton_Click(object sender, EventArgs e)
+        {
+            IniciarSesion();         
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ContrasenatextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                IniciarSesion();
+            }
         }
     }
 }
