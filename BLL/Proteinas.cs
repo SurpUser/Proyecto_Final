@@ -27,7 +27,7 @@ namespace BLL
         public Proteinas()
         {
             this.ProteinaId = 0;
-            this.Nombre = "";
+            this.Nombre = ""; 
             this.Precio = 0.0;
             this.ITBS = 0.0;
             this.Cantidad = 0;

@@ -104,7 +104,7 @@ namespace StrongerGym.Registros
             try
             {
                 int Id = 0;
-                bool result = Int32.TryParse(ProveedorIdtextBox.Text,out Id);
+                bool result = Int32.TryParse(ProveedorIdtextBox.Text,out Id); 
                 proveedor.ProveedorId = Id;
                 if (proveedor.Eliminar())
                 {

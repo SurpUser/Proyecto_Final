@@ -54,7 +54,7 @@ namespace BLL
 
         public DataTable ObtenerCiudadId(string Nombre)
         {
-            return conexion.ObtenerDatos(String.Format("select CiudadId from Ciudades where Nombre = '{0}'",Nombre));
+            return conexion.ObtenerDatos(String.Format("select CiudadId from Ciudades where Nombre = '{0}'",Nombre)); 
         }
     }
 }

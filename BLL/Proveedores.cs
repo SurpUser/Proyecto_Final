@@ -86,7 +86,7 @@ namespace BLL
             {
                 return conexion.Ejecutar(String.Format("delete from Proveedores where ProveedorId ={0};",this.ProveedorId));
             }
-            catch (Exception)
+            catch (Exception) 
             {
 
                 return false;
