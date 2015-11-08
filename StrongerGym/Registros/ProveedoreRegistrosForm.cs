@@ -20,6 +20,14 @@ namespace StrongerGym.Registros
             InitializeComponent();
         }
 
+        public void Ciudades()
+        {
+            for (int i = 0; i < 1; i++)
+            {
+
+            }
+        }
+
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -42,8 +50,8 @@ namespace StrongerGym.Registros
             if (NombreEmpresatextBox.Text.Length > 0 && NombreRepresentantetextBox.Text.Length > 0 && RNCtextBox.Text.Length > 0 && TelefonotextBox.Text.Length > 0)
             {
                 int id = 0;
-                id = Convert.ToInt32(proveedor.);
-                proveedor.CiudadId = id;
+                //id = Convert.ToInt32(proveedor.Listado("ProveedorId","Nombre =",""));
+                proveedor.CiudadId = 1;
                 proveedor.NombreEmpresa = NombreEmpresatextBox.Text;
                 proveedor.NombreRepresentante = NombreRepresentantetextBox.Text;
                 proveedor.RNC = RNCtextBox.Text;
