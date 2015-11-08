@@ -93,7 +93,26 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            bool retorno = false;
+            try
+            {
+                dt = con.ObtenerDatos(string.Format("select * from Proteinas where ProteinaId = {0} ", IdBuscado));
+                this.Nombre = dt.Rows[0]["Nombre"].ToString();
+                this.Precio = (double)dt.Rows[0]["Precio"];
+                this.ITBS = (double)dt.Rows[0]["ITBS"];
+                this.Cantidad = (int)dt.Rows[0]["Cantidad"];
+                this.Costo = (double)dt.Rows[0]["Costo"];
+
+                retorno = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

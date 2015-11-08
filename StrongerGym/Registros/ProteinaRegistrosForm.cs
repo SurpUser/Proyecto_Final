@@ -24,7 +24,7 @@ namespace StrongerGym.Registros
             proteina = new Proteinas();
         }
 
-        private void Nuevobutton_Click(object sender, EventArgs e)
+        public void Limpiar()
         {
             ProteinaIdtextBox.Clear();
             NombretextBox.Clear();
@@ -34,6 +34,11 @@ namespace StrongerGym.Registros
             CantidadtextBox.Clear();
             TiposProteinacomboBox.SelectedIndex = 0;
             TiposProteinalistBox.Items.Clear();
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -76,6 +81,8 @@ namespace StrongerGym.Registros
                 if (proteina.Insertar())
                 {
                     MessageBox.Show("Se guardo correctamente");
+
+                    Limpiar();
                 }
                 else
                 {
@@ -119,12 +126,16 @@ namespace StrongerGym.Registros
                 if (proteina.Editar())
                 {
                     MessageBox.Show("Se edito correctamente");
+
+                    Limpiar();
                 }
                 else
                 {
                     MessageBox.Show("No se edito");
                 }
             }
+
+            
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -151,11 +162,44 @@ namespace StrongerGym.Registros
 
                 throw ex;
             }
+
+            Limpiar();
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             TiposProteinalistBox.Items.Add(TiposProteinacomboBox.Text);
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            Convertir = 0;
+
+            if (ProteinaIdtextBox.Text.Length > 0)
+            {       
+                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
+
+                if (proteina.Buscar(Convertir))
+                {
+                    NombretextBox.Text = proteina.Nombre;
+
+                    PreciotextBox.Text = proteina.Precio.ToString();
+
+                    ITBStextBox.Text = proteina.ITBS.ToString();
+
+                    CantidadtextBox.Text = proteina.Cantidad.ToString();
+
+                    CostotextBox.Text = proteina.Costo.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("No encontro ese Id");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un Id");
+            }
         }
     }
 }
