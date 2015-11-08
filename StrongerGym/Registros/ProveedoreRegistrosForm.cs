@@ -14,17 +14,20 @@ namespace StrongerGym.Registros
     public partial class ProveedoreRegistrosForm : Form
     {
         Proveedores proveedor = new Proveedores();
+        Ciudades ciudad = new Ciudades();
 
         public ProveedoreRegistrosForm()
         {
             InitializeComponent();
+            Ciudades();
+            CiudadescomboBox.SelectedIndex = 0;
         }
 
         public void Ciudades()
         {
-            for (int i = 0; i < 1; i++)
+            for (int i = 0; i < ciudad.Listado("Nombre","1=1","").Rows.Count; i++)
             {
-
+                CiudadescomboBox.Items.Add(ciudad.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
             }
         }
 
@@ -35,7 +38,6 @@ namespace StrongerGym.Registros
 
         public void Limpiar()
         {
-            ProveedorIdtextBox.Clear();
             NombreEmpresatextBox.Clear();
             NombreRepresentantetextBox.Clear();
             RNCtextBox.Clear();
@@ -45,13 +47,13 @@ namespace StrongerGym.Registros
             EmailtextBox.Clear();
         }
 
-        public bool GuardarProveedore()
+        public bool GuardarProveedor()
         {
             if (NombreEmpresatextBox.Text.Length > 0 && NombreRepresentantetextBox.Text.Length > 0 && RNCtextBox.Text.Length > 0 && TelefonotextBox.Text.Length > 0)
             {
-                int id = 0;
-                //id = Convert.ToInt32(proveedor.Listado("ProveedorId","Nombre =",""));
-                proveedor.CiudadId = 1;
+                int id = 1;
+                id = (int)ciudad.ObtenerCiudadId("Tenares").Rows[0]["CiudadId"];
+                proveedor.CiudadId = id;
                 proveedor.NombreEmpresa = NombreEmpresatextBox.Text;
                 proveedor.NombreRepresentante = NombreRepresentantetextBox.Text;
                 proveedor.RNC = RNCtextBox.Text;
@@ -60,7 +62,6 @@ namespace StrongerGym.Registros
                 proveedor.Celular = CelulartextBox.Text;
                 proveedor.Email = EmailtextBox.Text;
                 return true;
-
             }
             else
             {
@@ -72,16 +73,29 @@ namespace StrongerGym.Registros
         {
             try
             {
-                GuardarProveedore();
-                if (proveedor.Insertar())
+                if (GuardarProveedor())
                 {
-                    MessageBox.Show("Guardado Correctamente.","Correcto");
+                    if (proveedor.Insertar())
+                    {
+                        MessageBox.Show("Guardado Correctamente.", "Correcto");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Guardar", "Error");
+                    }
+
                 }
+                else
+                {
+                    MessageBox.Show("Faltan Campos", "Error");
+                }
+                
+                
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Eror al Guardar","Error");
+                MessageBox.Show("Error inesperado","Error");
             }
         }
 
@@ -94,19 +108,48 @@ namespace StrongerGym.Registros
                 proveedor.ProveedorId = Id;
                 if (proveedor.Eliminar())
                 {
-
+                    MessageBox.Show("Proveedor Eliminaro","Correcto");
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar", "Error");
                 }
             }
             catch (Exception)
             {
 
-                MessageBox.Show("Error al Eliminar","Error"); ;
+                MessageBox.Show("Error inesperado", "Error");
             }
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
+            if (ProveedorIdtextBox.Text.Length > 0)
+            {
+                int id = 1;
+                bool result = Int32.TryParse(ProveedorIdtextBox.Text,out id);
+                int PeliculaId = id;
+                if (proveedor.Buscar(PeliculaId))
+                {
+                    Limpiar();
+                    NombreEmpresatextBox.Text = proveedor.NombreEmpresa;
+                    NombreRepresentantetextBox.Text = proveedor.NombreRepresentante;
+                    RNCtextBox.Text = proveedor.RNC;
+                    DirecciontextBox.Text = proveedor.Direccion;
+                    CiudadescomboBox.Text = ciudad.Nombre;
+                    TelefonotextBox.Text = proveedor.Telefono;
+                    CelulartextBox.Text = proveedor.Celular;
+                    EmailtextBox.Text = proveedor.Email;
 
+                }
+                else
+                {
+                    MessageBox.Show("No Existe");
+                }
+
+            }
+            else { MessageBox.Show("Seleccione un Id"); }
         }
     }
 }

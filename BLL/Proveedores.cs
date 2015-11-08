@@ -11,7 +11,7 @@ namespace BLL
     public class Proveedores : ClaseMaestra
     {
         ConexionDB conexion = new ConexionDB();
-
+        Ciudades ciudad = new Ciudades();
         public int ProveedorId { get; set; }
         public int CiudadId { get; set; }
         public string NombreRepresentante { get; set; }
@@ -38,6 +38,8 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dtProveedor = new DataTable();
+            DataTable dtCiudad = new DataTable();
+
             try
             {
                 dtProveedor = conexion.ObtenerDatos(String.Format("select * from Proveedores where ProveedorId = {0}",IdBuscado));
@@ -49,6 +51,9 @@ namespace BLL
                 this.Telefono = dtProveedor.Rows[0]["Telefono"].ToString();
                 this.Celular = dtProveedor.Rows[0]["Celular"].ToString();
                 this.Email = dtProveedor.Rows[0]["Email"].ToString();
+
+                dtCiudad = conexion.ObtenerDatos(String.Format("select Nombre from Ciudades where CiudadId = {0}",this.CiudadId));
+                ciudad.Nombre = dtCiudad.Rows[0]["Nombre"].ToString();
             }
             catch (Exception)
             {
@@ -79,8 +84,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format("delete from Proveedores where ProveedorId ={0}; "+
-                                                       "delete from Ciudades where ProveedorId ={0}; ",this.ProveedorId));
+                return conexion.Ejecutar(String.Format("delete from Proveedores where ProveedorId ={0};",this.ProveedorId));
             }
             catch (Exception)
             {
