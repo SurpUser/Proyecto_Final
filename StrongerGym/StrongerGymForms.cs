@@ -115,5 +115,16 @@ namespace StrongerGym
 
             proveedore.ShowDialog();
         }
+
+        private void StrongerGymForms_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CiudadRegistroForm ciudad = new CiudadRegistroForm();
+            ciudad.Show();
+        }
     }
 }
