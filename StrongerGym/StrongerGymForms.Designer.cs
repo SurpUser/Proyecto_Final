@@ -31,6 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tiposDeProteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ciudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,11 +48,7 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tiposDeProteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ciudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -88,6 +89,41 @@
             this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             this.configuracionToolStripMenuItem.Click += new System.EventHandler(this.configuracionToolStripMenuItem_Click);
+            // 
+            // generalToolStripMenuItem
+            // 
+            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
+            this.generalToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.generalToolStripMenuItem.Text = "General";
+            this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
+            // 
+            // proteinasToolStripMenuItem
+            // 
+            this.proteinasToolStripMenuItem.Name = "proteinasToolStripMenuItem";
+            this.proteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.proteinasToolStripMenuItem.Text = "Proteinas";
+            this.proteinasToolStripMenuItem.Click += new System.EventHandler(this.proteinasToolStripMenuItem_Click);
+            // 
+            // tiposDeProteinasToolStripMenuItem
+            // 
+            this.tiposDeProteinasToolStripMenuItem.Name = "tiposDeProteinasToolStripMenuItem";
+            this.tiposDeProteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.tiposDeProteinasToolStripMenuItem.Text = "Tipos de Proteinas";
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.proveedoresToolStripMenuItem.Text = "Proveedores";
+            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
+            // 
+            // ciudadesToolStripMenuItem
+            // 
+            this.ciudadesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroToolStripMenuItem});
+            this.ciudadesToolStripMenuItem.Name = "ciudadesToolStripMenuItem";
+            this.ciudadesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.ciudadesToolStripMenuItem.Text = "Ciudades";
             // 
             // salirToolStripMenuItem
             // 
@@ -176,38 +212,12 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
-            // generalToolStripMenuItem
+            // registroToolStripMenuItem
             // 
-            this.generalToolStripMenuItem.Name = "generalToolStripMenuItem";
-            this.generalToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.generalToolStripMenuItem.Text = "General";
-            this.generalToolStripMenuItem.Click += new System.EventHandler(this.generalToolStripMenuItem_Click);
-            // 
-            // proteinasToolStripMenuItem
-            // 
-            this.proteinasToolStripMenuItem.Name = "proteinasToolStripMenuItem";
-            this.proteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.proteinasToolStripMenuItem.Text = "Proteinas";
-            this.proteinasToolStripMenuItem.Click += new System.EventHandler(this.proteinasToolStripMenuItem_Click);
-            // 
-            // proveedoresToolStripMenuItem
-            // 
-            this.proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            this.proveedoresToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.proveedoresToolStripMenuItem.Text = "Proveedores";
-            this.proveedoresToolStripMenuItem.Click += new System.EventHandler(this.proveedoresToolStripMenuItem_Click);
-            // 
-            // tiposDeProteinasToolStripMenuItem
-            // 
-            this.tiposDeProteinasToolStripMenuItem.Name = "tiposDeProteinasToolStripMenuItem";
-            this.tiposDeProteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.tiposDeProteinasToolStripMenuItem.Text = "Tipos de Proteinas";
-            // 
-            // ciudadesToolStripMenuItem
-            // 
-            this.ciudadesToolStripMenuItem.Name = "ciudadesToolStripMenuItem";
-            this.ciudadesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
-            this.ciudadesToolStripMenuItem.Text = "Ciudades";
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // StrongerGymForms
             // 
@@ -222,6 +232,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "StrongerGym";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.StrongerGymForms_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -251,6 +262,7 @@
         private System.Windows.Forms.ToolStripMenuItem tiposDeProteinasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
     }
 }
 
