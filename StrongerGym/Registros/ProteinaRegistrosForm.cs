@@ -22,6 +22,10 @@ namespace StrongerGym.Registros
         {
             InitializeComponent();
             proteina = new Proteinas();
+            for (int i = 0; i < proteina.Listado("Nombre", "1=1", "").Rows.Count; i++)
+            {
+                TiposProteinacomboBox.Items.Add(proteina.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
+            }
         }
 
         public void Limpiar()
@@ -134,7 +138,6 @@ namespace StrongerGym.Registros
                     MessageBox.Show("No se edito");
                 }
             }
-
             
         }
 
