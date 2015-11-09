@@ -1,7 +1,7 @@
-create database StrongerGYM
+create database StrongerDB
 
-use StrongerGYM
-drop table Usuarios
+use StrongerDB
+
 create table Usuarios(
 UsuarioId int identity(1,1) primary key,
 Nombre varchar(40),
@@ -114,14 +114,14 @@ Mes int,
 Ano int
 );
 
-insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','fc1010','08/11/2015','Administrativa');
 select * from Usuarios
 
 select * from Proveedores
 
-select CiudadId from Ciudades where Nombre = 'Tenares';
+insert into Ciudades(Nombre) values('Tenares');
 
 select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;
 
+delete from Ciudades where CiudadId = 2
+
 select * from Ciudades
-delete from Proveedores where ProveedorId = 3;
