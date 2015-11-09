@@ -24,7 +24,7 @@ namespace StrongerGym.Registros
             proteina = new Proteinas();
             for (int i = 0; i < proteina.Listado("Nombre", "1=1", "").Rows.Count; i++)
             {
-                TiposProteinacomboBox.Items.Add(proteina.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
+                TipoProteinaIdcomboBox.Items.Add(proteina.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
             }
         }
 
@@ -36,8 +36,7 @@ namespace StrongerGym.Registros
             ITBStextBox.Clear();
             CostotextBox.Clear();
             CantidadtextBox.Clear();
-            TiposProteinacomboBox.SelectedIndex = 0;
-            TiposProteinalistBox.Items.Clear();
+            TipoProteinaIdcomboBox.SelectedIndex = 0;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -75,6 +74,12 @@ namespace StrongerGym.Registros
                 Resultado = Int32.TryParse(CantidadtextBox.Text, out Convertir);
 
                 proteina.Cantidad = Convertir;
+
+                Convertir = 0;
+
+                Resultado = Int32.TryParse(TipoProteinaIdcomboBox.Text, out Convertir);
+
+                proteina.TiposProteinaId = Convertir;
 
                 Convertir2 = 0;
 
@@ -169,10 +174,7 @@ namespace StrongerGym.Registros
             Limpiar();
         }
 
-        private void Agregarbutton_Click(object sender, EventArgs e)
-        {
-            TiposProteinalistBox.Items.Add(TiposProteinacomboBox.Text);
-        }
+        private void Agregarbutton_Click(object sender, EventArgs e){}
 
         private void Buscar_Click(object sender, EventArgs e)
         {

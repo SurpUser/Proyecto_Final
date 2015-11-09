@@ -43,10 +43,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.CostotextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.TiposProteinacomboBox = new System.Windows.Forms.ComboBox();
+            this.TipoProteinaIdcomboBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TiposProteinalistBox = new System.Windows.Forms.ListBox();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -80,7 +78,7 @@
             // 
             // CantidadtextBox
             // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(37, 225);
+            this.CantidadtextBox.Location = new System.Drawing.Point(287, 180);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(225, 20);
             this.CantidadtextBox.TabIndex = 0;
@@ -89,7 +87,7 @@
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(389, 271);
+            this.Eliminarbutton.Location = new System.Drawing.Point(359, 229);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
             this.Eliminarbutton.TabIndex = 10;
@@ -102,7 +100,7 @@
             // 
             this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(160, 271);
+            this.Nuevobutton.Location = new System.Drawing.Point(136, 229);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 8;
@@ -115,7 +113,7 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(270, 271);
+            this.Guardarbutton.Location = new System.Drawing.Point(240, 229);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
             this.Guardarbutton.TabIndex = 9;
@@ -163,7 +161,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(34, 209);
+            this.label5.Location = new System.Drawing.Point(284, 164);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 11;
@@ -185,14 +183,14 @@
             this.label6.TabIndex = 11;
             this.label6.Text = "Costo";
             // 
-            // TiposProteinacomboBox
+            // TipoProteinaIdcomboBox
             // 
-            this.TiposProteinacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.TiposProteinacomboBox.FormattingEnabled = true;
-            this.TiposProteinacomboBox.Location = new System.Drawing.Point(287, 140);
-            this.TiposProteinacomboBox.Name = "TiposProteinacomboBox";
-            this.TiposProteinacomboBox.Size = new System.Drawing.Size(225, 21);
-            this.TiposProteinacomboBox.TabIndex = 12;
+            this.TipoProteinaIdcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.TipoProteinaIdcomboBox.FormattingEnabled = true;
+            this.TipoProteinaIdcomboBox.Location = new System.Drawing.Point(287, 140);
+            this.TipoProteinaIdcomboBox.Name = "TipoProteinaIdcomboBox";
+            this.TipoProteinaIdcomboBox.Size = new System.Drawing.Size(225, 21);
+            this.TipoProteinaIdcomboBox.TabIndex = 12;
             // 
             // label7
             // 
@@ -202,24 +200,6 @@
             this.label7.Size = new System.Drawing.Size(80, 13);
             this.label7.TabIndex = 11;
             this.label7.Text = "Tipos Proteinas";
-            // 
-            // TiposProteinalistBox
-            // 
-            this.TiposProteinalistBox.FormattingEnabled = true;
-            this.TiposProteinalistBox.Location = new System.Drawing.Point(287, 202);
-            this.TiposProteinalistBox.Name = "TiposProteinalistBox";
-            this.TiposProteinalistBox.Size = new System.Drawing.Size(225, 43);
-            this.TiposProteinalistBox.TabIndex = 13;
-            // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Location = new System.Drawing.Point(459, 173);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(53, 23);
-            this.Agregarbutton.TabIndex = 14;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
             // button1
             // 
@@ -238,11 +218,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 331);
+            this.ClientSize = new System.Drawing.Size(546, 299);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.Agregarbutton);
-            this.Controls.Add(this.TiposProteinalistBox);
-            this.Controls.Add(this.TiposProteinacomboBox);
+            this.Controls.Add(this.TipoProteinaIdcomboBox);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -283,10 +261,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox CostotextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox TiposProteinacomboBox;
+        private System.Windows.Forms.ComboBox TipoProteinaIdcomboBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.ListBox TiposProteinalistBox;
-        private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.Button button1;
     }
 }

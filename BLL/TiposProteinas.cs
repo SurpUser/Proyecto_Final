@@ -8,7 +8,7 @@ using DAL;
 
 namespace BLL
 {
-    class TiposProteinas : ClaseMaestra
+    public class TiposProteinas : ClaseMaestra
     {
         public int TipoProteinaId { get; set; }
 
@@ -30,22 +30,72 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            throw new NotImplementedException();
+            DataTable dt = new DataTable();
+            bool retorno = false;
+
+            try
+            {
+                dt = con.ObtenerDatos(string.Format("select Nombre from TiposProteinas where TipoProteinaId = {0} ", IdBuscado));
+                this.Nombre = dt.Rows[0]["Nombre"].ToString();
+
+                retorno = true;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return retorno;
         }
 
         public override bool Editar()
-        {
-            throw new NotImplementedException();
+        {          
+            bool retorno = false;
+            try
+            {
+                retorno = con.Ejecutar(string.Format("update TiposProteinas set Nombre = '{0}' where TipoProteinaId = {1} ", this.Nombre, this.TipoProteinaId));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return retorno;
         }
 
         public override bool Eliminar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+
+            try
+            {
+                retorno = con.Ejecutar(string.Format("delete from TiposProteinas where TipoProteinaId = {0} ", this.TipoProteinaId));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return retorno;
         }
 
         public override bool Insertar()
         {
-            throw new NotImplementedException();
+            bool retorno = false;
+            try
+            {
+                retorno = con.Ejecutar(string.Format("insert into TiposProteinas (Nombre) values ('{0}') ", this.Nombre));
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+
+            return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
@@ -54,10 +104,10 @@ namespace BLL
             {
                 return con.ObtenerDatos("select " + Campos + " from TiposProteinas where " + Condicion + " " + Orden);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
         }
 

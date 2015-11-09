@@ -15,8 +15,6 @@ namespace BLL
 
         public int ProteinaId { get; set; }
 
-        //List<TiposProteinas> TipoProteina;
-
         public int TiposProteinaId { get; set; }
 
         public string  Nombre { get; set; }
@@ -38,7 +36,6 @@ namespace BLL
             this.ITBS = 0.0;
             this.Cantidad = 0;
             this.Costo = 0.0;
-            //TipoProteina = new List<TiposProteinas>();
         }
 
         public Proteinas(int ProteinaID, int TiposProteinaId, string Nombre, double Precio, double Itbs, int Cantidad, double Costo)
@@ -51,12 +48,6 @@ namespace BLL
             this.Cantidad = Cantidad;
             this.Costo = Costo;
         }
-
-        /*public void AgregarTiposProteinas(int Id, string NombreParametro)
-        {
-            this.TipoProteina.Add(new TiposProteinas(Id, NombreParametro));
-        }
-        */
 
         public override bool Insertar()
         {
