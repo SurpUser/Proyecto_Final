@@ -104,7 +104,7 @@ namespace StrongerGym.Recursos
             this.AreacomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.AreacomboBox.FormattingEnabled = true;
             this.AreacomboBox.Items.AddRange(new object[] {
-            "Administrativo",
+            "Administrativa",
             "Empleado"});
             this.AreacomboBox.Location = new System.Drawing.Point(259, 186);
             this.AreacomboBox.Name = "AreacomboBox";
@@ -202,6 +202,7 @@ namespace StrongerGym.Recursos
             // FechaIniciodateTimePicker
             // 
             this.FechaIniciodateTimePicker.Enabled = false;
+            this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(259, 146);
             this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
             this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(266, 20);

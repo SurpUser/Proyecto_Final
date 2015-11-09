@@ -18,7 +18,8 @@ namespace StrongerGym.Recursos
         public RegistroUsuarioForm()
         {
             InitializeComponent();
-            FechaIniciomaskedTextBox.Text = String.Format("{0:dd/MM/yyyy}",DateTime.Now);
+            //FechaIniciomaskedTextBox.Text = String.Format("{0:dd/MM/yyyy}",DateTime.Now);
+            AreacomboBox.SelectedIndex = 0;
         }
 
         void Limpiar()
@@ -29,6 +30,24 @@ namespace StrongerGym.Recursos
             AreacomboBox.SelectedIndex = 0;
         }
 
+        public bool GuardarUsuario()
+        {
+            try
+            {
+                usuario.Nombre = NombretextBox.Text;
+                usuario.Contrasena = Seguridad.Encriptar(ContrasenatextBox.Text);
+                MessageBox.Show(usuario.Contrasena + "\n" + Seguridad.DesEncriptar(usuario.Contrasena));
+                usuario.FechaInicio = FechaIniciomaskedTextBox.Text;
+                usuario.Area = AreacomboBox.Text;
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             if (IdUsuariotextBox.Text.Length < 0)
@@ -36,15 +55,14 @@ namespace StrongerGym.Recursos
 
                 if (NombretextBox.Text.Length > 0 && ContrasenatextBox.Text.Length > 0)
                 {
-                    usuario.Nombre = NombretextBox.Text;
-                    usuario.Contrasena = ContrasenatextBox.Text;
-                    usuario.FechaInicio = FechaIniciomaskedTextBox.Text;
-                    usuario.Area = AreacomboBox.Text;
 
-                    if (usuario.Insertar())
+                    if (GuardarUsuario())
                     {
-                        MessageBox.Show("Se guardo correctamente");
-                        Limpiar();
+                        if (usuario.Insertar())
+                        {
+                            MessageBox.Show("Guardado correctamente");
+                            Limpiar();
+                        }
                     }
                 }
                 else
@@ -54,18 +72,20 @@ namespace StrongerGym.Recursos
             }
             else
             {
-                usuario.IdUsuario = Convert.ToInt32(IdUsuariotextBox.Text);
-                usuario.Nombre = NombretextBox.Text;
-                usuario.Contrasena = ContrasenatextBox.Text;
-                usuario.Area = AreacomboBox.Text;
-
-                if (usuario.Editar())
+                if (GuardarUsuario())
                 {
-                    MessageBox.Show("Editado Correctamente.");
+                    if (usuario.Editar())
+                    {
+                        MessageBox.Show("Editado Correctamente.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Modificar.");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Modificar.");
+                    MessageBox.Show("Faltan Campos");
                 }
             }
         }

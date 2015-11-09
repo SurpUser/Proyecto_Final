@@ -36,6 +36,7 @@
             this.tiposDeProteinasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ciudadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,7 +49,6 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.registroToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -125,6 +125,13 @@
             this.ciudadesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.ciudadesToolStripMenuItem.Text = "Ciudades";
             // 
+            // registroToolStripMenuItem
+            // 
+            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.registroToolStripMenuItem.Text = "Registro";
+            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
+            // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
@@ -175,21 +182,21 @@
             // registrarToolStripMenuItem1
             // 
             this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
-            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.registrarToolStripMenuItem1.Text = "Registrar";
             this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // carnetToolStripMenuItem
             // 
             this.carnetToolStripMenuItem.Name = "carnetToolStripMenuItem";
-            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
+            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.carnetToolStripMenuItem.Text = "Carnet";
             this.carnetToolStripMenuItem.Click += new System.EventHandler(this.carnetToolStripMenuItem_Click);
             // 
@@ -211,13 +218,6 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
-            // 
-            // registroToolStripMenuItem
-            // 
-            this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.registroToolStripMenuItem.Text = "Registro";
-            this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
             // StrongerGymForms
             // 
@@ -254,7 +254,6 @@
         private System.Windows.Forms.ToolStripMenuItem acercaDeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registrarToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem generalToolStripMenuItem;
@@ -263,6 +262,7 @@
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
+        public System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem;
     }
 }
 

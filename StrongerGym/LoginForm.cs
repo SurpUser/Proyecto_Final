@@ -25,11 +25,16 @@ namespace StrongerGym.R
             if (UsuariotextBox.Text.Length > 0 && ContrasenatextBox.Text.Length > 0)
             {
                 usuario.Nombre = UsuariotextBox.Text;
-                usuario.Contrasena = ContrasenatextBox.Text;
+                usuario.Contrasena = Seguridad.Encriptar(ContrasenatextBox.Text);
                 if (usuario.InicioSesion())
                 {
                     this.Visible = false;
                     StrongerGymForms sgf = new StrongerGymForms();
+                    usuario.Permisos();
+                    if (usuario.Area != "Administrativa")
+                    {
+                        sgf.registroUsuarioToolStripMenuItem.Visible = false;
+                    }
                     sgf.Show();
                 }
                 else
