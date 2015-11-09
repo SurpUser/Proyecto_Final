@@ -11,8 +11,13 @@ namespace BLL
     public class Proteinas : ClaseMaestra
     {
         ConexionDB con = new ConexionDB();
+        TiposProteinas TiposProteina = new TiposProteinas();
 
         public int ProteinaId { get; set; }
+
+        //List<TiposProteinas> TipoProteina;
+
+        public int TiposProteinaId { get; set; }
 
         public string  Nombre { get; set; }
 
@@ -27,16 +32,19 @@ namespace BLL
         public Proteinas()
         {
             this.ProteinaId = 0;
+            this.TiposProteinaId = 0;
             this.Nombre = ""; 
             this.Precio = 0.0;
             this.ITBS = 0.0;
             this.Cantidad = 0;
             this.Costo = 0.0;
+            //TipoProteina = new List<TiposProteinas>();
         }
 
-        public Proteinas(int ProteinaID, string Nombre, double Precio, double Itbs, int Cantidad, double Costo)
+        public Proteinas(int ProteinaID, int TiposProteinaId, string Nombre, double Precio, double Itbs, int Cantidad, double Costo)
         {
             this.ProteinaId = ProteinaID;
+            this.TiposProteinaId = TiposProteinaId; 
             this.Nombre = Nombre;
             this.Precio = Precio;
             this.ITBS = Itbs;
@@ -44,12 +52,30 @@ namespace BLL
             this.Costo = Costo;
         }
 
+        /*public void AgregarTiposProteinas(int Id, string NombreParametro)
+        {
+            this.TipoProteina.Add(new TiposProteinas(Id, NombreParametro));
+        }
+        */
+
         public override bool Insertar()
         {
             bool retorno = false;
+            StringBuilder comando = new StringBuilder();
             try
             {
-                retorno = con.Ejecutar(string.Format("insert into Proteinas (Nombre, Precio, ITBS, Cantidad, Costo) values ('{0}',{1},{2},{3},{4})", this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo));
+                retorno = con.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, ITBS, Cantidad, Costo) values ('{0}',{1},{2},{3},{4})", this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo));
+
+                if (retorno)
+                {
+                    this.ProteinaId = (int)con.ObtenerDatos("Select Max(ProteinaId) as ProteinaId from Proteinas").Rows[0]["ProteinaId"];
+
+                    /*foreach (var Tipoproteina in this.TipoProteina)
+                    {
+                        comando.AppendLine(String.Format("insert into TiposProteinas(ProteinaId,) Values({0},{1}); ",));
+                    }
+*/
+                }
             }
             catch (Exception ex)
             {
@@ -64,7 +90,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = con.Ejecutar(string.Format("update Proteinas set Nombre = '{0}', Precio = {1}, ITBS = {2}, Cantidad = {3}, Costo = {4} where ProteinaId = {5}", this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo, this.ProteinaId));
+                retorno = con.Ejecutar(string.Format("update Proteinas set TipoProteinaId = {0}, Nombre = '{1}', Precio = {2}, ITBS = {3}, Cantidad = {4}, Costo = {5} where ProteinaId = {6}", this.TiposProteinaId, this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo, this.ProteinaId));
             }
             catch (Exception ex)
             {
@@ -94,6 +120,7 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
+            DataTable dt2 = new DataTable();
             bool retorno = false;
             try
             {
@@ -103,6 +130,9 @@ namespace BLL
                 this.ITBS = (double)dt.Rows[0]["ITBS"];
                 this.Cantidad = (int)dt.Rows[0]["Cantidad"];
                 this.Costo = (double)dt.Rows[0]["Costo"];
+
+                dt2 = con.ObtenerDatos(string.Format("select Nombre from TiposProteinas where TipoProteinaId = {0} ", this.TiposProteinaId));
+                this.TiposProteina.Nombre = dt2.Rows[0]["Nombre"].ToString();
 
                 retorno = true;
             }

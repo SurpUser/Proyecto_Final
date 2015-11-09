@@ -22,6 +22,12 @@ namespace BLL
             this.Nombre = "";
         }
 
+        public TiposProteinas(int Id, string Nombre)
+        {
+            this.TipoProteinaId = Id;
+            this.Nombre = Nombre;
+        }
+
         public override bool Buscar(int IdBuscado)
         {
             throw new NotImplementedException();
