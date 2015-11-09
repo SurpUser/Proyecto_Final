@@ -50,15 +50,40 @@ namespace StrongerGym.Registros
         {
             try
             {
-                if (GuardarCiudades())
+                if (CiudadIdtextBox.Text.Length == 0)
                 {
-                    if (ciudad.Insertar())
+
+
+                    if (GuardarCiudades())
                     {
-                        MessageBox.Show("Guardado Correctamente","Correcto",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        if (ciudad.Insertar())
+                        {
+                            MessageBox.Show("Guardado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error Al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
-                    else
+                }
+                else
+                {
+                    if (GuardarCiudades())
                     {
-                        MessageBox.Show("Error Al Guardar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        int id = 0;
+                        bool DialogResult = Int32.TryParse(CiudadIdtextBox.Text, out id);
+                        ciudad.CiudadId = id;
+
+                        if (ciudad.Editar())
+                        {
+                            MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                 }
             }
@@ -76,6 +101,7 @@ namespace StrongerGym.Registros
                 if (ciudad.Eliminar())
                 {
                     MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
                 else
                 {

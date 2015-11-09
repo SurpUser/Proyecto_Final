@@ -88,11 +88,11 @@
     <Compile Include="Registros\ProveedoreRegistrosForm.Designer.cs">
       <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Registros\RegistroUsuarioForm.cs">
+    <Compile Include="Registros\UsuarioRegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Registros\RegistroUsuarioForm.Designer.cs">
-      <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
+    <Compile Include="Registros\UsuarioRegistroForm.Designer.cs">
+      <DependentUpon>UsuarioRegistroForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\TipoProteinaRegistroForm.cs">
       <SubType>Form</SubType>
@@ -144,8 +144,8 @@
     <EmbeddedResource Include="Registros\ProveedoreRegistrosForm.resx">
       <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Registros\RegistroUsuarioForm.resx">
-      <DependentUpon>RegistroUsuarioForm.cs</DependentUpon>
+    <EmbeddedResource Include="Registros\UsuarioRegistroForm.resx">
+      <DependentUpon>UsuarioRegistroForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\TipoProteinaRegistroForm.resx">
       <DependentUpon>TipoProteinaRegistroForm.cs</DependentUpon>

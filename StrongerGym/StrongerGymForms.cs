@@ -77,13 +77,14 @@ namespace StrongerGym
         private void registroUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             RegistroUsuarioForm registro = new RegistroUsuarioForm();
-            registro.ShowDialog();
+            registro.MdiParent = this;
+            registro.Show();
         }
 
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaUsuarioForm usuario = new ConsultaUsuarioForm();
-            usuario.ShowDialog();
+            usuario.Show();
         }
 
         protected override void OnClosed(EventArgs e)
@@ -99,21 +100,21 @@ namespace StrongerGym
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfiguracoinForm configuracion = new ConfiguracoinForm();
-            configuracion.ShowDialog();
+            configuracion.Show();
         }
 
         private void proteinasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProteinaRegistrosForm proteina = new ProteinaRegistrosForm();
 
-            proteina.ShowDialog();
+            proteina.Show();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
 
-            proveedore.ShowDialog();
+            proveedore.Show();
         }
 
         private void StrongerGymForms_Load(object sender, EventArgs e)

@@ -41,7 +41,7 @@ namespace BLL
         {
             try
             {
-               return conexion.Ejecutar(String.Format("update Ciudades set Nombre = '{0}'",this.Nombre));
+               return conexion.Ejecutar(String.Format("update Ciudades set Nombre = '{0}' where CiudadId = {1}",this.Nombre,this.CiudadId));
                 
             }
             catch (Exception)
@@ -55,7 +55,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format("delete from Ciudades where CiudadId = {0}",this.CiudadId));
+                return conexion.Ejecutar(String.Format("delete from Ciudades where CiudadId = {0};",this.CiudadId));
             }
             catch (Exception)
             {

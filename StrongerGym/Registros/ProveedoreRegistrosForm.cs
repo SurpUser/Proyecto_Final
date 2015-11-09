@@ -27,7 +27,7 @@ namespace StrongerGym.Registros
         {
             for (int i = 0; i < ciudad.Listado("Nombre","1=1","").Rows.Count; i++)
             {
-                CiudadescomboBox.Items.Add(ciudad.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
+                CiudadescomboBox.Items.Add(ciudad.Listado("Nombre", "1=1", "").Rows[i]["Nombre"]);
             }
         }
 
