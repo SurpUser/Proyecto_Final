@@ -42,7 +42,7 @@
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(198, 124);
+            this.Eliminarbutton.Location = new System.Drawing.Point(198, 133);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
             this.Eliminarbutton.TabIndex = 10;
@@ -55,7 +55,7 @@
             // 
             this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 124);
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 133);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 8;
@@ -68,7 +68,7 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(99, 124);
+            this.Guardarbutton.Location = new System.Drawing.Point(99, 133);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
             this.Guardarbutton.TabIndex = 9;
@@ -80,6 +80,7 @@
             // CiudadIdtextBox
             // 
             this.CiudadIdtextBox.Location = new System.Drawing.Point(12, 32);
+            this.CiudadIdtextBox.MaxLength = 8;
             this.CiudadIdtextBox.Name = "CiudadIdtextBox";
             this.CiudadIdtextBox.Size = new System.Drawing.Size(227, 20);
             this.CiudadIdtextBox.TabIndex = 15;
@@ -108,7 +109,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 55);
+            this.label1.Location = new System.Drawing.Point(9, 66);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 13;
@@ -116,7 +117,8 @@
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(12, 71);
+            this.NombretextBox.Location = new System.Drawing.Point(9, 82);
+            this.NombretextBox.MaxLength = 95;
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(266, 20);
             this.NombretextBox.TabIndex = 11;

@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+
 namespace StrongerGym.Registros
 {
     public partial class CiudadRegistroForm : Form
     {
         Ciudades ciudad = new Ciudades();
+
         public CiudadRegistroForm()
         {
             InitializeComponent();
@@ -98,14 +100,26 @@ namespace StrongerGym.Registros
         {
             try
             {
-                if (ciudad.Eliminar())
+                if (CiudadIdtextBox.Text.Length != 0)
                 {
-                    MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+
+                    int id = 0;
+                    bool result = Int32.TryParse(CiudadIdtextBox.Text, out id);
+                    ciudad.CiudadId = id;
+
+                    if (ciudad.Eliminar())
+                    {
+                        MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ingrese un Id","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 }
             }
             catch (Exception)
@@ -128,12 +142,13 @@ namespace StrongerGym.Registros
                 else
                 {
                     MessageBox.Show("Id no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Limpiar();
                 }
             }
             catch (Exception)
             {
-
                 MessageBox.Show("Id no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiar();
             }
         }
     }

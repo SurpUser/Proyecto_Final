@@ -79,14 +79,16 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
+            DataTable dt = new DataTable();
             try
             {
-                return conexion.ObtenerDatos("select "+Campos +" from Ciudades where "+Condicion +" "+Orden);
+                dt = conexion.ObtenerDatos("select "+Campos +" from Ciudades where "+Condicion +" "+Orden);
+                return dt;
             }
             catch (Exception)
             {
 
-                throw;
+                return dt;
             }
         }
 

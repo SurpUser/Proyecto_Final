@@ -198,6 +198,7 @@
             // NombreRepresentantetextBox
             // 
             this.NombreRepresentantetextBox.Location = new System.Drawing.Point(399, 40);
+            this.NombreRepresentantetextBox.MaxLength = 45;
             this.NombreRepresentantetextBox.Name = "NombreRepresentantetextBox";
             this.NombreRepresentantetextBox.Size = new System.Drawing.Size(241, 20);
             this.NombreRepresentantetextBox.TabIndex = 22;
@@ -205,6 +206,7 @@
             // NombreEmpresatextBox
             // 
             this.NombreEmpresatextBox.Location = new System.Drawing.Point(399, 70);
+            this.NombreEmpresatextBox.MaxLength = 45;
             this.NombreEmpresatextBox.Name = "NombreEmpresatextBox";
             this.NombreEmpresatextBox.Size = new System.Drawing.Size(241, 20);
             this.NombreEmpresatextBox.TabIndex = 23;
@@ -212,6 +214,7 @@
             // RNCtextBox
             // 
             this.RNCtextBox.Location = new System.Drawing.Point(399, 100);
+            this.RNCtextBox.MaxLength = 12;
             this.RNCtextBox.Name = "RNCtextBox";
             this.RNCtextBox.Size = new System.Drawing.Size(241, 20);
             this.RNCtextBox.TabIndex = 24;
@@ -219,6 +222,7 @@
             // DirecciontextBox
             // 
             this.DirecciontextBox.Location = new System.Drawing.Point(399, 161);
+            this.DirecciontextBox.MaxLength = 100;
             this.DirecciontextBox.Name = "DirecciontextBox";
             this.DirecciontextBox.Size = new System.Drawing.Size(241, 20);
             this.DirecciontextBox.TabIndex = 25;
@@ -226,6 +230,7 @@
             // TelefonotextBox
             // 
             this.TelefonotextBox.Location = new System.Drawing.Point(399, 191);
+            this.TelefonotextBox.MaxLength = 12;
             this.TelefonotextBox.Name = "TelefonotextBox";
             this.TelefonotextBox.Size = new System.Drawing.Size(241, 20);
             this.TelefonotextBox.TabIndex = 26;
@@ -233,6 +238,7 @@
             // CelulartextBox
             // 
             this.CelulartextBox.Location = new System.Drawing.Point(399, 221);
+            this.CelulartextBox.MaxLength = 12;
             this.CelulartextBox.Name = "CelulartextBox";
             this.CelulartextBox.Size = new System.Drawing.Size(241, 20);
             this.CelulartextBox.TabIndex = 27;
@@ -240,6 +246,7 @@
             // EmailtextBox
             // 
             this.EmailtextBox.Location = new System.Drawing.Point(399, 251);
+            this.EmailtextBox.MaxLength = 95;
             this.EmailtextBox.Name = "EmailtextBox";
             this.EmailtextBox.Size = new System.Drawing.Size(241, 20);
             this.EmailtextBox.TabIndex = 28;

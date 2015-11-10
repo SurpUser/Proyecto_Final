@@ -19,7 +19,7 @@ create table Proveedores(
 ProveedorId int primary key identity(1,1),------------------------
 CiudadId int References Ciudades(CiudadId),----------------------
 NombreEmpresa varchar(50),----------------
-RNC varchar(50),-------------
+RNC varchar(50),-------------12-15
 Direccion varchar(100),-----------
 Telefono varchar(12),----------------
 Celular varchar(12),
@@ -118,10 +118,8 @@ select * from Usuarios
 
 select * from Proveedores
 
-insert into Ciudades(Nombre) values('Tenares');
-
 select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;
 
-delete from Ciudades where CiudadId = 2
-
 select * from Ciudades
+
+update Proveedores set CiudadId = 3,NombreEmpresa='FCPrograms',NombreRepresentante='Francis',RNC='3-23-12874-3',Direccion='Calle julia javier',Telefono='902-323-4354',Celular='323-434-5465',Email='info@fcprograms.com' where ProveedorId = 1;

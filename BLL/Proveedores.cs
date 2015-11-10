@@ -14,6 +14,7 @@ namespace BLL
         Ciudades ciudad = new Ciudades();
         public int ProveedorId { get; set; }
         public int CiudadId { get; set; }
+        public string CiudadNombre { get; set; }
         public string NombreRepresentante { get; set; }
         public string NombreEmpresa { get; set; }
         public string RNC { get; set; }
@@ -43,7 +44,7 @@ namespace BLL
             try
             {
                 dtProveedor = conexion.ObtenerDatos(String.Format("select * from Proveedores where ProveedorId = {0}",IdBuscado));
-                this.CiudadId = Convert.ToInt32(dtProveedor.Rows[0]["CiudadId"]);
+                this.CiudadId = (int)dtProveedor.Rows[0]["CiudadId"];
                 this.NombreEmpresa = dtProveedor.Rows[0]["NombreEmpresa"].ToString();
                 this.NombreRepresentante = dtProveedor.Rows[0]["NombreRepresentante"].ToString();
                 this.RNC = dtProveedor.Rows[0]["RNC"].ToString();
@@ -52,8 +53,8 @@ namespace BLL
                 this.Celular = dtProveedor.Rows[0]["Celular"].ToString();
                 this.Email = dtProveedor.Rows[0]["Email"].ToString();
 
-                dtCiudad = conexion.ObtenerDatos(String.Format("select Nombre from Ciudades where CiudadId = {0}",this.CiudadId));
-                ciudad.Nombre = dtCiudad.Rows[0]["Nombre"].ToString();
+                dtCiudad = conexion.ObtenerDatos(String.Format("select * from Ciudades where CiudadId = {0}",this.CiudadId));
+                this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
             }
             catch (Exception)
             {
@@ -67,10 +68,9 @@ namespace BLL
         {
             try
             {
-                conexion.Ejecutar(String.Format("update Proveedores set CiudadId = {0},NombreEmpresa ='{1}',NombreRepresentante ='{2}',RNC ='{3}',"+
-                                                "Direccion='{4}',Telefono='{5}',Celular='{6}',Email='{7}'",
-                                                this.CiudadId,this.NombreEmpresa,this.NombreRepresentante,this.RNC,this.Direccion,this.Telefono,this.Celular,this.Email));
-                /////////////////////////falta detalle
+                conexion.Ejecutar(String.Format("update Proveedores set CiudadId={0}, NombreEmpresa='{1}' ,NombreRepresentante='{2}', RNC='{3}', Direccion='{4}', Telefono='{5}', Celular='{6}' ,Email='{7}' where ProveedorId={8}",
+                                                this.CiudadId,this.NombreEmpresa,this.NombreRepresentante,this.RNC,this.Direccion,this.Telefono,this.Celular,this.Email,2));
+                
             }
             catch (Exception)
             {
