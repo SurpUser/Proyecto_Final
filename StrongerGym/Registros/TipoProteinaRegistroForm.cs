@@ -107,5 +107,28 @@ namespace StrongerGym.Registros
 
             Limpiar();
         }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            Convertir = 0;
+
+            if (TipoProteinaIdtextBox.Text.Length > 0)
+            {
+                Resultado = Int32.TryParse(TipoProteinaIdtextBox.Text, out Convertir);
+
+                if (TipoProteina.Buscar(Convertir))
+                {
+                    NombretextBox.Text = TipoProteina.Nombre;
+                }
+                else
+                {
+                    MessageBox.Show("No encontro ese Id");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un Id");
+            }
+        }
     }
 }

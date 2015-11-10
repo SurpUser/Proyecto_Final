@@ -105,9 +105,7 @@ namespace StrongerGym
 
         private void proteinasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ProteinaRegistrosForm proteina = new ProteinaRegistrosForm();
-
-            proteina.Show();
+            
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -126,6 +124,25 @@ namespace StrongerGym
         {
             CiudadRegistroForm ciudad = new CiudadRegistroForm();
             ciudad.Show();
+        }
+
+        private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProteinaRegistrosForm ProteinaShow = new ProteinaRegistrosForm();
+
+            ProteinaShow.Show();
+        }
+
+        private void registroToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            TipoProteinaRegistroForm TipoProteinaShow = new TipoProteinaRegistroForm();
+
+            TipoProteinaShow.Show();
+        }
+
+        private void tiposDeProteinasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

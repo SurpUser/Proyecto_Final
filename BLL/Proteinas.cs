@@ -55,18 +55,7 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             try
             {
-                retorno = con.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, ITBS, Cantidad, Costo) values ('{0}',{1},{2},{3},{4})", this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo));
-
-                if (retorno)
-                {
-                    this.ProteinaId = (int)con.ObtenerDatos("Select Max(ProteinaId) as ProteinaId from Proteinas").Rows[0]["ProteinaId"];
-
-                    /*foreach (var Tipoproteina in this.TipoProteina)
-                    {
-                        comando.AppendLine(String.Format("insert into TiposProteinas(ProteinaId,) Values({0},{1}); ",));
-                    }
-*/
-                }
+                retorno = con.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, ITBS, Cantidad, Costo) values ({0},'{1}',{2},{3},{4},{5})",this.TiposProteinaId, this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo));
             }
             catch (Exception ex)
             {
@@ -138,7 +127,7 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return con.ObtenerDatos("select " + Campos + " from Proteinas " + Condicion + " " + Orden);
+            return con.ObtenerDatos("select " + Campos + " from Proteinas where " + Condicion + " " + Orden);
         }
     }
 }

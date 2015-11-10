@@ -205,9 +205,9 @@
             // 
             this.button1.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(287, 44);
+            this.button1.Location = new System.Drawing.Point(287, 48);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 32);
+            this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 15;
             this.button1.Text = "Buscar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;

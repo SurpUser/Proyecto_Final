@@ -14,6 +14,8 @@ namespace StrongerGym.Registros
     public partial class ProteinaRegistrosForm : Form
     {
         Proteinas proteina;
+        TiposProteinas Tipoproteina;
+
         int Convertir = 0;
         double Convertir2 = 0.0;
         bool Resultado;
@@ -22,9 +24,11 @@ namespace StrongerGym.Registros
         {
             InitializeComponent();
             proteina = new Proteinas();
-            for (int i = 0; i < proteina.Listado("Nombre", "1=1", "").Rows.Count; i++)
+            Tipoproteina = new TiposProteinas();
+
+            for (int i = 0; i < Tipoproteina.Listado(" Nombre ", " 1=1 ", " ").Rows.Count; i++)
             {
-                TipoProteinaIdcomboBox.Items.Add(proteina.Listado("Nombre", "1=1", "").Rows[0]["Nombre"]);
+                TipoProteinaIdcomboBox.Items.Add(Tipoproteina.Listado(" Nombre ", " 1=1 ", " ").Rows[i]["Nombre"]);
             }
         }
 
@@ -86,6 +90,8 @@ namespace StrongerGym.Registros
                 Resultado = Double.TryParse(CostotextBox.Text, out Convertir2);
 
                 proteina.Costo = Convertir2;
+
+                proteina.TiposProteinaId = (int)Tipoproteina.ObtenerTipoProteinaId(TipoProteinaIdcomboBox.Text).Rows[0]["TipoProteinaId"];
 
                 if (proteina.Insertar())
                 {
