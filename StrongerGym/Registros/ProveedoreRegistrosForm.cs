@@ -55,8 +55,9 @@ namespace StrongerGym.Registros
         {
             if (NombreEmpresatextBox.Text.Length > 0 && NombreRepresentantetextBox.Text.Length > 0 && RNCtextBox.Text.Length > 0 && TelefonotextBox.Text.Length > 0 && DirecciontextBox.Text.Length > 0 && CelulartextBox.Text.Length > 0 && EmailtextBox.Text.Length > 0)
             {
-                Regex Val = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
-                if (Val.IsMatch(EmailtextBox.Text))
+                Regex email = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+
+                if (email.IsMatch(EmailtextBox.Text))
                 {
                     int id = 0;
                     id = (int)ciudad.ObtenerCiudadId(CiudadescomboBox.Text).Rows[0]["CiudadId"];
@@ -90,7 +91,6 @@ namespace StrongerGym.Registros
             {
                 if (ProveedorIdtextBox.Text.Length == 0)
                 {
-
                     if (GuardarProveedor())
                     {
                         if (proveedor.Insertar())
@@ -115,15 +115,21 @@ namespace StrongerGym.Registros
                     bool result = Int32.TryParse(ProveedorIdtextBox.Text, out id);
                     proveedor.ProveedorId = id;
 
-                    MessageBox.Show(""+proveedor.ProveedorId);
-                    if (proveedor.Editar())
+                    if (GuardarProveedor())
                     {
-                        MessageBox.Show("Modificado Correctamente","Confirmar",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                        Limpiar();
+                        if (proveedor.Editar())
+                        {
+                            MessageBox.Show("Modificado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
                     {
-                        MessageBox.Show("Error Al Modificar","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                        MessageBox.Show("Faltan Campos","Error");
                     }
                 }
                 
