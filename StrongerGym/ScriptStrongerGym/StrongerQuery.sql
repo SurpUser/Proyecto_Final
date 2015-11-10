@@ -10,6 +10,8 @@ FechaInicio varchar(11),
 Area varchar(40) 
 );
 
+select * from Usuarios
+
 create table Ciudades(
 CiudadId int primary key identity(1,1),
 Nombre varchar(100)
