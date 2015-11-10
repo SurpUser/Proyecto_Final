@@ -69,7 +69,7 @@ namespace BLL
             try
             {
                 conexion.Ejecutar(String.Format("update Proveedores set CiudadId={0}, NombreEmpresa='{1}' ,NombreRepresentante='{2}', RNC='{3}', Direccion='{4}', Telefono='{5}', Celular='{6}' ,Email='{7}' where ProveedorId={8}",
-                                                this.CiudadId,this.NombreEmpresa,this.NombreRepresentante,this.RNC,this.Direccion,this.Telefono,this.Celular,this.Email,2));
+                                                this.CiudadId,this.NombreEmpresa,this.NombreRepresentante,this.RNC,this.Direccion,this.Telefono,this.Celular,this.Email,this.ProveedorId));
                 
             }
             catch (Exception)

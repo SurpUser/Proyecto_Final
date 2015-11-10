@@ -201,7 +201,6 @@ namespace StrongerGym.Recursos
             // 
             // FechaIniciodateTimePicker
             // 
-            this.FechaIniciodateTimePicker.Enabled = false;
             this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(259, 146);
             this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
