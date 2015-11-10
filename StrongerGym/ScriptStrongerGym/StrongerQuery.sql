@@ -5,7 +5,7 @@ use StrongerDB
 create table Usuarios(
 UsuarioId int identity(1,1) primary key,
 Nombre varchar(40),
-Contrasena Varchar(30),
+Contrasena Varchar(200),
 FechaInicio varchar(11),
 Area varchar(40) 
 );
@@ -124,7 +124,7 @@ select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ci
 
 select * from Ciudades
 
-insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Edwin','MgA0ADEAMAAyADQAMQAwAA==','10-Nov-2015','Admintrativa');
+insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Edwin','MgA0ADEAMAAyADQAMQAwAA==','10-Nov-2015','Administrativa');
 
 
 
