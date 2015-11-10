@@ -69,9 +69,9 @@
             this.ContrasenatextBox.Location = new System.Drawing.Point(206, 109);
             this.ContrasenatextBox.MaxLength = 30;
             this.ContrasenatextBox.Name = "ContrasenatextBox";
-            this.ContrasenatextBox.PasswordChar = '*';
             this.ContrasenatextBox.Size = new System.Drawing.Size(186, 20);
             this.ContrasenatextBox.TabIndex = 3;
+            this.ContrasenatextBox.UseSystemPasswordChar = true;
             this.ContrasenatextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ContrasenatextBox_KeyDown);
             // 
             // button2

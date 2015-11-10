@@ -113,7 +113,7 @@ namespace BLL
 
         public DataTable ObtenerTipoProteinaId(string Nombre)
         {
-            return con.ObtenerDatos(String.Format("select TipoProteinaId from TiposProteinas where Nombre = '{0}'", Nombre));
+            return con.ObtenerDatos(String.Format("select TipoProteinaId from TiposProteinas where Nombre = '{0}' ", Nombre));
         }
     }
 }

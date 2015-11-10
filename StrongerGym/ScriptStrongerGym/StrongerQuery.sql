@@ -118,6 +118,10 @@ Ano int
 
 select * from Usuarios
 
+select * from TiposProteinas
+
+insert into TiposProteinas(Nombre) values ('Suplemento');
+
 select * from Proveedores
 
 select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;

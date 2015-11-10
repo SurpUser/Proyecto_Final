@@ -49,6 +49,8 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.registroToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,6 +101,8 @@
             // 
             // proteinasToolStripMenuItem
             // 
+            this.proteinasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroToolStripMenuItem1});
             this.proteinasToolStripMenuItem.Name = "proteinasToolStripMenuItem";
             this.proteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.proteinasToolStripMenuItem.Text = "Proteinas";
@@ -106,9 +110,12 @@
             // 
             // tiposDeProteinasToolStripMenuItem
             // 
+            this.tiposDeProteinasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registroToolStripMenuItem2});
             this.tiposDeProteinasToolStripMenuItem.Name = "tiposDeProteinasToolStripMenuItem";
             this.tiposDeProteinasToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.tiposDeProteinasToolStripMenuItem.Text = "Tipos de Proteinas";
+            this.tiposDeProteinasToolStripMenuItem.Click += new System.EventHandler(this.tiposDeProteinasToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -182,21 +189,21 @@
             // registrarToolStripMenuItem1
             // 
             this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
-            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.registrarToolStripMenuItem1.Text = "Registrar";
             this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
             // 
             // consultarToolStripMenuItem1
             // 
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
             // carnetToolStripMenuItem
             // 
             this.carnetToolStripMenuItem.Name = "carnetToolStripMenuItem";
-            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.carnetToolStripMenuItem.Text = "Carnet";
             this.carnetToolStripMenuItem.Click += new System.EventHandler(this.carnetToolStripMenuItem_Click);
             // 
@@ -218,6 +225,20 @@
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // registroToolStripMenuItem1
+            // 
+            this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registroToolStripMenuItem1.Text = "Registro";
+            this.registroToolStripMenuItem1.Click += new System.EventHandler(this.registroToolStripMenuItem1_Click);
+            // 
+            // registroToolStripMenuItem2
+            // 
+            this.registroToolStripMenuItem2.Name = "registroToolStripMenuItem2";
+            this.registroToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
+            this.registroToolStripMenuItem2.Text = "Registro";
+            this.registroToolStripMenuItem2.Click += new System.EventHandler(this.registroToolStripMenuItem2_Click);
             // 
             // StrongerGymForms
             // 
@@ -263,6 +284,8 @@
         private System.Windows.Forms.ToolStripMenuItem ciudadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem registroUsuarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem2;
     }
 }
 
