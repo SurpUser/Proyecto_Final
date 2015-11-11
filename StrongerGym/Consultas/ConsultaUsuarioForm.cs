@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+
 namespace StrongerGym.Recursos
 {
     public partial class ConsultaUsuarioForm : Form
@@ -30,7 +31,7 @@ namespace StrongerGym.Recursos
                 }
                 if (BucarcomboBox.Text == "Por IdUsuario")
                 {
-                    ConsultadataGridView.DataSource = usuario.Listado(" * ", "IdUsuario = "+BuscartextBox.Text, "");
+                    ConsultadataGridView.DataSource = usuario.Listado(" * ", "UsuarioId = "+BuscartextBox.Text, "");
                 }
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
@@ -46,7 +47,7 @@ namespace StrongerGym.Recursos
                     MessageBox.Show("No hay Usuarios registradas.");
                 }
             }
-            
+            Cantidadtextbox.Text = "Cantidad de Usuario: "+ConsultadataGridView.RowCount.ToString();
         }
     }
 }

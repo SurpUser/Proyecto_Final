@@ -25,7 +25,7 @@ namespace StrongerGym.R
 
         private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e)
         {
-            pictureBox1.ImageLocation = openFileDialog1.FileName;
+            ClientepictureBox.ImageLocation = openFileDialog1.FileName;
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -135,7 +135,10 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.TipoProteinaIdtextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "TipoProteinaRegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TipoProteinaRegistroForm";
             this.ResumeLayout(false);
             this.PerformLayout();

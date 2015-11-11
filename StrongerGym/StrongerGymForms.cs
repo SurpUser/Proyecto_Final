@@ -58,9 +58,9 @@ namespace StrongerGym
 
         private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            RegistroForm rf = new RegistroForm();
-            rf.MdiParent = this;
-            rf.Show();
+            RegistroForm registro = new RegistroForm();
+            registro.MdiParent = this;
+            registro.Show();
         }
 
         private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
@@ -84,6 +84,7 @@ namespace StrongerGym
         private void consultaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConsultaUsuarioForm usuario = new ConsultaUsuarioForm();
+            usuario.MdiParent = this;
             usuario.Show();
         }
 
@@ -100,6 +101,7 @@ namespace StrongerGym
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ConfiguracoinForm configuracion = new ConfiguracoinForm();
+            configuracion.MdiParent = this;
             configuracion.Show();
         }
 
@@ -111,7 +113,7 @@ namespace StrongerGym
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
-
+            proveedore.MdiParent = this;
             proveedore.Show();
         }
 
@@ -123,24 +125,30 @@ namespace StrongerGym
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CiudadRegistroForm ciudad = new CiudadRegistroForm();
+            ciudad.MdiParent = this;
             ciudad.Show();
         }
 
         private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ProteinaRegistrosForm ProteinaShow = new ProteinaRegistrosForm();
-
-            ProteinaShow.Show();
+            ProteinaRegistrosForm proteina = new ProteinaRegistrosForm();
+            proteina.MdiParent = this;
+            proteina.Show();
         }
 
         private void registroToolStripMenuItem2_Click(object sender, EventArgs e)
         {
-            TipoProteinaRegistroForm TipoProteinaShow = new TipoProteinaRegistroForm();
-
-            TipoProteinaShow.Show();
+            TipoProteinaRegistroForm tipoProteina = new TipoProteinaRegistroForm();
+            tipoProteina.MdiParent = this;
+            tipoProteina.Show();
         }
 
         private void tiposDeProteinasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

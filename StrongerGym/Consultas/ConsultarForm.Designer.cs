@@ -515,6 +515,8 @@
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.Consultarbutton);
             this.Controls.Add(this.BuscartextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ConsultarForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consultar";

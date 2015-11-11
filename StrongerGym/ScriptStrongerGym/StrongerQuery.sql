@@ -126,18 +126,10 @@ select * from Proveedores
 
 select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;
 
-select * from Ciudades
+select * from Ciudades;
+
+select UsuarioId from Usuarios where Nombre = 'Francis' And Contrasena = 'ZgBjADEAMAAxADAA'
 
 insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Edwin','MgA0ADEAMAAyADQAMQAwAA==','10-Nov-2015','Administrativa');
-
-
-
-
-
-
-
-
-
-
 
 update Proveedores set CiudadId = 3,NombreEmpresa='FCPrograms',NombreRepresentante='Francis',RNC='3-23-12874-3',Direccion='Calle julia javier',Telefono='902-323-4354',Celular='323-434-5465',Email='info@fcprograms.com' where ProveedorId = 1;

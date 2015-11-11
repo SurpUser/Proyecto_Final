@@ -136,7 +136,10 @@
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CiudadRegistroForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CiudadRegistroForm";
             this.ResumeLayout(false);
             this.PerformLayout();

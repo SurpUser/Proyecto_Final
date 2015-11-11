@@ -228,6 +228,7 @@
     <None Include="Resources\1445977332_search_magnifying_glass_find.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\avatar.png" />
     <Content Include="ScriptStrongerGym\StrongerQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

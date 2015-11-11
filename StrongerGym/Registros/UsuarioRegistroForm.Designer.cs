@@ -227,7 +227,10 @@ namespace StrongerGym.Recursos
             this.Controls.Add(this.LoginportadapictureBox);
             this.Controls.Add(this.ContrasenatextBox);
             this.Controls.Add(this.NombretextBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "RegistroUsuarioForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroUsuarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).EndInit();
             this.ResumeLayout(false);

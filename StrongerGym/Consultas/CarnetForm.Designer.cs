@@ -126,7 +126,10 @@
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.CodigotextBox);
             this.Controls.Add(this.CarnetpictureBox);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "CarnetForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CarnetForm";
             ((System.ComponentModel.ISupportInitialize)(this.CarnetpictureBox)).EndInit();
             this.ResumeLayout(false);

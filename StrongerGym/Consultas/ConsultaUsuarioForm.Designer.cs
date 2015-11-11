@@ -33,7 +33,7 @@
             this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
-            this.Cantidad = new System.Windows.Forms.Label();
+            this.Cantidadtextbox = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,27 +89,30 @@
             this.ConsultadataGridView.Size = new System.Drawing.Size(542, 244);
             this.ConsultadataGridView.TabIndex = 4;
             // 
-            // Cantidad
+            // Cantidadtextbox
             // 
-            this.Cantidad.AutoSize = true;
-            this.Cantidad.Location = new System.Drawing.Point(492, 391);
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Size = new System.Drawing.Size(106, 13);
-            this.Cantidad.TabIndex = 5;
-            this.Cantidad.Text = "Cantidad de Usuario:";
+            this.Cantidadtextbox.AutoSize = true;
+            this.Cantidadtextbox.Location = new System.Drawing.Point(492, 391);
+            this.Cantidadtextbox.Name = "Cantidadtextbox";
+            this.Cantidadtextbox.Size = new System.Drawing.Size(106, 13);
+            this.Cantidadtextbox.TabIndex = 5;
+            this.Cantidadtextbox.Text = "Cantidad de Usuario:";
             // 
             // ConsultaUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(690, 422);
-            this.Controls.Add(this.Cantidad);
+            this.Controls.Add(this.Cantidadtextbox);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.BucarcomboBox);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ConsultaUsuarioForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ConsultaUsuarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -124,6 +127,6 @@
         private System.Windows.Forms.TextBox BuscartextBox;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
-        private System.Windows.Forms.Label Cantidad;
+        private System.Windows.Forms.Label Cantidadtextbox;
     }
 }
