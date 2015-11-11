@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StrongerGym.Registros;
 
 namespace StrongerGym.R
 {
@@ -17,20 +18,24 @@ namespace StrongerGym.R
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void button6_Click(object sender, EventArgs e)
         {
-            openFileDialog1.ShowDialog();
+            HacerFotoForm foto = new HacerFotoForm();
+            foto.ShowDialog();
+            if (foto.Confirmar)
+            {
+                ClientepictureBox.ImageLocation = foto.sf.FileName;
+            }
+            
         }
 
-
-        private void openFileDialog1_FileOk_1(object sender, CancelEventArgs e)
+        private void HacerFotobutton_Click(object sender, EventArgs e)
         {
-            ClientepictureBox.ImageLocation = openFileDialog1.FileName;
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CodigoRtextBox.Text = "1";
+            ImagenopenFileDialog.ShowDialog();
+            if (ImagenopenFileDialog.FileName != null)
+            {
+                ClientepictureBox.ImageLocation = ImagenopenFileDialog.FileName;
+            }
         }
     }
 }

@@ -50,7 +50,7 @@
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.ImagenopenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -255,8 +255,7 @@
             // 
             // openFileDialog1
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
-            this.openFileDialog1.FileOk += new System.ComponentModel.CancelEventHandler(this.openFileDialog1_FileOk_1);
+            this.ImagenopenFileDialog.FileName = "openFileDialog1";
             // 
             // button6
             // 
@@ -266,6 +265,7 @@
             this.button6.TabIndex = 48;
             this.button6.Text = "Hacer Foto";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
@@ -275,6 +275,7 @@
             this.button7.TabIndex = 49;
             this.button7.Text = "Subir Foto";
             this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.HacerFotobutton_Click);
             // 
             // button5
             // 
@@ -335,7 +336,6 @@
             this.button1.Text = "Agregar";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // ClientepictureBox
             // 
@@ -348,7 +348,6 @@
             this.ClientepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ClientepictureBox.TabIndex = 14;
             this.ClientepictureBox.TabStop = false;
-            this.ClientepictureBox.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // RegistroForm
             // 
@@ -425,7 +424,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.OpenFileDialog ImagenopenFileDialog;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
     }
