@@ -39,7 +39,9 @@ Nombre varchar(50),
 Sexo bit,
 Direccion varchar(100),
 Telefono varchar(12),
-Celular varchar(12)
+Celular varchar(12),
+Peso varchar(10),
+Altura varchar(10)
 );
 
 create table Asistencias(

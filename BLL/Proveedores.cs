@@ -11,7 +11,7 @@ namespace BLL
     public class Proveedores : ClaseMaestra
     {
         ConexionDB conexion = new ConexionDB();
-        Ciudades ciudad = new Ciudades();
+
         public int ProveedorId { get; set; }
         public int CiudadId { get; set; }
         public string CiudadNombre { get; set; }
