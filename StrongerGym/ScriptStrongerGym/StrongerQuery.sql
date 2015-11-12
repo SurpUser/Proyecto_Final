@@ -74,14 +74,13 @@ Costo float
 create table Compras(
 CompraId int primary key identity(1,1),
 ProveedorId int References Proveedores(ProveedorId),
+ProteinaId int References Proteinas(ProteinaId),
 UsuarioId int References Usuarios(UsuarioId),
 ITBS float,
 Monto float,
 NCF varchar(50),
 Fecha date,
 Cantidad int,
-Descuento float,
-Envio float
 );
 
 create table ComprasDetalle(

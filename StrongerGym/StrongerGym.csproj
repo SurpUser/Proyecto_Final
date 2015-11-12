@@ -85,6 +85,12 @@
     <Compile Include="Registros\HacerFotoForm.Designer.cs">
       <DependentUpon>HacerFotoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\ProteinaComprasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\ProteinaComprasForm.Designer.cs">
+      <DependentUpon>ProteinaComprasForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\ProteinaRegistrosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\HacerFotoForm.resx">
       <DependentUpon>HacerFotoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\ProteinaComprasForm.resx">
+      <DependentUpon>ProteinaComprasForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\ProteinaRegistrosForm.resx">
       <DependentUpon>ProteinaRegistrosForm.cs</DependentUpon>
