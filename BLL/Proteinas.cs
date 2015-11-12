@@ -118,8 +118,7 @@ namespace BLL
             }
             catch (Exception ex)
             {
-                return false;
-               // throw ex;
+               throw ex;
             }
 
             return retorno;

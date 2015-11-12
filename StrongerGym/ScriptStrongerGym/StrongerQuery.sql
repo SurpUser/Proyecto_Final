@@ -10,6 +10,8 @@ FechaInicio varchar(11),
 Area varchar(40) 
 );
 
+drop table Usuarios
+
 select * from Usuarios
 
 create table Ciudades(

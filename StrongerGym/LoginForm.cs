@@ -26,6 +26,7 @@ namespace StrongerGym.R
             {
                 usuario.Nombre = UsuariotextBox.Text;
                 usuario.Contrasena = Seguridad.Encriptar(ContrasenatextBox.Text);
+                MessageBox.Show(usuario.Contrasena);
                 if (usuario.InicioSesion())
                 {
                     this.Visible = false;

@@ -70,5 +70,12 @@ namespace StrongerGym.Registros
             }
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FuenteDeVideo = new VideoCaptureDevice(Dispositivos[CamarascomboBox.SelectedIndex].MonikerString);
+            videoSourcePlayer1.VideoSource = FuenteDeVideo;
+            videoSourcePlayer1.Start();
+        }
     }
 }

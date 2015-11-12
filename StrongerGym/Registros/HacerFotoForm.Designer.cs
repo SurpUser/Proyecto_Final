@@ -31,6 +31,7 @@
             this.videoSourcePlayer1 = new AForge.Controls.VideoSourcePlayer();
             this.CamarascomboBox = new System.Windows.Forms.ComboBox();
             this.HacerFotobutton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // videoSourcePlayer1
@@ -53,7 +54,7 @@
             // 
             // HacerFotobutton
             // 
-            this.HacerFotobutton.Location = new System.Drawing.Point(436, 52);
+            this.HacerFotobutton.Location = new System.Drawing.Point(519, 50);
             this.HacerFotobutton.Name = "HacerFotobutton";
             this.HacerFotobutton.Size = new System.Drawing.Size(75, 23);
             this.HacerFotobutton.TabIndex = 3;
@@ -61,11 +62,22 @@
             this.HacerFotobutton.UseVisualStyleBackColor = true;
             this.HacerFotobutton.Click += new System.EventHandler(this.HacerFotobutton_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(438, 50);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Iniciar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // HacerFotoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(636, 463);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.HacerFotobutton);
             this.Controls.Add(this.CamarascomboBox);
             this.Controls.Add(this.videoSourcePlayer1);
@@ -84,5 +96,6 @@
         private AForge.Controls.VideoSourcePlayer videoSourcePlayer1;
         private System.Windows.Forms.ComboBox CamarascomboBox;
         private System.Windows.Forms.Button HacerFotobutton;
+        private System.Windows.Forms.Button button1;
     }
 }
