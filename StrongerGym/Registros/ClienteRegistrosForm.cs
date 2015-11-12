@@ -18,7 +18,22 @@ namespace StrongerGym.R
             InitializeComponent();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        public void Limpiar()
+        {
+            ClienteIdtextBox.Clear();
+            NombretextBox.Clear();
+            DirecciontextBox.Clear();
+            CiudadtextBox.Clear();
+            TelefonotextBox.Clear();
+            PesotextBox.Clear();
+            AlturatextBox.Clear();
+            ClientepictureBox.ImageLocation = null;
+            HombreradioButton.Checked = true;
+            MujerradioButton.Checked = false;
+            
+        }
+
+        private void SubirFotobutton_Click(object sender, EventArgs e)
         {
             HacerFotoForm foto = new HacerFotoForm();
             foto.ShowDialog();
@@ -36,6 +51,11 @@ namespace StrongerGym.R
             {
                 ClientepictureBox.ImageLocation = ImagenopenFileDialog.FileName;
             }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
