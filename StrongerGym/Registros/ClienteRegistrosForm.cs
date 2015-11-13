@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using StrongerGym.Registros;
+using StrongerGym.Properties;
 
 namespace StrongerGym.R
 {
@@ -24,16 +25,15 @@ namespace StrongerGym.R
             NombretextBox.Clear();
             DirecciontextBox.Clear();
             CiudadtextBox.Clear();
-            TelefonotextBox.Clear();
+            TelefonomaskedTextBox.Clear();
+            CelularmaskedTextBox.Clear();
             PesotextBox.Clear();
             AlturatextBox.Clear();
             ClientepictureBox.ImageLocation = null;
             HombreradioButton.Checked = true;
-            MujerradioButton.Checked = false;
-            
         }
 
-        private void SubirFotobutton_Click(object sender, EventArgs e)
+        private void HacerFoto_Click(object sender, EventArgs e)
         {
             HacerFotoForm foto = new HacerFotoForm();
             foto.ShowDialog();
@@ -41,10 +41,14 @@ namespace StrongerGym.R
             {
                 ClientepictureBox.ImageLocation = foto.sf.FileName;
             }
+            else
+            {
+                ClientepictureBox.ImageLocation = null;
+            }
             
         }
 
-        private void HacerFotobutton_Click(object sender, EventArgs e)
+        private void SubirFotobutton_Click(object sender, EventArgs e)
         {
             ImagenopenFileDialog.ShowDialog();
             if (ImagenopenFileDialog.FileName != null)
@@ -56,6 +60,15 @@ namespace StrongerGym.R
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            Guardarbutton.Image = Resources._1444608937_Save;
+            Guardarbutton.Text = "Guardar";
+        }
+
+        private void Buscarbutton_Click(object sender, EventArgs e)
+        {
+            ClienteIdtextBox.ReadOnly = false;
+            Guardarbutton.Image = Resources._1442108330_Modify;
+            Guardarbutton.Text = "Modificar";
         }
     }
 }

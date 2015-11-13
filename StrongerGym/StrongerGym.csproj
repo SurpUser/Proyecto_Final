@@ -44,6 +44,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,6 +61,12 @@
     </Compile>
     <Compile Include="Consultas\CarnetForm.Designer.cs">
       <DependentUpon>CarnetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ClienteGrafico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ClienteGrafico.Designer.cs">
+      <DependentUpon>ClienteGrafico.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\CiudadRegistroForm.cs">
       <SubType>Form</SubType>
@@ -129,11 +136,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Consultas\ConsultarForm.cs">
+    <Compile Include="Consultas\ClienteConsultarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultarForm.Designer.cs">
-      <DependentUpon>ConsultarForm.cs</DependentUpon>
+    <Compile Include="Consultas\ClienteConsultarForm.Designer.cs">
+      <DependentUpon>ClienteConsultarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -143,6 +150,9 @@
     </Compile>
     <EmbeddedResource Include="Consultas\CarnetForm.resx">
       <DependentUpon>CarnetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ClienteGrafico.resx">
+      <DependentUpon>ClienteGrafico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\CiudadRegistroForm.resx">
       <DependentUpon>CiudadRegistroForm.cs</DependentUpon>
@@ -190,8 +200,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Consultas\ConsultarForm.resx">
-      <DependentUpon>ConsultarForm.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\ClienteConsultarForm.resx">
+      <DependentUpon>ClienteConsultarForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

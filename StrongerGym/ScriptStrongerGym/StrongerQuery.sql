@@ -121,6 +121,8 @@ Ano int
 
 select * from Usuarios
 
+select Area,COUNT(Area) as Cantidad from Usuarios group by Area
+
 select * from TiposProteinas
 
 insert into TiposProteinas(Nombre) values ('Suplemento');

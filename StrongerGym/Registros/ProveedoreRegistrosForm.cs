@@ -26,11 +26,10 @@ namespace StrongerGym.Registros
         }
 
         public void InicializarCiudades()
-        {
-            for (int i = 0; i < ciudad.Listado("Nombre","1=1","").Rows.Count; i++)
-            {
-                CiudadescomboBox.Items.Add(ciudad.Listado("Nombre", "1=1", "").Rows[i]["Nombre"]);
-            }
+        {          
+            CiudadescomboBox.DataSource = ciudad.Listado(" * ", "1=1", "");
+            CiudadescomboBox.DisplayMember = "Nombre";
+            CiudadescomboBox.ValueMember = "CiudadId";           
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -60,7 +59,7 @@ namespace StrongerGym.Registros
                 if (email.IsMatch(EmailtextBox.Text))
                 {
                     int id = 0;
-                    id = (int)ciudad.ObtenerCiudadId(CiudadescomboBox.Text).Rows[0]["CiudadId"];
+                    id = (int)CiudadescomboBox.SelectedValue;
                     proveedor.CiudadId = id;
                     proveedor.NombreEmpresa = NombreEmpresatextBox.Text;
                     proveedor.NombreRepresentante = NombreRepresentantetextBox.Text;

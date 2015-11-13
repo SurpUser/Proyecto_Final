@@ -14,6 +14,7 @@ namespace StrongerGym.Registros
     public partial class CiudadRegistroForm : Form
     {
         Ciudades ciudad = new Ciudades();
+        private int Id;
 
         public CiudadRegistroForm()
         {
@@ -26,12 +27,26 @@ namespace StrongerGym.Registros
             NombretextBox.Clear();
         }
 
+        public bool ValidarId(string IdTextBox)
+        {
+            if (IdTextBox.Length > 0)
+            {
+                bool result = Int32.TryParse(IdTextBox, out Id);
+                ciudad.CiudadId = Id;
+            }
+            else
+            {
+                return false;
+            }
+            return true;
+        }
+
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
         }
 
-        public bool GuardarCiudades()
+        public bool LlenarDatoCiudades()
         {
             try
             {
@@ -55,8 +70,7 @@ namespace StrongerGym.Registros
                 if (CiudadIdtextBox.Text.Length == 0)
                 {
 
-
-                    if (GuardarCiudades())
+                    if (LlenarDatoCiudades())
                     {
                         if (ciudad.Insertar())
                         {
@@ -71,11 +85,9 @@ namespace StrongerGym.Registros
                 }
                 else
                 {
-                    if (GuardarCiudades())
+                    if (LlenarDatoCiudades())
                     {
-                        int id = 0;
-                        bool DialogResult = Int32.TryParse(CiudadIdtextBox.Text, out id);
-                        ciudad.CiudadId = id;
+                        ValidarId(CiudadIdtextBox.Text);
 
                         if (ciudad.Editar())
                         {
@@ -100,27 +112,18 @@ namespace StrongerGym.Registros
         {
             try
             {
-                if (CiudadIdtextBox.Text.Length != 0)
+                ValidarId(CiudadIdtextBox.Text);
+
+                if (ciudad.Eliminar())
                 {
-
-                    int id = 0;
-                    bool result = Int32.TryParse(CiudadIdtextBox.Text, out id);
-                    ciudad.CiudadId = id;
-
-                    if (ciudad.Eliminar())
-                    {
-                        MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
+                    MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un Id","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                
             }
             catch (Exception)
             {
@@ -133,9 +136,8 @@ namespace StrongerGym.Registros
         {
             try
             {
-                int id = 0;
-                bool DialogResult = Int32.TryParse(CiudadIdtextBox.Text,out id);
-                if (ciudad.Buscar(id))
+                ValidarId(CiudadIdtextBox.Text);
+                if (ciudad.Buscar(Id))
                 {
                     NombretextBox.Text = ciudad.Nombre;
                 }

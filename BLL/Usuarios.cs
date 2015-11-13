@@ -130,6 +130,19 @@ namespace BLL
             {
                 return conexion.ObtenerDatos("Select "+Campos +" From Usuarios where "+Condicion +" "+Orden);
             }
+            catch (Exception e)
+            {
+
+                throw e;
+            }
+        }
+
+        public DataTable GraficoUsuario()
+        {
+            try
+            {
+                return conexion.ObtenerDatos(String.Format("select Area,COUNT(Area) as Cantidad from Usuarios group by Area"));
+            }
             catch (Exception)
             {
 

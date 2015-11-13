@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using StrongerGym.R;
 using StrongerGym.Recursos;
 using StrongerGym.Registros;
+using StrongerGym.Consultas;
 
 namespace StrongerGym
 {
@@ -18,16 +19,6 @@ namespace StrongerGym
         public StrongerGymForms()
         {
             InitializeComponent();
-        }
-
-        private void registrarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void consultarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -44,11 +35,6 @@ namespace StrongerGym
             Login.Show();
         }
 
-        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
         private void carnetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CarnetForm carnet = new CarnetForm();
@@ -61,11 +47,6 @@ namespace StrongerGym
             RegistroForm registro = new RegistroForm();
             registro.MdiParent = this;
             registro.Show();
-        }
-
-        private void informacionToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -105,23 +86,6 @@ namespace StrongerGym
             configuracion.Show();
         }
 
-        private void proteinasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
-            proveedore.MdiParent = this;
-            proveedore.Show();
-        }
-
-        private void StrongerGymForms_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
             CiudadRegistroForm ciudad = new CiudadRegistroForm();
@@ -143,14 +107,27 @@ namespace StrongerGym
             tipoProteina.Show();
         }
 
-        private void tiposDeProteinasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
 
+
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProteinaComprasForm compra = new ProteinaComprasForm();
+            compra.MdiParent = this;
+            compra.Show();
         }
 
-        private void ciudadesToolStripMenuItem_Click(object sender, EventArgs e)
+        private void registroToolStripMenuItem3_Click(object sender, EventArgs e)
         {
+            ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
+            proveedore.MdiParent = this;
+            proveedore.Show();
+        }
 
+        private void graficoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ClienteGrafico cliente = new ClienteGrafico();
+            cliente.MdiParent = this;
+            cliente.Show();
         }
     }
 }
