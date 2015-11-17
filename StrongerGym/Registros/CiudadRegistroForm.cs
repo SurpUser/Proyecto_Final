@@ -14,7 +14,6 @@ namespace StrongerGym.Registros
     public partial class CiudadRegistroForm : Form
     {
         Ciudades ciudad = new Ciudades();
-        private int Id;
 
         public CiudadRegistroForm()
         {
@@ -25,20 +24,6 @@ namespace StrongerGym.Registros
         {
             CiudadIdtextBox.Clear();
             NombretextBox.Clear();
-        }
-
-        public bool ValidarId(string IdTextBox)
-        {
-            if (IdTextBox.Length > 0)
-            {
-                bool result = Int32.TryParse(IdTextBox, out Id);
-                ciudad.CiudadId = Id;
-            }
-            else
-            {
-                return false;
-            }
-            return true;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
@@ -87,16 +72,22 @@ namespace StrongerGym.Registros
                 {
                     if (LlenarDatoCiudades())
                     {
-                        ValidarId(CiudadIdtextBox.Text);
-
-                        if (ciudad.Editar())
+                        if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
                         {
-                            MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Limpiar();
+                            ciudad.CiudadId = Seguridad.ValidarId(CiudadIdtextBox.Text);
+                            if (ciudad.Editar())
+                            {
+                                MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Limpiar();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                         }
                         else
                         {
-                            MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Id Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
                 }
@@ -112,18 +103,24 @@ namespace StrongerGym.Registros
         {
             try
             {
-                ValidarId(CiudadIdtextBox.Text);
-
-                if (ciudad.Eliminar())
+                if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
                 {
-                    MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                    ciudad.CiudadId = Seguridad.ValidarId(CiudadIdtextBox.Text);
+
+                    if (ciudad.Eliminar())
+                    {
+                        MessageBox.Show("Eliminado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Id Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
             }
             catch (Exception)
             {
@@ -136,15 +133,21 @@ namespace StrongerGym.Registros
         {
             try
             {
-                ValidarId(CiudadIdtextBox.Text);
-                if (ciudad.Buscar(Id))
+                if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
                 {
-                    NombretextBox.Text = ciudad.Nombre;
+                    if (ciudad.Buscar(Seguridad.ValidarId(CiudadIdtextBox.Text)))
+                    {
+                        NombretextBox.Text = ciudad.Nombre;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Id no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        Limpiar();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Id no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Limpiar();
+                    MessageBox.Show("Id Incorrecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception)

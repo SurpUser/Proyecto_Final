@@ -75,20 +75,21 @@ namespace BLL
 
             try
             {
-                dtCliente = conexion.ObtenerDatos(String.Format("select * from Clientes where ClienteId = {0} ", IdBuscado));
-                this.CiudadId = (int)dtCliente.Rows[0]["CiudadId"];
-                this.Nombre = dtCliente.Rows[0]["Nombre"].ToString();
-                this.Imagen = dtCliente.Rows[0]["Imagen"].ToString();
-                this.Sexo = (int)dtCliente.Rows[0]["Sexo"];
-                this.Direccion = dtCliente.Rows[0]["Direccion"].ToString();
-                this.Telefono = dtCliente.Rows[0]["Telefono"].ToString();
-                this.Celular = dtCliente.Rows[0]["Celular"].ToString();
-                this.Fecha = dtCliente.Rows[0]["Fecha"].ToString();
-                this.Peso = (double)dtCliente.Rows[0]["Peso"];
-                this.Altura = (double)dtCliente.Rows[0]["Altura"];
-
-                dtCiudad = conexion.ObtenerDatos(String.Format("select * from Ciudades where CiudadId = {0}", this.CiudadId));
-                this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
+                 dtCliente = conexion.ObtenerDatos(String.Format("select * from Clientes where ClienteId = {0}", IdBuscado));
+                 this.CiudadId = (int)dtCliente.Rows[0]["CiudadId"];
+                 this.Nombre = dtCliente.Rows[0]["Nombre"].ToString();
+                 this.Imagen = dtCliente.Rows[0]["Imagen"].ToString();
+                 //this.Sexo = (int)dtCliente.Rows[0]["Sexo"];
+                 this.Direccion = dtCliente.Rows[0]["Direccion"].ToString();
+                 this.Telefono = dtCliente.Rows[0]["Telefono"].ToString();
+                 this.Celular = dtCliente.Rows[0]["Celular"].ToString();
+                 this.Fecha = dtCliente.Rows[0]["Fecha"].ToString();
+                 this.Peso = Convert.ToDouble(dtCliente.Rows[0]["Peso"]);
+                 this.Altura = Convert.ToDouble(dtCliente.Rows[0]["Altura"]);
+                 
+                 dtCiudad = conexion.ObtenerDatos(String.Format("select * from Ciudades where CiudadId = {0}", this.CiudadId));
+                 this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
+                 retorno = true;
             }
             catch (Exception ex)
             {

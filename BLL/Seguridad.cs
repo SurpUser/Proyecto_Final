@@ -24,5 +24,19 @@ namespace BLL
             result = System.Text.Encoding.Unicode.GetString(decryted);
             return result;
         }
+
+        public static int ValidarId(string IdTextBox)
+        {
+            int Id = 0;
+            if (IdTextBox.Length > 0)
+            {
+                bool result = Int32.TryParse(IdTextBox, out Id);
+            }
+            else
+            {
+                return 0;
+            }
+            return Id;
+        }
     }
 }
