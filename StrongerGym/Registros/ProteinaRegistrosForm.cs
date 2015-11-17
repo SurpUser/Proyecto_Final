@@ -16,20 +16,15 @@ namespace StrongerGym.Registros
         Proteinas proteina;
         TiposProteinas Tipoproteina;
 
-        int Convertir = 0;
-        double Convertir2 = 0.0;
-        bool Resultado;
-
         public ProteinaRegistrosForm()
         {
             InitializeComponent();
             proteina = new Proteinas();
             Tipoproteina = new TiposProteinas();
 
-            for (int i = 0; i < Tipoproteina.Listado(" Nombre ", " 1=1 ", " ").Rows.Count; i++)
-            {
-                TipoProteinaIdcomboBox.Items.Add(Tipoproteina.Listado(" Nombre ", " 1=1 ", " ").Rows[i]["Nombre"]);
-            }
+            TipoProteinaIdcomboBox.DataSource = Tipoproteina.Listado(" * ", "1=1", " ");
+            TipoProteinaIdcomboBox.DisplayMember = "Nombre";
+            TipoProteinaIdcomboBox.ValueMember = "TipoProteinaId";
         }
 
         public void Limpiar()
@@ -48,48 +43,42 @@ namespace StrongerGym.Registros
             Limpiar();
         }
 
+        public int ConvertirEntero(string Textbox)
+        {
+            int Convertir = 0;
+
+            bool Resultado = Int32.TryParse(Textbox, out Convertir);
+
+            return Convertir;
+        }
+
+        public double ConvertirDouble(string Textbox)
+        {
+            double Convertir = 0.0;
+
+            bool Resultado = Double.TryParse(Textbox, out Convertir);
+
+            return Convertir;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             
             if (ProteinaIdtextBox.Text.Length == 0)
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
-
-                proteina.ProteinaId = Convertir;
+                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
 
                 proteina.Nombre = NombretextBox.Text;
 
-                Convertir2 = 0;
+                proteina.Precio = ConvertirDouble(PreciotextBox.Text);
 
-                Resultado = Double.TryParse(PreciotextBox.Text, out Convertir2);
+                proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
 
-                proteina.Precio = Convertir2;
+                proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
 
-                Convertir2 = 0;
+                proteina.TiposProteinaId = ConvertirEntero(TipoProteinaIdcomboBox.Text);
 
-                Resultado = Double.TryParse(ITBStextBox.Text, out Convertir2);
-
-                proteina.ITBS = Convertir2;
-
-                Convertir2 = 0;
-
-                Resultado = Int32.TryParse(CantidadtextBox.Text, out Convertir);
-
-                proteina.Cantidad = Convertir;
-
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(TipoProteinaIdcomboBox.Text, out Convertir);
-
-                proteina.TiposProteinaId = Convertir;
-
-                Convertir2 = 0;
-
-                Resultado = Double.TryParse(CostotextBox.Text, out Convertir2);
-
-                proteina.Costo = Convertir2;
+                proteina.Costo = ConvertirDouble(CostotextBox.Text);
 
                 proteina.TiposProteinaId = (int)Tipoproteina.ObtenerTipoProteinaId(TipoProteinaIdcomboBox.Text).Rows[0]["TipoProteinaId"];
 
@@ -106,37 +95,17 @@ namespace StrongerGym.Registros
             }
             else
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
-
-                proteina.ProteinaId = Convertir;
+                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
 
                 proteina.Nombre = NombretextBox.Text;
 
-                Convertir2 = 0;
+                proteina.Precio = ConvertirDouble(PreciotextBox.Text);
 
-                Resultado = Double.TryParse(PreciotextBox.Text, out Convertir2);
+                proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
 
-                proteina.Precio = Convertir2;
+                proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
 
-                Convertir2 = 0;
-
-                Resultado = Double.TryParse(ITBStextBox.Text, out Convertir2);
-
-                proteina.ITBS = Convertir2;
-
-                Convertir2 = 0;
-
-                Resultado = Int32.TryParse(CantidadtextBox.Text, out Convertir);
-
-                proteina.Cantidad = Convertir;
-
-                Convertir2 = 0;
-
-                Resultado = Double.TryParse(CostotextBox.Text, out Convertir2);
-
-                proteina.Costo = Convertir2;
+                proteina.Costo = ConvertirEntero(CostotextBox.Text);
 
                 if (proteina.Editar())
                 {
@@ -156,11 +125,7 @@ namespace StrongerGym.Registros
         {
             try
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
-
-                proteina.ProteinaId = Convertir;
+                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
 
                 if (proteina.Eliminar())
                 {
@@ -184,13 +149,9 @@ namespace StrongerGym.Registros
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            Convertir = 0;
-
             if (ProteinaIdtextBox.Text.Length > 0)
             {       
-                Resultado = Int32.TryParse(ProteinaIdtextBox.Text, out Convertir);
-
-                if (proteina.Buscar(Convertir))
+                if (proteina.Buscar(ConvertirEntero(ProteinaIdtextBox.Text)))
                 {
                     NombretextBox.Text = proteina.Nombre;
 
