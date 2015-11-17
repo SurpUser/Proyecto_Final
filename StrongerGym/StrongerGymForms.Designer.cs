@@ -58,7 +58,6 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.graficoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -220,8 +219,7 @@
             // 
             this.registroUsuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.registroUsuarioToolStripMenuItem1,
-            this.consultaToolStripMenuItem,
-            this.graficoToolStripMenuItem});
+            this.consultaToolStripMenuItem});
             this.registroUsuarioToolStripMenuItem.Name = "registroUsuarioToolStripMenuItem";
             this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.registroUsuarioToolStripMenuItem.Text = "Usuario";
@@ -296,13 +294,6 @@
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
             // 
-            // graficoToolStripMenuItem
-            // 
-            this.graficoToolStripMenuItem.Name = "graficoToolStripMenuItem";
-            this.graficoToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.graficoToolStripMenuItem.Text = "Grafico";
-            this.graficoToolStripMenuItem.Click += new System.EventHandler(this.graficoToolStripMenuItem_Click);
-            // 
             // StrongerGymForms
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -355,7 +346,6 @@
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem4;
-        private System.Windows.Forms.ToolStripMenuItem graficoToolStripMenuItem;
     }
 }
 

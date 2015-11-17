@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+
 namespace StrongerGym.R
 {
     //Login y usuario
@@ -35,6 +36,7 @@ namespace StrongerGym.R
                     {
                         sgf.registroUsuarioToolStripMenuItem.Visible = false;
                     }
+                    sgf.Text = "StrongerGymForms [" + usuario.Nombre + "]";
                     sgf.Show();
                 }
                 else
@@ -58,7 +60,7 @@ namespace StrongerGym.R
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void ContrasenatextBox_KeyDown(object sender, KeyEventArgs e)

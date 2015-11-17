@@ -18,7 +18,7 @@ namespace BLL
 
         public string CiudadNombre { get; set; }
 
-        public string ClienteImagen { get; set; }
+        public string Imagen { get; set; }
 
         public string Nombre { get; set; }
 
@@ -34,12 +34,14 @@ namespace BLL
 
         public double Altura { get; set; }
 
+        public string Fecha { get; set; }
+
         public Clientes()
         {
             this.ClienteId = 0;
             this.CiudadId = 0;
             this.CiudadNombre = "";
-            this.ClienteImagen = "";
+            this.Imagen = "";
             this.Nombre = "";
             this.Sexo = 0;
             this.Direccion = "";
@@ -47,18 +49,20 @@ namespace BLL
             this.Celular = "";
             this.Peso = 0.0;
             this.Altura = 0.0;
+            this.Fecha = "";
         }
 
-        public Clientes(int Clienteid, int Ciudadid, string Imagen, string Nombre, int Sexo, string Direccion, string Telefono, string Celular, double Peso, double Altura)
+        public Clientes(int Clienteid, int Ciudadid, string Imagen, string Nombre, int Sexo, string Direccion, string Telefono, string Celular,string Fecha, double Peso, double Altura)
         {
             this.ClienteId = Clienteid;
             this.CiudadId = Ciudadid;
-            this.ClienteImagen = Imagen;
+            this.Imagen = Imagen;
             this.Nombre = Nombre;
             this.Sexo = Sexo;
             this.Direccion = Direccion;
             this.Telefono = Telefono;
             this.Celular = Celular;
+            this.Fecha = Fecha;
             this.Peso = Peso;
             this.Altura = Altura;
         }
@@ -74,10 +78,12 @@ namespace BLL
                 dtCliente = conexion.ObtenerDatos(String.Format("select * from Clientes where ClienteId = {0} ", IdBuscado));
                 this.CiudadId = (int)dtCliente.Rows[0]["CiudadId"];
                 this.Nombre = dtCliente.Rows[0]["Nombre"].ToString();
+                this.Imagen = dtCliente.Rows[0]["Imagen"].ToString();
                 this.Sexo = (int)dtCliente.Rows[0]["Sexo"];
                 this.Direccion = dtCliente.Rows[0]["Direccion"].ToString();
                 this.Telefono = dtCliente.Rows[0]["Telefono"].ToString();
                 this.Celular = dtCliente.Rows[0]["Celular"].ToString();
+                this.Fecha = dtCliente.Rows[0]["Fecha"].ToString();
                 this.Peso = (double)dtCliente.Rows[0]["Peso"];
                 this.Altura = (double)dtCliente.Rows[0]["Altura"];
 
@@ -99,8 +105,8 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Clientes set CiudadId = {0}, Imagen = '{1}', Nombre = '{2}', Sexo = {3}, Direccion = '{4}', Telefono = '{5}', Celular = '{6}', Peso = {7}, Altura = {8} where ClienteId = {9} ",
-                                                this.CiudadId, this.ClienteImagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("update Clientes set CiudadId = {0}, Imagen = '{1}', Nombre = '{2}', Sexo = {3}, Direccion = '{4}', Telefono = '{5}', Celular = '{6}', Peso = {7}, Altura = {8},Fecha = '{9}' where ClienteId = {10} ",
+                                                this.CiudadId, this.Imagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura,this.Fecha, this.ClienteId));
             }
             catch (Exception ex)
             {
@@ -132,8 +138,8 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}',{7},{8})",
-                                                this.CiudadId, this.ClienteImagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura));
+                retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura,Fecha) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
+                                                this.CiudadId, this.Imagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura,this.Fecha));
             }
             catch (Exception ex)
             {
@@ -145,7 +151,7 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return conexion.ObtenerDatos("select " + Campos + " from Clientes where " + Condicion + " " + Orden);
+            return conexion.ObtenerDatos("select " + Campos + " from Clientes where " + Condicion + " " +Orden);
         }
     }
 }

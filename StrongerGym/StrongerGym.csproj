@@ -62,12 +62,6 @@
     <Compile Include="Consultas\CarnetForm.Designer.cs">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ClienteGrafico.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Consultas\ClienteGrafico.Designer.cs">
-      <DependentUpon>ClienteGrafico.cs</DependentUpon>
-    </Compile>
     <Compile Include="Registros\CiudadRegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,9 +144,6 @@
     </Compile>
     <EmbeddedResource Include="Consultas\CarnetForm.resx">
       <DependentUpon>CarnetForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ClienteGrafico.resx">
-      <DependentUpon>ClienteGrafico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\CiudadRegistroForm.resx">
       <DependentUpon>CiudadRegistroForm.cs</DependentUpon>

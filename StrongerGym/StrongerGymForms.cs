@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using StrongerGym.R;
 using StrongerGym.Recursos;
 using StrongerGym.Registros;
-using StrongerGym.Consultas;
 
 namespace StrongerGym
 {
@@ -30,7 +29,7 @@ namespace StrongerGym
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Visible = false;
             LoginForm Login = new LoginForm();
             Login.Show();
         }
@@ -51,7 +50,7 @@ namespace StrongerGym
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Close();
 
         }
 
@@ -76,7 +75,6 @@ namespace StrongerGym
             {
                 Application.Exit();
             }
-
         }
 
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)
@@ -121,13 +119,6 @@ namespace StrongerGym
             ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
             proveedore.MdiParent = this;
             proveedore.Show();
-        }
-
-        private void graficoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ClienteGrafico cliente = new ClienteGrafico();
-            cliente.MdiParent = this;
-            cliente.Show();
         }
     }
 }

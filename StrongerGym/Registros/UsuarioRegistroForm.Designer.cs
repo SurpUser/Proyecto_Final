@@ -30,6 +30,8 @@ namespace StrongerGym.Recursos
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.ContrasenatextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,7 +48,9 @@ namespace StrongerGym.Recursos
             this.LoginportadapictureBox = new System.Windows.Forms.PictureBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Usuariochart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Usuariochart)).BeginInit();
             this.SuspendLayout();
             // 
             // NombretextBox
@@ -207,11 +211,24 @@ namespace StrongerGym.Recursos
             this.FechaIniciodateTimePicker.Size = new System.Drawing.Size(266, 20);
             this.FechaIniciodateTimePicker.TabIndex = 8;
             // 
+            // Usuariochart
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.Usuariochart.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.Usuariochart.Legends.Add(legend1);
+            this.Usuariochart.Location = new System.Drawing.Point(531, 20);
+            this.Usuariochart.Name = "Usuariochart";
+            this.Usuariochart.Size = new System.Drawing.Size(265, 244);
+            this.Usuariochart.TabIndex = 9;
+            this.Usuariochart.Text = "chart1";
+            // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 276);
+            this.ClientSize = new System.Drawing.Size(802, 276);
+            this.Controls.Add(this.Usuariochart);
             this.Controls.Add(this.FechaIniciodateTimePicker);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.IdUsuariotextBox);
@@ -233,6 +250,7 @@ namespace StrongerGym.Recursos
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroUsuarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Usuariochart)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -257,5 +275,6 @@ namespace StrongerGym.Recursos
         private System.Windows.Forms.Button button1;
         private Button Eliminarbutton;
         private DateTimePicker FechaIniciodateTimePicker;
+        private System.Windows.Forms.DataVisualization.Charting.Chart Usuariochart;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace StrongerGym.Recursos
 {
@@ -18,8 +19,20 @@ namespace StrongerGym.Recursos
         public RegistroUsuarioForm()
         {
             InitializeComponent();
-            //FechaIniciomaskedTextBox.Text = String.Format("{0:dd/MM/yyyy}",DateTime.Now);
+            CargarGrafico();
             AreacomboBox.SelectedIndex = 0;
+        }
+
+        public void CargarGrafico()
+        {
+            Usuariochart.Titles.Add("Areas");
+            Usuariochart.Palette = ChartColorPalette.SeaGreen;
+            Usuariochart.Series.Add("Area");
+            Usuariochart.Series["Area"].XValueMember = "Area";
+            Usuariochart.Series["Area"].YValueMembers = "Cantidad";
+
+            Usuariochart.DataSource = usuario.GraficoUsuario();
+            Usuariochart.DataBind();
         }
 
         void Limpiar()
@@ -65,6 +78,7 @@ namespace StrongerGym.Recursos
                     if (usuario.Insertar())
                     {
                         MessageBox.Show("Guardado correctamente");
+                        Usuariochart.Refresh();
                         Limpiar();
                     }
                 }
