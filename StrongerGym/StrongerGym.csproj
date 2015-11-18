@@ -257,6 +257,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar.png" />
+    <None Include="Resources\1447893716_mypc_config.png" />
+    <None Include="Resources\Gear.png" />
+    <None Include="Resources\lock-128.png" />
+    <None Include="Resources\Protein-Powder-128.png" />
+    <None Include="Resources\Protein-Powder-type.png" />
+    <None Include="Resources\man_user_male_human_people-128.png" />
+    <None Include="Resources\Building3_c-128.png" />
+    <None Include="Resources\edit_tasks-128.png" />
+    <None Include="Resources\Preview.png" />
+    <None Include="Resources\Shopping-basket.png" />
+    <None Include="Resources\price-sale-cart-shopping-list-ecommerce-tag-18-128.png" />
+    <None Include="Resources\051-512.png" />
     <Content Include="ScriptStrongerGym\StrongerQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

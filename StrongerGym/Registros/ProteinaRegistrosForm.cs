@@ -61,26 +61,30 @@ namespace StrongerGym.Registros
             return Convertir;
         }
 
+        public bool LlenarDatos()
+        {
+            proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
+
+            proteina.Nombre = NombretextBox.Text;
+
+            proteina.Precio = ConvertirDouble(PreciotextBox.Text);
+
+            proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
+
+            proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
+
+            proteina.TiposProteinaId = (int)TipoProteinaIdcomboBox.SelectedValue;
+
+            proteina.Costo = ConvertirDouble(CostotextBox.Text);
+            return true;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             
             if (ProteinaIdtextBox.Text.Length == 0)
             {
-                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
-
-                proteina.Nombre = NombretextBox.Text;
-
-                proteina.Precio = ConvertirDouble(PreciotextBox.Text);
-
-                proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
-
-                proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
-
-                proteina.TiposProteinaId = ConvertirEntero(TipoProteinaIdcomboBox.Text);
-
-                proteina.Costo = ConvertirDouble(CostotextBox.Text);
-
-                proteina.TiposProteinaId = (int)Tipoproteina.ObtenerTipoProteinaId(TipoProteinaIdcomboBox.Text).Rows[0]["TipoProteinaId"];
+                LlenarDatos();
 
                 if (proteina.Insertar())
                 {
@@ -95,17 +99,7 @@ namespace StrongerGym.Registros
             }
             else
             {
-                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
-
-                proteina.Nombre = NombretextBox.Text;
-
-                proteina.Precio = ConvertirDouble(PreciotextBox.Text);
-
-                proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
-
-                proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
-
-                proteina.Costo = ConvertirEntero(CostotextBox.Text);
+                LlenarDatos();
 
                 if (proteina.Editar())
                 {
