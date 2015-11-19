@@ -22,7 +22,7 @@ namespace BLL
 
         public string Nombre { get; set; }
 
-        public int Sexo { get; set; }
+        public bool Sexo { get; set; }
 
         public string Direccion { get; set; }
 
@@ -43,7 +43,7 @@ namespace BLL
             this.CiudadNombre = "";
             this.Imagen = "";
             this.Nombre = "";
-            this.Sexo = 0;
+            this.Sexo = false;
             this.Direccion = "";
             this.Telefono = "";
             this.Celular = "";
@@ -52,7 +52,7 @@ namespace BLL
             this.Fecha = "";
         }
 
-        public Clientes(int Clienteid, int Ciudadid, string Imagen, string Nombre, int Sexo, string Direccion, string Telefono, string Celular,string Fecha, double Peso, double Altura)
+        public Clientes(int Clienteid, int Ciudadid, string Imagen, string Nombre, bool Sexo, string Direccion, string Telefono, string Celular,string Fecha, double Peso, double Altura)
         {
             this.ClienteId = Clienteid;
             this.CiudadId = Ciudadid;
@@ -79,7 +79,7 @@ namespace BLL
                  this.CiudadId = (int)dtCliente.Rows[0]["CiudadId"];
                  this.Nombre = dtCliente.Rows[0]["Nombre"].ToString();
                  this.Imagen = dtCliente.Rows[0]["Imagen"].ToString();
-                 //this.Sexo = (int)dtCliente.Rows[0]["Sexo"];
+                 this.Sexo = (bool)dtCliente.Rows[0]["Sexo"];
                  this.Direccion = dtCliente.Rows[0]["Direccion"].ToString();
                  this.Telefono = dtCliente.Rows[0]["Telefono"].ToString();
                  this.Celular = dtCliente.Rows[0]["Celular"].ToString();
@@ -106,8 +106,17 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Clientes set CiudadId = {0}, Imagen = '{1}', Nombre = '{2}', Sexo = {3}, Direccion = '{4}', Telefono = '{5}', Celular = '{6}', Peso = {7}, Altura = {8},Fecha = '{9}' where ClienteId = {10} ",
-                                                this.CiudadId, this.Imagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura,this.Fecha, this.ClienteId));
+                if (this.Sexo)
+                {
+                    retorno = conexion.Ejecutar(String.Format("update Clientes set CiudadId = {0}, Imagen = '{1}', Nombre = '{2}', Sexo = {3}, Direccion = '{4}', Telefono = '{5}', Celular = '{6}', Peso = {7}, Altura = {8},Fecha = '{9}' where ClienteId = {10} ",
+                                                this.CiudadId, this.Imagen, this.Nombre, 1, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha, this.ClienteId));
+                }
+                else
+                {
+                    retorno = conexion.Ejecutar(String.Format("update Clientes set CiudadId = {0}, Imagen = '{1}', Nombre = '{2}', Sexo = {3}, Direccion = '{4}', Telefono = '{5}', Celular = '{6}', Peso = {7}, Altura = {8},Fecha = '{9}' where ClienteId = {10} ",
+                                                this.CiudadId, this.Imagen, this.Nombre, 0, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha, this.ClienteId));
+                }
+                
             }
             catch (Exception ex)
             {
@@ -139,8 +148,17 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura,Fecha) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
-                                                this.CiudadId, this.Imagen, this.Nombre, this.Sexo, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura,this.Fecha));
+                if (this.Sexo)
+                {
+                    retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura,Fecha) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
+                                               this.CiudadId, this.Imagen, this.Nombre, 1, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha));
+                }
+                else
+                {
+                    retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura,Fecha) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
+                                               this.CiudadId, this.Imagen, this.Nombre, 0, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha));
+                }
+               
             }
             catch (Exception ex)
             {

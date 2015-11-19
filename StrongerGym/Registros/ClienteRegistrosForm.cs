@@ -68,15 +68,7 @@ namespace StrongerGym.R
                     cliente.Altura = Convert.ToDouble(AlturatextBox.Text);
                     cliente.Peso = Convert.ToDouble(PesotextBox.Text);
                     cliente.Fecha = FechaNacimientodateTimePicker.Text;
-
-                    if (MasculinoradioButton.Checked)
-                    {
-                        cliente.Sexo = 1;
-                    }
-                    else
-                    {
-                        cliente.Sexo = 0;
-                    }
+                    cliente.Sexo = MasculinoradioButton.Checked;
                 }
                 else
                 {
@@ -101,6 +93,15 @@ namespace StrongerGym.R
             CiudadcomboBox.Text = cliente.CiudadNombre;
             FechaNacimientodateTimePicker.Text = cliente.Fecha;
             ClientepictureBox.ImageLocation = cliente.Imagen;
+        }
+
+        public int IntervaloFecha(int Dia,int Mes,int Ano)
+        {
+            DateTime oldDate = new DateTime(Ano, Mes, Dia);
+            DateTime newDate = DateTime.Now;
+            
+            TimeSpan ts = newDate - oldDate;
+            return ts.Days;
         }
 
         private void HacerFoto_Click(object sender, EventArgs e)
@@ -144,7 +145,20 @@ namespace StrongerGym.R
                     Guardarbutton.Image = Resources._1442108330_Modify;
                     Guardarbutton.Text = "Modificar";
                     LlenarFormulario();
-                }
+                    //--------------------------------
+                    int Dias;
+                    String [] resultado = cliente.Fecha.Split(new char[] {'/'});
+                    Dias = IntervaloFecha(Convert.ToInt32(resultado[0]), Convert.ToInt32(resultado[1]), Convert.ToInt32(resultado[2]));
+                    if (Dias > 0)
+                    {
+                        MessageBox.Show(Dias + " Dias inactivo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se Vence en :"+Dias +" Dias");
+                    }
+                    
+            }
                 else
                 {
                     MessageBox.Show("Cliente No Existe", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -181,6 +195,27 @@ namespace StrongerGym.R
             catch (Exception ex)
             {
                 MessageBox.Show("Error Inesperado"+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            }
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cliente.ClienteId = Seguridad.ValidarId(ClienteIdtextBox.Text);
+                if (cliente.Eliminar())
+                {
+                    MessageBox.Show("Eliminado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Error Al Eliminar","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -87,7 +87,7 @@
             this.ClienteIdtextBox.Location = new System.Drawing.Point(495, 85);
             this.ClienteIdtextBox.MaxLength = 4;
             this.ClienteIdtextBox.Name = "ClienteIdtextBox";
-            this.ClienteIdtextBox.Size = new System.Drawing.Size(112, 20);
+            this.ClienteIdtextBox.Size = new System.Drawing.Size(121, 20);
             this.ClienteIdtextBox.TabIndex = 23;
             // 
             // label3
@@ -241,7 +241,7 @@
             // 
             // HacerFotobutton
             // 
-            this.HacerFotobutton.Location = new System.Drawing.Point(50, 317);
+            this.HacerFotobutton.Location = new System.Drawing.Point(44, 295);
             this.HacerFotobutton.Name = "HacerFotobutton";
             this.HacerFotobutton.Size = new System.Drawing.Size(75, 23);
             this.HacerFotobutton.TabIndex = 48;
@@ -251,7 +251,7 @@
             // 
             // SubirFotobutton
             // 
-            this.SubirFotobutton.Location = new System.Drawing.Point(139, 317);
+            this.SubirFotobutton.Location = new System.Drawing.Point(140, 295);
             this.SubirFotobutton.Name = "SubirFotobutton";
             this.SubirFotobutton.Size = new System.Drawing.Size(69, 23);
             this.SubirFotobutton.TabIndex = 49;
@@ -270,6 +270,7 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -290,7 +291,7 @@
             this.ClientepictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.avatar;
             this.ClientepictureBox.Location = new System.Drawing.Point(12, 66);
             this.ClientepictureBox.Name = "ClientepictureBox";
-            this.ClientepictureBox.Size = new System.Drawing.Size(231, 230);
+            this.ClientepictureBox.Size = new System.Drawing.Size(231, 215);
             this.ClientepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.ClientepictureBox.TabIndex = 14;
             this.ClientepictureBox.TabStop = false;
@@ -317,7 +318,7 @@
             // 
             this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(612, 78);
+            this.Buscarbutton.Location = new System.Drawing.Point(622, 78);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(33, 32);
             this.Buscarbutton.TabIndex = 51;
@@ -367,7 +368,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(673, 350);
+            this.ClientSize = new System.Drawing.Size(673, 338);
             this.Controls.Add(this.CiudadcomboBox);
             this.Controls.Add(this.CelularmaskedTextBox);
             this.Controls.Add(this.TelefonomaskedTextBox);

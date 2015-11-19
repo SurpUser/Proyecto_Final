@@ -116,7 +116,7 @@ Mes int,
 Ano int
 );
 
---select * from Usuarios
+select * from Usuarios
 
 select * from Clientes
 

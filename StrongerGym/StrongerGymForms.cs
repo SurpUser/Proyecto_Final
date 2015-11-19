@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using StrongerGym.R;
 using StrongerGym.Recursos;
 using StrongerGym.Registros;
+using StrongerGym.Consultas;
 
 namespace StrongerGym
 {
@@ -119,6 +120,13 @@ namespace StrongerGym
             ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
             proveedore.MdiParent = this;
             proveedore.Show();
+        }
+
+        private void strongerGymToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AcercaDeForm acerca = new AcercaDeForm();
+            acerca.MdiParent = this;
+            acerca.Show();
         }
     }
 }

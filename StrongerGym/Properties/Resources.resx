@@ -118,85 +118,88 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="1442105540_Gnome-Edit-Clear-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1442105540_Gnome-Edit-Clear-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1134781-gimnasio-stronger-gym-20140330071511707" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1441466_615720135173929_289418604_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1441466_615720135173929_289418604_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="user-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1443916247_Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1443916247_Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1447893716_mypc_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1447893716_mypc_config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1445977332_search_magnifying_glass_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1445977332_search_magnifying_glass_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Building3_c-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Building3_c-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="man_user_male_human_people-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\man_user_male_human_people-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1442108115_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1442108115_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Protein-Powder-type" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Protein-Powder-type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1442108330_Modify" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1442108330_Modify.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lock-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lock-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1442108658_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1442108658_trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1445977332_search_magnifying_glass_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1445977332_search_magnifying_glass_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Shopping-basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shopping-basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Protein-Powder-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Protein-Powder-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1444609073_search_magnifying_glass_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1444609073_search_magnifying_glass_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1444608937_Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1444608937_Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1443916450_Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1443916450_Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_tasks-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\edit_tasks-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1134781-gimnasio-stronger-gym-20140330071511707" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="price-sale-cart-shopping-list-ecommerce-tag-18-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\price-sale-cart-shopping-list-ecommerce-tag-18-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="051-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\051-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1444608937_Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1444608937_Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Protein-Powder-type" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Protein-Powder-type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Protein-Powder-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Protein-Powder-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1442108115_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1442108115_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="man_user_male_human_people-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\man_user_male_human_people-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1442108658_trash" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1442108658_trash.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="lock-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lock-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Building3_c-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Building3_c-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1444609073_search_magnifying_glass_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1444609073_search_magnifying_glass_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1447893716_mypc_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1447893716_mypc_config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1441466_615720135173929_289418604_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1441466_615720135173929_289418604_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1443916247_Check" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1443916247_Check.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1443916450_Cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1443916450_Cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="avatar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\avatar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_tasks-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\edit_tasks-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="1442105540_Gnome-Edit-Clear-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1442105540_Gnome-Edit-Clear-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Printer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Printer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

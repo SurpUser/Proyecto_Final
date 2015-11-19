@@ -36,7 +36,7 @@ namespace StrongerGym.R
                     {
                         sgf.registroUsuarioToolStripMenuItem.Visible = false;
                     }
-                    sgf.Text = "StrongerGymForms [" + usuario.Nombre + "]";
+                    sgf.Text = "StrongerGym [" + usuario.Nombre + "]";
                     sgf.Show();
                 }
                 else
@@ -44,12 +44,12 @@ namespace StrongerGym.R
                     intentos++;
                     if (intentos >= 3)
                         this.Close();
-                    MessageBox.Show("Usuario Incorrecto " + intentos + "\n Intentos Incorrectos.");
+                    MessageBox.Show("Usuario Incorrecto \n" + intentos + " Intentos Incorrectos.","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Faltan Campos.");
+                MessageBox.Show("Faltan Campos.","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -70,5 +70,6 @@ namespace StrongerGym.R
                 IniciarSesion();
             }
         }
+
     }
 }

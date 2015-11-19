@@ -59,6 +59,8 @@
             this.informacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.acercaDeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.strongerGymToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nosotrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,7 +99,7 @@
             this.ciudadesToolStripMenuItem});
             this.configuracionToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.Gear;
             this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
-            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.configuracionToolStripMenuItem.Text = "Configuracion";
             // 
             // generalToolStripMenuItem
@@ -124,7 +126,7 @@
             // 
             this.registroToolStripMenuItem1.Image = global::StrongerGym.Properties.Resources.edit_tasks_128;
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
-            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.registroToolStripMenuItem1.Text = "Registro";
             this.registroToolStripMenuItem1.Click += new System.EventHandler(this.registroToolStripMenuItem1_Click);
             // 
@@ -132,14 +134,14 @@
             // 
             this.consultaToolStripMenuItem1.Image = global::StrongerGym.Properties.Resources.Preview;
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
-            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
             // 
             // compraToolStripMenuItem
             // 
             this.compraToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.Shopping_basket;
             this.compraToolStripMenuItem.Name = "compraToolStripMenuItem";
-            this.compraToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.compraToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.compraToolStripMenuItem.Text = "Compra";
             this.compraToolStripMenuItem.Click += new System.EventHandler(this.compraToolStripMenuItem_Click);
             // 
@@ -147,7 +149,7 @@
             // 
             this.ventaToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.price_sale_cart_shopping_list_ecommerce_tag_18_128;
             this.ventaToolStripMenuItem.Name = "ventaToolStripMenuItem";
-            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.ventaToolStripMenuItem.Text = "Venta";
             // 
             // tiposDeProteinasToolStripMenuItem
@@ -229,7 +231,7 @@
             // 
             this.salirToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.lock_128;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.salirToolStripMenuItem.Text = "Cerrar Sesion";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -240,7 +242,7 @@
             this.consultaToolStripMenuItem});
             this.registroUsuarioToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.user_icon;
             this.registroUsuarioToolStripMenuItem.Name = "registroUsuarioToolStripMenuItem";
-            this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registroUsuarioToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.registroUsuarioToolStripMenuItem.Text = "Usuario";
             // 
             // registroUsuarioToolStripMenuItem1
@@ -263,7 +265,7 @@
             // 
             this.salirToolStripMenuItem1.Image = global::StrongerGym.Properties.Resources._1442108773_Gnome_Application_Exit_32;
             this.salirToolStripMenuItem1.Name = "salirToolStripMenuItem1";
-            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem1.Size = new System.Drawing.Size(150, 22);
             this.salirToolStripMenuItem1.Text = "Salir";
             this.salirToolStripMenuItem1.Click += new System.EventHandler(this.salirToolStripMenuItem1_Click);
             // 
@@ -281,7 +283,7 @@
             // 
             this.registrarToolStripMenuItem1.Image = global::StrongerGym.Properties.Resources.edit_tasks_128;
             this.registrarToolStripMenuItem1.Name = "registrarToolStripMenuItem1";
-            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.registrarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.registrarToolStripMenuItem1.Text = "Registrar";
             this.registrarToolStripMenuItem1.Click += new System.EventHandler(this.registrarToolStripMenuItem1_Click);
             // 
@@ -289,7 +291,7 @@
             // 
             this.consultarToolStripMenuItem1.Image = global::StrongerGym.Properties.Resources.Preview;
             this.consultarToolStripMenuItem1.Name = "consultarToolStripMenuItem1";
-            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.consultarToolStripMenuItem1.Size = new System.Drawing.Size(125, 22);
             this.consultarToolStripMenuItem1.Text = "Consultar";
             this.consultarToolStripMenuItem1.Click += new System.EventHandler(this.consultarToolStripMenuItem1_Click);
             // 
@@ -297,7 +299,7 @@
             // 
             this.carnetToolStripMenuItem.Image = global::StrongerGym.Properties.Resources._051_512;
             this.carnetToolStripMenuItem.Name = "carnetToolStripMenuItem";
-            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.carnetToolStripMenuItem.Size = new System.Drawing.Size(125, 22);
             this.carnetToolStripMenuItem.Text = "Carnet";
             this.carnetToolStripMenuItem.Click += new System.EventHandler(this.carnetToolStripMenuItem_Click);
             // 
@@ -315,9 +317,25 @@
             // 
             // acercaDeToolStripMenuItem
             // 
+            this.acercaDeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.strongerGymToolStripMenuItem,
+            this.nosotrosToolStripMenuItem});
             this.acercaDeToolStripMenuItem.Name = "acercaDeToolStripMenuItem";
             this.acercaDeToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.acercaDeToolStripMenuItem.Text = "Acerca de";
+            // 
+            // strongerGymToolStripMenuItem
+            // 
+            this.strongerGymToolStripMenuItem.Name = "strongerGymToolStripMenuItem";
+            this.strongerGymToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.strongerGymToolStripMenuItem.Text = "StrongerGym";
+            this.strongerGymToolStripMenuItem.Click += new System.EventHandler(this.strongerGymToolStripMenuItem_Click);
+            // 
+            // nosotrosToolStripMenuItem
+            // 
+            this.nosotrosToolStripMenuItem.Name = "nosotrosToolStripMenuItem";
+            this.nosotrosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nosotrosToolStripMenuItem.Text = "Nosotros";
             // 
             // StrongerGymForms
             // 
@@ -372,6 +390,8 @@
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem consultaToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem strongerGymToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nosotrosToolStripMenuItem;
     }
 }
 

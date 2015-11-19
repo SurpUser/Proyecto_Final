@@ -56,6 +56,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Consultas\AcercaDeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\AcercaDeForm.Designer.cs">
+      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\CarnetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +148,9 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Consultas\AcercaDeForm.resx">
+      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Consultas\CarnetForm.resx">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,6 +278,7 @@
     <None Include="Resources\Shopping-basket.png" />
     <None Include="Resources\price-sale-cart-shopping-list-ecommerce-tag-18-128.png" />
     <None Include="Resources\051-512.png" />
+    <None Include="Resources\Printer.png" />
     <Content Include="ScriptStrongerGym\StrongerQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

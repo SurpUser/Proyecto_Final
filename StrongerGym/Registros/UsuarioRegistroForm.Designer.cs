@@ -66,6 +66,7 @@ namespace StrongerGym.Recursos
             this.ContrasenatextBox.Name = "ContrasenatextBox";
             this.ContrasenatextBox.Size = new System.Drawing.Size(266, 20);
             this.ContrasenatextBox.TabIndex = 0;
+            this.ContrasenatextBox.UseSystemPasswordChar = true;
             // 
             // label1
             // 
@@ -205,6 +206,7 @@ namespace StrongerGym.Recursos
             // 
             // FechaIniciodateTimePicker
             // 
+            this.FechaIniciodateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaIniciodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.FechaIniciodateTimePicker.Location = new System.Drawing.Point(259, 146);
             this.FechaIniciodateTimePicker.Name = "FechaIniciodateTimePicker";
