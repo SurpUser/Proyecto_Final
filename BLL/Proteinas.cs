@@ -105,6 +105,7 @@ namespace BLL
             try
             {
                 dt = con.ObtenerDatos(string.Format("select * from Proteinas where ProteinaId = {0} ", IdBuscado));
+                this.TiposProteinaId = (int)dt.Rows[0]["TipoProteinaId"];
                 this.Nombre = dt.Rows[0]["Nombre"].ToString();
                 this.Precio = (double)dt.Rows[0]["Precio"];
                 this.ITBS = (double)dt.Rows[0]["ITBS"];
