@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace StrongerGym.Registros
 {
-    public partial class ProteinaComprasForm : Form
+    public partial class ProteinaVentaForm : Form
     {
-        public ProteinaComprasForm()
+        public ProteinaVentaForm()
         {
             InitializeComponent();
         }
 
-        private void ProteinaComprasForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Guardarbutton_Click(object sender, EventArgs e)
+        private void VentasdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

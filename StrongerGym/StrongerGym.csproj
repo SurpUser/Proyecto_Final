@@ -110,6 +110,12 @@
     <Compile Include="Registros\ClienteRegistrosForm.Designer.cs">
       <DependentUpon>ClienteRegistrosForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Registros\ProteinaVentaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registros\ProteinaVentaForm.Designer.cs">
+      <DependentUpon>ProteinaVentaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\ProveedoreRegistrosForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\ClienteRegistrosForm.resx">
       <DependentUpon>ClienteRegistrosForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registros\ProteinaVentaForm.resx">
+      <DependentUpon>ProteinaVentaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\ProveedoreRegistrosForm.resx">
       <DependentUpon>ProveedoreRegistrosForm.cs</DependentUpon>
@@ -279,6 +288,7 @@
     <None Include="Resources\price-sale-cart-shopping-list-ecommerce-tag-18-128.png" />
     <None Include="Resources\051-512.png" />
     <None Include="Resources\Printer.png" />
+    <None Include="Resources\1447982246_invoice.png" />
     <Content Include="ScriptStrongerGym\StrongerQuery.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
