@@ -128,5 +128,12 @@ namespace StrongerGym
             acerca.MdiParent = this;
             acerca.Show();
         }
+
+        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProteinaVentaForm venta = new ProteinaVentaForm();
+            venta.MdiParent = this;
+            venta.Show();
+        }
     }
 }

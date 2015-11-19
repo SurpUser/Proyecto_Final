@@ -120,6 +120,8 @@ select * from Usuarios
 
 select * from Clientes
 
+select * from Proteinas
+
 --select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
 --select * from TiposProteinas
