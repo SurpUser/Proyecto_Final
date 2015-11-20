@@ -65,8 +65,6 @@ ProteinaId int primary key identity(1,1),
 TipoProteinaId int References TiposProteinas(TipoProteinaId),
 Nombre varchar(50),
 Precio float,
-ITBS float,
-Cantidad int,
 Costo float
 );
 go

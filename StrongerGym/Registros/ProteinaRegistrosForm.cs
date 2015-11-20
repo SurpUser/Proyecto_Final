@@ -32,9 +32,7 @@ namespace StrongerGym.Registros
             ProteinaIdtextBox.Clear();
             NombretextBox.Clear();
             PreciotextBox.Clear();
-            ITBStextBox.Clear();
             CostotextBox.Clear();
-            CantidadtextBox.Clear();
             TipoProteinaIdcomboBox.SelectedIndex = 0;
         }
 
@@ -68,10 +66,6 @@ namespace StrongerGym.Registros
             proteina.Nombre = NombretextBox.Text;
 
             proteina.Precio = ConvertirDouble(PreciotextBox.Text);
-
-            proteina.ITBS = ConvertirDouble(ITBStextBox.Text);
-
-            proteina.Cantidad = ConvertirEntero(CantidadtextBox.Text);
 
             proteina.TiposProteinaId = (int)TipoProteinaIdcomboBox.SelectedValue;
 
@@ -151,11 +145,9 @@ namespace StrongerGym.Registros
 
                     PreciotextBox.Text = proteina.Precio.ToString();
 
-                    ITBStextBox.Text = proteina.ITBS.ToString();
-
-                    CantidadtextBox.Text = proteina.Cantidad.ToString();
-
                     CostotextBox.Text = proteina.Costo.ToString();
+
+                    TipoProteinaIdcomboBox.Text = proteina.NombreProteina.ToString();
                 }
                 else
                 {

@@ -100,20 +100,9 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            try
-            {
-                return con.ObtenerDatos("select " + Campos + " from TiposProteinas where " + Condicion + " " + Orden);
-            }
-            catch (Exception ex)
-            {
 
-                throw ex;
-            }
-        }
+            return con.ObtenerDatos("Select " + Campos + " from TiposProteinas where " + Condicion + " " + Orden);
 
-        public DataTable ObtenerTipoProteinaId(string Nombre)
-        {
-            return con.ObtenerDatos(String.Format("select TipoProteinaId from TiposProteinas where Nombre = '{0}' ", Nombre));
         }
     }
 }

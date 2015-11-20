@@ -28,56 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.AnotextBox = new System.Windows.Forms.TextBox();
+            this.MestextBox = new System.Windows.Forms.TextBox();
+            this.SemanatextBox = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.DiatextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Cancelarbutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 115);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(97, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ruta de Las Fotos:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(15, 132);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(333, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(354, 130);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "...";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.AnotextBox);
+            this.groupBox1.Controls.Add(this.MestextBox);
+            this.groupBox1.Controls.Add(this.SemanatextBox);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.DiatextBox);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Location = new System.Drawing.Point(15, 14);
             this.groupBox1.Name = "groupBox1";
@@ -86,26 +59,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Precios de Tafifas";
             // 
-            // textBox5
+            // AnotextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(241, 55);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(92, 20);
-            this.textBox5.TabIndex = 7;
+            this.AnotextBox.Location = new System.Drawing.Point(241, 55);
+            this.AnotextBox.Name = "AnotextBox";
+            this.AnotextBox.Size = new System.Drawing.Size(92, 20);
+            this.AnotextBox.TabIndex = 7;
             // 
-            // textBox4
+            // MestextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(241, 20);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(92, 20);
-            this.textBox4.TabIndex = 6;
+            this.MestextBox.Location = new System.Drawing.Point(241, 20);
+            this.MestextBox.Name = "MestextBox";
+            this.MestextBox.Size = new System.Drawing.Size(92, 20);
+            this.MestextBox.TabIndex = 6;
             // 
-            // textBox3
+            // SemanatextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(80, 57);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(85, 20);
-            this.textBox3.TabIndex = 5;
+            this.SemanatextBox.Location = new System.Drawing.Point(80, 57);
+            this.SemanatextBox.Name = "SemanatextBox";
+            this.SemanatextBox.Size = new System.Drawing.Size(85, 20);
+            this.SemanatextBox.TabIndex = 5;
             // 
             // label5
             // 
@@ -134,12 +107,12 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Por Semana:";
             // 
-            // textBox2
+            // DiatextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(80, 20);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(85, 20);
-            this.textBox2.TabIndex = 1;
+            this.DiatextBox.Location = new System.Drawing.Point(80, 20);
+            this.DiatextBox.Name = "DiatextBox";
+            this.DiatextBox.Size = new System.Drawing.Size(85, 20);
+            this.DiatextBox.TabIndex = 1;
             // 
             // label2
             // 
@@ -150,15 +123,40 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "Por Dia:";
             // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(192, 120);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
+            this.Guardarbutton.TabIndex = 53;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Cancelarbutton
+            // 
+            this.Cancelarbutton.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
+            this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cancelarbutton.Location = new System.Drawing.Point(283, 120);
+            this.Cancelarbutton.Name = "Cancelarbutton";
+            this.Cancelarbutton.Size = new System.Drawing.Size(90, 44);
+            this.Cancelarbutton.TabIndex = 8;
+            this.Cancelarbutton.Text = "Cancelar";
+            this.Cancelarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Cancelarbutton.UseVisualStyleBackColor = true;
+            this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
+            // 
             // ConfiguracoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 166);
+            this.ClientSize = new System.Drawing.Size(389, 171);
+            this.Controls.Add(this.Cancelarbutton);
+            this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConfiguracoinForm";
@@ -168,23 +166,20 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox AnotextBox;
+        private System.Windows.Forms.TextBox MestextBox;
+        private System.Windows.Forms.TextBox SemanatextBox;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox DiatextBox;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.Button Cancelarbutton;
     }
 }

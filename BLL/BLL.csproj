@@ -50,6 +50,7 @@
     <Compile Include="ClaseMaestra.cs" />
     <Compile Include="Compras.cs" />
     <Compile Include="Clientes.cs" />
+    <Compile Include="Configuracion.cs" />
     <Compile Include="Proteinas.cs" />
     <Compile Include="Proveedores.cs" />
     <Compile Include="TiposProteinas.cs" />

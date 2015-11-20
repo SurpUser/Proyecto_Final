@@ -15,31 +15,28 @@ namespace BLL
 
         public int ProteinaId { get; set; }
         public int TiposProteinaId { get; set; }
+        public string NombreProteina { get; set; }
         public string  Nombre { get; set; }
         public double Precio { get; set; }
-        public double ITBS { get; set; }
-        public int Cantidad { get; set; }
         public double Costo { get; set; }
 
         public Proteinas()
         {
             this.ProteinaId = 0;
             this.TiposProteinaId = 0;
+            this.NombreProteina = "";
             this.Nombre = ""; 
             this.Precio = 0.0;
-            this.ITBS = 0.0;
-            this.Cantidad = 0;
             this.Costo = 0.0;
         }
 
-        public Proteinas(int ProteinaID, int TiposProteinaId, string Nombre, double Precio, double Itbs, int Cantidad, double Costo)
+        public Proteinas(int ProteinaID, int TiposProteinaId,string Nombreproteina, string Nombre, double Precio, double Costo)
         {
             this.ProteinaId = ProteinaID;
-            this.TiposProteinaId = TiposProteinaId; 
+            this.TiposProteinaId = TiposProteinaId;
+            this.NombreProteina = Nombreproteina;
             this.Nombre = Nombre;
             this.Precio = Precio;
-            this.ITBS = Itbs;
-            this.Cantidad = Cantidad;
             this.Costo = Costo;
         }
 
@@ -54,7 +51,7 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             try
             {
-                retorno = conexion.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, ITBS, Cantidad, Costo) values ({0},'{1}',{2},{3},{4},{5})",this.TiposProteinaId, this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo));
+                retorno = conexion.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, Costo) values ({0},'{1}',{2},{3})",this.TiposProteinaId, this.Nombre, this.Precio, this.Costo));
             }
             catch (Exception ex)
             {
@@ -69,7 +66,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(string.Format("update Proteinas set TipoProteinaId = {0}, Nombre = '{1}', Precio = {2}, ITBS = {3}, Cantidad = {4}, Costo = {5} where ProteinaId = {6}", this.TiposProteinaId, this.Nombre, this.Precio, this.ITBS, this.Cantidad, this.Costo, this.ProteinaId));
+                retorno = conexion.Ejecutar(string.Format("update Proteinas set TipoProteinaId = {0}, Nombre = '{1}', Precio = {2}, Costo = {3} where ProteinaId = {4}", this.TiposProteinaId, this.Nombre, this.Precio, this.Costo, this.ProteinaId));
             }
             catch (Exception ex)
             {
@@ -104,17 +101,17 @@ namespace BLL
             try
             {
                 dt = conexion.ObtenerDatos(string.Format("select * from Proteinas where ProteinaId = {0} ", IdBuscado));
-               // dt2 = conexion.ObtenerDatos(string.Format("select Nombre from TiposProteinas where TipoProteinaId = {0} ", this.TiposProteinaId));
+                
                 if (dt.Rows.Count > 0)
                 {
                     this.TiposProteinaId = (int)dt.Rows[0]["TipoProteinaId"];
                     this.Nombre = dt.Rows[0]["Nombre"].ToString();
                     this.Precio = (double)dt.Rows[0]["Precio"];
-                    this.ITBS = (double)dt.Rows[0]["ITBS"];
-                    this.Cantidad = (int)dt.Rows[0]["Cantidad"];
                     this.Costo = (double)dt.Rows[0]["Costo"];
 
-                    //this.TiposProteina.Nombre = dt2.Rows[0]["Nombre"].ToString();
+                    dt2 = conexion.ObtenerDatos(string.Format("select Nombre from TiposProteinas where TipoProteinaId = {0} ", this.TiposProteinaId));
+
+                    this.NombreProteina = dt2.Rows[0]["Nombre"].ToString();
                     retorno = true;
                 }
                 else
