@@ -20,7 +20,6 @@ namespace BLL
         public string Fecha { get; set; }
         public string NCF { get; set; }
         public double TotalVenta { get; set; }
-        public double Descuento { get; set; }
         public List<Proteinas> proteina { get; set; }
 
         ConexionDB conexion = new ConexionDB();
@@ -34,14 +33,13 @@ namespace BLL
             this.Fecha = "";
             this.NCF = "";
             this.TotalVenta = 0.0;
-            this.Descuento = 0.0;
             this.ProteinaId = 0;
             this.Cantidad = 0;
             this.Precio = 0.0;
             this.proteina = new List<Proteinas>();
         }
 
-        public Ventas(int Ventaid, int Usuarioid, int Clienteid, double Itbs, string Fecha, string Nfc, double Totalventa, double Descuento,int ProteinaId,int Cantidad, double Precio)
+        public Ventas(int Ventaid, int Usuarioid, int Clienteid, double Itbs, string Fecha, string Nfc, double Totalventa,int ProteinaId,int Cantidad, double Precio)
         {
             this.VentaId = Ventaid;
             this.UsuarioId = Usuarioid;
@@ -50,15 +48,14 @@ namespace BLL
             this.Fecha = Fecha;
             this.NCF = Nfc;
             this.TotalVenta = Totalventa;
-            this.Descuento = Descuento;
             this.ProteinaId = ProteinaId;
             this.Cantidad = Cantidad;
             this.Precio = Precio;
         }
 
-        public void AgregarProteinas(int ProteinaId)
+        public void AgregarProteinas(int ProteinaId,int Cantidad)
         {
-            this.proteina.Add(new Proteinas(ProteinaId));
+            this.proteina.Add(new Proteinas(ProteinaId,Cantidad));
         }
 
         public override bool Buscar(int IdBuscado)
@@ -76,7 +73,6 @@ namespace BLL
                     this.Fecha = dt.Rows[0]["Fecha"].ToString();
                     this.NCF = dt.Rows[0]["NCF"].ToString();
                     this.TotalVenta = (double)dt.Rows[0]["TotalVenta"];
-                    this.Descuento = (double)dt.Rows[0]["Descuento"];
                 }            
             }
             catch (Exception e)
@@ -93,13 +89,13 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             try
             {
-                retorno = conexion.Ejecutar(String.Format("(Update Ventas set UsuarioId = {0}, ClienteId = {1}, ITBS = {2}, Fecha = '{3}', NCF = '{4}', TotalVenta = {5}, Descuento = {6} where VentaId = {7}", this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.Descuento, this.VentaId));
+                retorno = conexion.Ejecutar(String.Format("(Update Ventas set UsuarioId = {0}, ClienteId = {1}, ITBS = {2}, Fecha = '{3}', NCF = '{4}', TotalVenta = {5} where VentaId = {7}", this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.VentaId));
                 if (retorno)
                 {
-                    retorno = conexion.Ejecutar(String.Format("delete from VentasDetalle where VentaId = {0}",this.VentaId));
+                    retorno = conexion.Ejecutar(String.Format("delete from VentasProteinas where VentaId = {0}", this.VentaId));
                     foreach (var pro in proteina)
                     {
-                        comando.AppendLine(String.Format("insert into VentasDetalle(UsuarioId,ProteinaId,VentaId) values({0},{1},{2})", this.UsuarioId, this.ProteinaId, this.VentaId));
+                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad));
                     }
                     retorno = conexion.Ejecutar(comando.ToString());
                 }
@@ -118,13 +114,11 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Delete from Ventas where VentaId = {0}; "+ 
-                                                          "Delete from VentasDetalle where VentaId = {0};", this.VentaId));
+                retorno = conexion.Ejecutar("Delete from Ventas where VentaId = "+ this.VentaId+";" +"Delete from VentasProteinas where VentaId ="+ this.VentaId);
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                throw e;
+                retorno = false;
             }
 
             return retorno;
@@ -136,14 +130,14 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             try
             {
-                retorno = conexion.Ejecutar(String.Format("Insert into Ventas (UsuarioId, ClienteId, ITBS, Fecha, NCF, TotalVenta, Descuento) Values ({0},{1},{2},'{3}','{4}',{5},{6}) ",
-                                            this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.Descuento));
+                retorno = conexion.Ejecutar(String.Format("Insert into Ventas (UsuarioId, ClienteId, ITBS, Fecha, NCF, TotalVenta) Values ({0},{1},{2},'{3}','{4}',{5}) ",
+                                            this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta));
                 if (retorno)
                 {
                     this.VentaId = (int)conexion.ObtenerDatos(String.Format("select MAX(VentaId) as VentaId from Ventas")).Rows[0]["VentaId"];
                     foreach (var pro in proteina)
                     {
-                        comando.AppendLine(String.Format("insert into VentasDetalle(UsuarioId,ProteinaId,VentaId) values({0},{1},{2})",this.UsuarioId,this.ProteinaId,this.VentaId));
+                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad));
                     }
                 }
 

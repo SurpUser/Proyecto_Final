@@ -34,6 +34,7 @@ namespace StrongerGym.R
                 SemanatextBox.Text = dt.Rows[0]["Semana"].ToString();
                 MestextBox.Text = dt.Rows[0]["Mes"].ToString();
                 AnotextBox.Text = dt.Rows[0]["Ano"].ToString();
+                ITBIStextBox.Text = dt.Rows[0]["ITBIS"].ToString();
             }
             else
             {
@@ -51,12 +52,22 @@ namespace StrongerGym.R
             return Convertir;
         }
 
+        public double ConvertirDouble(string Textbox)
+        {
+            double Convertir = 0.0;
+
+            bool Resultado = Double.TryParse(Textbox, out Convertir);
+
+            return Convertir;
+        }
+
         public bool LLenarDatos()
         {
             Configurar.Dia = ConvertirEntero(DiatextBox.Text);
             Configurar.Semana = ConvertirEntero(SemanatextBox.Text);
             Configurar.Mes = ConvertirEntero(MestextBox.Text);
             Configurar.Ano = ConvertirEntero(AnotextBox.Text);
+            Configurar.ITBIS = ConvertirDouble(ITBIStextBox.Text);
             return true;
         }
 

@@ -19,7 +19,7 @@ create table Proveedores(
 ProveedorId int primary key identity(1,1),
 CiudadId int References Ciudades(CiudadId),
 NombreEmpresa varchar(50),
-RNC varchar(50),--12-15
+RNC varchar(15),--12-15
 Direccion varchar(100),
 Telefono varchar(14),
 Celular varchar(14),
@@ -80,7 +80,7 @@ Fecha varchar(11),
 Cantidad int,
 );
 go
-create table ComprasDetalle(
+create table ComprasProteinas(
 CompraDetalleId int primary key identity(1,1),
 CompraId int References Compras(CompraId),
 ProteinaId int References Proteinas(ProteinaId),
@@ -95,15 +95,15 @@ ClienteId int References Clientes(ClienteId),
 ITBS float,
 Fecha varchar(11),
 NCF varchar(50),
-TotalVenta float,
-Descuento float
+TotalVenta float
 );
 go
-create table VentasDetalle(
+create table VentasProteinas(
 VentaDetalleId int primary key identity(1,1),
 UsuarioId int References Usuarios(UsuarioId),
 ProteinaId int References Proteinas(ProteinaId),
-VentaId int References Ventas(VentaId)
+VentaId int References Ventas(VentaId),
+Cantidad int
 );
 go
 create table Configuraciones(
@@ -111,7 +111,8 @@ ConfiguracionId int primary key identity(1,1),
 Dia int,
 Semana int,
 Mes int,
-Ano int
+Ano int,
+ITBIS float
 );
 
 select * from Usuarios
@@ -120,6 +121,13 @@ select * from Clientes
 
 select * from Proteinas
 
+select * from Ventas where VentaId = 10;
+
+select * from VentasProteinas
+
+select vd.UsuarioId, vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad from VentasProteinas vd inner join 
+Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId
+ where v.VentaId = 2;
 --select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
 --select * from TiposProteinas
@@ -130,6 +138,6 @@ select * from Proteinas
 
 --select * from Ciudades;
 
-insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','ZgBjADEAMAAxADAA','10-Nov-2015','Administrativa');
+insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','ZgBjADEAMAAxADAA','10/11/2015','Administrativa');
 
 --update Proveedores set CiudadId = 3,NombreEmpresa='FCPrograms',NombreRepresentante='Francis',RNC='3-23-12874-3',Direccion='Calle julia javier',Telefono='902-323-4354',Celular='323-434-5465',Email='info@fcprograms.com' where ProveedorId = 1;

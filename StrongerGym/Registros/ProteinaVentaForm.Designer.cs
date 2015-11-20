@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Subtotallabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -39,15 +37,7 @@
             this.Montolabel = new System.Windows.Forms.Label();
             this.ITBISlabel = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.VentasdataGridView = new System.Windows.Forms.DataGridView();
-            this.ProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodigoProductotextBox = new System.Windows.Forms.TextBox();
+            this.CodigoProteinatextBox = new System.Windows.Forms.TextBox();
             this.CodigoClientetextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.CodigoVentatextBox = new System.Windows.Forms.TextBox();
@@ -55,7 +45,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.UsuariotextBox = new System.Windows.Forms.TextBox();
-            this.AgregarProductobutton = new System.Windows.Forms.Button();
+            this.AgregarProteinabutton = new System.Windows.Forms.Button();
             this.Facturarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
@@ -65,30 +55,22 @@
             this.ProteinatextBox = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.BuscarClientebutton = new System.Windows.Forms.Button();
-            this.BuscarProductobutton = new System.Windows.Forms.Button();
+            this.BuscarProteinabutton = new System.Windows.Forms.Button();
+            this.ProductoId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.VentasdataGridView = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ITBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BuscarVentabutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
             this.SuspendLayout();
-            // 
-            // Subtotallabel
-            // 
-            this.Subtotallabel.AutoSize = true;
-            this.Subtotallabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Subtotallabel.ForeColor = System.Drawing.Color.Red;
-            this.Subtotallabel.Location = new System.Drawing.Point(570, 404);
-            this.Subtotallabel.Name = "Subtotallabel";
-            this.Subtotallabel.Size = new System.Drawing.Size(32, 13);
-            this.Subtotallabel.TabIndex = 43;
-            this.Subtotallabel.Text = "0.00";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(514, 404);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 13);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Subtotal:";
             // 
             // label9
             // 
@@ -138,7 +120,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(429, 404);
+            this.label5.Location = new System.Drawing.Point(523, 404);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(39, 13);
             this.label5.TabIndex = 34;
@@ -149,7 +131,7 @@
             this.Montolabel.AutoSize = true;
             this.Montolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Montolabel.ForeColor = System.Drawing.Color.Red;
-            this.Montolabel.Location = new System.Drawing.Point(664, 404);
+            this.Montolabel.Location = new System.Drawing.Point(655, 404);
             this.Montolabel.Name = "Montolabel";
             this.Montolabel.Size = new System.Drawing.Size(32, 13);
             this.Montolabel.TabIndex = 33;
@@ -160,7 +142,7 @@
             this.ITBISlabel.AutoSize = true;
             this.ITBISlabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ITBISlabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.ITBISlabel.Location = new System.Drawing.Point(464, 404);
+            this.ITBISlabel.Location = new System.Drawing.Point(558, 404);
             this.ITBISlabel.Name = "ITBISlabel";
             this.ITBISlabel.Size = new System.Drawing.Size(32, 13);
             this.ITBISlabel.TabIndex = 32;
@@ -170,84 +152,18 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(616, 404);
+            this.label4.Location = new System.Drawing.Point(607, 404);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 13);
             this.label4.TabIndex = 31;
             this.label4.Text = "Monto:";
             // 
-            // VentasdataGridView
+            // CodigoProteinatextBox
             // 
-            this.VentasdataGridView.AllowUserToAddRows = false;
-            this.VentasdataGridView.AllowUserToDeleteRows = false;
-            this.VentasdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ProductoId,
-            this.Nombre,
-            this.Precio,
-            this.Cantidad,
-            this.ITBIS,
-            this.SubTotal,
-            this.Total});
-            this.VentasdataGridView.Location = new System.Drawing.Point(27, 155);
-            this.VentasdataGridView.Name = "VentasdataGridView";
-            this.VentasdataGridView.ReadOnly = true;
-            this.VentasdataGridView.Size = new System.Drawing.Size(683, 215);
-            this.VentasdataGridView.TabIndex = 30;
-            this.VentasdataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.VentasdataGridView_CellContentClick);
-            // 
-            // ProductoId
-            // 
-            this.ProductoId.HeaderText = "Codigo";
-            this.ProductoId.Name = "ProductoId";
-            this.ProductoId.ReadOnly = true;
-            this.ProductoId.Width = 50;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 150;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Width = 80;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.ReadOnly = true;
-            this.Cantidad.Width = 80;
-            // 
-            // ITBIS
-            // 
-            this.ITBIS.HeaderText = "ITBIS";
-            this.ITBIS.Name = "ITBIS";
-            this.ITBIS.ReadOnly = true;
-            this.ITBIS.Width = 80;
-            // 
-            // SubTotal
-            // 
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.Name = "SubTotal";
-            this.SubTotal.ReadOnly = true;
-            // 
-            // Total
-            // 
-            this.Total.HeaderText = "Total";
-            this.Total.Name = "Total";
-            this.Total.ReadOnly = true;
-            // 
-            // CodigoProductotextBox
-            // 
-            this.CodigoProductotextBox.Location = new System.Drawing.Point(382, 84);
-            this.CodigoProductotextBox.Name = "CodigoProductotextBox";
-            this.CodigoProductotextBox.Size = new System.Drawing.Size(100, 20);
-            this.CodigoProductotextBox.TabIndex = 2;
+            this.CodigoProteinatextBox.Location = new System.Drawing.Point(382, 84);
+            this.CodigoProteinatextBox.Name = "CodigoProteinatextBox";
+            this.CodigoProteinatextBox.Size = new System.Drawing.Size(100, 20);
+            this.CodigoProteinatextBox.TabIndex = 2;
             // 
             // CodigoClientetextBox
             // 
@@ -261,9 +177,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(287, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(89, 13);
+            this.label3.Size = new System.Drawing.Size(85, 13);
             this.label3.TabIndex = 27;
-            this.label3.Text = "Codigo Producto:";
+            this.label3.Text = "Codigo Proteina:";
             // 
             // CodigoVentatextBox
             // 
@@ -308,24 +224,24 @@
             this.UsuariotextBox.Size = new System.Drawing.Size(100, 20);
             this.UsuariotextBox.TabIndex = 49;
             // 
-            // AgregarProductobutton
+            // AgregarProteinabutton
             // 
-            this.AgregarProductobutton.Image = global::StrongerGym.Properties.Resources.Shopping_cart_add;
-            this.AgregarProductobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarProductobutton.Location = new System.Drawing.Point(596, 108);
-            this.AgregarProductobutton.Name = "AgregarProductobutton";
-            this.AgregarProductobutton.Size = new System.Drawing.Size(85, 37);
-            this.AgregarProductobutton.TabIndex = 5;
-            this.AgregarProductobutton.Text = "Agregar";
-            this.AgregarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarProductobutton.UseVisualStyleBackColor = true;
-            this.AgregarProductobutton.Click += new System.EventHandler(this.AgregarProductobutton_Click);
+            this.AgregarProteinabutton.Image = global::StrongerGym.Properties.Resources.Shopping_cart_add;
+            this.AgregarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AgregarProteinabutton.Location = new System.Drawing.Point(596, 108);
+            this.AgregarProteinabutton.Name = "AgregarProteinabutton";
+            this.AgregarProteinabutton.Size = new System.Drawing.Size(100, 37);
+            this.AgregarProteinabutton.TabIndex = 5;
+            this.AgregarProteinabutton.Text = "Add Proteina";
+            this.AgregarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarProteinabutton.UseVisualStyleBackColor = true;
+            this.AgregarProteinabutton.Click += new System.EventHandler(this.AgregarProductobutton_Click);
             // 
             // Facturarbutton
             // 
             this.Facturarbutton.Image = global::StrongerGym.Properties.Resources._1447982246_invoice;
             this.Facturarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Facturarbutton.Location = new System.Drawing.Point(317, 388);
+            this.Facturarbutton.Location = new System.Drawing.Point(316, 388);
             this.Facturarbutton.Name = "Facturarbutton";
             this.Facturarbutton.Size = new System.Drawing.Size(86, 44);
             this.Facturarbutton.TabIndex = 9;
@@ -337,13 +253,14 @@
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(225, 388);
+            this.Eliminarbutton.Location = new System.Drawing.Point(227, 388);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
             this.Eliminarbutton.TabIndex = 8;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
             // 
             // Nuevobutton
             // 
@@ -362,9 +279,9 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(129, 388);
+            this.Guardarbutton.Location = new System.Drawing.Point(128, 388);
             this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(80, 44);
+            this.Guardarbutton.Size = new System.Drawing.Size(90, 44);
             this.Guardarbutton.TabIndex = 7;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -374,7 +291,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(24, 118);
+            this.label12.Location = new System.Drawing.Point(24, 121);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(82, 13);
             this.label12.TabIndex = 51;
@@ -411,44 +328,141 @@
             this.BuscarClientebutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BuscarClientebutton.Location = new System.Drawing.Point(215, 86);
             this.BuscarClientebutton.Name = "BuscarClientebutton";
-            this.BuscarClientebutton.Size = new System.Drawing.Size(33, 32);
+            this.BuscarClientebutton.Size = new System.Drawing.Size(33, 27);
             this.BuscarClientebutton.TabIndex = 1;
             this.BuscarClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarClientebutton.UseVisualStyleBackColor = true;
             this.BuscarClientebutton.Click += new System.EventHandler(this.BuscarClientebutton_Click);
             // 
-            // BuscarProductobutton
+            // BuscarProteinabutton
             // 
-            this.BuscarProductobutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarProductobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarProductobutton.Location = new System.Drawing.Point(488, 77);
-            this.BuscarProductobutton.Name = "BuscarProductobutton";
-            this.BuscarProductobutton.Size = new System.Drawing.Size(33, 32);
-            this.BuscarProductobutton.TabIndex = 3;
-            this.BuscarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarProductobutton.UseVisualStyleBackColor = true;
-            this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
+            this.BuscarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarProteinabutton.Location = new System.Drawing.Point(488, 82);
+            this.BuscarProteinabutton.Name = "BuscarProteinabutton";
+            this.BuscarProteinabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarProteinabutton.TabIndex = 3;
+            this.BuscarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarProteinabutton.UseVisualStyleBackColor = true;
+            this.BuscarProteinabutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);
+            // 
+            // ProductoId
+            // 
+            this.ProductoId.HeaderText = "Codigo";
+            this.ProductoId.Name = "ProductoId";
+            this.ProductoId.Width = 50;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.Width = 150;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            this.Precio.Width = 80;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Width = 80;
+            // 
+            // ITBIS
+            // 
+            this.ITBIS.HeaderText = "ITBIS";
+            this.ITBIS.Name = "ITBIS";
+            this.ITBIS.Width = 80;
+            // 
+            // VentasdataGridView
+            // 
+            this.VentasdataGridView.AllowUserToAddRows = false;
+            this.VentasdataGridView.AllowUserToDeleteRows = false;
+            this.VentasdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.VentasdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Nombres,
+            this.Precios,
+            this.Cant,
+            this.ITBS,
+            this.Importe});
+            this.VentasdataGridView.Location = new System.Drawing.Point(27, 157);
+            this.VentasdataGridView.Name = "VentasdataGridView";
+            this.VentasdataGridView.ReadOnly = true;
+            this.VentasdataGridView.Size = new System.Drawing.Size(669, 225);
+            this.VentasdataGridView.TabIndex = 55;
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombre";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 125;
+            // 
+            // Precios
+            // 
+            this.Precios.HeaderText = "Precio";
+            this.Precios.Name = "Precios";
+            this.Precios.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Cantidad";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            // 
+            // ITBS
+            // 
+            this.ITBS.HeaderText = "ITBIS";
+            this.ITBS.Name = "ITBS";
+            this.ITBS.ReadOnly = true;
+            // 
+            // Importe
+            // 
+            this.Importe.HeaderText = "Importe";
+            this.Importe.Name = "Importe";
+            this.Importe.ReadOnly = true;
+            // 
+            // BuscarVentabutton
+            // 
+            this.BuscarVentabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarVentabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarVentabutton.Location = new System.Drawing.Point(215, 58);
+            this.BuscarVentabutton.Name = "BuscarVentabutton";
+            this.BuscarVentabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarVentabutton.TabIndex = 56;
+            this.BuscarVentabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarVentabutton.UseVisualStyleBackColor = true;
+            this.BuscarVentabutton.Click += new System.EventHandler(this.BuscarVentabutton_Click);
             // 
             // ProteinaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 439);
-            this.Controls.Add(this.BuscarProductobutton);
+            this.Controls.Add(this.BuscarVentabutton);
+            this.Controls.Add(this.VentasdataGridView);
+            this.Controls.Add(this.BuscarProteinabutton);
             this.Controls.Add(this.BuscarClientebutton);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.ProteinatextBox);
             this.Controls.Add(this.NombreClientetextBox);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.AgregarProductobutton);
+            this.Controls.Add(this.AgregarProteinabutton);
             this.Controls.Add(this.UsuariotextBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.Facturarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
-            this.Controls.Add(this.Subtotallabel);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label8);
@@ -458,8 +472,7 @@
             this.Controls.Add(this.Montolabel);
             this.Controls.Add(this.ITBISlabel);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.VentasdataGridView);
-            this.Controls.Add(this.CodigoProductotextBox);
+            this.Controls.Add(this.CodigoProteinatextBox);
             this.Controls.Add(this.CodigoClientetextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.CodigoVentatextBox);
@@ -479,8 +492,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Label Subtotallabel;
-        private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Label label8;
@@ -490,8 +501,7 @@
         private System.Windows.Forms.Label Montolabel;
         private System.Windows.Forms.Label ITBISlabel;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.DataGridView VentasdataGridView;
-        private System.Windows.Forms.TextBox CodigoProductotextBox;
+        private System.Windows.Forms.TextBox CodigoProteinatextBox;
         private System.Windows.Forms.TextBox CodigoClientetextBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox CodigoVentatextBox;
@@ -500,19 +510,25 @@
         private System.Windows.Forms.Button Facturarbutton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox UsuariotextBox;
-        private System.Windows.Forms.Button AgregarProductobutton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITBIS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Total;
+        private System.Windows.Forms.Button AgregarProteinabutton;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox NombreClientetextBox;
         private System.Windows.Forms.TextBox ProteinatextBox;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Button BuscarClientebutton;
-        private System.Windows.Forms.Button BuscarProductobutton;
+        private System.Windows.Forms.Button BuscarProteinabutton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductoId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITBIS;
+        private System.Windows.Forms.DataGridView VentasdataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ITBS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.Button BuscarVentabutton;
     }
 }

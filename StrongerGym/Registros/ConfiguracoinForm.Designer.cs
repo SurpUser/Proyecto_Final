@@ -39,7 +39,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -149,11 +153,39 @@
             this.Cancelarbutton.UseVisualStyleBackColor = true;
             this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ITBIStextBox);
+            this.groupBox2.Controls.Add(this.label1);
+            this.groupBox2.Location = new System.Drawing.Point(15, 115);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(165, 49);
+            this.groupBox2.TabIndex = 54;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Impuesto";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(10, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "ITBIS";
+            // 
+            // ITBIStextBox
+            // 
+            this.ITBIStextBox.Location = new System.Drawing.Point(50, 18);
+            this.ITBIStextBox.Name = "ITBIStextBox";
+            this.ITBIStextBox.Size = new System.Drawing.Size(100, 20);
+            this.ITBIStextBox.TabIndex = 1;
+            // 
             // ConfiguracoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 171);
+            this.ClientSize = new System.Drawing.Size(389, 173);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.groupBox1);
@@ -165,6 +197,8 @@
             this.Load += new System.EventHandler(this.Configuracoin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -181,5 +215,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Cancelarbutton;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox ITBIStextBox;
+        private System.Windows.Forms.Label label1;
     }
 }

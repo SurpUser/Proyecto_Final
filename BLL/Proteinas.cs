@@ -19,6 +19,7 @@ namespace BLL
         public string  Nombre { get; set; }
         public double Precio { get; set; }
         public double Costo { get; set; }
+        public int Cantidad { get; set; }
 
         public Proteinas()
         {
@@ -28,6 +29,7 @@ namespace BLL
             this.Nombre = ""; 
             this.Precio = 0.0;
             this.Costo = 0.0;
+            this.Cantidad = 0;
         }
 
         public Proteinas(int ProteinaID, int TiposProteinaId,string Nombreproteina, string Nombre, double Precio, double Costo)
@@ -40,9 +42,10 @@ namespace BLL
             this.Costo = Costo;
         }
 
-        public Proteinas(int Proteinaid)
+        public Proteinas(int ProteinaId,int Cantidad)
         {
             this.ProteinaId = ProteinaId;
+            this.Cantidad = Cantidad;
         }
 
         public override bool Insertar()
