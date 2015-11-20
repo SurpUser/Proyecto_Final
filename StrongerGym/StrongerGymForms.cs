@@ -51,8 +51,7 @@ namespace StrongerGym
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            this.Close();
-
+            Application.Exit();
         }
 
         private void registroUsuarioToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -71,11 +70,11 @@ namespace StrongerGym
 
         protected override void OnClosed(EventArgs e)
         {
-            DialogResult rs2 = MessageBox.Show("Desea Salir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (rs2 == DialogResult.Yes)
-            {
+            //DialogResult rs2 = MessageBox.Show("Desea Salir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if (rs2 == DialogResult.Yes)
+            //{
                 Application.Exit();
-            }
+            //}
         }
 
         private void generalToolStripMenuItem_Click(object sender, EventArgs e)

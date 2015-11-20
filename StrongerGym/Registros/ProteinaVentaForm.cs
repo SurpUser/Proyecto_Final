@@ -16,6 +16,7 @@ namespace StrongerGym.Registros
         Proteinas proteina = new Proteinas();
         Ventas venta = new Ventas();
         Clientes cliente = new Clientes();
+        Usuarios usuario = new Usuarios();
 
         int Cantida = 0;
         double monto = 0.0;
@@ -24,6 +25,7 @@ namespace StrongerGym.Registros
         public ProteinaVentaForm()
         {
             InitializeComponent();
+            UsuariotextBox.Text = usuario.IdUsuario.ToString();
         }
 
         private void VentasdataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +93,18 @@ namespace StrongerGym.Registros
             Subtotallabel.Text = "0.00";
         }
 
+        public bool LlenarDatos()
+        {
+            if (true)
+            {
+                for (int i = 0; i < VentasdataGridView.RowCount; i++)
+                {
+                    venta.AgregarProteinas((int)VentasdataGridView.Rows[i].Cells[0].Value);
+                }
+            }
+            return false;
+        }
+
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
@@ -104,6 +118,11 @@ namespace StrongerGym.Registros
         private void BuscarProductobutton_Click(object sender, EventArgs e)
         {
             BuscarProteina();
+        }
+
+        private void Guardarbutton_Click(object sender, EventArgs e)
+        {
+            LlenarDatos();
         }
     }
 }

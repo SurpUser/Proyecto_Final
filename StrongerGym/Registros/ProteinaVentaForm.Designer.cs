@@ -123,7 +123,7 @@
             this.CantidadProteinatextBox.Location = new System.Drawing.Point(596, 52);
             this.CantidadProteinatextBox.Name = "CantidadProteinatextBox";
             this.CantidadProteinatextBox.Size = new System.Drawing.Size(100, 20);
-            this.CantidadProteinatextBox.TabIndex = 38;
+            this.CantidadProteinatextBox.TabIndex = 4;
             // 
             // label7
             // 
@@ -247,14 +247,14 @@
             this.CodigoProductotextBox.Location = new System.Drawing.Point(382, 84);
             this.CodigoProductotextBox.Name = "CodigoProductotextBox";
             this.CodigoProductotextBox.Size = new System.Drawing.Size(100, 20);
-            this.CodigoProductotextBox.TabIndex = 29;
+            this.CodigoProductotextBox.TabIndex = 2;
             // 
             // CodigoClientetextBox
             // 
             this.CodigoClientetextBox.Location = new System.Drawing.Point(109, 90);
             this.CodigoClientetextBox.Name = "CodigoClientetextBox";
             this.CodigoClientetextBox.Size = new System.Drawing.Size(100, 20);
-            this.CodigoClientetextBox.TabIndex = 28;
+            this.CodigoClientetextBox.TabIndex = 0;
             // 
             // label3
             // 
@@ -315,7 +315,7 @@
             this.AgregarProductobutton.Location = new System.Drawing.Point(596, 108);
             this.AgregarProductobutton.Name = "AgregarProductobutton";
             this.AgregarProductobutton.Size = new System.Drawing.Size(85, 37);
-            this.AgregarProductobutton.TabIndex = 50;
+            this.AgregarProductobutton.TabIndex = 5;
             this.AgregarProductobutton.Text = "Agregar";
             this.AgregarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarProductobutton.UseVisualStyleBackColor = true;
@@ -328,7 +328,7 @@
             this.Facturarbutton.Location = new System.Drawing.Point(317, 388);
             this.Facturarbutton.Name = "Facturarbutton";
             this.Facturarbutton.Size = new System.Drawing.Size(86, 44);
-            this.Facturarbutton.TabIndex = 47;
+            this.Facturarbutton.TabIndex = 9;
             this.Facturarbutton.Text = "Facturar";
             this.Facturarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Facturarbutton.UseVisualStyleBackColor = true;
@@ -340,7 +340,7 @@
             this.Eliminarbutton.Location = new System.Drawing.Point(225, 388);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
-            this.Eliminarbutton.TabIndex = 46;
+            this.Eliminarbutton.TabIndex = 8;
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
@@ -352,7 +352,7 @@
             this.Nuevobutton.Location = new System.Drawing.Point(39, 388);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(80, 44);
-            this.Nuevobutton.TabIndex = 44;
+            this.Nuevobutton.TabIndex = 6;
             this.Nuevobutton.Text = "Nuevo";
             this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Nuevobutton.UseVisualStyleBackColor = true;
@@ -365,10 +365,11 @@
             this.Guardarbutton.Location = new System.Drawing.Point(129, 388);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(80, 44);
-            this.Guardarbutton.TabIndex = 45;
+            this.Guardarbutton.TabIndex = 7;
             this.Guardarbutton.Text = "Guardar";
             this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // label12
             // 
@@ -411,7 +412,7 @@
             this.BuscarClientebutton.Location = new System.Drawing.Point(215, 86);
             this.BuscarClientebutton.Name = "BuscarClientebutton";
             this.BuscarClientebutton.Size = new System.Drawing.Size(33, 32);
-            this.BuscarClientebutton.TabIndex = 55;
+            this.BuscarClientebutton.TabIndex = 1;
             this.BuscarClientebutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarClientebutton.UseVisualStyleBackColor = true;
             this.BuscarClientebutton.Click += new System.EventHandler(this.BuscarClientebutton_Click);
@@ -423,7 +424,7 @@
             this.BuscarProductobutton.Location = new System.Drawing.Point(488, 77);
             this.BuscarProductobutton.Name = "BuscarProductobutton";
             this.BuscarProductobutton.Size = new System.Drawing.Size(33, 32);
-            this.BuscarProductobutton.TabIndex = 56;
+            this.BuscarProductobutton.TabIndex = 3;
             this.BuscarProductobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarProductobutton.UseVisualStyleBackColor = true;
             this.BuscarProductobutton.Click += new System.EventHandler(this.BuscarProductobutton_Click);

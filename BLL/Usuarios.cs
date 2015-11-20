@@ -19,7 +19,7 @@ namespace BLL
 
         public Usuarios()
         {
-            IdUsuario = 0;
+            //IdUsuario = 0;
             Nombre = "";
             Contrasena = "";
             FechaInicio = "";
@@ -76,6 +76,7 @@ namespace BLL
                 dt = conexion.ObtenerDatos(String.Format("select UsuarioId from Usuarios where Nombre = '{0}' And Contrasena = '{1}'", this.Nombre, this.Contrasena));
                 if (dt.Rows.Count > 0)
                 {
+                    this.IdUsuario = (int)dt.Rows[0]["UsuarioId"];
                     return true;
                 }
                 else
