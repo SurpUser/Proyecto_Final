@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using StrongerGym.R;
 
 namespace StrongerGym.Registros
 {
@@ -27,7 +28,8 @@ namespace StrongerGym.Registros
         public ProteinaVentaForm()
         {
             InitializeComponent();
-            UsuariotextBox.Text = usuario.IdUsuario.ToString();
+            VentaUsuariotextBox.Text = LoginForm.NombreUsuario;
+
             itbis = Convert.ToDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"]);
             CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
             ITBISlabel.Text = itbis.ToString();
@@ -90,7 +92,7 @@ namespace StrongerGym.Registros
             CodigoClientetextBox.Clear();
             CodigoProteinatextBox.Clear();
             CantidadProteinatextBox.Clear();
-            UsuariotextBox.Clear();
+            VentaUsuariotextBox.Clear();
             Montolabel.Text = "0.00";
             CodigoClientetextBox.ReadOnly = false;
         }

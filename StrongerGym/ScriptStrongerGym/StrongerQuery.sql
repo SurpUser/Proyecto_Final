@@ -127,7 +127,7 @@ select * from VentasProteinas
 
 select vd.UsuarioId, vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad from VentasProteinas vd inner join 
 Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId
- where v.VentaId = 2;
+ where v.VentaId = 4;
 --select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
 --select * from TiposProteinas

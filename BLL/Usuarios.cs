@@ -19,7 +19,7 @@ namespace BLL
 
         public Usuarios()
         {
-            //IdUsuario = 0;
+            IdUsuario = 0;
             Nombre = "";
             Contrasena = "";
             FechaInicio = "";

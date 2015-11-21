@@ -16,6 +16,7 @@ namespace StrongerGym.R
     {
         int intentos = 0;
         Usuarios usuario = new Usuarios();
+        public static string NombreUsuario { get; set; }
         public LoginForm()
         {
             InitializeComponent();
@@ -37,6 +38,7 @@ namespace StrongerGym.R
                         sgf.registroUsuarioToolStripMenuItem.Visible = false;
                     }
                     sgf.Text = "StrongerGym [" + usuario.Nombre + "]";
+                    NombreUsuario = usuario.Nombre;
                     sgf.Show();
                 }
                 else
