@@ -68,6 +68,30 @@
     <Compile Include="Consultas\CarnetForm.Designer.cs">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\CiudadConsultarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\CiudadConsultarForm.Designer.cs">
+      <DependentUpon>CiudadConsultarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ProteinaConsultarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ProteinaConsultarForm.Designer.cs">
+      <DependentUpon>ProteinaConsultarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\ProveedoreConsultarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ProveedoreConsultarForm.Designer.cs">
+      <DependentUpon>ProveedoreConsultarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\TipoProteinaConsultarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\TipoProteinaConsultarForm.Designer.cs">
+      <DependentUpon>TipoProteinaConsultarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registros\CiudadRegistroForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,11 +104,11 @@
     <Compile Include="Registros\ConfiguracoinForm.Designer.cs">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Consultas\ConsultaUsuarioForm.cs">
+    <Compile Include="Consultas\UsuarioConsultarForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\ConsultaUsuarioForm.Designer.cs">
-      <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
+    <Compile Include="Consultas\UsuarioConsultarForm.Designer.cs">
+      <DependentUpon>UsuarioConsultarForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\HacerFotoForm.cs">
       <SubType>Form</SubType>
@@ -166,8 +190,8 @@
     <EmbeddedResource Include="Registros\ConfiguracoinForm.resx">
       <DependentUpon>ConfiguracoinForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Consultas\ConsultaUsuarioForm.resx">
-      <DependentUpon>ConsultaUsuarioForm.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\UsuarioConsultarForm.resx">
+      <DependentUpon>UsuarioConsultarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>

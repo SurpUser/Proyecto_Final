@@ -40,8 +40,10 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CompFiscaltextBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -131,7 +133,7 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(192, 120);
+            this.Guardarbutton.Location = new System.Drawing.Point(196, 170);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
             this.Guardarbutton.TabIndex = 53;
@@ -144,7 +146,7 @@
             // 
             this.Cancelarbutton.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
             this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelarbutton.Location = new System.Drawing.Point(283, 120);
+            this.Cancelarbutton.Location = new System.Drawing.Point(287, 170);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(90, 44);
             this.Cancelarbutton.TabIndex = 8;
@@ -155,36 +157,54 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.CompFiscaltextBox);
             this.groupBox2.Controls.Add(this.ITBIStextBox);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(15, 115);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 49);
+            this.groupBox2.Size = new System.Drawing.Size(358, 49);
             this.groupBox2.TabIndex = 54;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Impuesto";
+            this.groupBox2.Text = "Impuesto y Comprobante";
+            // 
+            // ITBIStextBox
+            // 
+            this.ITBIStextBox.Location = new System.Drawing.Point(53, 18);
+            this.ITBIStextBox.Name = "ITBIStextBox";
+            this.ITBIStextBox.Size = new System.Drawing.Size(100, 20);
+            this.ITBIStextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(10, 21);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(34, 13);
+            this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "ITBIS";
+            this.label1.Text = "ITBIS:";
             // 
-            // ITBIStextBox
+            // CompFiscaltextBox
             // 
-            this.ITBIStextBox.Location = new System.Drawing.Point(50, 18);
-            this.ITBIStextBox.Name = "ITBIStextBox";
-            this.ITBIStextBox.Size = new System.Drawing.Size(100, 20);
-            this.ITBIStextBox.TabIndex = 1;
+            this.CompFiscaltextBox.Location = new System.Drawing.Point(241, 17);
+            this.CompFiscaltextBox.Name = "CompFiscaltextBox";
+            this.CompFiscaltextBox.Size = new System.Drawing.Size(100, 20);
+            this.CompFiscaltextBox.TabIndex = 2;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(168, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "Comp. Fiscal:";
             // 
             // ConfiguracoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(389, 173);
+            this.ClientSize = new System.Drawing.Size(389, 223);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Guardarbutton);
@@ -218,5 +238,7 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox ITBIStextBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox CompFiscaltextBox;
     }
 }

@@ -166,5 +166,10 @@ namespace StrongerGym.Registros
         {
             CodigoVentatextBox.ReadOnly = false;
         }
+
+        private void Facturarbutton_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

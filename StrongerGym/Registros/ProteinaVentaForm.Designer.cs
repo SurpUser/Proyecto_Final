@@ -62,15 +62,15 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITBIS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VentasdataGridView = new System.Windows.Forms.DataGridView();
-            this.BuscarVentabutton = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ITBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BuscarVentabutton = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NCFtextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -250,6 +250,7 @@
             this.Facturarbutton.Text = "Facturar";
             this.Facturarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Facturarbutton.UseVisualStyleBackColor = true;
+            this.Facturarbutton.Click += new System.EventHandler(this.Facturarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -396,35 +397,6 @@
             this.VentasdataGridView.Size = new System.Drawing.Size(713, 225);
             this.VentasdataGridView.TabIndex = 55;
             // 
-            // BuscarVentabutton
-            // 
-            this.BuscarVentabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarVentabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarVentabutton.Location = new System.Drawing.Point(206, 57);
-            this.BuscarVentabutton.Name = "BuscarVentabutton";
-            this.BuscarVentabutton.Size = new System.Drawing.Size(33, 27);
-            this.BuscarVentabutton.TabIndex = 56;
-            this.BuscarVentabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarVentabutton.UseVisualStyleBackColor = true;
-            this.BuscarVentabutton.Click += new System.EventHandler(this.BuscarVentabutton_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(483, 64);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(28, 13);
-            this.label6.TabIndex = 57;
-            this.label6.Text = "NCF";
-            // 
-            // NCFtextBox
-            // 
-            this.NCFtextBox.Location = new System.Drawing.Point(535, 61);
-            this.NCFtextBox.Name = "NCFtextBox";
-            this.NCFtextBox.ReadOnly = true;
-            this.NCFtextBox.Size = new System.Drawing.Size(100, 20);
-            this.NCFtextBox.TabIndex = 58;
-            // 
             // Codigo
             // 
             this.Codigo.HeaderText = "Codigo";
@@ -462,6 +434,35 @@
             this.Importe.Name = "Importe";
             this.Importe.ReadOnly = true;
             this.Importe.Width = 120;
+            // 
+            // BuscarVentabutton
+            // 
+            this.BuscarVentabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarVentabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarVentabutton.Location = new System.Drawing.Point(206, 57);
+            this.BuscarVentabutton.Name = "BuscarVentabutton";
+            this.BuscarVentabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarVentabutton.TabIndex = 56;
+            this.BuscarVentabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarVentabutton.UseVisualStyleBackColor = true;
+            this.BuscarVentabutton.Click += new System.EventHandler(this.BuscarVentabutton_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(483, 64);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(28, 13);
+            this.label6.TabIndex = 57;
+            this.label6.Text = "NCF";
+            // 
+            // NCFtextBox
+            // 
+            this.NCFtextBox.Location = new System.Drawing.Point(535, 61);
+            this.NCFtextBox.Name = "NCFtextBox";
+            this.NCFtextBox.ReadOnly = true;
+            this.NCFtextBox.Size = new System.Drawing.Size(100, 20);
+            this.NCFtextBox.TabIndex = 58;
             // 
             // ProteinaVentaForm
             // 

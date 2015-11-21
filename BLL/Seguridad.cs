@@ -41,14 +41,14 @@ namespace BLL
 
         public static double ValidarIdDouble(string IdTextBox)
         {
-            double Id = 0;
+            double Id = 0.0;
             if (IdTextBox.Length > 0)
             {
                 bool result = Double.TryParse(IdTextBox, out Id);
             }
             else
             {
-                return 0;
+                return 0.0;
             }
             return Id;
         }

@@ -112,8 +112,11 @@ Dia int,
 Semana int,
 Mes int,
 Ano int,
-ITBIS float
+ITBIS float,
+ComprobanteFiscal varchar(20)
 );
+
+select * from Configuraciones
 
 select * from Usuarios
 
