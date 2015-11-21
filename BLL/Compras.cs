@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using BLL;
 
 namespace BLL
 {
@@ -19,14 +20,47 @@ namespace BLL
         public string NCF { get; set; }
         public string Fecha { get; set; }
         public int Cantidad { get; set; }
-       
+        public List<Proteinas> proteina { get; set; }
+
         ConexionDB conexion = new ConexionDB();
+
+        public Compras()
+        {
+            this.CompraId = 0;
+            this.ProveedorId = 0;
+            this.UsuarioId = 0;
+            this.ProteinaId = 0;
+            this.ITBS = 0.0;
+            this.Monto = 0.0;
+            this.NCF = "";
+            this.Fecha = "";
+            this.Cantidad = 0;
+            this.proteina = new List<Proteinas>();
+        }
+
+        public void AgregarProteinas(int ProteinaId, int Cantidad)
+        {
+            this.proteina.Add(new Proteinas(ProteinaId, Cantidad));
+        }
 
         public override bool Buscar(int IdBuscado)
         {
+            DataTable dt = new DataTable();
             try
             {
-                conexion.ObtenerDatos("");
+                dt = conexion.ObtenerDatos(string.Format("select * from Compras where CompraId = {0}", IdBuscado));
+
+                if (dt.Rows.Count > 0)
+                {
+                    this.ProveedorId = (int)dt.Rows[0]["ProveedorId"];
+                    this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
+                    this.ProteinaId = (int)dt.Rows[0]["ProteinaId"];
+                    this.ITBS = (double)dt.Rows[0]["ITBS"];
+                    this.Monto = (double)dt.Rows[0]["Monto"];                
+                    this.NCF = dt.Rows[0]["NCF"].ToString();
+                    this.Fecha = dt.Rows[0]["Fecha"].ToString();
+                    this.Cantidad = (int)dt.Rows[0]["Cantidad"];
+                }
             }
             catch (Exception e)
             {
@@ -41,7 +75,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format(""));
+                return conexion.Ejecutar(String.Format("update Compras set ProveedorId = {0}, ProteinaId = {1}, UsuarioId = {2}, ITBS = {3}, Monto = {4}, NCF = '{5}', Fecha = '{6}', Cantidad = {7} where CompraId = {8} ", this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad, this.CompraId));
             }
             catch (Exception e)
             {
@@ -53,7 +87,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format(""));
+                return conexion.Ejecutar(String.Format("delete from Compras where CompraId = {0}",this.CompraId));
             }
             catch (Exception e)
             {
@@ -66,7 +100,7 @@ namespace BLL
         {
             try
             {
-                return conexion.Ejecutar(String.Format(""));
+                return conexion.Ejecutar(String.Format("insert into Compras (ProveedorId, ProteinaId, UsuarioId, ITBS, Monto, NCF, Fecha, Cantidad) values ({0},{1},{2},{3},{4},'{5}','{6}',{7})",this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad));
             }
             catch (Exception e)
             {
@@ -80,7 +114,7 @@ namespace BLL
             DataTable dtCompras = new DataTable();
             try
             {
-               dtCompras = conexion.ObtenerDatos(String.Format(" select "+Campos +" from Compras where "+Condicion +""+Orden));
+               dtCompras = conexion.ObtenerDatos(String.Format("select " + Campos + " from Compras where " + Condicion + "" + Orden));
             }
             catch (Exception e)
             {
