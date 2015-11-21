@@ -14,8 +14,8 @@ namespace BLL
         public int ProveedorId { get; set; }
         public int UsuarioId { get; set; }
         public int ProteinaId { get; set; }
-        public float ITBS { get; set; }
-        public float Monto { get; set; }
+        public double ITBS { get; set; }
+        public double Monto { get; set; }
         public string NCF { get; set; }
         public string Fecha { get; set; }
         public int Cantidad { get; set; }

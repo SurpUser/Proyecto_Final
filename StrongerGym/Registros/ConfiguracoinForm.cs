@@ -35,7 +35,7 @@ namespace StrongerGym.R
                 MestextBox.Text = dt.Rows[0]["Mes"].ToString();
                 AnotextBox.Text = dt.Rows[0]["Ano"].ToString();
                 ITBIStextBox.Text = dt.Rows[0]["ITBIS"].ToString();
-                CompFiscaltextBox.Text = dt.Rows[0]["ComprobanteFiscal"].ToString();
+                NCFtextBox.Text = dt.Rows[0]["NCF"].ToString();
             }
             else
             {
@@ -51,7 +51,7 @@ namespace StrongerGym.R
             Configurar.Mes = Seguridad.ValidarIdEntero(MestextBox.Text);
             Configurar.Ano = Seguridad.ValidarIdEntero(AnotextBox.Text);
             Configurar.ITBIS = Seguridad.ValidarIdDouble(ITBIStextBox.Text);
-            Configurar.CompFiscal = CompFiscaltextBox.Text;
+            Configurar.NCF = NCFtextBox.Text;
             return true;
         }
 

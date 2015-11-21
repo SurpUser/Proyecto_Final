@@ -32,6 +32,7 @@ namespace StrongerGym.Registros
 
             itbis = Seguridad.ValidarIdDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"].ToString());
             CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
+            NCFtextBox.Text = configuracion.Listado("NCF","1=1","").Rows[0]["NCF"].ToString();
             ITBISlabel.Text = itbis.ToString();
         }
 
@@ -106,7 +107,7 @@ namespace StrongerGym.Registros
                 venta.ITBS = itbis;
                 venta.Fecha = FechadateTimePicker.Text;
                 venta.TotalVenta = Convert.ToDouble(Montolabel.Text);
-                venta.NCF = "12121212";
+                venta.NCF = NCFtextBox.Text;
             }
             return true;
         }

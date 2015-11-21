@@ -148,7 +148,7 @@
             this.ITBISlabel.Name = "ITBISlabel";
             this.ITBISlabel.Size = new System.Drawing.Size(32, 13);
             this.ITBISlabel.TabIndex = 32;
-            this.ITBISlabel.Text = "0.18";
+            this.ITBISlabel.Text = "0.00";
             // 
             // label4
             // 

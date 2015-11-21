@@ -40,10 +40,10 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.CompFiscaltextBox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -158,7 +158,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.CompFiscaltextBox);
+            this.groupBox2.Controls.Add(this.NCFtextBox);
             this.groupBox2.Controls.Add(this.ITBIStextBox);
             this.groupBox2.Controls.Add(this.label1);
             this.groupBox2.Location = new System.Drawing.Point(15, 115);
@@ -168,37 +168,37 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Impuesto y Comprobante";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(185, 21);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(31, 13);
+            this.label6.TabIndex = 3;
+            this.label6.Text = "NCF:";
+            // 
+            // NCFtextBox
+            // 
+            this.NCFtextBox.Location = new System.Drawing.Point(241, 18);
+            this.NCFtextBox.Name = "NCFtextBox";
+            this.NCFtextBox.Size = new System.Drawing.Size(92, 20);
+            this.NCFtextBox.TabIndex = 2;
+            // 
             // ITBIStextBox
             // 
-            this.ITBIStextBox.Location = new System.Drawing.Point(53, 18);
+            this.ITBIStextBox.Location = new System.Drawing.Point(80, 18);
             this.ITBIStextBox.Name = "ITBIStextBox";
-            this.ITBIStextBox.Size = new System.Drawing.Size(100, 20);
+            this.ITBIStextBox.Size = new System.Drawing.Size(85, 20);
             this.ITBIStextBox.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 21);
+            this.label1.Location = new System.Drawing.Point(15, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "ITBIS:";
-            // 
-            // CompFiscaltextBox
-            // 
-            this.CompFiscaltextBox.Location = new System.Drawing.Point(241, 17);
-            this.CompFiscaltextBox.Name = "CompFiscaltextBox";
-            this.CompFiscaltextBox.Size = new System.Drawing.Size(100, 20);
-            this.CompFiscaltextBox.TabIndex = 2;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(168, 21);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
-            this.label6.TabIndex = 3;
-            this.label6.Text = "Comp. Fiscal:";
             // 
             // ConfiguracoinForm
             // 
@@ -239,6 +239,6 @@
         private System.Windows.Forms.TextBox ITBIStextBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox CompFiscaltextBox;
+        private System.Windows.Forms.TextBox NCFtextBox;
     }
 }

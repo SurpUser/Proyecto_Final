@@ -113,9 +113,9 @@ Semana int,
 Mes int,
 Ano int,
 ITBIS float,
-ComprobanteFiscal varchar(20)
+NCF varchar(20)
 );
-
+drop table Configuraciones
 select * from Configuraciones
 
 select * from Usuarios
