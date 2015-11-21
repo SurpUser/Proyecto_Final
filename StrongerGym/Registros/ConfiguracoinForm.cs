@@ -43,31 +43,13 @@ namespace StrongerGym.R
 
         }
 
-        public int ConvertirEntero(string Textbox)
-        {
-            int Convertir = 0;
-
-            bool Resultado = Int32.TryParse(Textbox, out Convertir);
-
-            return Convertir;
-        }
-
-        public double ConvertirDouble(string Textbox)
-        {
-            double Convertir = 0.0;
-
-            bool Resultado = Double.TryParse(Textbox, out Convertir);
-
-            return Convertir;
-        }
-
         public bool LLenarDatos()
         {
-            Configurar.Dia = ConvertirEntero(DiatextBox.Text);
-            Configurar.Semana = ConvertirEntero(SemanatextBox.Text);
-            Configurar.Mes = ConvertirEntero(MestextBox.Text);
-            Configurar.Ano = ConvertirEntero(AnotextBox.Text);
-            Configurar.ITBIS = ConvertirDouble(ITBIStextBox.Text);
+            Configurar.Dia = Seguridad.ValidarIdEntero(DiatextBox.Text);
+            Configurar.Semana = Seguridad.ValidarIdEntero(SemanatextBox.Text);
+            Configurar.Mes = Seguridad.ValidarIdEntero(MestextBox.Text);
+            Configurar.Ano = Seguridad.ValidarIdEntero(AnotextBox.Text);
+            Configurar.ITBIS = Seguridad.ValidarIdDouble(ITBIStextBox.Text);
             return true;
         }
 

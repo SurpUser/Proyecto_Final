@@ -14,8 +14,6 @@ namespace StrongerGym.Registros
     public partial class TipoProteinaRegistroForm : Form
     {
         TiposProteinas TipoProteina;
-        int Convertir = 0;
-        bool Resultado;
 
         public TipoProteinaRegistroForm()
         {
@@ -38,11 +36,7 @@ namespace StrongerGym.Registros
         {
             if (TipoProteinaIdtextBox.Text.Length == 0)
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(TipoProteinaIdtextBox.Text, out Convertir);
-
-                TipoProteina.TipoProteinaId = Convertir;
+                TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
                 TipoProteina.Nombre = NombretextBox.Text;
 
@@ -59,11 +53,7 @@ namespace StrongerGym.Registros
             }
             else
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(TipoProteinaIdtextBox.Text, out Convertir);
-
-                TipoProteina.TipoProteinaId = Convertir;
+                TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
                 TipoProteina.Nombre = NombretextBox.Text;
 
@@ -84,11 +74,7 @@ namespace StrongerGym.Registros
         {
             try
             {
-                Convertir = 0;
-
-                Resultado = Int32.TryParse(TipoProteinaIdtextBox.Text, out Convertir);
-
-                TipoProteina.TipoProteinaId = Convertir;
+                TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
                 if (TipoProteina.Eliminar())
                 {
@@ -110,13 +96,9 @@ namespace StrongerGym.Registros
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            Convertir = 0;
-
             if (TipoProteinaIdtextBox.Text.Length > 0)
             {
-                Resultado = Int32.TryParse(TipoProteinaIdtextBox.Text, out Convertir);
-
-                if (TipoProteina.Buscar(Convertir))
+                if (TipoProteina.Buscar(Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text)))
                 {
                     NombretextBox.Text = TipoProteina.Nombre;
                 }

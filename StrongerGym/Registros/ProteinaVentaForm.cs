@@ -30,7 +30,7 @@ namespace StrongerGym.Registros
             InitializeComponent();
             VentaUsuariotextBox.Text = LoginForm.NombreUsuario;
 
-            itbis = Convert.ToDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"]);
+            itbis = Seguridad.ValidarIdDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"].ToString());
             CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
             ITBISlabel.Text = itbis.ToString();
         }
@@ -42,7 +42,7 @@ namespace StrongerGym.Registros
 
         public void BuscarProteina()
         {
-            proteina.ProteinaId = Seguridad.ValidarId(CodigoProteinatextBox.Text);
+            proteina.ProteinaId = Seguridad.ValidarIdEntero(CodigoProteinatextBox.Text);
             if (proteina.Buscar(proteina.ProteinaId))
             {
                 ProteinatextBox.Text = proteina.Nombre;
@@ -55,7 +55,7 @@ namespace StrongerGym.Registros
 
         public void BuscarCliente()
         {
-            if (cliente.Buscar(Seguridad.ValidarId(CodigoClientetextBox.Text)))
+            if (cliente.Buscar(Seguridad.ValidarIdEntero(CodigoClientetextBox.Text)))
             {
                 NombreClientetextBox.Text = cliente.Nombre;
             }
@@ -102,7 +102,7 @@ namespace StrongerGym.Registros
             if (true)
             {
                 venta.UsuarioId = 1;
-                venta.ClienteId = Seguridad.ValidarId(CodigoClientetextBox.Text);
+                venta.ClienteId = Seguridad.ValidarIdEntero(CodigoClientetextBox.Text);
                 venta.ITBS = itbis;
                 venta.Fecha = FechadateTimePicker.Text;
                 venta.TotalVenta = Convert.ToDouble(Montolabel.Text);
@@ -150,7 +150,7 @@ namespace StrongerGym.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            venta.VentaId = Seguridad.ValidarId(CodigoVentatextBox.Text);
+            venta.VentaId = Seguridad.ValidarIdEntero(CodigoVentatextBox.Text);
             if (venta.Eliminar())
             {
                 MessageBox.Show("Eliminado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);

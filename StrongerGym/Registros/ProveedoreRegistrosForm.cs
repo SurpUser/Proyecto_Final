@@ -110,9 +110,7 @@ namespace StrongerGym.Registros
                 }
                 else
                 {
-                    int id = 0;
-                    bool result = Int32.TryParse(ProveedorIdtextBox.Text, out id);
-                    proveedor.ProveedorId = id;
+                    proveedor.ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
 
                     if (GuardarProveedor())
                     {
@@ -146,11 +144,7 @@ namespace StrongerGym.Registros
             {
                 if (ProveedorIdtextBox.Text.Length != 0)
                 {
-
-
-                    int Id = 0;
-                    bool result = Int32.TryParse(ProveedorIdtextBox.Text, out Id);
-                    proveedor.ProveedorId = Id;
+                    proveedor.ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
                     if (proveedor.Eliminar())
                     {
                         MessageBox.Show("Proveedor Eliminaro", "Correcto");
@@ -177,9 +171,7 @@ namespace StrongerGym.Registros
         {
             if (ProveedorIdtextBox.Text.Length > 0)
             {
-                int id = 1;
-                bool result = Int32.TryParse(ProveedorIdtextBox.Text,out id);
-                int ProveedorId = id;
+                int ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
 
                 if (proveedor.Buscar(ProveedorId))
                 {

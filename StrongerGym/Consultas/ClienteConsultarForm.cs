@@ -50,13 +50,13 @@ namespace StrongerGym.R
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (cliente.Buscar(Seguridad.ValidarId(BuscartextBox.Text)))
+            if (cliente.Buscar(Seguridad.ValidarIdEntero(BuscartextBox.Text)))
             {
                 LlenarFormulario();
 
                 int Dias;
                 String[] resultado = cliente.Fecha.Split(new char[] { '/' });
-                Dias = IntervaloFecha(Convert.ToInt32(resultado[0]), Convert.ToInt32(resultado[1]), Convert.ToInt32(resultado[2]));
+                Dias = IntervaloFecha(Seguridad.ValidarIdEntero(resultado[0]), Seguridad.ValidarIdEntero(resultado[1]), Seguridad.ValidarIdEntero(resultado[2]));
                 if (Dias > 0)
                 {
                     MessageBox.Show(Dias + " Dias inactivo");

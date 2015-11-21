@@ -72,9 +72,9 @@ namespace StrongerGym.Registros
                 {
                     if (LlenarDatoCiudades())
                     {
-                        if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
+                        if (Seguridad.ValidarIdEntero(CiudadIdtextBox.Text) > 0)
                         {
-                            ciudad.CiudadId = Seguridad.ValidarId(CiudadIdtextBox.Text);
+                            ciudad.CiudadId = Seguridad.ValidarIdEntero(CiudadIdtextBox.Text);
                             if (ciudad.Editar())
                             {
                                 MessageBox.Show("Modificado Correctamente", "Correcto", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -103,9 +103,9 @@ namespace StrongerGym.Registros
         {
             try
             {
-                if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
+                if (Seguridad.ValidarIdEntero(CiudadIdtextBox.Text) > 0)
                 {
-                    ciudad.CiudadId = Seguridad.ValidarId(CiudadIdtextBox.Text);
+                    ciudad.CiudadId = Seguridad.ValidarIdEntero(CiudadIdtextBox.Text);
 
                     if (ciudad.Eliminar())
                     {
@@ -133,9 +133,9 @@ namespace StrongerGym.Registros
         {
             try
             {
-                if (Seguridad.ValidarId(CiudadIdtextBox.Text) > 0)
+                if (Seguridad.ValidarIdEntero(CiudadIdtextBox.Text) > 0)
                 {
-                    if (ciudad.Buscar(Seguridad.ValidarId(CiudadIdtextBox.Text)))
+                    if (ciudad.Buscar(Seguridad.ValidarIdEntero(CiudadIdtextBox.Text)))
                     {
                         NombretextBox.Text = ciudad.Nombre;
                     }

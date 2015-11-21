@@ -137,10 +137,10 @@ namespace StrongerGym.R
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (Seguridad.ValidarId(ClienteIdtextBox.Text) > 0)
+            if (Seguridad.ValidarIdEntero(ClienteIdtextBox.Text) > 0)
             {
 
-                if (cliente.Buscar(Seguridad.ValidarId(ClienteIdtextBox.Text)))
+                if (cliente.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
                 {
                     Guardarbutton.Image = Resources._1442108330_Modify;
                     Guardarbutton.Text = "Modificar";
@@ -202,7 +202,7 @@ namespace StrongerGym.R
         {
             try
             {
-                cliente.ClienteId = Seguridad.ValidarId(ClienteIdtextBox.Text);
+                cliente.ClienteId = Seguridad.ValidarIdEntero(ClienteIdtextBox.Text);
                 if (cliente.Eliminar())
                 {
                     MessageBox.Show("Eliminado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);

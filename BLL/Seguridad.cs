@@ -25,12 +25,26 @@ namespace BLL
             return result;
         }
 
-        public static int ValidarId(string IdTextBox)
+        public static int ValidarIdEntero(string IdTextBox)
         {
             int Id = 0;
             if (IdTextBox.Length > 0)
             {
                 bool result = Int32.TryParse(IdTextBox, out Id);
+            }
+            else
+            {
+                return 0;
+            }
+            return Id;
+        }
+
+        public static double ValidarIdDouble(string IdTextBox)
+        {
+            double Id = 0;
+            if (IdTextBox.Length > 0)
+            {
+                bool result = Double.TryParse(IdTextBox, out Id);
             }
             else
             {

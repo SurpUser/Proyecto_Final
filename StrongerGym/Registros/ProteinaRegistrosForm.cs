@@ -41,35 +41,17 @@ namespace StrongerGym.Registros
             Limpiar();
         }
 
-        public int ConvertirEntero(string Textbox)
-        {
-            int Convertir = 0;
-
-            bool Resultado = Int32.TryParse(Textbox, out Convertir);
-
-            return Convertir;
-        }
-
-        public double ConvertirDouble(string Textbox)
-        {
-            double Convertir = 0.0;
-
-            bool Resultado = Double.TryParse(Textbox, out Convertir);
-
-            return Convertir;
-        }
-
         public bool LlenarDatos()
         {
-            proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
+            proteina.ProteinaId = Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text);
 
             proteina.Nombre = NombretextBox.Text;
 
-            proteina.Precio = ConvertirDouble(PreciotextBox.Text);
+            proteina.Precio = Seguridad.ValidarIdDouble(PreciotextBox.Text);
 
             proteina.TiposProteinaId = (int)TipoProteinaIdcomboBox.SelectedValue;
 
-            proteina.Costo = ConvertirDouble(CostotextBox.Text);
+            proteina.Costo = Seguridad.ValidarIdDouble(CostotextBox.Text);
             return true;
         }
 
@@ -113,7 +95,7 @@ namespace StrongerGym.Registros
         {
             try
             {
-                proteina.ProteinaId = ConvertirEntero(ProteinaIdtextBox.Text);
+                proteina.ProteinaId = Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text);
 
                 if (proteina.Eliminar())
                 {
@@ -139,7 +121,7 @@ namespace StrongerGym.Registros
         {
             if (ProteinaIdtextBox.Text.Length > 0)
             {       
-                if (proteina.Buscar(ConvertirEntero(ProteinaIdtextBox.Text)))
+                if (proteina.Buscar(Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text)))
                 {
                     NombretextBox.Text = proteina.Nombre;
 

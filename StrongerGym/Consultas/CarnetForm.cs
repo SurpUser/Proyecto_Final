@@ -30,7 +30,7 @@ namespace StrongerGym.R
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (cliente.Buscar(Seguridad.ValidarId(CodigotextBox.Text)))
+            if (cliente.Buscar(Seguridad.ValidarIdEntero(CodigotextBox.Text)))
             {
                 LlenarForm();
             }

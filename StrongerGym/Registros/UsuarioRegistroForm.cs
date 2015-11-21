@@ -92,9 +92,7 @@ namespace StrongerGym.Recursos
             {
                 if (GuardarUsuario())
                 {
-                    int id = 0;
-                    bool result = Int32.TryParse(IdUsuariotextBox.Text, out id);
-                    usuario.IdUsuario = id;
+                    usuario.IdUsuario = Seguridad.ValidarIdEntero(IdUsuariotextBox.Text);
 
                     if (usuario.Editar())
                     {
@@ -122,10 +120,7 @@ namespace StrongerGym.Recursos
             
             if (IdUsuariotextBox.Text.Length > 0)
             {
-                int Id = 0;
-                bool result = Int32.TryParse(IdUsuariotextBox.Text, out Id);
-
-                if (usuario.Buscar(Id))
+                if (usuario.Buscar(Seguridad.ValidarIdEntero(IdUsuariotextBox.Text)))
                 {
                     NombretextBox.Text = usuario.Nombre;
                     FechaIniciomaskedTextBox.Text = usuario.FechaInicio;
@@ -146,7 +141,7 @@ namespace StrongerGym.Recursos
         {
             try
             {
-                usuario.IdUsuario = Convert.ToInt32(IdUsuariotextBox.Text);
+                usuario.IdUsuario = Seguridad.ValidarIdEntero(IdUsuariotextBox.Text);
                 if (usuario.Eliminar())
                 {
                     MessageBox.Show("Eliminado Correctamente.", "Eliminar");
