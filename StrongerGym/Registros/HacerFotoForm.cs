@@ -63,6 +63,12 @@ namespace StrongerGym.Registros
                 img.Dispose();
                 Confirmar = true;
             }
+            else
+            {
+                videoSourcePlayer1.SignalToStop();
+                this.Close();
+            }
+
             if (Confirmar)
             {
                 videoSourcePlayer1.SignalToStop();
@@ -71,7 +77,7 @@ namespace StrongerGym.Registros
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Iniciarbutton_Click(object sender, EventArgs e)
         {
             FuenteDeVideo = new VideoCaptureDevice(Dispositivos[CamarascomboBox.SelectedIndex].MonikerString);
             videoSourcePlayer1.VideoSource = FuenteDeVideo;

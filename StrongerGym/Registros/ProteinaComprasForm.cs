@@ -20,8 +20,7 @@ namespace StrongerGym.Registros
         Usuarios usuario = new Usuarios();
         Compras compra = new Compras();
 
-
-        int Cantida = 0;
+        int Cantidad = 0;
         double monto = 0.0;
         double itbis = 0.0;
 
@@ -64,9 +63,9 @@ namespace StrongerGym.Registros
         {
             Montolabel.Text = "";
             monto = 0.0;
-            Cantida = Convert.ToInt32(CantidadProteinatextBox.Text);
+            Cantidad = Convert.ToInt32(CantidadProteinatextBox.Text);
 
-            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Precio, Cantida, itbis, Cantida * proteina.Precio + (itbis * proteina.Precio));
+            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Precio, Cantidad, itbis, Cantidad * proteina.Precio + (itbis * proteina.Precio));
 
             for (int i = 0; i < ComprasdataGridView.RowCount; i++)
             {
@@ -112,12 +111,46 @@ namespace StrongerGym.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-
+            if (LlenarDatos())
+            {
+                for (int i = 0; i < ComprasdataGridView.RowCount; i++)
+                {
+                    compra.AgregarProteinas((int)ComprasdataGridView.Rows[i].Cells[0].Value, (int)ComprasdataGridView.Rows[i].Cells[3].Value);
+                }
+                if (compra.Insertar())
+                {
+                    MessageBox.Show("Guardado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Error al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
             AgregarProducto();
+        }
+
+        private void Eliminarbutton_Click(object sender, EventArgs e)
+        {
+            compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            if (compra.Eliminar())
+            {
+                MessageBox.Show("Eliminado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Error al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Nuevobutton_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 }
