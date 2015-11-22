@@ -98,15 +98,27 @@ namespace BLL
 
         public override bool Insertar()
         {
+            bool retorno = false;
+            StringBuilder comando = new StringBuilder();
             try
             {
-                return conexion.Ejecutar(String.Format("insert into Compras (ProveedorId, ProteinaId, UsuarioId, ITBS, Monto, NCF, Fecha, Cantidad) values ({0},{1},{2},{3},{4},'{5}','{6}',{7})",this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad));
+                retorno= conexion.Ejecutar(String.Format("insert into Compras (ProveedorId, ProteinaId, UsuarioId, ITBS, Monto, NCF, Fecha, Cantidad) values ({0},{1},{2},{3},{4},'{5}','{6}',{7})",this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad));
+                if (retorno)
+                {
+                    //retorno = conexion.Ejecutar(String.Format("delete from VentasProteinas where VentaId = {0}", this.VentaId));
+                    foreach (var pro in proteina)
+                    {
+                        //comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId, pro.Cantidad));
+                    }
+                    retorno = conexion.Ejecutar(comando.ToString());
+                }
             }
-            catch (Exception e)
+            catch (Exception )
             {
 
-                throw e;
+                retorno = false;
             }
+            return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)

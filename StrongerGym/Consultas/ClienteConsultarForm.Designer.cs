@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
             this.UltimoPagotextBox = new System.Windows.Forms.TextBox();
-            this.VencimientotextBox = new System.Windows.Forms.TextBox();
             this.PesotextBox = new System.Windows.Forms.TextBox();
             this.AlturatextBox = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -46,15 +44,17 @@
             this.labbel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.VencedateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.Aceptarbutton = new System.Windows.Forms.Button();
+            this.Montolabel = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
             this.CantidadtextBox = new System.Windows.Forms.TextBox();
             this.TiempocomboBox = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ModalidadcomboBox = new System.Windows.Forms.ComboBox();
-            this.CodigotextBox = new System.Windows.Forms.TextBox();
+            this.ClienteIdtextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.BuscarcomboBox = new System.Windows.Forms.ComboBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.CiudadtextBox = new System.Windows.Forms.TextBox();
@@ -64,26 +64,22 @@
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.ClientepictureBox = new System.Windows.Forms.PictureBox();
             this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Modificarbutton = new System.Windows.Forms.Button();
             this.Cancelarbutton = new System.Windows.Forms.Button();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.FechaMontodateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).BeginInit();
             this.SuspendLayout();
             // 
-            // BuscartextBox
-            // 
-            this.BuscartextBox.Location = new System.Drawing.Point(265, 28);
-            this.BuscartextBox.Name = "BuscartextBox";
-            this.BuscartextBox.Size = new System.Drawing.Size(414, 20);
-            this.BuscartextBox.TabIndex = 0;
-            // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(332, 86);
+            this.NombretextBox.Location = new System.Drawing.Point(339, 96);
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.ReadOnly = true;
             this.NombretextBox.Size = new System.Drawing.Size(231, 20);
@@ -91,7 +87,7 @@
             // 
             // DirecciontextBox
             // 
-            this.DirecciontextBox.Location = new System.Drawing.Point(332, 124);
+            this.DirecciontextBox.Location = new System.Drawing.Point(339, 134);
             this.DirecciontextBox.Name = "DirecciontextBox";
             this.DirecciontextBox.ReadOnly = true;
             this.DirecciontextBox.Size = new System.Drawing.Size(231, 20);
@@ -105,17 +101,9 @@
             this.UltimoPagotextBox.Size = new System.Drawing.Size(207, 20);
             this.UltimoPagotextBox.TabIndex = 3;
             // 
-            // VencimientotextBox
-            // 
-            this.VencimientotextBox.Location = new System.Drawing.Point(6, 106);
-            this.VencimientotextBox.Name = "VencimientotextBox";
-            this.VencimientotextBox.ReadOnly = true;
-            this.VencimientotextBox.Size = new System.Drawing.Size(222, 20);
-            this.VencimientotextBox.TabIndex = 3;
-            // 
             // PesotextBox
             // 
-            this.PesotextBox.Location = new System.Drawing.Point(373, 198);
+            this.PesotextBox.Location = new System.Drawing.Point(380, 208);
             this.PesotextBox.Name = "PesotextBox";
             this.PesotextBox.ReadOnly = true;
             this.PesotextBox.Size = new System.Drawing.Size(63, 20);
@@ -123,7 +111,7 @@
             // 
             // AlturatextBox
             // 
-            this.AlturatextBox.Location = new System.Drawing.Point(500, 198);
+            this.AlturatextBox.Location = new System.Drawing.Point(507, 208);
             this.AlturatextBox.Name = "AlturatextBox";
             this.AlturatextBox.ReadOnly = true;
             this.AlturatextBox.Size = new System.Drawing.Size(63, 20);
@@ -133,7 +121,7 @@
             // 
             this.groupBox1.Controls.Add(this.MasculinoradioButton);
             this.groupBox1.Controls.Add(this.FemeninaradioButton);
-            this.groupBox1.Location = new System.Drawing.Point(332, 234);
+            this.groupBox1.Location = new System.Drawing.Point(339, 244);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(231, 54);
             this.groupBox1.TabIndex = 4;
@@ -165,7 +153,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(332, 67);
+            this.label1.Location = new System.Drawing.Point(339, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 5;
@@ -174,7 +162,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(332, 151);
+            this.label2.Location = new System.Drawing.Point(339, 161);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 5;
@@ -183,7 +171,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(332, 109);
+            this.label3.Location = new System.Drawing.Point(339, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 5;
@@ -192,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(332, 201);
+            this.label4.Location = new System.Drawing.Point(339, 211);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 5;
@@ -201,7 +189,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(459, 201);
+            this.label5.Location = new System.Drawing.Point(466, 211);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(34, 13);
             this.label5.TabIndex = 5;
@@ -219,14 +207,18 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 90);
+            this.label7.Location = new System.Drawing.Point(6, 80);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 13);
+            this.label7.Size = new System.Drawing.Size(113, 13);
             this.label7.TabIndex = 5;
-            this.label7.Text = "Fecha de vencimiento";
+            this.label7.Text = "Fecha de Vencimiento";
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.VencedateTimePicker);
+            this.groupBox2.Controls.Add(this.Aceptarbutton);
+            this.groupBox2.Controls.Add(this.Montolabel);
+            this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.CantidadtextBox);
             this.groupBox2.Controls.Add(this.TiempocomboBox);
             this.groupBox2.Controls.Add(this.label12);
@@ -235,17 +227,56 @@
             this.groupBox2.Controls.Add(this.labbel);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.UltimoPagotextBox);
-            this.groupBox2.Controls.Add(this.VencimientotextBox);
-            this.groupBox2.Location = new System.Drawing.Point(335, 305);
+            this.groupBox2.Location = new System.Drawing.Point(342, 315);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(469, 154);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pago y Factura";
             // 
+            // VencedateTimePicker
+            // 
+            this.VencedateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.VencedateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.VencedateTimePicker.Location = new System.Drawing.Point(7, 96);
+            this.VencedateTimePicker.Name = "VencedateTimePicker";
+            this.VencedateTimePicker.Size = new System.Drawing.Size(222, 20);
+            this.VencedateTimePicker.TabIndex = 15;
+            // 
+            // Aceptarbutton
+            // 
+            this.Aceptarbutton.Location = new System.Drawing.Point(104, 124);
+            this.Aceptarbutton.Name = "Aceptarbutton";
+            this.Aceptarbutton.Size = new System.Drawing.Size(75, 23);
+            this.Aceptarbutton.TabIndex = 14;
+            this.Aceptarbutton.Text = "Aceptar";
+            this.Aceptarbutton.UseVisualStyleBackColor = true;
+            this.Aceptarbutton.Click += new System.EventHandler(this.Aceptarbutton_Click);
+            // 
+            // Montolabel
+            // 
+            this.Montolabel.AutoSize = true;
+            this.Montolabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Montolabel.ForeColor = System.Drawing.Color.Green;
+            this.Montolabel.Location = new System.Drawing.Point(313, 135);
+            this.Montolabel.Name = "Montolabel";
+            this.Montolabel.Size = new System.Drawing.Size(35, 15);
+            this.Montolabel.TabIndex = 13;
+            this.Montolabel.Text = "0.00";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(256, 135);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 15);
+            this.label15.TabIndex = 12;
+            this.label15.Text = "Monto:";
+            // 
             // CantidadtextBox
             // 
-            this.CantidadtextBox.Location = new System.Drawing.Point(256, 105);
+            this.CantidadtextBox.Location = new System.Drawing.Point(256, 96);
             this.CantidadtextBox.Name = "CantidadtextBox";
             this.CantidadtextBox.Size = new System.Drawing.Size(70, 20);
             this.CantidadtextBox.TabIndex = 11;
@@ -259,7 +290,7 @@
             "De Semanas",
             "De Mes",
             "De Anos"});
-            this.TiempocomboBox.Location = new System.Drawing.Point(338, 105);
+            this.TiempocomboBox.Location = new System.Drawing.Point(338, 96);
             this.TiempocomboBox.Name = "TiempocomboBox";
             this.TiempocomboBox.Size = new System.Drawing.Size(121, 21);
             this.TiempocomboBox.TabIndex = 10;
@@ -267,7 +298,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(256, 85);
+            this.label12.Location = new System.Drawing.Point(256, 76);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(49, 13);
             this.label12.TabIndex = 9;
@@ -295,49 +326,28 @@
             this.ModalidadcomboBox.Name = "ModalidadcomboBox";
             this.ModalidadcomboBox.Size = new System.Drawing.Size(223, 21);
             this.ModalidadcomboBox.TabIndex = 6;
+            this.ModalidadcomboBox.SelectedIndexChanged += new System.EventHandler(this.ModalidadcomboBox_SelectedIndexChanged);
             // 
-            // CodigotextBox
+            // ClienteIdtextBox
             // 
-            this.CodigotextBox.Location = new System.Drawing.Point(600, 86);
-            this.CodigotextBox.Name = "CodigotextBox";
-            this.CodigotextBox.ReadOnly = true;
-            this.CodigotextBox.Size = new System.Drawing.Size(194, 20);
-            this.CodigotextBox.TabIndex = 7;
+            this.ClienteIdtextBox.Location = new System.Drawing.Point(607, 96);
+            this.ClienteIdtextBox.Name = "ClienteIdtextBox";
+            this.ClienteIdtextBox.Size = new System.Drawing.Size(123, 20);
+            this.ClienteIdtextBox.TabIndex = 7;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(604, 67);
+            this.label8.Location = new System.Drawing.Point(604, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(40, 13);
             this.label8.TabIndex = 8;
             this.label8.Text = "Codigo";
             // 
-            // BuscarcomboBox
-            // 
-            this.BuscarcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.BuscarcomboBox.FormattingEnabled = true;
-            this.BuscarcomboBox.Items.AddRange(new object[] {
-            "Codigo",
-            "Nombre"});
-            this.BuscarcomboBox.Location = new System.Drawing.Point(112, 27);
-            this.BuscarcomboBox.Name = "BuscarcomboBox";
-            this.BuscarcomboBox.Size = new System.Drawing.Size(147, 21);
-            this.BuscarcomboBox.TabIndex = 9;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(44, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(62, 13);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Buscar Por:";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(604, 151);
+            this.label10.Location = new System.Drawing.Point(604, 161);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(39, 13);
             this.label10.TabIndex = 5;
@@ -346,7 +356,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(604, 109);
+            this.label11.Location = new System.Drawing.Point(604, 118);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(40, 13);
             this.label11.TabIndex = 12;
@@ -354,10 +364,10 @@
             // 
             // CiudadtextBox
             // 
-            this.CiudadtextBox.Location = new System.Drawing.Point(600, 124);
+            this.CiudadtextBox.Location = new System.Drawing.Point(607, 134);
             this.CiudadtextBox.Name = "CiudadtextBox";
             this.CiudadtextBox.ReadOnly = true;
-            this.CiudadtextBox.Size = new System.Drawing.Size(194, 20);
+            this.CiudadtextBox.Size = new System.Drawing.Size(198, 20);
             this.CiudadtextBox.TabIndex = 11;
             // 
             // ActivocheckBox
@@ -365,7 +375,7 @@
             this.ActivocheckBox.AutoSize = true;
             this.ActivocheckBox.Checked = true;
             this.ActivocheckBox.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.ActivocheckBox.Location = new System.Drawing.Point(600, 254);
+            this.ActivocheckBox.Location = new System.Drawing.Point(607, 304);
             this.ActivocheckBox.Name = "ActivocheckBox";
             this.ActivocheckBox.Size = new System.Drawing.Size(56, 17);
             this.ActivocheckBox.TabIndex = 14;
@@ -375,7 +385,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(604, 190);
+            this.label13.Location = new System.Drawing.Point(604, 208);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(93, 13);
             this.label13.TabIndex = 15;
@@ -385,7 +395,7 @@
             // 
             this.FechaNacimientodateTimePicker.CustomFormat = "dd/MM/yyyy";
             this.FechaNacimientodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.FechaNacimientodateTimePicker.Location = new System.Drawing.Point(600, 206);
+            this.FechaNacimientodateTimePicker.Location = new System.Drawing.Point(607, 229);
             this.FechaNacimientodateTimePicker.Name = "FechaNacimientodateTimePicker";
             this.FechaNacimientodateTimePicker.Size = new System.Drawing.Size(195, 20);
             this.FechaNacimientodateTimePicker.TabIndex = 16;
@@ -399,7 +409,7 @@
             this.ClientepictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientepictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.avatar;
             this.ClientepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientepictureBox.Location = new System.Drawing.Point(5, 67);
+            this.ClientepictureBox.Location = new System.Drawing.Point(12, 77);
             this.ClientepictureBox.Name = "ClientepictureBox";
             this.ClientepictureBox.Size = new System.Drawing.Size(321, 321);
             this.ClientepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -410,7 +420,7 @@
             // 
             this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
             this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(685, 21);
+            this.Buscarbutton.Location = new System.Drawing.Point(732, 89);
             this.Buscarbutton.Name = "Buscarbutton";
             this.Buscarbutton.Size = new System.Drawing.Size(73, 32);
             this.Buscarbutton.TabIndex = 56;
@@ -419,35 +429,11 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442105540_Gnome_Edit_Clear_32;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(5, 415);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(85, 44);
-            this.Nuevobutton.TabIndex = 57;
-            this.Nuevobutton.Text = "Limpiar";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            // 
-            // Modificarbutton
-            // 
-            this.Modificarbutton.Image = global::StrongerGym.Properties.Resources._1442108330_Modify;
-            this.Modificarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Modificarbutton.Location = new System.Drawing.Point(123, 415);
-            this.Modificarbutton.Name = "Modificarbutton";
-            this.Modificarbutton.Size = new System.Drawing.Size(85, 44);
-            this.Modificarbutton.TabIndex = 58;
-            this.Modificarbutton.Text = "Modificar";
-            this.Modificarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Modificarbutton.UseVisualStyleBackColor = true;
-            // 
             // Cancelarbutton
             // 
             this.Cancelarbutton.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
             this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelarbutton.Location = new System.Drawing.Point(241, 415);
+            this.Cancelarbutton.Location = new System.Drawing.Point(248, 425);
             this.Cancelarbutton.Name = "Cancelarbutton";
             this.Cancelarbutton.Size = new System.Drawing.Size(85, 44);
             this.Cancelarbutton.TabIndex = 59;
@@ -457,7 +443,7 @@
             // 
             // TelefonomaskedTextBox
             // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(332, 167);
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(339, 177);
             this.TelefonomaskedTextBox.Mask = "(999) 000-0000";
             this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
             this.TelefonomaskedTextBox.ReadOnly = true;
@@ -466,34 +452,89 @@
             // 
             // CelularmaskedTextBox
             // 
-            this.CelularmaskedTextBox.Location = new System.Drawing.Point(600, 167);
+            this.CelularmaskedTextBox.Location = new System.Drawing.Point(607, 177);
             this.CelularmaskedTextBox.Mask = "(999) 000-0000";
             this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
             this.CelularmaskedTextBox.ReadOnly = true;
-            this.CelularmaskedTextBox.Size = new System.Drawing.Size(194, 20);
+            this.CelularmaskedTextBox.Size = new System.Drawing.Size(198, 20);
             this.CelularmaskedTextBox.TabIndex = 61;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(320, 28);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(202, 24);
+            this.label9.TabIndex = 62;
+            this.label9.Text = "Consulta de Clientes";
+            // 
+            // FechaMontodateTimePicker
+            // 
+            this.FechaMontodateTimePicker.CustomFormat = "dd/MM/yyyy";
+            this.FechaMontodateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.FechaMontodateTimePicker.Location = new System.Drawing.Point(607, 278);
+            this.FechaMontodateTimePicker.Name = "FechaMontodateTimePicker";
+            this.FechaMontodateTimePicker.Size = new System.Drawing.Size(194, 20);
+            this.FechaMontodateTimePicker.TabIndex = 63;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(607, 256);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 13);
+            this.label14.TabIndex = 64;
+            this.label14.Text = "Fecha Monto";
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(125, 425);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
+            this.Guardarbutton.TabIndex = 65;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 425);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
+            this.Nuevobutton.TabIndex = 66;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
             // 
             // ConsultarForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 474);
+            this.Controls.Add(this.Nuevobutton);
+            this.Controls.Add(this.Guardarbutton);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.FechaMontodateTimePicker);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.CelularmaskedTextBox);
             this.Controls.Add(this.TelefonomaskedTextBox);
             this.Controls.Add(this.Cancelarbutton);
-            this.Controls.Add(this.Modificarbutton);
-            this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
+            this.Controls.Add(this.ActivocheckBox);
             this.Controls.Add(this.ClientepictureBox);
             this.Controls.Add(this.FechaNacimientodateTimePicker);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.ActivocheckBox);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.CiudadtextBox);
-            this.Controls.Add(this.label9);
-            this.Controls.Add(this.BuscarcomboBox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.CodigotextBox);
+            this.Controls.Add(this.ClienteIdtextBox);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -506,7 +547,6 @@
             this.Controls.Add(this.PesotextBox);
             this.Controls.Add(this.DirecciontextBox);
             this.Controls.Add(this.NombretextBox);
-            this.Controls.Add(this.BuscartextBox);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConsultarForm";
@@ -523,12 +563,9 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox BuscartextBox;
         private System.Windows.Forms.TextBox NombretextBox;
         private System.Windows.Forms.TextBox DirecciontextBox;
         private System.Windows.Forms.TextBox UltimoPagotextBox;
-        private System.Windows.Forms.TextBox VencimientotextBox;
         private System.Windows.Forms.TextBox PesotextBox;
         private System.Windows.Forms.TextBox AlturatextBox;
         private System.Windows.Forms.GroupBox groupBox1;
@@ -544,10 +581,8 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox ModalidadcomboBox;
-        private System.Windows.Forms.TextBox CodigotextBox;
+        private System.Windows.Forms.TextBox ClienteIdtextBox;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox BuscarcomboBox;
-        private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox CiudadtextBox;
@@ -560,10 +595,17 @@
         private System.Windows.Forms.TextBox CantidadtextBox;
         private System.Windows.Forms.ComboBox TiempocomboBox;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button Nuevobutton;
-        private System.Windows.Forms.Button Modificarbutton;
         private System.Windows.Forms.Button Cancelarbutton;
         private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CelularmaskedTextBox;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DateTimePicker FechaMontodateTimePicker;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Guardarbutton;
+        private System.Windows.Forms.Button Nuevobutton;
+        private System.Windows.Forms.Label Montolabel;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Button Aceptarbutton;
+        private System.Windows.Forms.DateTimePicker VencedateTimePicker;
     }
 }

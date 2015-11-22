@@ -51,8 +51,9 @@ go
 create table Cuotas(
 CuotaId int primary key identity(1,1),
 ClienteId int References Clientes(ClienteId),
-FechaCuota date,
-MontoCuota float
+FechaCuota varchar(11),
+MontoCuota float,
+FechaVence varchar(11)
 );
 go
 create table TiposProteinas(
@@ -127,6 +128,8 @@ select * from Proteinas
 select * from Ventas where VentaId = 10;
 
 select * from VentasProteinas
+
+select * from Cuotas
 
 select vd.UsuarioId, vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad from VentasProteinas vd inner join 
 Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId
