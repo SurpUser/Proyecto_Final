@@ -47,7 +47,7 @@ namespace StrongerGym.Recursos
                     MessageBox.Show("No hay Usuarios registradas.");
                 }
             }
-            Cantidadtextbox.Text = "Cantidad de Usuario: "+ConsultadataGridView.RowCount.ToString();
+            Cantidadlabelbox.Text = "Cantidad de Usuario: "+ConsultadataGridView.RowCount.ToString();
         }
     }
 }

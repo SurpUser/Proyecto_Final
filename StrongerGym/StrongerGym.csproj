@@ -74,6 +74,12 @@
     <Compile Include="Consultas\CiudadConsultarForm.Designer.cs">
       <DependentUpon>CiudadConsultarForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Consultas\ClienteNombreConsultarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\ClienteNombreConsultarForm.Designer.cs">
+      <DependentUpon>ClienteNombreConsultarForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Consultas\ProteinaConsultarForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\CiudadConsultarForm.resx">
       <DependentUpon>CiudadConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ClienteNombreConsultarForm.resx">
+      <DependentUpon>ClienteNombreConsultarForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\ProteinaConsultarForm.resx">
       <DependentUpon>ProteinaConsultarForm.cs</DependentUpon>

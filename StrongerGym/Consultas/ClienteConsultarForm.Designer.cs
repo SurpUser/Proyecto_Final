@@ -62,16 +62,16 @@
             this.label13 = new System.Windows.Forms.Label();
             this.FechaNacimientodateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.ClientepictureBox = new System.Windows.Forms.PictureBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Cancelarbutton = new System.Windows.Forms.Button();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.FechaMontodateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label14 = new System.Windows.Forms.Label();
-            this.Guardarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Cancelarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.ClientepictureBox = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).BeginInit();
@@ -404,43 +404,6 @@
             // 
             this.openFileDialog2.FileName = "openFileDialog2";
             // 
-            // ClientepictureBox
-            // 
-            this.ClientepictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientepictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.avatar;
-            this.ClientepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientepictureBox.Location = new System.Drawing.Point(12, 77);
-            this.ClientepictureBox.Name = "ClientepictureBox";
-            this.ClientepictureBox.Size = new System.Drawing.Size(321, 321);
-            this.ClientepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ClientepictureBox.TabIndex = 53;
-            this.ClientepictureBox.TabStop = false;
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(732, 89);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(73, 32);
-            this.Buscarbutton.TabIndex = 56;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // Cancelarbutton
-            // 
-            this.Cancelarbutton.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
-            this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Cancelarbutton.Location = new System.Drawing.Point(248, 425);
-            this.Cancelarbutton.Name = "Cancelarbutton";
-            this.Cancelarbutton.Size = new System.Drawing.Size(85, 44);
-            this.Cancelarbutton.TabIndex = 59;
-            this.Cancelarbutton.Text = "Cancelar";
-            this.Cancelarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Cancelarbutton.UseVisualStyleBackColor = true;
-            // 
             // TelefonomaskedTextBox
             // 
             this.TelefonomaskedTextBox.Location = new System.Drawing.Point(339, 177);
@@ -463,7 +426,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(320, 28);
+            this.label9.Location = new System.Drawing.Point(319, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(202, 24);
             this.label9.TabIndex = 62;
@@ -487,6 +450,19 @@
             this.label14.TabIndex = 64;
             this.label14.Text = "Fecha Monto";
             // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(12, 425);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
+            this.Nuevobutton.TabIndex = 66;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
             // Guardarbutton
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
@@ -500,18 +476,42 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
-            // Nuevobutton
+            // Cancelarbutton
             // 
-            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(12, 425);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
-            this.Nuevobutton.TabIndex = 66;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            this.Cancelarbutton.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
+            this.Cancelarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Cancelarbutton.Location = new System.Drawing.Point(248, 425);
+            this.Cancelarbutton.Name = "Cancelarbutton";
+            this.Cancelarbutton.Size = new System.Drawing.Size(85, 44);
+            this.Cancelarbutton.TabIndex = 59;
+            this.Cancelarbutton.Text = "Cancelar";
+            this.Cancelarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Cancelarbutton.UseVisualStyleBackColor = true;
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(732, 89);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(73, 32);
+            this.Buscarbutton.TabIndex = 56;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
+            // ClientepictureBox
+            // 
+            this.ClientepictureBox.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.ClientepictureBox.BackgroundImage = global::StrongerGym.Properties.Resources.avatar;
+            this.ClientepictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.ClientepictureBox.Location = new System.Drawing.Point(12, 77);
+            this.ClientepictureBox.Name = "ClientepictureBox";
+            this.ClientepictureBox.Size = new System.Drawing.Size(321, 321);
+            this.ClientepictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ClientepictureBox.TabIndex = 53;
+            this.ClientepictureBox.TabStop = false;
             // 
             // ConsultarForm
             // 

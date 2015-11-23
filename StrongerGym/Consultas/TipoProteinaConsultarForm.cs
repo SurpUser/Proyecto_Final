@@ -36,7 +36,7 @@ namespace StrongerGym.Consultas
                 }
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Usuarios registradas.");
+                    MessageBox.Show("No hay Tipos de Proteinas registradas.");
                 }
 
             }
@@ -46,10 +46,10 @@ namespace StrongerGym.Consultas
                 ConsultadataGridView.DataSource = TipoProteina.Listado(" * ", " 1=1 ", "");
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Usuarios registradas.");
+                    MessageBox.Show("No hay Tipos de Proteinas registradas.");
                 }
             }
-            Cantidadtextbox.Text = "Cantidad de Usuario: " + ConsultadataGridView.RowCount.ToString();
+            Cantidadlabelbox.Text = "Cantidad de Tipos de Proteina: " + ConsultadataGridView.RowCount.ToString();
         }
     }
 }

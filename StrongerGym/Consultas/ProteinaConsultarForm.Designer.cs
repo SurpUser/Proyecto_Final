@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Cantidadtextbox = new System.Windows.Forms.Label();
+            this.Cantidadlabelbox = new System.Windows.Forms.Label();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
             this.BucarcomboBox = new System.Windows.Forms.ComboBox();
@@ -37,14 +37,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
-            // Cantidadtextbox
+            // Cantidadlabelbox
             // 
-            this.Cantidadtextbox.AutoSize = true;
-            this.Cantidadtextbox.Location = new System.Drawing.Point(421, 360);
-            this.Cantidadtextbox.Name = "Cantidadtextbox";
-            this.Cantidadtextbox.Size = new System.Drawing.Size(114, 13);
-            this.Cantidadtextbox.TabIndex = 17;
-            this.Cantidadtextbox.Text = "Cantidad de Proteinas:";
+            this.Cantidadlabelbox.AutoSize = true;
+            this.Cantidadlabelbox.Location = new System.Drawing.Point(421, 360);
+            this.Cantidadlabelbox.Name = "Cantidadlabelbox";
+            this.Cantidadlabelbox.Size = new System.Drawing.Size(114, 13);
+            this.Cantidadlabelbox.TabIndex = 17;
+            this.Cantidadlabelbox.Text = "Cantidad de Proteinas:";
             // 
             // ConsultadataGridView
             // 
@@ -103,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(578, 382);
-            this.Controls.Add(this.Cantidadtextbox);
+            this.Controls.Add(this.Cantidadlabelbox);
             this.Controls.Add(this.ConsultadataGridView);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.BuscartextBox);
@@ -119,7 +119,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Cantidadtextbox;
+        private System.Windows.Forms.Label Cantidadlabelbox;
         private System.Windows.Forms.DataGridView ConsultadataGridView;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox BuscartextBox;

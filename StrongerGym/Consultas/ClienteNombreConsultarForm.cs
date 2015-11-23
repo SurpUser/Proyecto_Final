@@ -11,11 +11,11 @@ using BLL;
 
 namespace StrongerGym.Consultas
 {
-    public partial class ProteinaConsultarForm : Form
+    public partial class ClienteNombreConsultarForm : Form
     {
-        Proteinas Proteina = new Proteinas();
+        Clientes Cliente = new Clientes();
 
-        public ProteinaConsultarForm()
+        public ClienteNombreConsultarForm()
         {
             InitializeComponent();
             BucarcomboBox.SelectedIndex = 0;
@@ -28,27 +28,27 @@ namespace StrongerGym.Consultas
                 string Dato = BuscartextBox.Text;
                 if (BucarcomboBox.Text == "Por Nombre")
                 {
-                    ConsultadataGridView.DataSource = Proteina.Listado(" * ", " Nombre like '" + BuscartextBox.Text + "%'", "");
+                    ConsultadataGridView.DataSource = Cliente.Listado(" * ", "Nombre like '" + BuscartextBox.Text + "%'", "");
                 }
-                if (BucarcomboBox.Text == "Por Id de Proteinas")
+                if (BucarcomboBox.Text == "Por Id de Clientes")
                 {
-                    ConsultadataGridView.DataSource = Proteina.Listado(" * ", " ProteinaId = " + BuscartextBox.Text, "");
+                    ConsultadataGridView.DataSource = Cliente.Listado(" * ", " ClienteId = " + BuscartextBox.Text, "");
                 }
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Proteinas registradas.");
+                    MessageBox.Show("No hay Clientes registradas.");
                 }
 
             }
             if (BucarcomboBox.Text == "Todo")
             {
-                ConsultadataGridView.DataSource = Proteina.Listado(" * ", " 1=1 ", "");
+                ConsultadataGridView.DataSource = Cliente.Listado(" * ", " 1=1 ", "");
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Proteinas registradas.");
+                    MessageBox.Show("No hay Clientes registradas.");
                 }
             }
-            Cantidadlabelbox.Text = "Cantidad de Proteinas: " + ConsultadataGridView.RowCount.ToString();
+            Cantidadlabelbox.Text = "Cantidad de Clientes: " + ConsultadataGridView.RowCount.ToString();
         }
     }
 }

@@ -36,7 +36,7 @@ namespace StrongerGym.Consultas
                 }
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Usuarios registradas.");
+                    MessageBox.Show("No hay Proveedores registradas.");
                 }
 
             }
@@ -45,10 +45,10 @@ namespace StrongerGym.Consultas
                 ConsultadataGridView.DataSource = Proveedore.Listado(" * ", " 1=1 ", "");
                 if (ConsultadataGridView.Rows.Count == 0)
                 {
-                    MessageBox.Show("No hay Usuarios registradas.");
+                    MessageBox.Show("No hay Proveedores registradas.");
                 }
             }
-            Cantidadtextbox.Text = "Cantidad de Proveedores: " + ConsultadataGridView.RowCount.ToString();
+            Cantidadlabelbox.Text = "Cantidad de Proveedores: " + ConsultadataGridView.RowCount.ToString();
         }
     }
 }
