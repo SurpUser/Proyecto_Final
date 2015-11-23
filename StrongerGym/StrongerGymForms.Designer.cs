@@ -136,6 +136,7 @@
             this.consultaToolStripMenuItem1.Name = "consultaToolStripMenuItem1";
             this.consultaToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem1.Text = "Consulta";
+            this.consultaToolStripMenuItem1.Click += new System.EventHandler(this.consultaToolStripMenuItem1_Click);
             // 
             // compraToolStripMenuItem
             // 
@@ -167,7 +168,7 @@
             // 
             this.registroToolStripMenuItem2.Image = global::StrongerGym.Properties.Resources.edit_tasks_128;
             this.registroToolStripMenuItem2.Name = "registroToolStripMenuItem2";
-            this.registroToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.registroToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.registroToolStripMenuItem2.Text = "Registro";
             this.registroToolStripMenuItem2.Click += new System.EventHandler(this.registroToolStripMenuItem2_Click);
             // 
@@ -175,8 +176,9 @@
             // 
             this.consultaToolStripMenuItem2.Image = global::StrongerGym.Properties.Resources.Preview;
             this.consultaToolStripMenuItem2.Name = "consultaToolStripMenuItem2";
-            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem2.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem2.Text = "Consulta";
+            this.consultaToolStripMenuItem2.Click += new System.EventHandler(this.consultaToolStripMenuItem2_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -192,7 +194,7 @@
             // 
             this.registroToolStripMenuItem3.Image = global::StrongerGym.Properties.Resources.edit_tasks_128;
             this.registroToolStripMenuItem3.Name = "registroToolStripMenuItem3";
-            this.registroToolStripMenuItem3.Size = new System.Drawing.Size(121, 22);
+            this.registroToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.registroToolStripMenuItem3.Text = "Registro";
             this.registroToolStripMenuItem3.Click += new System.EventHandler(this.registroToolStripMenuItem3_Click);
             // 
@@ -200,8 +202,9 @@
             // 
             this.consultaToolStripMenuItem3.Image = global::StrongerGym.Properties.Resources.Preview;
             this.consultaToolStripMenuItem3.Name = "consultaToolStripMenuItem3";
-            this.consultaToolStripMenuItem3.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem3.Text = "Consulta";
+            this.consultaToolStripMenuItem3.Click += new System.EventHandler(this.consultaToolStripMenuItem3_Click);
             // 
             // ciudadesToolStripMenuItem
             // 
@@ -217,7 +220,7 @@
             // 
             this.registroToolStripMenuItem.Image = global::StrongerGym.Properties.Resources.edit_tasks_128;
             this.registroToolStripMenuItem.Name = "registroToolStripMenuItem";
-            this.registroToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
+            this.registroToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.registroToolStripMenuItem.Text = "Registro";
             this.registroToolStripMenuItem.Click += new System.EventHandler(this.registroToolStripMenuItem_Click);
             // 
@@ -225,8 +228,9 @@
             // 
             this.consultaToolStripMenuItem4.Image = global::StrongerGym.Properties.Resources.Preview;
             this.consultaToolStripMenuItem4.Name = "consultaToolStripMenuItem4";
-            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(121, 22);
+            this.consultaToolStripMenuItem4.Size = new System.Drawing.Size(152, 22);
             this.consultaToolStripMenuItem4.Text = "Consulta";
+            this.consultaToolStripMenuItem4.Click += new System.EventHandler(this.consultaToolStripMenuItem4_Click);
             // 
             // salirToolStripMenuItem
             // 

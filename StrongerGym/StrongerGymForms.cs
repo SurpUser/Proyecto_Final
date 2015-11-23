@@ -134,5 +134,33 @@ namespace StrongerGym
             venta.MdiParent = this;
             venta.Show();
         }
+
+        private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ProteinaConsultarForm Proteinaconsultar = new ProteinaConsultarForm();
+            Proteinaconsultar.MdiParent = this;
+            Proteinaconsultar.Show();
+        }
+
+        private void consultaToolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            TipoProteinaConsultarForm TiposProteinaconsultar = new TipoProteinaConsultarForm();
+            TiposProteinaconsultar.MdiParent = this;
+            TiposProteinaconsultar.Show();
+        }
+
+        private void consultaToolStripMenuItem3_Click(object sender, EventArgs e)
+        {
+            ProveedoreConsultarForm Proveedorconsultar = new ProveedoreConsultarForm();
+            Proveedorconsultar.MdiParent = this;
+            Proveedorconsultar.Show();
+        }
+
+        private void consultaToolStripMenuItem4_Click(object sender, EventArgs e)
+        {
+            CiudadConsultarForm Ciudadconsultar = new CiudadConsultarForm();
+            Ciudadconsultar.MdiParent = this;
+            Ciudadconsultar.Show();
+        }
     }
 }
