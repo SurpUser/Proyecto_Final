@@ -31,9 +31,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.BucarcomboBox = new System.Windows.Forms.ComboBox();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.ConsultadataGridView = new System.Windows.Forms.DataGridView();
             this.Cantidadtextbox = new System.Windows.Forms.Label();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +54,7 @@
             this.BucarcomboBox.Items.AddRange(new object[] {
             "Todo",
             "Por Nombre",
-            "Por IdUsuario"});
+            "Por Id de Usuarios"});
             this.BucarcomboBox.Location = new System.Drawing.Point(129, 80);
             this.BucarcomboBox.Name = "BucarcomboBox";
             this.BucarcomboBox.Size = new System.Drawing.Size(116, 21);
@@ -66,19 +66,6 @@
             this.BuscartextBox.Name = "BuscartextBox";
             this.BuscartextBox.Size = new System.Drawing.Size(181, 20);
             this.BuscartextBox.TabIndex = 2;
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(471, 74);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(68, 29);
-            this.Buscarbutton.TabIndex = 3;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ConsultadataGridView
             // 
@@ -97,6 +84,19 @@
             this.Cantidadtextbox.Size = new System.Drawing.Size(106, 13);
             this.Cantidadtextbox.TabIndex = 5;
             this.Cantidadtextbox.Text = "Cantidad de Usuario:";
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(471, 74);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(68, 29);
+            this.Buscarbutton.TabIndex = 3;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // ConsultaUsuarioForm
             // 

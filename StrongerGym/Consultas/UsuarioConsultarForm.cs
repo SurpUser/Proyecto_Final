@@ -29,9 +29,9 @@ namespace StrongerGym.Recursos
                 {
                     ConsultadataGridView.DataSource = usuario.Listado(" * ", "Nombre like '" + BuscartextBox.Text + "%'", "");
                 }
-                if (BucarcomboBox.Text == "Por IdUsuario")
+                if (BucarcomboBox.Text == "Por Id de Usuarios")
                 {
-                    ConsultadataGridView.DataSource = usuario.Listado(" * ", "UsuarioId = "+BuscartextBox.Text, "");
+                    ConsultadataGridView.DataSource = usuario.Listado(" * ", " UsuarioId = "+BuscartextBox.Text, "");
                 }
                 if (ConsultadataGridView.Rows.Count == 0)
                 {

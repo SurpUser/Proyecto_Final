@@ -184,6 +184,18 @@
     <EmbeddedResource Include="Consultas\CarnetForm.resx">
       <DependentUpon>CarnetForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\CiudadConsultarForm.resx">
+      <DependentUpon>CiudadConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ProteinaConsultarForm.resx">
+      <DependentUpon>ProteinaConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\ProveedoreConsultarForm.resx">
+      <DependentUpon>ProveedoreConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\TipoProteinaConsultarForm.resx">
+      <DependentUpon>TipoProteinaConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registros\CiudadRegistroForm.resx">
       <DependentUpon>CiudadRegistroForm.cs</DependentUpon>
     </EmbeddedResource>
