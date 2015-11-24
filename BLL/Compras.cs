@@ -104,7 +104,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("delete from Compras where CompraId = {0}",this.CompraId));
+                retorno = conexion.Ejecutar(String.Format("delete from Compras where CompraId = {0};"+ "delete from ComprasProteinas where CompraId = {0}", this.CompraId));
             }
             catch (Exception)
             {
