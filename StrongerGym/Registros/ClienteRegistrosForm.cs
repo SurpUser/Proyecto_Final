@@ -26,6 +26,7 @@ namespace StrongerGym.R
 
         public void Limpiar()
         {
+            ClienteerrorProvider.Clear();
             ClienteIdtextBox.Clear();
             NombretextBox.Clear();
             DirecciontextBox.Clear();
@@ -189,7 +190,7 @@ namespace StrongerGym.R
         {
             if (Seguridad.ValidarIdEntero(ClienteIdtextBox.Text) > 0)
             {
-
+                ClienteerrorProvider.Clear();
                 if (cliente.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
                 {
                     Guardarbutton.Image = Resources._1442108330_Modify;

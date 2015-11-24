@@ -140,6 +140,8 @@ Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.P
 
 --select * from TiposProteinas
 
+delete from TiposProteinas where TipoProteinaId = 3
+
 --select * from Proveedores
 
 --select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;

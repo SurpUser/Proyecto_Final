@@ -41,6 +41,7 @@ namespace StrongerGym.Recursos
             ContrasenatextBox.Clear();
             FechaIniciomaskedTextBox.Clear();
             AreacomboBox.SelectedIndex = 0;
+            UsuarioerrorProvider.Clear();
         }
 
         public bool LLenarDatos()

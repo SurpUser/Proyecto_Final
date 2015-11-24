@@ -23,6 +23,7 @@ namespace StrongerGym.Registros
         public void Limpiar()
         {
             CiudadIdtextBox.Clear();
+            CiudaderrorProvider.Clear();
             NombretextBox.Clear();
         }
 

@@ -23,6 +23,7 @@ namespace StrongerGym.Registros
 
         public void Limpiar()
         {
+            TipoProteinaerrorProvider.Clear();
             TipoProteinaIdtextBox.Clear();
             NombretextBox.Clear();
         }

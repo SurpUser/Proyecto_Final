@@ -29,6 +29,7 @@ namespace StrongerGym.Registros
 
         public void Limpiar()
         {
+            ProteinaerrorProvider.Clear();
             ProteinaIdtextBox.Clear();
             NombretextBox.Clear();
             PreciotextBox.Clear();
