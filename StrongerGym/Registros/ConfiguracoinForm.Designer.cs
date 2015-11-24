@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AnotextBox = new System.Windows.Forms.TextBox();
             this.MestextBox = new System.Windows.Forms.TextBox();
@@ -44,8 +45,10 @@
             this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.ITBIStextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.ConfiguracionerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfiguracionerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -200,6 +203,10 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ITBIS:";
             // 
+            // ConfiguracionerrorProvider
+            // 
+            this.ConfiguracionerrorProvider.ContainerControl = this;
+            // 
             // ConfiguracoinForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,11 +221,11 @@
             this.Name = "ConfiguracoinForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configuracoin";
-            this.Load += new System.EventHandler(this.Configuracoin_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ConfiguracionerrorProvider)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -240,5 +247,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox NCFtextBox;
+        private System.Windows.Forms.ErrorProvider ConfiguracionerrorProvider;
     }
 }

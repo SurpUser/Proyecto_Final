@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.ProveedorIdtextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -51,7 +52,9 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.ProveedorerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -269,11 +272,15 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
+            // ProveedorerrorProvider
+            // 
+            this.ProveedorerrorProvider.ContainerControl = this;
+            // 
             // ProveedoreRegistrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(652, 348);
+            this.ClientSize = new System.Drawing.Size(661, 348);
             this.Controls.Add(this.CiudadescomboBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.EmailtextBox);
@@ -303,6 +310,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegistroProveedoresForm";
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProveedorerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,5 +341,6 @@
         private System.Windows.Forms.TextBox EmailtextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox CiudadescomboBox;
+        private System.Windows.Forms.ErrorProvider ProveedorerrorProvider;
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using StrongerGym.Consultas;
+using StrongerGym.Reportes;
 
 namespace StrongerGym.R
 {
@@ -38,6 +40,14 @@ namespace StrongerGym.R
             {
                 MessageBox.Show("Cliente No Existe","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
+        }
+
+        private void Imprimirbutton_Click(object sender, EventArgs e)
+        {
+            CarnetClientesForm carnet = new CarnetClientesForm();
+            CarnetClientesCrystalReport ccr = new CarnetClientesCrystalReport();
+            carnet.ClientescrystalReportViewer.ReportSource = ccr;
+            carnet.ShowDialog();
         }
     }
 }

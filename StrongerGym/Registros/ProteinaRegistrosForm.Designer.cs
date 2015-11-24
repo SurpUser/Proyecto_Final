@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.ProteinaIdtextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
@@ -42,33 +43,35 @@
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
+            this.ProteinaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ProteinaerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // ProteinaIdtextBox
             // 
-            this.ProteinaIdtextBox.Location = new System.Drawing.Point(69, 44);
+            this.ProteinaIdtextBox.Location = new System.Drawing.Point(16, 34);
             this.ProteinaIdtextBox.Name = "ProteinaIdtextBox";
-            this.ProteinaIdtextBox.Size = new System.Drawing.Size(144, 20);
+            this.ProteinaIdtextBox.Size = new System.Drawing.Size(184, 20);
             this.ProteinaIdtextBox.TabIndex = 0;
             // 
             // NombretextBox
             // 
-            this.NombretextBox.Location = new System.Drawing.Point(69, 93);
+            this.NombretextBox.Location = new System.Drawing.Point(16, 83);
             this.NombretextBox.Name = "NombretextBox";
-            this.NombretextBox.Size = new System.Drawing.Size(225, 20);
+            this.NombretextBox.Size = new System.Drawing.Size(265, 20);
             this.NombretextBox.TabIndex = 0;
             // 
             // PreciotextBox
             // 
-            this.PreciotextBox.Location = new System.Drawing.Point(69, 133);
+            this.PreciotextBox.Location = new System.Drawing.Point(16, 123);
             this.PreciotextBox.Name = "PreciotextBox";
-            this.PreciotextBox.Size = new System.Drawing.Size(225, 20);
+            this.PreciotextBox.Size = new System.Drawing.Size(265, 20);
             this.PreciotextBox.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(66, 28);
+            this.label1.Location = new System.Drawing.Point(13, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 13);
             this.label1.TabIndex = 11;
@@ -77,7 +80,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(66, 77);
+            this.label2.Location = new System.Drawing.Point(13, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 11;
@@ -86,7 +89,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(66, 117);
+            this.label3.Location = new System.Drawing.Point(13, 107);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 13);
             this.label3.TabIndex = 11;
@@ -94,15 +97,15 @@
             // 
             // CostotextBox
             // 
-            this.CostotextBox.Location = new System.Drawing.Point(69, 173);
+            this.CostotextBox.Location = new System.Drawing.Point(16, 163);
             this.CostotextBox.Name = "CostotextBox";
-            this.CostotextBox.Size = new System.Drawing.Size(225, 20);
+            this.CostotextBox.Size = new System.Drawing.Size(265, 20);
             this.CostotextBox.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(66, 157);
+            this.label6.Location = new System.Drawing.Point(13, 147);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(37, 13);
             this.label6.TabIndex = 11;
@@ -112,15 +115,15 @@
             // 
             this.TipoProteinaIdcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoProteinaIdcomboBox.FormattingEnabled = true;
-            this.TipoProteinaIdcomboBox.Location = new System.Drawing.Point(69, 213);
+            this.TipoProteinaIdcomboBox.Location = new System.Drawing.Point(16, 203);
             this.TipoProteinaIdcomboBox.Name = "TipoProteinaIdcomboBox";
-            this.TipoProteinaIdcomboBox.Size = new System.Drawing.Size(225, 21);
+            this.TipoProteinaIdcomboBox.Size = new System.Drawing.Size(265, 21);
             this.TipoProteinaIdcomboBox.TabIndex = 12;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(66, 197);
+            this.label7.Location = new System.Drawing.Point(13, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(80, 13);
             this.label7.TabIndex = 11;
@@ -130,7 +133,7 @@
             // 
             this.button1.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(219, 41);
+            this.button1.Location = new System.Drawing.Point(206, 31);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 25);
             this.button1.TabIndex = 15;
@@ -143,7 +146,7 @@
             // 
             this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
             this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(253, 260);
+            this.Eliminarbutton.Location = new System.Drawing.Point(201, 250);
             this.Eliminarbutton.Name = "Eliminarbutton";
             this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
             this.Eliminarbutton.TabIndex = 10;
@@ -156,7 +159,7 @@
             // 
             this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
             this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(30, 260);
+            this.Nuevobutton.Location = new System.Drawing.Point(16, 250);
             this.Nuevobutton.Name = "Nuevobutton";
             this.Nuevobutton.Size = new System.Drawing.Size(81, 44);
             this.Nuevobutton.TabIndex = 8;
@@ -169,7 +172,7 @@
             // 
             this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
             this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(134, 260);
+            this.Guardarbutton.Location = new System.Drawing.Point(103, 250);
             this.Guardarbutton.Name = "Guardarbutton";
             this.Guardarbutton.Size = new System.Drawing.Size(92, 44);
             this.Guardarbutton.TabIndex = 9;
@@ -178,11 +181,15 @@
             this.Guardarbutton.UseVisualStyleBackColor = true;
             this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
+            // ProteinaerrorProvider
+            // 
+            this.ProteinaerrorProvider.ContainerControl = this;
+            // 
             // ProteinaRegistrosForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(370, 325);
+            this.ClientSize = new System.Drawing.Size(300, 306);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.TipoProteinaIdcomboBox);
             this.Controls.Add(this.label7);
@@ -202,6 +209,7 @@
             this.Name = "ProteinaRegistrosForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Registro de Proteina";
+            ((System.ComponentModel.ISupportInitialize)(this.ProteinaerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +231,6 @@
         private System.Windows.Forms.ComboBox TipoProteinaIdcomboBox;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ErrorProvider ProteinaerrorProvider;
     }
 }

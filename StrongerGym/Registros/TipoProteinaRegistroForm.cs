@@ -32,63 +32,89 @@ namespace StrongerGym.Registros
             Limpiar();
         }
 
+        public bool LlenarDato()
+        {
+            try
+            {
+                TipoProteinaerrorProvider.Clear();
+                if (NombretextBox.Text.Length > 0)
+                {
+                    TipoProteina.Nombre = NombretextBox.Text;
+                }
+                else
+                {
+                    TipoProteinaerrorProvider.SetError(NombretextBox, "Ingrese Un Nombre");
+                    return false;
+                }
+            }
+            catch (Exception)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             if (TipoProteinaIdtextBox.Text.Length == 0)
             {
                 TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
-                TipoProteina.Nombre = NombretextBox.Text;
-
-                if (TipoProteina.Insertar())
+                if (LlenarDato())
                 {
-                    MessageBox.Show("Se guardo correctamente");
 
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("No se guardo");
+                    if (TipoProteina.Insertar())
+                    {
+                        MessageBox.Show("Guardado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
             {
                 TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
-                TipoProteina.Nombre = NombretextBox.Text;
-
-                if (TipoProteina.Editar())
+                if (LlenarDato())
                 {
-                    MessageBox.Show("Se edito correctamente");
 
-                    Limpiar();
-                }
-                else
-                {
-                    MessageBox.Show("No se edito");
+                    if (TipoProteina.Editar())
+                    {
+                        MessageBox.Show("Modificado Correctamente","Confirmacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Modificado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text) > 0)
             {
                 TipoProteina.TipoProteinaId = Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text);
 
                 if (TipoProteina.Eliminar())
                 {
-                    MessageBox.Show("Se elimino correctamente");
+                    MessageBox.Show("Eliminado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
-                    MessageBox.Show("No se elimino");
+                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex)
+            else
             {
-
-                throw ex;
+                MessageBox.Show("Id No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             Limpiar();
@@ -96,7 +122,7 @@ namespace StrongerGym.Registros
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            if (TipoProteinaIdtextBox.Text.Length > 0)
+            if (Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text) > 0)
             {
                 if (TipoProteina.Buscar(Seguridad.ValidarIdEntero(TipoProteinaIdtextBox.Text)))
                 {
@@ -104,12 +130,12 @@ namespace StrongerGym.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No encontro ese Id");
+                    MessageBox.Show("Id No Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un Id");
+                MessageBox.Show("Id No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
