@@ -51,7 +51,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(203, 83);
+            this.label2.Location = new System.Drawing.Point(203, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 1;
@@ -59,7 +59,7 @@
             // 
             // UsuariotextBox
             // 
-            this.UsuariotextBox.Location = new System.Drawing.Point(206, 43);
+            this.UsuariotextBox.Location = new System.Drawing.Point(206, 29);
             this.UsuariotextBox.MaxLength = 40;
             this.UsuariotextBox.Name = "UsuariotextBox";
             this.UsuariotextBox.Size = new System.Drawing.Size(186, 20);
@@ -67,7 +67,7 @@
             // 
             // ContrasenatextBox
             // 
-            this.ContrasenatextBox.Location = new System.Drawing.Point(206, 109);
+            this.ContrasenatextBox.Location = new System.Drawing.Point(206, 85);
             this.ContrasenatextBox.MaxLength = 30;
             this.ContrasenatextBox.Name = "ContrasenatextBox";
             this.ContrasenatextBox.Size = new System.Drawing.Size(186, 20);
@@ -79,7 +79,7 @@
             // 
             this.button2.Image = global::StrongerGym.Properties.Resources._1443916450_Cancel;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(302, 154);
+            this.button2.Location = new System.Drawing.Point(302, 128);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(90, 43);
             this.button2.TabIndex = 6;
@@ -94,7 +94,7 @@
             this.pictureBox1.Image = global::StrongerGym.Properties.Resources.user_icon;
             this.pictureBox1.Location = new System.Drawing.Point(12, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(160, 185);
+            this.pictureBox1.Size = new System.Drawing.Size(164, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -104,7 +104,7 @@
             this.button1.BackgroundImage = global::StrongerGym.Properties.Resources._1443916247_Check;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(206, 154);
+            this.button1.Location = new System.Drawing.Point(206, 128);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(90, 43);
             this.button1.TabIndex = 4;
@@ -117,7 +117,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(414, 225);
+            this.ClientSize = new System.Drawing.Size(414, 181);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button1);

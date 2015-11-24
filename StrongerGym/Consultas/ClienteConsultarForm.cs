@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using StrongerGym.Consultas;
 using BLL;
 
 namespace StrongerGym.R
@@ -57,13 +58,6 @@ namespace StrongerGym.R
             FechaNacimientodateTimePicker.Text = cliente.Fecha;
             ClientepictureBox.ImageLocation = cliente.Imagen;
             MasculinoradioButton.Checked = cliente.Sexo;
-
-            if (cuota.Listado(" FechaCuota ", " ClienteId =" + cliente.ClienteId, "").Rows.Count > 0)
-            {
-                dtFecha = cuota.Listado(" FechaCuota,FechaVence ", " ClienteId =" + cliente.ClienteId, "");
-                FechaMontodateTimePicker.Text = dtFecha.Rows[0]["FechaCuota"].ToString();
-            }
-            
         }
 
         public int IntervaloFecha(int Dia, int Mes, int Ano)
@@ -84,12 +78,13 @@ namespace StrongerGym.R
             PesotextBox.Clear();
             AlturatextBox.Clear();
             CiudadtextBox.Clear();
-            FechaNacimientodateTimePicker.Update();
+            FechaNacimientodateTimePicker.Value = DateTime.Now;
+            FechaMontodateTimePicker.Value = DateTime.Now;
+            VencedateTimePicker.Value = DateTime.Now;
             ClientepictureBox.ImageLocation = null;
             MasculinoradioButton.Checked = true;
             ModalidadcomboBox.SelectedIndex = 0;
             TiempocomboBox.SelectedIndex = 0;
-            VencedateTimePicker.Update();
             UltimoPagotextBox.Clear();
             CantidadtextBox.Clear();
             Montolabel.Text = "0.00";
@@ -101,18 +96,25 @@ namespace StrongerGym.R
             if (cliente.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
             {
                 LlenarFormulario();
-                cuota.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text));
-                VencedateTimePicker.Text = cuota.FechaVencimiento;
-                String[] resultado = cuota.FechaVencimiento.Split(new char[] { '/' });//cuota.FechaVencimiento
-                Dias = IntervaloFecha(Seguridad.ValidarIdEntero(resultado[0]), Seguridad.ValidarIdEntero(resultado[1]), Seguridad.ValidarIdEntero(resultado[2]));
-                if (Dias > 0)
+                
+                if (cuota.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
                 {
-                    MessageBox.Show(Dias + " Dias inactivo");
+                    VencedateTimePicker.Text = cuota.FechaVencimiento;
+                    UltimoPagotextBox.Text = cuota.FechaCuota;
+                    String[] resultado = cuota.FechaVencimiento.Split(new char[] { '/' });//cuota.FechaVencimiento
+                    Dias = IntervaloFecha(Seguridad.ValidarIdEntero(resultado[0]), Seguridad.ValidarIdEntero(resultado[1]), Seguridad.ValidarIdEntero(resultado[2]));
+
+                    if (Dias > 0)
+                    {
+                        MessageBox.Show(Dias + " Dias inactivo");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Se Vence en : " + -1 * Dias + " Dias");
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("Se Vence en : " + -1 * Dias + " Dias");
-                }
+               
+                
             }
             else
             {
@@ -141,7 +143,7 @@ namespace StrongerGym.R
         {
             if (LlenarCuota())
             {
-                if (cuota.Listado(" FechaCuota,FechaVence ", " ClienteId =" + cliente.ClienteId, "").Rows.Count > 0)
+                if (cuota.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)) != true)
                 {
                     if (cuota.Insertar())
                     {
@@ -219,6 +221,20 @@ namespace StrongerGym.R
                 DateTime fecha = DateTime.Now.AddYears(cantidad);
                 VencedateTimePicker.Text = fecha.ToString();
             }
+        }
+
+        private void ClienteIdtextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                ClienteNombreConsultarForm consulta = new ClienteNombreConsultarForm();
+                consulta.ShowDialog();
+            }
+        }
+
+        private void Cancelarbutton_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

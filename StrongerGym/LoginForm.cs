@@ -33,10 +33,12 @@ namespace StrongerGym.R
                     this.Visible = false;
                     StrongerGymForms sgf = new StrongerGymForms();
                     usuario.Permisos();
+
                     if (usuario.Area != "Administrativa")
                     {
                         sgf.registroUsuarioToolStripMenuItem.Visible = false;
                     }
+
                     sgf.Text = "StrongerGym [" + usuario.Nombre + "]";
                     NombreUsuario = usuario.Nombre;
                     sgf.Show();

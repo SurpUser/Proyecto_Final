@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -36,6 +37,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.NombretextBox = new System.Windows.Forms.TextBox();
+            this.CiudaderrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.CiudaderrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // Eliminarbutton
@@ -123,6 +126,10 @@
             this.NombretextBox.Size = new System.Drawing.Size(266, 20);
             this.NombretextBox.TabIndex = 11;
             // 
+            // CiudaderrorProvider
+            // 
+            this.CiudaderrorProvider.ContainerControl = this;
+            // 
             // CiudadRegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,6 +148,7 @@
             this.Name = "CiudadRegistroForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CiudadRegistroForm";
+            ((System.ComponentModel.ISupportInitialize)(this.CiudaderrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -156,5 +164,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox NombretextBox;
+        private System.Windows.Forms.ErrorProvider CiudaderrorProvider;
     }
 }
