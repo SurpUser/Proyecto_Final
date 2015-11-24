@@ -109,8 +109,11 @@
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.BucarcomboBox);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ClienteNombreConsultarForm";
-            this.Text = "ClienteNombreConsultarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "ClienteConsultarForm";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

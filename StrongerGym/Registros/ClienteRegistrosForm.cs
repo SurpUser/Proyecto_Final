@@ -17,7 +17,6 @@ namespace StrongerGym.R
     {
         Clientes cliente = new Clientes();
         Ciudades ciudad = new Ciudades();
-        int numero = 0;
 
         public RegistroForm()
         {
@@ -55,31 +54,45 @@ namespace StrongerGym.R
 
         public bool LlenarDatos()
         {
-            try
+            bool retorno = true;
+            ClienteerrorProvider.Clear();
+            if (NombretextBox.Text.Length > 0)
             {
-                if (NombretextBox.Text.Length > 0 && DirecciontextBox.Text.Length > 0 && TelefonomaskedTextBox.Text.Length > 0)
-                {
-                    cliente.Imagen = ClientepictureBox.ImageLocation.ToString();
-                    cliente.Nombre = NombretextBox.Text;
-                    cliente.Direccion = DirecciontextBox.Text;
-                    cliente.CiudadId = (int)CiudadcomboBox.SelectedValue;
-                    cliente.Telefono = TelefonomaskedTextBox.Text;
-                    cliente.Celular = CelularmaskedTextBox.Text;
-                    cliente.Altura = Convert.ToDouble(AlturatextBox.Text);
-                    cliente.Peso = Convert.ToDouble(PesotextBox.Text);
-                    cliente.Fecha = FechaNacimientodateTimePicker.Text;
-                    cliente.Sexo = MasculinoradioButton.Checked;
-                }
-                else
-                {
-                    return false;
-                }
+                cliente.Nombre = NombretextBox.Text;
             }
-            catch (Exception)
+            else
             {
-                MessageBox.Show("Faltan Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                ClienteerrorProvider.SetError(NombretextBox, "Ingrese Un Nombre");
+                retorno = false;
             }
-            return true;
+            if (ClientepictureBox.ImageLocation != null)
+            {
+                cliente.Imagen = ClientepictureBox.ImageLocation.ToString();
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(ClientepictureBox, "Ingrese Una Foto");
+                retorno = false;
+            }
+            /*
+            if (NombretextBox.Text.Length > 0 && DirecciontextBox.Text.Length > 0 && TelefonomaskedTextBox.Text.Length > 0)
+            {
+                                
+                cliente.Direccion = DirecciontextBox.Text;
+                cliente.CiudadId = (int)CiudadcomboBox.SelectedValue;
+                cliente.Telefono = TelefonomaskedTextBox.Text;
+                cliente.Celular = CelularmaskedTextBox.Text;
+                cliente.Altura = Convert.ToDouble(AlturatextBox.Text);
+                cliente.Peso = Convert.ToDouble(PesotextBox.Text);
+                cliente.Fecha = FechaNacimientodateTimePicker.Text;
+                cliente.Sexo = MasculinoradioButton.Checked;
+            }
+            else
+            {
+                return false;
+            }
+            */
+            return retorno;
         }
 
         public void LlenarFormulario()
@@ -93,15 +106,6 @@ namespace StrongerGym.R
             CiudadcomboBox.Text = cliente.CiudadNombre;
             FechaNacimientodateTimePicker.Text = cliente.Fecha;
             ClientepictureBox.ImageLocation = cliente.Imagen;
-        }
-
-        public int IntervaloFecha(int Dia,int Mes,int Ano)
-        {
-            DateTime oldDate = new DateTime(Ano, Mes, Dia);
-            DateTime newDate = DateTime.Now;
-            
-            TimeSpan ts = newDate - oldDate;
-            return ts.Days;
         }
 
         private void HacerFoto_Click(object sender, EventArgs e)
@@ -145,20 +149,8 @@ namespace StrongerGym.R
                     Guardarbutton.Image = Resources._1442108330_Modify;
                     Guardarbutton.Text = "Modificar";
                     LlenarFormulario();
-                    //--------------------------------
-                    int Dias;
-                    String [] resultado = cliente.Fecha.Split(new char[] {'/'});
-                    Dias = IntervaloFecha(Convert.ToInt32(resultado[0]), Convert.ToInt32(resultado[1]), Convert.ToInt32(resultado[2]));
-                    if (Dias > 0)
-                    {
-                        MessageBox.Show(Dias + " Dias inactivo");
-                    }
-                    else
-                    {
-                        MessageBox.Show("Se Vence en :"+Dias +" Dias");
-                    }
                     
-            }
+                }
                 else
                 {
                     MessageBox.Show("Cliente No Existe", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,13 +165,13 @@ namespace StrongerGym.R
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (LlenarDatos())
             {
-                if (LlenarDatos())
+                if (ClienteIdtextBox.Text.Length == 0)
                 {
                     if (cliente.Insertar())
                     {
-                        MessageBox.Show("Guardado Correctamente","Comfirmar",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                        MessageBox.Show("Guardado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Limpiar();
                     }
                     else
@@ -189,12 +181,21 @@ namespace StrongerGym.R
                 }
                 else
                 {
-                    MessageBox.Show("Faltan Datos","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    cliente.ClienteId = Seguridad.ValidarIdEntero(ClienteIdtextBox.Text);
+                    if (cliente.Editar())
+                    {
+                        MessageBox.Show("Modificado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Error Inesperado"+ex.Message,"Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("Faltan Datos","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

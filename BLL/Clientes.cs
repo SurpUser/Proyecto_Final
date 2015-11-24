@@ -91,10 +91,10 @@ namespace BLL
                  this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
                  retorno = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -156,7 +156,7 @@ namespace BLL
                 else
                 {
                     retorno = conexion.Ejecutar(String.Format("insert into Clientes (CiudadId, Imagen, Nombre, Sexo, Direccion, Telefono, Celular, Peso, Altura,Fecha) values ({0},'{1}','{2}',{3},'{4}','{5}','{6}','{7}','{8}','{9}')",
-                                               this.CiudadId, this.Imagen, this.Nombre, 0, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha));
+                                                this.CiudadId, this.Imagen, this.Nombre, 0, this.Direccion, this.Telefono, this.Celular, this.Peso, this.Altura, this.Fecha));
                 }
                
             }

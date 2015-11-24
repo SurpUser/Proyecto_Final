@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ClienteIdtextBox = new System.Windows.Forms.TextBox();
@@ -60,8 +61,10 @@
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CiudadcomboBox = new System.Windows.Forms.ComboBox();
+            this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             this.SexogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -364,6 +367,10 @@
             this.CiudadcomboBox.Size = new System.Drawing.Size(160, 21);
             this.CiudadcomboBox.TabIndex = 55;
             // 
+            // ClienteerrorProvider
+            // 
+            this.ClienteerrorProvider.ContainerControl = this;
+            // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -406,6 +413,7 @@
             this.SexogroupBox.ResumeLayout(false);
             this.SexogroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -444,5 +452,6 @@
         private System.Windows.Forms.MaskedTextBox TelefonomaskedTextBox;
         private System.Windows.Forms.MaskedTextBox CelularmaskedTextBox;
         private System.Windows.Forms.ComboBox CiudadcomboBox;
+        private System.Windows.Forms.ErrorProvider ClienteerrorProvider;
     }
 }

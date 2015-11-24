@@ -109,7 +109,10 @@
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.BucarcomboBox);
             this.Controls.Add(this.label1);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ProteinaConsultarForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ProteinaConsultarForm";
             ((System.ComponentModel.ISupportInitialize)(this.ConsultadataGridView)).EndInit();
             this.ResumeLayout(false);

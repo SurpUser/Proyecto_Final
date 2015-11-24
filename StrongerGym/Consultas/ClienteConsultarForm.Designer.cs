@@ -334,6 +334,7 @@
             this.ClienteIdtextBox.Name = "ClienteIdtextBox";
             this.ClienteIdtextBox.Size = new System.Drawing.Size(123, 20);
             this.ClienteIdtextBox.TabIndex = 7;
+            this.ClienteIdtextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ClienteIdtextBox_KeyDown);
             // 
             // label8
             // 
@@ -487,6 +488,7 @@
             this.Cancelarbutton.Text = "Cancelar";
             this.Cancelarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Cancelarbutton.UseVisualStyleBackColor = true;
+            this.Cancelarbutton.Click += new System.EventHandler(this.Cancelarbutton_Click);
             // 
             // Buscarbutton
             // 

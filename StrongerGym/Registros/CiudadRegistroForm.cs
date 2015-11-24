@@ -35,9 +35,15 @@ namespace StrongerGym.Registros
         {
             try
             {
+                CiudaderrorProvider.Clear();
                 if (NombretextBox.Text.Length > 0)
                 {
                     ciudad.Nombre = NombretextBox.Text;
+                }
+                else
+                {
+                    CiudaderrorProvider.SetError(NombretextBox,"Ingrese Una Ciudad");
+                    return false;
                 }
             }
             catch (Exception)
