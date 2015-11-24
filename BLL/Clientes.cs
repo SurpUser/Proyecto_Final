@@ -91,10 +91,9 @@ namespace BLL
                  this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
                  retorno = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -118,11 +117,11 @@ namespace BLL
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
+
             return retorno;
         }
 
@@ -134,11 +133,11 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(String.Format("delete from Clientes where ClienteId = {0}" , this.ClienteId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
+
             return retorno;
         }
 
@@ -160,17 +159,28 @@ namespace BLL
                 }
                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
+
             return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return conexion.ObtenerDatos("select " + Campos + " from Clientes where " + Condicion + " " +Orden);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = conexion.ObtenerDatos("select " + Campos + " from Clientes where " + Condicion + " " +Orden);
+            }
+            catch (Exception ex)
+            {
+                Seguridad.ErrorExcepcion(ex.ToString());
+            }
+
+            return dt;
         }
     }
 }

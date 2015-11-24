@@ -56,11 +56,11 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("insert into Proteinas (TipoProteinaId, Nombre, Precio, Costo) values ({0},'{1}',{2},{3})",this.TiposProteinaId, this.Nombre, this.Precio, this.Costo));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
+
             return retorno;
         }
 
@@ -71,10 +71,9 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("update Proteinas set TipoProteinaId = {0}, Nombre = '{1}', Precio = {2}, Costo = {3} where ProteinaId = {4}", this.TiposProteinaId, this.Nombre, this.Precio, this.Costo, this.ProteinaId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -87,10 +86,9 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("delete from Proteinas where ProteinaId = {0}", this.ProteinaId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -123,9 +121,9 @@ namespace BLL
                 }
                 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-               throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -133,7 +131,17 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return conexion.ObtenerDatos("select " + Campos + " from Proteinas where " + Condicion + " " + Orden);
+            DataTable dt = new DataTable();
+            try
+            {
+                dt =conexion.ObtenerDatos("select " + Campos + " from Proteinas where " + Condicion + " " + Orden);
+            }
+            catch (Exception ex)
+            {
+                Seguridad.ErrorExcepcion(ex.ToString());
+            }
+
+            return dt;
         }
     }
 }

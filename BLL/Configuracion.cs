@@ -55,25 +55,25 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("insert into Configuraciones (Dia, Semana, Mes, Ano, ITBIS, NCF) values ({0},{1},{2},{3},{4},'{5}') ", this.Dia, this.Semana, this.Mes, this.Ano,this.ITBIS, this.NCF));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
+
             return retorno;
         }
 
         public override bool Editar()
         {
             bool retorno = false;
+
             try
             {
                 retorno = conexion.Ejecutar(string.Format("update Configuraciones set Dia = {0}, Semana = {1}, Mes = {2}, Ano = {3}, ITBIS = {4}, NCF = '{5}' where ConfiguracionId = {6}", this.Dia, this.Semana ,this.Mes, this.Ano,this.ITBIS, this.NCF, this.ConfiguracionId));
             }
             catch (Exception ex)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -86,10 +86,9 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("Delete from Configuraciones where ConfiguracionId = {0}", this.ConfiguracionId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -116,11 +115,10 @@ namespace BLL
                 {
                     retorno = false;
                 }
-
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -128,7 +126,17 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
-            return conexion.ObtenerDatos("select " + Campos + " from Configuraciones where " + Condicion + " " + Orden);
+            DataTable dt = new DataTable();
+
+            try
+            {
+                dt = conexion.ObtenerDatos("select " + Campos + " from Configuraciones where " + Condicion + " " + Orden);
+            }
+            catch (Exception ex)
+            {
+                Seguridad.ErrorExcepcion(ex.ToString());
+            }
+            return dt;
         }
     }
 }

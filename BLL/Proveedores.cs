@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using BLL;
 
 namespace BLL
 {
@@ -40,6 +41,7 @@ namespace BLL
         {
             DataTable dtProveedor = new DataTable();
             DataTable dtCiudad = new DataTable();
+            bool retorno = false;
 
             try
             {
@@ -55,70 +57,81 @@ namespace BLL
 
                 dtCiudad = conexion.ObtenerDatos(String.Format("select * from Ciudades where CiudadId = {0}",this.CiudadId));
                 this.CiudadNombre = dtCiudad.Rows[0]["Nombre"].ToString();
+
+                retorno = true;
             }
             catch (Exception)
             {
-
-                return false;
+                retorno = false;
             }
-            return true;
+
+            return retorno;
         }
 
         public override bool Editar()
         {
+            bool retorno = false;
             try
             {
-                conexion.Ejecutar(String.Format("update Proveedores set CiudadId={0}, NombreEmpresa='{1}' ,NombreRepresentante='{2}', RNC='{3}', Direccion='{4}', Telefono='{5}', Celular='{6}' ,Email='{7}' where ProveedorId={8}",
+                retorno = conexion.Ejecutar(String.Format("update Proveedores set CiudadId={0}, NombreEmpresa='{1}' ,NombreRepresentante='{2}', RNC='{3}', Direccion='{4}', Telefono='{5}', Celular='{6}' ,Email='{7}' where ProveedorId={8}",
                                                 this.CiudadId,this.NombreEmpresa,this.NombreRepresentante,this.RNC,this.Direccion,this.Telefono,this.Celular,this.Email,this.ProveedorId));
                 
             }
             catch (Exception)
             {
-
-                return false;
+                retorno = false;
             }
-            return true;
+
+            return retorno;
         }
 
         public override bool Eliminar()
         {
+            bool retorno = false;
+
             try
             {
-                return conexion.Ejecutar(String.Format("delete from Proveedores where ProveedorId ={0};",this.ProveedorId));
+                retorno = conexion.Ejecutar(String.Format("delete from Proveedores where ProveedorId ={0};",this.ProveedorId));
             }
-            catch (Exception) 
+            catch (Exception)
             {
-
-                return false;
+                retorno = false;
             }
+
+            return retorno;
         }
 
         public override bool Insertar()
         {
+            bool retorno = false;
+
             try
             {
-                conexion.Ejecutar(String.Format("insert into Proveedores(CiudadId,NombreEmpresa,NombreRepresentante,RNC,Direccion,Telefono,Celular,Email) values({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
+                retorno = conexion.Ejecutar(String.Format("insert into Proveedores(CiudadId,NombreEmpresa,NombreRepresentante,RNC,Direccion,Telefono,Celular,Email) values({0},'{1}','{2}','{3}','{4}','{5}','{6}','{7}')",
                                                 this.CiudadId, this.NombreEmpresa, this.NombreRepresentante, this.RNC, this.Direccion, this.Telefono, this.Celular, this.Email));
             }
             catch (Exception)
             {
-
-                return false;
+                retorno = false;
             }
-            return true;
+
+            return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
+            DataTable dt = new DataTable();
+
             try
             {
-                return conexion.ObtenerDatos("select "+Campos +" from Proveedores where "+Condicion+" "+Orden);
+                dt = conexion.ObtenerDatos("select "+Campos +" from Proveedores where "+Condicion+" "+Orden);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                Seguridad.ErrorExcepcion(ex.ToString());
             }
+
+            return dt;
         }
 
         

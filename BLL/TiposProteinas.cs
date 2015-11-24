@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using BLL;
 
 namespace BLL
 {
@@ -40,10 +41,9 @@ namespace BLL
 
                 retorno = true;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -56,10 +56,10 @@ namespace BLL
             {
                 retorno = con.Ejecutar(string.Format("update TiposProteinas set Nombre = '{0}' where TipoProteinaId = {1} ", this.Nombre, this.TipoProteinaId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -73,10 +73,9 @@ namespace BLL
             {
                 retorno = con.Ejecutar(string.Format("delete from TiposProteinas where TipoProteinaId = {0} ", this.TipoProteinaId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -89,10 +88,9 @@ namespace BLL
             {
                 retorno = con.Ejecutar(string.Format("insert into TiposProteinas (Nombre) values ('{0}') ", this.Nombre));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-
-                throw ex;
+                retorno = false;
             }
 
             return retorno;
@@ -100,9 +98,19 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
+            DataTable dt = new DataTable();
 
-            return con.ObtenerDatos("Select " + Campos + " from TiposProteinas where " + Condicion + " " + Orden);
+            try
+            {
+                dt = con.ObtenerDatos("Select " + Campos + " from TiposProteinas where " + Condicion + " " + Orden);
 
+            }
+            catch (Exception ex)
+            {
+                Seguridad.ErrorExcepcion(ex.ToString());
+            }
+
+            return dt;
         }
     }
 }

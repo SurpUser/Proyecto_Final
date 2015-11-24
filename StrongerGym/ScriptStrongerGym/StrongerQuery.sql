@@ -117,6 +117,8 @@ ITBIS float,
 NCF varchar(20)
 );
 
+drop table Configuraciones
+
 select * from Configuraciones
 
 select * from Usuarios

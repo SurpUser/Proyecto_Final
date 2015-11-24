@@ -26,22 +26,29 @@ namespace StrongerGym.R
         {
             DataTable dt = new DataTable();
 
-            dt = Configurar.Listado(" * ", " 1=1 ", " ");
-
-            if (Configurar.Listado(" * ", " 1=1 ", " ").Rows.Count > 0)
+            try
             {
-                DiatextBox.Text = dt.Rows[0]["Dia"].ToString();
-                SemanatextBox.Text = dt.Rows[0]["Semana"].ToString();
-                MestextBox.Text = dt.Rows[0]["Mes"].ToString();
-                AnotextBox.Text = dt.Rows[0]["Ano"].ToString();
-                ITBIStextBox.Text = dt.Rows[0]["ITBIS"].ToString();
-                NCFtextBox.Text = dt.Rows[0]["NCF"].ToString();
-            }
-            else
-            {
-                MessageBox.Show("Agrege una Configuracion", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
 
+                dt = Configurar.Listado(" * ", " 1=1 ", " ");
+
+                if (Configurar.Listado(" * ", " 1=1 ", " ").Rows.Count > 0)
+                {
+                    DiatextBox.Text = dt.Rows[0]["Dia"].ToString();
+                    SemanatextBox.Text = dt.Rows[0]["Semana"].ToString();
+                    MestextBox.Text = dt.Rows[0]["Mes"].ToString();
+                    AnotextBox.Text = dt.Rows[0]["Ano"].ToString();
+                    ITBIStextBox.Text = dt.Rows[0]["ITBIS"].ToString();
+                    NCFtextBox.Text = dt.Rows[0]["NCF"].ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Agrege una Configuracion", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         public bool LLenarDatos()

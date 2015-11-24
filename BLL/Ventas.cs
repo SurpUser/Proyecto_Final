@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BLL;
 
 namespace BLL
 {
@@ -61,6 +62,7 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
+            bool retorno = false;
 
             try
             {
@@ -73,20 +75,23 @@ namespace BLL
                     this.Fecha = dt.Rows[0]["Fecha"].ToString();
                     this.NCF = dt.Rows[0]["NCF"].ToString();
                     this.TotalVenta = (double)dt.Rows[0]["TotalVenta"];
+
+                    retorno = true;
                 }            
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                retorno = false;
             }
 
-            return dt.Rows.Count > 0;
+            return retorno;
         }
 
         public override bool Editar()
         {
             bool retorno = false;
             StringBuilder comando = new StringBuilder();
+
             try
             {
                 retorno = conexion.Ejecutar(String.Format("(Update Ventas set UsuarioId = {0}, ClienteId = {1}, ITBS = {2}, Fecha = '{3}', NCF = '{4}', TotalVenta = {5} where VentaId = {7}", this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.VentaId));
@@ -97,12 +102,13 @@ namespace BLL
                     {
                         comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad));
                     }
+
                     retorno = conexion.Ejecutar(comando.ToString());
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                retorno = false;
             }
 
             return retorno;
@@ -143,10 +149,9 @@ namespace BLL
 
                 retorno = conexion.Ejecutar(comando.ToString());
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                throw e;
+                retorno = false;
             }
 
             return retorno;
@@ -154,14 +159,17 @@ namespace BLL
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
+            DataTable dt = new DataTable();
             try
             {
-                return conexion.ObtenerDatos(String.Format("Select " + Campos + " from Ventas where " +Condicion +" " +Orden));
+                dt = conexion.ObtenerDatos(String.Format("Select " + Campos + " from Ventas where " +Condicion +" " +Orden));
             }
             catch (Exception e)
             {
-                throw e;
+                Seguridad.ErrorExcepcion(e.ToString());
             }
+
+            return dt;
         }
     }
 }

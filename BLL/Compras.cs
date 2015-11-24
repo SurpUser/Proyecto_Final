@@ -46,6 +46,8 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
+            bool retorno = false;
+
             try
             {
                 dt = conexion.ObtenerDatos(string.Format("select * from Compras where CompraId = {0}", IdBuscado));
@@ -62,38 +64,54 @@ namespace BLL
                     this.Cantidad = (int)dt.Rows[0]["Cantidad"];
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                throw e;
-
+                retorno = false;
             }
-            return false;
+
+            return retorno;
         }
 
         public override bool Editar()
         {
+            bool retorno = false;
+            StringBuilder comando = new StringBuilder();
+
             try
             {
-                return conexion.Ejecutar(String.Format("update Compras set ProveedorId = {0}, ProteinaId = {1}, UsuarioId = {2}, ITBS = {3}, Monto = {4}, NCF = '{5}', Fecha = '{6}', Cantidad = {7} where CompraId = {8} ", this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad, this.CompraId));
+                retorno = conexion.Ejecutar(String.Format("update Compras set ProveedorId = {0}, ProteinaId = {1}, UsuarioId = {2}, ITBS = {3}, Monto = {4}, NCF = '{5}', Fecha = '{6}', Cantidad = {7} where CompraId = {8} ", this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad, this.CompraId));
+
+                if (retorno)
+                {
+                    retorno = conexion.Ejecutar(String.Format("delete from ComprasProteinas where CompraId = {0}", this.CompraId));
+                    foreach (var pro in proteina)
+                    {
+                        comando.AppendLine(String.Format("insert into ComprasProteinas(CompraId, ProteinaId, Cantidad, Costo) values({0},{1},{2},{3})", this.CompraId, pro.ProteinaId, pro.Cantidad, pro.Costo));
+                    }
+                    retorno = conexion.Ejecutar(comando.ToString());
+                }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                retorno = false;
             }
+
+            return retorno;
         }
 
         public override bool Eliminar()
         {
+            bool retorno = false;
             try
             {
-                return conexion.Ejecutar(String.Format("delete from Compras where CompraId = {0}",this.CompraId));
+                retorno = conexion.Ejecutar(String.Format("delete from Compras where CompraId = {0}",this.CompraId));
             }
-            catch (Exception e)
+            catch (Exception)
             {
-
-                throw e;
+                retorno = false;
             }
+
+            return retorno;
         }
 
         public override bool Insertar()
@@ -102,22 +120,24 @@ namespace BLL
             StringBuilder comando = new StringBuilder();
             try
             {
-                retorno= conexion.Ejecutar(String.Format("insert into Compras (ProveedorId, ProteinaId, UsuarioId, ITBS, Monto, NCF, Fecha, Cantidad) values ({0},{1},{2},{3},{4},'{5}','{6}',{7})",this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad));
+                retorno = conexion.Ejecutar(String.Format("insert into Compras (ProveedorId, ProteinaId, UsuarioId, ITBS, Monto, NCF, Fecha, Cantidad) values ({0},{1},{2},{3},{4},'{5}','{6}',{7})", this.ProveedorId, this.ProteinaId, this.UsuarioId, this.ITBS, this.Monto, this.NCF, this.Fecha, this.Cantidad));
+
                 if (retorno)
                 {
-                    //retorno = conexion.Ejecutar(String.Format("delete from VentasProteinas where VentaId = {0}", this.VentaId));
+                    this.CompraId = (int)conexion.ObtenerDatos(String.Format("select MAX(CompraId) as CompraId from Compras")).Rows[0]["CompraId"];
                     foreach (var pro in proteina)
                     {
-                        //comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId, pro.Cantidad));
+                        comando.AppendLine(String.Format("insert into ComprasProteinas(CompraId, ProteinaId, Cantidad, Costo) values({0},{1},{2},{3})", this.CompraId, pro.ProteinaId, pro.Cantidad, pro.Costo));
                     }
-                    retorno = conexion.Ejecutar(comando.ToString());
                 }
-            }
-            catch (Exception )
-            {
 
+                retorno = conexion.Ejecutar(comando.ToString());
+            }
+            catch (Exception)
+            {
                 retorno = false;
             }
+
             return retorno;
         }
 
@@ -128,11 +148,11 @@ namespace BLL
             {
                dtCompras = conexion.ObtenerDatos(String.Format("select " + Campos + " from Compras where " + Condicion + "" + Orden));
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
-                throw e;
+                Seguridad.ErrorExcepcion(ex.ToString());
             }
+
             return dtCompras;
         }
     }

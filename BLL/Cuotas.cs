@@ -33,6 +33,7 @@ namespace BLL
             {
                 retorno = false;
             }
+
             return retorno;
         }
 
@@ -45,22 +46,26 @@ namespace BLL
             }
             catch (Exception)
             {
-                retorno = false;               
+                retorno = false;
             }
+
             return retorno;
         }
 
         public override bool Eliminar()
         {
+            bool retorno = false;
+
             try
             {
-                return conexion.Ejecutar(String.Format("Delete from Cuotas where ClienteId = ",this.ClienteId));
+                retorno = conexion.Ejecutar(String.Format("Delete from Cuotas where ClienteId = ",this.ClienteId));
             }
             catch (Exception)
             {
-
-                return false;
+                retorno = false;
             }
+
+            return retorno;
         }
 
         public override bool Insertar()
@@ -73,22 +78,26 @@ namespace BLL
             }
             catch (Exception)
             {
-
                 retorno = false;
             }
+
             return retorno;
         }
 
         public override DataTable Listado(string Campos, string Condicion, string Orden)
         {
+            DataTable dt = new DataTable();
+
             try
             {
-                return conexion.ObtenerDatos("select " + Campos + " from Cuotas where " + Condicion + " " + Orden);
+                dt = conexion.ObtenerDatos("select " + Campos + " from Cuotas where " + Condicion + " " + Orden);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                Seguridad.ErrorExcepcion(ex.ToString());
             }
+
+            return dt;
         }
     }
 }

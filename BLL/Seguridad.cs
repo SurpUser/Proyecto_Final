@@ -52,5 +52,14 @@ namespace BLL
             }
             return Id;
         }
+
+        public static string ErrorExcepcion(string MensajeExcepcion)
+        { 
+            string Mensaje = "";
+
+            Mensaje = MensajeExcepcion;
+
+            return Mensaje;
+        }
     }
 }
