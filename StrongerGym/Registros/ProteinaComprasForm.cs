@@ -68,7 +68,7 @@ namespace StrongerGym.Registros
             monto = 0.0;
             Cantidad = Convert.ToInt32(CantidadProteinatextBox.Text);
 
-            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Precio, Cantidad, itbis, Cantidad * proteina.Precio + (itbis * proteina.Precio));
+            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Costo, proteina.Precio, Cantidad, proveedor, Cantidad * proteina.Costo + (itbis * proteina.Costo));
 
             for (int i = 0; i < ComprasdataGridView.RowCount; i++)
             {

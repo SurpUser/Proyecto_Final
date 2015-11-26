@@ -44,12 +44,6 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Facturarbutton = new System.Windows.Forms.Button();
             this.ComprasdataGridView = new System.Windows.Forms.DataGridView();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ITBS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BuscarComprabutton = new System.Windows.Forms.Button();
             this.BuscarProveedorbutton = new System.Windows.Forms.Button();
             this.AgregarProteinabutton = new System.Windows.Forms.Button();
@@ -66,6 +60,12 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CantidadProteinatextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ComprasdataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -229,53 +229,15 @@
             this.ComprasdataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.Nombres,
+            this.Cost,
             this.Precios,
             this.Cant,
-            this.ITBS,
-            this.Importe});
+            this.SubT});
             this.ComprasdataGridView.Location = new System.Drawing.Point(12, 159);
             this.ComprasdataGridView.Name = "ComprasdataGridView";
             this.ComprasdataGridView.ReadOnly = true;
             this.ComprasdataGridView.Size = new System.Drawing.Size(723, 225);
             this.ComprasdataGridView.TabIndex = 56;
-            // 
-            // Codigo
-            // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombre";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 150;
-            // 
-            // Precios
-            // 
-            this.Precios.HeaderText = "Precio";
-            this.Precios.Name = "Precios";
-            this.Precios.ReadOnly = true;
-            // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Cantidad";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            // 
-            // ITBS
-            // 
-            this.ITBS.HeaderText = "ITBIS";
-            this.ITBS.Name = "ITBS";
-            this.ITBS.ReadOnly = true;
-            // 
-            // Importe
-            // 
-            this.Importe.HeaderText = "Importe";
-            this.Importe.Name = "Importe";
-            this.Importe.ReadOnly = true;
-            this.Importe.Width = 120;
             // 
             // BuscarComprabutton
             // 
@@ -428,6 +390,43 @@
             this.label7.TabIndex = 69;
             this.label7.Text = "Cantidad:";
             // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombre";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 180;
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Costo";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // Precios
+            // 
+            this.Precios.HeaderText = "Precio";
+            this.Precios.Name = "Precios";
+            this.Precios.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Cantidad";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            // 
+            // SubT
+            // 
+            this.SubT.HeaderText = "SubTotal";
+            this.SubT.Name = "SubT";
+            this.SubT.ReadOnly = true;
+            // 
             // ProteinaComprasForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -493,12 +492,6 @@
         private System.Windows.Forms.Button Guardarbutton;
         private System.Windows.Forms.Button Facturarbutton;
         private System.Windows.Forms.DataGridView ComprasdataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precios;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ITBS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Button BuscarComprabutton;
         private System.Windows.Forms.Button BuscarProveedorbutton;
         private System.Windows.Forms.Button AgregarProteinabutton;
@@ -515,5 +508,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox CantidadProteinatextBox;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombres;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cost;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precios;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
+        private System.Windows.Forms.DataGridViewTextBoxColumn SubT;
     }
 }
