@@ -53,33 +53,91 @@ namespace StrongerGym.R
 
         public bool LLenarDatos()
         {
-            Configurar.Dia = Seguridad.ValidarIdEntero(DiatextBox.Text);
-            Configurar.Semana = Seguridad.ValidarIdEntero(SemanatextBox.Text);
-            Configurar.Mes = Seguridad.ValidarIdEntero(MestextBox.Text);
-            Configurar.Ano = Seguridad.ValidarIdEntero(AnotextBox.Text);
-            Configurar.ITBIS = Seguridad.ValidarIdDouble(ITBIStextBox.Text);
-            Configurar.NCF = NCFtextBox.Text;
-            return true;
-        }
+            ConfiguracionerrorProvider.Clear();
+            bool retorno = true;
 
-        private void Configuracoin_Load(object sender, EventArgs e)
-        {
+            if (Seguridad.ValidarIdEntero(DiatextBox.Text) > 0)
+            {
+                Configurar.Dia = Seguridad.ValidarIdEntero(DiatextBox.Text);
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(DiatextBox,"Ingrese el Precio");
+                retorno = false;
+            }
 
+            if (Seguridad.ValidarIdEntero(SemanatextBox.Text) > 0)
+            {
+                Configurar.Semana = Seguridad.ValidarIdEntero(SemanatextBox.Text);
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(SemanatextBox, "Ingrese el Precio");
+                retorno = false;
+            }
+
+            if (Seguridad.ValidarIdEntero(MestextBox.Text) > 0)
+            {
+                Configurar.Mes = Seguridad.ValidarIdEntero(MestextBox.Text);
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(MestextBox, "Ingrese el Precio");
+                retorno = false;
+            }
+
+            if (Seguridad.ValidarIdEntero(AnotextBox.Text) > 0)
+            {
+                Configurar.Ano = Seguridad.ValidarIdEntero(AnotextBox.Text);
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(AnotextBox, "Ingrese el Precio");
+                retorno = false;
+            }
+
+            if (Seguridad.ValidarIdDouble(ITBIStextBox.Text) > 0)
+            {
+
+                Configurar.ITBIS = Seguridad.ValidarIdDouble(ITBIStextBox.Text);
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(ITBIStextBox, "Ingrese el Precio");
+                retorno = false;
+            }
+
+            if (NCFtextBox.Text.Length > 0)
+            {
+                Configurar.NCF = NCFtextBox.Text;
+            }
+            else
+            {
+                ConfiguracionerrorProvider.SetError(NCFtextBox, "Ingrese el NCF");
+                retorno = false;
+            }
+
+            return retorno;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             if (Configurar.Listado(" * ", " 1=1 ", " ").Rows.Count > 0)
             {
-                LLenarDatos();
-
-                if (Configurar.Editar())
+                if (LLenarDatos())
                 {
-                    MessageBox.Show("Se Modifico correctamente");
+                    if (Configurar.Editar())
+                    {
+                        MessageBox.Show("Modificado Correctamente","Confirmacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se modifico");
+                    MessageBox.Show("Faltan Datos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else

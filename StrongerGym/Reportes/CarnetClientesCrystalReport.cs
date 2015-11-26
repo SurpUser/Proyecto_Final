@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DAL {
+namespace StrongerGym.Reportes {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -16,14 +16,14 @@ namespace DAL {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class VentaFacturaCrystalReport : ReportClass {
+    public class CarnetClientesCrystalReport : ReportClass {
         
-        public VentaFacturaCrystalReport() {
+        public CarnetClientesCrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "VentaFacturaCrystalReport.rpt";
+                return "CarnetClientesCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace DAL {
         
         public override string FullResourceName {
             get {
-                return "DAL.VentaFacturaCrystalReport.rpt";
+                return "StrongerGym.Reportes.CarnetClientesCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace DAL {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedVentaFacturaCrystalReport : Component, ICachedReport {
+    public class CachedCarnetClientesCrystalReport : Component, ICachedReport {
         
-        public CachedVentaFacturaCrystalReport() {
+        public CachedCarnetClientesCrystalReport() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace DAL {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            VentaFacturaCrystalReport rpt = new VentaFacturaCrystalReport();
+            CarnetClientesCrystalReport rpt = new CarnetClientesCrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }

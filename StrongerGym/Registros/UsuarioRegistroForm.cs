@@ -41,31 +41,36 @@ namespace StrongerGym.Recursos
             ContrasenatextBox.Clear();
             FechaIniciomaskedTextBox.Clear();
             AreacomboBox.SelectedIndex = 0;
+            UsuarioerrorProvider.Clear();
         }
 
-        public bool GuardarUsuario()
+        public bool LLenarDatos()
         {
-            try
-            {
-                if (NombretextBox.Text.Length > 0 && ContrasenatextBox.Text.Length > 0)
-                {
-                    usuario.Nombre = NombretextBox.Text;
-                    usuario.Contrasena = Seguridad.Encriptar(ContrasenatextBox.Text);
-                    MessageBox.Show(usuario.Contrasena + "\n" + Seguridad.DesEncriptar(usuario.Contrasena));
-                    usuario.FechaInicio = FechaIniciomaskedTextBox.Text;
-                    usuario.Area = AreacomboBox.Text;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception)
-            {
+            UsuarioerrorProvider.Clear();
+            bool retorno = true;
 
-                return false;
+            if (NombretextBox.Text.Length > 0)
+            {
+                usuario.Nombre = NombretextBox.Text;
             }
-            return true;
+            else
+            {
+                UsuarioerrorProvider.SetError(NombretextBox,"Ingrese un Nombre");
+                retorno = false;
+            }
+            if (ContrasenatextBox.Text.Length > 6)
+            {
+                usuario.Contrasena = Seguridad.Encriptar(ContrasenatextBox.Text);
+            }
+            else
+            {
+                UsuarioerrorProvider.SetError(ContrasenatextBox, "Ingrese un Contrasena Valida");
+                retorno = false;
+            }
+            
+            usuario.FechaInicio = FechaIniciomaskedTextBox.Text;
+            usuario.Area = AreacomboBox.Text;
+            return retorno;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -73,13 +78,17 @@ namespace StrongerGym.Recursos
             if (IdUsuariotextBox.Text.Length == 0)
             {
 
-                if (GuardarUsuario())
+                if (LLenarDatos())
                 {
                     if (usuario.Insertar())
                     {
-                        MessageBox.Show("Guardado correctamente");
+                        MessageBox.Show("Guardado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         Usuariochart.Refresh();
                         Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
@@ -90,7 +99,7 @@ namespace StrongerGym.Recursos
             }
             else
             {
-                if (GuardarUsuario())
+                if (LLenarDatos())
                 {
                     usuario.IdUsuario = Seguridad.ValidarIdEntero(IdUsuariotextBox.Text);
 
@@ -105,7 +114,7 @@ namespace StrongerGym.Recursos
                 }
                 else
                 {
-                    MessageBox.Show("Faltan Campos");
+                    MessageBox.Show("Faltan Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
         }
@@ -128,30 +137,36 @@ namespace StrongerGym.Recursos
                 }
                 else
                 {
-                    MessageBox.Show("Usuario no Existe");
+                    
+                    MessageBox.Show("Usuario no Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un Id.");
+                MessageBox.Show("Ingrese un Id Valido","Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void Eliminarbutton_Click_1(object sender, EventArgs e)
         {
-            try
+            if (Seguridad.ValidarIdEntero(IdUsuariotextBox.Text) > 0)
             {
                 usuario.IdUsuario = Seguridad.ValidarIdEntero(IdUsuariotextBox.Text);
                 if (usuario.Eliminar())
                 {
-                    MessageBox.Show("Eliminado Correctamente.", "Eliminar");
+                    MessageBox.Show("Eliminado Correctamente.", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception)
+            else
             {
-
-                MessageBox.Show("Error al Eliminar", "Eliminar");
+                MessageBox.Show("Ingrese un Id Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
+            
         }
     }
 }

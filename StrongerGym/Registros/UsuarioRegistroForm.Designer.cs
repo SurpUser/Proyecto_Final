@@ -30,6 +30,7 @@ namespace StrongerGym.Recursos
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.NombretextBox = new System.Windows.Forms.TextBox();
@@ -49,8 +50,10 @@ namespace StrongerGym.Recursos
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.FechaIniciodateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Usuariochart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.UsuarioerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Usuariochart)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // NombretextBox
@@ -225,6 +228,10 @@ namespace StrongerGym.Recursos
             this.Usuariochart.TabIndex = 9;
             this.Usuariochart.Text = "chart1";
             // 
+            // UsuarioerrorProvider
+            // 
+            this.UsuarioerrorProvider.ContainerControl = this;
+            // 
             // RegistroUsuarioForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,6 +260,7 @@ namespace StrongerGym.Recursos
             this.Text = "RegistroUsuarioForm";
             ((System.ComponentModel.ISupportInitialize)(this.LoginportadapictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Usuariochart)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.UsuarioerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -278,5 +286,6 @@ namespace StrongerGym.Recursos
         private Button Eliminarbutton;
         private DateTimePicker FechaIniciodateTimePicker;
         private System.Windows.Forms.DataVisualization.Charting.Chart Usuariochart;
+        private ErrorProvider UsuarioerrorProvider;
     }
 }

@@ -26,6 +26,7 @@ namespace StrongerGym.R
 
         public void Limpiar()
         {
+            ClienteerrorProvider.Clear();
             ClienteIdtextBox.Clear();
             NombretextBox.Clear();
             DirecciontextBox.Clear();
@@ -74,24 +75,70 @@ namespace StrongerGym.R
                 ClienteerrorProvider.SetError(ClientepictureBox, "Ingrese Una Foto");
                 retorno = false;
             }
-            /*
-            if (NombretextBox.Text.Length > 0 && DirecciontextBox.Text.Length > 0 && TelefonomaskedTextBox.Text.Length > 0)
+            if (DirecciontextBox.Text.Length > 0)
             {
-                                
                 cliente.Direccion = DirecciontextBox.Text;
-                cliente.CiudadId = (int)CiudadcomboBox.SelectedValue;
-                cliente.Telefono = TelefonomaskedTextBox.Text;
-                cliente.Celular = CelularmaskedTextBox.Text;
-                cliente.Altura = Convert.ToDouble(AlturatextBox.Text);
-                cliente.Peso = Convert.ToDouble(PesotextBox.Text);
-                cliente.Fecha = FechaNacimientodateTimePicker.Text;
-                cliente.Sexo = MasculinoradioButton.Checked;
             }
             else
             {
-                return false;
+                ClienteerrorProvider.SetError(DirecciontextBox, "Ingrese Una Direccion");
+                retorno = false;
             }
-            */
+            if (CiudadcomboBox.Items.Count > 0)
+            {
+                cliente.CiudadId = (int)CiudadcomboBox.SelectedValue;
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(CiudadcomboBox, "Registre Ciudades");
+                retorno = false;
+            }
+
+            
+            cliente.Fecha = FechaNacimientodateTimePicker.Text;
+
+            if (TelefonomaskedTextBox.Text.Length > 13)
+            {
+                cliente.Telefono = TelefonomaskedTextBox.Text;
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(TelefonomaskedTextBox, "Ingrese un Telefono");
+                retorno = false;
+            }
+
+            if (CelularmaskedTextBox.Text.Length > 13)
+            {
+                cliente.Celular = CelularmaskedTextBox.Text;
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(CelularmaskedTextBox, "Ingrese un Celular");
+                retorno = false;
+            }
+
+            if (AlturatextBox.Text.Length > 0)
+            {
+                cliente.Altura =Seguridad.ValidarIdDouble(AlturatextBox.Text);
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(AlturatextBox, "Ingrese una Altura");
+                retorno = false;
+            }
+
+            if (PesotextBox.Text.Length > 0)
+            {
+                cliente.Peso = Seguridad.ValidarIdDouble(PesotextBox.Text);
+            }
+            else
+            {
+                ClienteerrorProvider.SetError(PesotextBox, "Ingrese un Peso");
+                retorno = false;
+            }
+
+            cliente.Sexo = MasculinoradioButton.Checked;
+            
             return retorno;
         }
 
@@ -143,7 +190,7 @@ namespace StrongerGym.R
         {
             if (Seguridad.ValidarIdEntero(ClienteIdtextBox.Text) > 0)
             {
-
+                ClienteerrorProvider.Clear();
                 if (cliente.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
                 {
                     Guardarbutton.Image = Resources._1442108330_Modify;
@@ -203,15 +250,23 @@ namespace StrongerGym.R
         {
             try
             {
+                ClienteerrorProvider.Clear();
                 cliente.ClienteId = Seguridad.ValidarIdEntero(ClienteIdtextBox.Text);
-                if (cliente.Eliminar())
+                if (cliente.ClienteId > 0)
                 {
-                    MessageBox.Show("Eliminado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                    if (cliente.Eliminar())
+                    {
+                        MessageBox.Show("Eliminado Correctamente", "Comfirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    ClienteerrorProvider.SetError(ClienteIdtextBox,"Ingrese un Id Valido");
                 }
             }
             catch (Exception)

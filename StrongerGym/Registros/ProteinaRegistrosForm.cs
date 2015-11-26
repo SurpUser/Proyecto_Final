@@ -29,6 +29,7 @@ namespace StrongerGym.Registros
 
         public void Limpiar()
         {
+            ProteinaerrorProvider.Clear();
             ProteinaIdtextBox.Clear();
             NombretextBox.Clear();
             PreciotextBox.Clear();
@@ -43,16 +44,41 @@ namespace StrongerGym.Registros
 
         public bool LlenarDatos()
         {
-            proteina.ProteinaId = Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text);
+            bool retorno = true;
+            ProteinaerrorProvider.Clear();
 
-            proteina.Nombre = NombretextBox.Text;
+            if (NombretextBox.Text.Length > 0)
+            {
+                proteina.Nombre = NombretextBox.Text;
+            }
+            else
+            {
+                ProteinaerrorProvider.SetError(NombretextBox, "Ingrese un Nombre");
+                retorno = false;
+            }
 
-            proteina.Precio = Seguridad.ValidarIdDouble(PreciotextBox.Text);
-
+            if (Seguridad.ValidarIdEntero(PreciotextBox.Text) > 0)
+            {
+                proteina.Precio = Seguridad.ValidarIdDouble(PreciotextBox.Text);
+            }
+            else
+            {
+                ProteinaerrorProvider.SetError(PreciotextBox, "Ingrese un Precio");
+                retorno = false;
+            }
+            
             proteina.TiposProteinaId = (int)TipoProteinaIdcomboBox.SelectedValue;
 
-            proteina.Costo = Seguridad.ValidarIdDouble(CostotextBox.Text);
-            return true;
+            if (Seguridad.ValidarIdEntero(CostotextBox.Text) > 0)
+            {
+                proteina.Costo = Seguridad.ValidarIdDouble(CostotextBox.Text);
+            }
+            else
+            {
+                ProteinaerrorProvider.SetError(CostotextBox, "Ingrese un Costo");
+                retorno = false;
+            }           
+            return retorno;
         }
 
         private void Guardarbutton_Click(object sender, EventArgs e)
@@ -60,32 +86,42 @@ namespace StrongerGym.Registros
             
             if (ProteinaIdtextBox.Text.Length == 0)
             {
-                LlenarDatos();
-
-                if (proteina.Insertar())
+                if (LlenarDatos())
                 {
-                    MessageBox.Show("Se guardo correctamente");
+                    if (proteina.Insertar())
+                    {
+                        MessageBox.Show("Guardado Correctamente","Confirmar",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
-                    Limpiar();
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se guardo");
+                    MessageBox.Show("Faltan Datos","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
             else
             {
-                LlenarDatos();
-
-                if (proteina.Editar())
+                if (LlenarDatos())
                 {
-                    MessageBox.Show("Se edito correctamente");
+                    if (proteina.Editar())
+                    {
+                        MessageBox.Show("Modificado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Limpiar();
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error Al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No se edito");
+                    MessageBox.Show("Faltan Datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             
@@ -93,52 +129,44 @@ namespace StrongerGym.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            try
+            if (Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text) > 0)
             {
                 proteina.ProteinaId = Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text);
-
                 if (proteina.Eliminar())
                 {
-                    MessageBox.Show("Se elimino correctamente");
+                    MessageBox.Show("Eliminado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show("No se elimino");
-                }
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
-
-            Limpiar();
-        }
-
-        private void Agregarbutton_Click(object sender, EventArgs e){}
-
-        private void Buscar_Click(object sender, EventArgs e)
-        {
-            if (ProteinaIdtextBox.Text.Length > 0)
-            {       
-                if (proteina.Buscar(Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text)))
-                {
-                    NombretextBox.Text = proteina.Nombre;
-
-                    PreciotextBox.Text = proteina.Precio.ToString();
-
-                    CostotextBox.Text = proteina.Costo.ToString();
-
-                    TipoProteinaIdcomboBox.Text = proteina.NombreProteina.ToString();
-                }
-                else
-                {
-                    MessageBox.Show("No encontro ese Id");
+                    MessageBox.Show("Error Al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else
             {
-                MessageBox.Show("Ingrese un Id");
+                ProteinaerrorProvider.SetError(ProteinaIdtextBox, "Ingrese un Id Valido");
+            }
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            if (Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text) > 0)
+            {       
+                if (proteina.Buscar(Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text)))
+                {
+                    NombretextBox.Text = proteina.Nombre;
+                    PreciotextBox.Text = proteina.Precio.ToString();
+                    CostotextBox.Text = proteina.Costo.ToString();
+                    TipoProteinaIdcomboBox.Text = proteina.NombreProteina.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Id No Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Ingrese un Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

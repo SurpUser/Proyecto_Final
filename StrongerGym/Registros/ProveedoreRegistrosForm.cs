@@ -48,39 +48,80 @@ namespace StrongerGym.Registros
             TelefonotextBox.Clear();
             CelulartextBox.Clear();
             EmailtextBox.Clear();
+            ProveedorerrorProvider.Clear();
         }
 
-        public bool GuardarProveedor()
+        public bool LlenarDatos()
         {
-            if (NombreEmpresatextBox.Text.Length > 0 && NombreRepresentantetextBox.Text.Length > 0 && RNCtextBox.Text.Length > 0 && TelefonotextBox.Text.Length > 0 && DirecciontextBox.Text.Length > 0 && CelulartextBox.Text.Length > 0 && EmailtextBox.Text.Length > 0)
-            {
-                Regex email = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            bool retorno = true;
+            Regex email = new Regex(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*");
+            ProveedorerrorProvider.Clear();
 
-                if (email.IsMatch(EmailtextBox.Text))
-                {
-                    int id = 0;
-                    id = (int)CiudadescomboBox.SelectedValue;
-                    proveedor.CiudadId = id;
-                    proveedor.NombreEmpresa = NombreEmpresatextBox.Text;
-                    proveedor.NombreRepresentante = NombreRepresentantetextBox.Text;
-                    proveedor.RNC = RNCtextBox.Text;
-                    proveedor.Direccion = DirecciontextBox.Text;
-                    proveedor.Telefono = TelefonotextBox.Text;
-                    proveedor.Celular = CelulartextBox.Text;
-                    proveedor.Email = EmailtextBox.Text;
-                    return true;
-                }
-                else
-                {                   
-                    MessageBox.Show("Email Incorrecto","Error");
-                    return false;
-                }
-                                   
+            if (email.IsMatch(EmailtextBox.Text))
+            {
+                proveedor.Email = EmailtextBox.Text;
             }
             else
             {
-                return false;
+                ProveedorerrorProvider.SetError(EmailtextBox, "Email Incorrecto");
+                retorno = false;
             }
+            if (NombreEmpresatextBox.Text.Length > 0)
+            {
+                proveedor.NombreEmpresa = NombreEmpresatextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(NombreEmpresatextBox, "Ingrese Un Nombre");
+                retorno = false;
+            }
+            if (NombreRepresentantetextBox.Text.Length > 0)
+            {
+                proveedor.NombreRepresentante = NombreRepresentantetextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(NombreRepresentantetextBox, "Ingrese Un Nombre");
+                retorno = false;
+            }
+            if (RNCtextBox.Text.Length > 0)
+            {
+                proveedor.RNC = RNCtextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(RNCtextBox, "Ingrese Un RNC");
+                retorno = false;
+            }
+            if (DirecciontextBox.Text.Length > 0)
+            {
+                proveedor.Direccion = DirecciontextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(DirecciontextBox, "Ingrese Una Direccion");
+                retorno = false;
+            }
+            if (TelefonotextBox.Text.Length > 0)
+            {
+                proveedor.Telefono = TelefonotextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(TelefonotextBox, "Ingrese Un Telefono");
+                retorno = false;
+            }
+            if (CelulartextBox.Text.Length > 0)
+            {
+                proveedor.Celular = CelulartextBox.Text;
+            }
+            else
+            {
+                ProveedorerrorProvider.SetError(CelulartextBox, "Ingrese Un Celular");
+                retorno = false;
+            }
+            proveedor.CiudadId = (int)CiudadescomboBox.SelectedValue;
+            return retorno;
         }
         
 
@@ -90,29 +131,29 @@ namespace StrongerGym.Registros
             {
                 if (ProveedorIdtextBox.Text.Length == 0)
                 {
-                    if (GuardarProveedor())
+                    if (LlenarDatos())
                     {
                         if (proveedor.Insertar())
                         {
-                            MessageBox.Show("Guardado Correctamente.", "Correcto");
+                            MessageBox.Show("Guardado Correctamente.", "Confirmacion",MessageBoxButtons.OK,MessageBoxIcon.Information);
                             Limpiar();
                         }
                         else
                         {
-                            MessageBox.Show("Error al Guardar", "Error");
+                            MessageBox.Show("Error al Guardar", "Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
 
                     }
                     else
                     {
-                        MessageBox.Show("Faltan Campos", "Error");
+                        MessageBox.Show("Faltan Campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 else
                 {
                     proveedor.ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
 
-                    if (GuardarProveedor())
+                    if (LlenarDatos())
                     {
                         if (proveedor.Editar())
                         {
@@ -126,7 +167,7 @@ namespace StrongerGym.Registros
                     }
                     else
                     {
-                        MessageBox.Show("Faltan Campos","Error");
+                        MessageBox.Show("Faltan Campos","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
                 
@@ -139,37 +180,30 @@ namespace StrongerGym.Registros
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
-        {
-            try
+        {           
+            if (Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text) > 0)
             {
-                if (ProveedorIdtextBox.Text.Length != 0)
+                proveedor.ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
+                if (proveedor.Eliminar())
                 {
-                    proveedor.ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
-                    if (proveedor.Eliminar())
-                    {
-                        MessageBox.Show("Proveedor Eliminaro", "Correcto");
-                        Limpiar();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Error al Eliminar", "Error");
-                    }
+                    MessageBox.Show("Proveedor Eliminaro", "Correcto");
+                    Limpiar();
                 }
                 else
                 {
-                    MessageBox.Show("Ingrese un Id", "Advertencia", MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                    MessageBox.Show("Error al Eliminar", "Error");
                 }
             }
-            catch (Exception)
+            else
             {
-
-                MessageBox.Show("Error inesperado", "Error");
+                MessageBox.Show("Ingrese un Id", "Advertencia", MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
+            
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            if (ProveedorIdtextBox.Text.Length > 0)
+            if (Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text) > 0)
             {
                 int ProveedorId = Seguridad.ValidarIdEntero(ProveedorIdtextBox.Text);
 
@@ -187,12 +221,12 @@ namespace StrongerGym.Registros
                 }
                 else
                 {
-                    MessageBox.Show("No Existe");
+                    MessageBox.Show("Id No Existe","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                     Limpiar();
                 }
 
             }
-            else { MessageBox.Show("Ingrese un Id"); }
+            else { MessageBox.Show("Ingrese un Id", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); }
         }
     }
 }
