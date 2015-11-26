@@ -52,7 +52,7 @@
             this.Importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BuscarComprabutton = new System.Windows.Forms.Button();
             this.BuscarProveedorbutton = new System.Windows.Forms.Button();
-            this.BuscarProteinabutton = new System.Windows.Forms.Button();
+            this.AgregarProteinabutton = new System.Windows.Forms.Button();
             this.CompraUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.NombreProveedortextBox = new System.Windows.Forms.TextBox();
@@ -287,6 +287,7 @@
             this.BuscarComprabutton.TabIndex = 58;
             this.BuscarComprabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarComprabutton.UseVisualStyleBackColor = true;
+            this.BuscarComprabutton.Click += new System.EventHandler(this.BuscarComprabutton_Click);
             // 
             // BuscarProveedorbutton
             // 
@@ -298,17 +299,19 @@
             this.BuscarProveedorbutton.TabIndex = 59;
             this.BuscarProveedorbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BuscarProveedorbutton.UseVisualStyleBackColor = true;
+            this.BuscarProveedorbutton.Click += new System.EventHandler(this.BuscarProveedorbutton_Click);
             // 
-            // BuscarProteinabutton
+            // AgregarProteinabutton
             // 
-            this.BuscarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarProteinabutton.Location = new System.Drawing.Point(226, 112);
-            this.BuscarProteinabutton.Name = "BuscarProteinabutton";
-            this.BuscarProteinabutton.Size = new System.Drawing.Size(33, 27);
-            this.BuscarProteinabutton.TabIndex = 60;
-            this.BuscarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarProteinabutton.UseVisualStyleBackColor = true;
+            this.AgregarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.AgregarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.AgregarProteinabutton.Location = new System.Drawing.Point(226, 112);
+            this.AgregarProteinabutton.Name = "AgregarProteinabutton";
+            this.AgregarProteinabutton.Size = new System.Drawing.Size(33, 27);
+            this.AgregarProteinabutton.TabIndex = 60;
+            this.AgregarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.AgregarProteinabutton.UseVisualStyleBackColor = true;
+            this.AgregarProteinabutton.Click += new System.EventHandler(this.BuscarProteinabutton_Click);
             // 
             // CompraUsuariotextBox
             // 
@@ -443,7 +446,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.CompraUsuariotextBox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.BuscarProteinabutton);
+            this.Controls.Add(this.AgregarProteinabutton);
             this.Controls.Add(this.BuscarProveedorbutton);
             this.Controls.Add(this.BuscarComprabutton);
             this.Controls.Add(this.ComprasdataGridView);
@@ -498,7 +501,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.Button BuscarComprabutton;
         private System.Windows.Forms.Button BuscarProveedorbutton;
-        private System.Windows.Forms.Button BuscarProteinabutton;
+        private System.Windows.Forms.Button AgregarProteinabutton;
         public System.Windows.Forms.TextBox CompraUsuariotextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox NombreProveedortextBox;

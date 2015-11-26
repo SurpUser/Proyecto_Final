@@ -45,27 +45,30 @@ namespace BLL
 
         public override bool Buscar(int IdBuscado)
         {
-            DataTable dt = new DataTable();
-            DataTable dtCompra = new DataTable();
+            DataTable dtCompras = new DataTable();
+            DataTable dtCompraProteina = new DataTable();
 
             bool retorno = false;
 
             try
             {
-                dt = conexion.ObtenerDatos(string.Format("select * from Compras where CompraId = {0}", IdBuscado));
-                dtCompra = conexion.ObtenerDatos(string.Format("select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, p.ProteinaId as ProteinaId , p.Nombre as NombreProteina, v.ITBS as ITBS, v.Monto as Monto, v.NCF as NCF, v.Fecha as Fecha, v.Cantidad as Cantidad from Compras v inner join Proveedores pr on pr.ProveedorId = v.ProveedorId inner join Usuarios u " +
-                    "on u.UsuarioId = v.UsuarioId inner join Proteina p on p.ClienteId = v.ClienteId where CompraId = {0}", IdBuscado));
+                //dtCompras = conexion.ObtenerDatos(string.Format("select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, p.ProteinaId as ProteinaId , p.Nombre as NombreProteina, v.ITBS as ITBS, v.Monto as Monto, v.NCF as NCF, v.Fecha as Fecha, v.Cantidad as Cantidad from Compras v inner join Proveedores pr on pr.ProveedorId = v.ProveedorId inner join Usuarios u " +
+                 //   "on u.UsuarioId = v.UsuarioId inner join Proteinas p on p.ClienteId = v.ClienteId where CompraId = {0}", IdBuscado));
 
-                if (dt.Rows.Count > 0)
+                if (dtCompras.Rows.Count > 0)
                 {
-                    this.ProveedorId = (int)dt.Rows[0]["ProveedorId"];
-                    this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
-                    this.ProteinaId = (int)dt.Rows[0]["ProteinaId"];
-                    this.ITBS = (double)dt.Rows[0]["ITBS"];
-                    this.Monto = (double)dt.Rows[0]["Monto"];                
-                    this.NCF = dt.Rows[0]["NCF"].ToString();
-                    this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                    this.Cantidad = (int)dt.Rows[0]["Cantidad"];
+                    this.ProveedorId = (int)dtCompras.Rows[0]["ProveedorId"];
+                    this.UsuarioId = (int)dtCompras.Rows[0]["UsuarioId"];
+                    this.ProteinaId = (int)dtCompras.Rows[0]["ProteinaId"];
+                    this.ITBS = (double)dtCompras.Rows[0]["ITBS"];
+                    this.Monto = (double)dtCompras.Rows[0]["Monto"];                
+                    this.NCF = dtCompras.Rows[0]["NCF"].ToString();
+                    this.Fecha = dtCompras.Rows[0]["Fecha"].ToString();
+                    this.Cantidad = (int)dtCompras.Rows[0]["Cantidad"];
+
+                    //dtCompraProteina = conexion.ObtenerDatos(String.Format("select cd.ProteinaId as ProteinaId, p.Nombre as Nombre, p.Costo as Costo, cd.Cantidad as Cantidad from ComprasProteinas cd inner join " +
+                      //  "Compras c on cd.CompraId = c.CompraId inner join Proteinas p on cd.ProteinaId = p.ProteinaId where c.CompraId =  {0}", IdBuscado));
+
                 }
             }
             catch (Exception)

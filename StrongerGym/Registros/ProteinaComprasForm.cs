@@ -1,4 +1,5 @@
 ﻿using BLL;
+using StrongerGym.Properties;
 using StrongerGym.R;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace StrongerGym.Registros
         int Cantidad = 0;
         double monto = 0.0;
         double itbis = 0.0;
+        bool Mode = false;
 
         public ProteinaComprasForm()
         {
@@ -38,6 +40,7 @@ namespace StrongerGym.Registros
         public void BuscarProteina()
         {
             proteina.ProteinaId = Seguridad.ValidarIdEntero(CodigoProteinatextBox.Text);
+
             if (proteina.Buscar(proteina.ProteinaId))
             {
                 ProteinatextBox.Text = proteina.Nombre;
@@ -48,7 +51,7 @@ namespace StrongerGym.Registros
             }
         }
 
-        public void BuscarCliente()
+        public void BuscarProveedor()
         {
             if (proveedor.Buscar(Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text)))
             {
@@ -131,7 +134,14 @@ namespace StrongerGym.Registros
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
-            AgregarProducto();
+            if (Mode)
+            {
+                ComprasdataGridView.Rows.RemoveAt(ComprasdataGridView.CurrentRow.Index);
+            }
+            else
+            {
+                AgregarProducto();
+            }
         }
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
@@ -151,6 +161,32 @@ namespace StrongerGym.Registros
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void BuscarProveedorbutton_Click(object sender, EventArgs e)
+        {
+            BuscarProveedor();
+        }
+
+        private void BuscarProteinabutton_Click(object sender, EventArgs e)
+        {
+            BuscarProteina();
+            AgregarProteinabutton.Image = Resources.Shopping_cart_add;
+            AgregarProteinabutton.Text = "Agregar";
+            Mode = false;
+        }
+
+        private void BuscarComprabutton_Click(object sender, EventArgs e)
+        {
+            if (!CodigoCompratextBox.ReadOnly)
+            {
+                Guardarbutton.Image = Resources._1442108330_Modify;
+                Guardarbutton.Text = "Modificar";
+                Limpiar();
+                LlenarDatos();
+            }
+
+            CodigoCompratextBox.ReadOnly = false;
         }
     }
 }
