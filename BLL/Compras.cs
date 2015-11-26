@@ -46,11 +46,15 @@ namespace BLL
         public override bool Buscar(int IdBuscado)
         {
             DataTable dt = new DataTable();
+            DataTable dtCompra = new DataTable();
+
             bool retorno = false;
 
             try
             {
                 dt = conexion.ObtenerDatos(string.Format("select * from Compras where CompraId = {0}", IdBuscado));
+                dtCompra = conexion.ObtenerDatos(string.Format("select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, p.ProteinaId as ProteinaId , p.Nombre as NombreProteina, v.ITBS as ITBS, v.Monto as Monto, v.NCF as NCF, v.Fecha as Fecha, v.Cantidad as Cantidad from Compras v inner join Proveedores pr on pr.ProveedorId = v.ProveedorId inner join Usuarios u " +
+                    "on u.UsuarioId = v.UsuarioId inner join Proteina p on p.ClienteId = v.ClienteId where CompraId = {0}", IdBuscado));
 
                 if (dt.Rows.Count > 0)
                 {
