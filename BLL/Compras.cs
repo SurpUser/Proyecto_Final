@@ -38,9 +38,9 @@ namespace BLL
             this.proteina = new List<Proteinas>();
         }
 
-        public void AgregarProteinas(int ProteinaId, int Cantidad)
+        public void AgregarProteinas(int ProteinaId, int Cantidad,double Importe)
         {
-            this.proteina.Add(new Proteinas(ProteinaId, Cantidad));
+            this.proteina.Add(new Proteinas(ProteinaId, Cantidad,Importe));
         }
 
         public override bool Buscar(int IdBuscado)

@@ -13,6 +13,8 @@ namespace BLL
     {
         public int VentaId { get; set; }
         public int UsuarioId { get; set; }
+        public string NombreUsuario { get; set; }
+        public string NombreCliente { get; set; }
         public int ClienteId { get; set; }
         public int ProteinaId { get; set; }
         public int Cantidad { get; set; }
@@ -54,28 +56,50 @@ namespace BLL
             this.Precio = Precio;
         }
 
-        public void AgregarProteinas(int ProteinaId,int Cantidad)
+        public void AgregarProteinas(int ProteinaId,int Cantidad,double Importe)
         {
-            this.proteina.Add(new Proteinas(ProteinaId,Cantidad));
+            this.proteina.Add(new Proteinas(ProteinaId,Cantidad,Importe));
+        }
+
+        public void AgregarProteinas(int ProteinaId,string Nombre,double Precio, int Cantidad, double Importe)
+        {
+            this.proteina.Add(new Proteinas(ProteinaId,Nombre,Precio, Cantidad, Importe));
+        }
+
+        public void LimpiarList()
+        {
+            this.proteina.Clear();
         }
 
         public override bool Buscar(int IdBuscado)
         {
-            DataTable dt = new DataTable();
+            DataTable dtVentas = new DataTable();
+            DataTable dtVentaProteinas = new DataTable();
             bool retorno = false;
 
             try
             {
-                dt = conexion.ObtenerDatos(string.Format("Select * from Ventas where VentaId = {0} ", IdBuscado));
-                if (dt.Rows.Count > 0)
+                dtVentas = conexion.ObtenerDatos(string.Format("select u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, c.ClienteId as ClienteId , c.Nombre as NombreCliente, v.NCF as NCF, v.Fecha as Fecha,v.ITBS as ITBS, v.TotalVenta as TotalVenta from Ventas v inner join Usuarios u " +
+                    "on u.UsuarioId = v.UsuarioId inner join Clientes c on c.ClienteId = v.ClienteId where VentaId = {0}", IdBuscado));
+                if (dtVentas.Rows.Count > 0)
                 {
-                    this.UsuarioId = (int)dt.Rows[0]["UsuarioId"];
-                    this.ClienteId = (int)dt.Rows[0]["ClienteId"];
-                    this.ITBS = (double)dt.Rows[0]["ITBS"];
-                    this.Fecha = dt.Rows[0]["Fecha"].ToString();
-                    this.NCF = dt.Rows[0]["NCF"].ToString();
-                    this.TotalVenta = (double)dt.Rows[0]["TotalVenta"];
+                    this.UsuarioId = (int)dtVentas.Rows[0]["UsuarioId"];
+                    this.NombreUsuario = dtVentas.Rows[0]["NombreUsuario"].ToString();
+                    this.ClienteId = (int)dtVentas.Rows[0]["ClienteId"];
+                    this.NombreCliente = dtVentas.Rows[0]["NombreCliente"].ToString();
+                    this.ITBS = (double)dtVentas.Rows[0]["ITBS"];
+                    this.Fecha = dtVentas.Rows[0]["Fecha"].ToString();
+                    this.NCF = dtVentas.Rows[0]["NCF"].ToString();
+                    this.TotalVenta = (double)dtVentas.Rows[0]["TotalVenta"];
 
+                    dtVentaProteinas = conexion.ObtenerDatos(String.Format("select vd.ProteinaId as ProteinaId, p.Nombre as Nombre, p.Precio as Precio, vd.Cantidad as Cantidad, vd.Importe as Importe from VentasProteinas vd inner join " +
+                        "Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId where v.VentaId =  {0}", IdBuscado));
+                     
+                    LimpiarList();
+                    foreach (DataRow row in dtVentaProteinas.Rows)
+                    {
+                        AgregarProteinas((int)row["ProteinaId"],(string)row["Nombre"],(double)row["Precio"],(int)row["Cantidad"],(double)row["Importe"]);
+                    }
                     retorno = true;
                 }            
             }
@@ -94,20 +118,21 @@ namespace BLL
 
             try
             {
-                retorno = conexion.Ejecutar(String.Format("(Update Ventas set UsuarioId = {0}, ClienteId = {1}, ITBS = {2}, Fecha = '{3}', NCF = '{4}', TotalVenta = {5} where VentaId = {7}", this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.VentaId));
+                retorno = conexion.Ejecutar(String.Format("update Ventas set UsuarioId = {0}, ClienteId = {1}, ITBS = {2}, Fecha = '{3}', NCF = '{4}', TotalVenta = {5} where VentaId = {6}", this.UsuarioId, this.ClienteId, this.ITBS, this.Fecha, this.NCF, this.TotalVenta, this.VentaId));
                 if (retorno)
                 {
                     retorno = conexion.Ejecutar(String.Format("delete from VentasProteinas where VentaId = {0}", this.VentaId));
                     foreach (var pro in proteina)
                     {
-                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad));
+                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad,Importe) values({0},{1},{2},{3},{4})", this.UsuarioId, pro.ProteinaId, this.VentaId, pro.Cantidad, pro.Importe));
                     }
 
                     retorno = conexion.Ejecutar(comando.ToString());
                 }
             }
-            catch (Exception)
+            catch (Exception e)
             {
+                throw e;
                 retorno = false;
             }
 
@@ -143,7 +168,7 @@ namespace BLL
                     this.VentaId = (int)conexion.ObtenerDatos(String.Format("select MAX(VentaId) as VentaId from Ventas")).Rows[0]["VentaId"];
                     foreach (var pro in proteina)
                     {
-                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad) values({0},{1},{2},{3})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad));
+                        comando.AppendLine(String.Format("insert into VentasProteinas(UsuarioId,ProteinaId,VentaId,Cantidad,Importe) values({0},{1},{2},{3},{4})", this.UsuarioId, pro.ProteinaId, this.VentaId,pro.Cantidad,pro.Importe));
                     }
                 }
 

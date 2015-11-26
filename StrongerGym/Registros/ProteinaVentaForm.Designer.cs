@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label9 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -71,7 +72,9 @@
             this.BuscarVentabutton = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.NCFtextBox = new System.Windows.Forms.TextBox();
+            this.VentaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -396,6 +399,7 @@
             this.VentasdataGridView.ReadOnly = true;
             this.VentasdataGridView.Size = new System.Drawing.Size(713, 225);
             this.VentasdataGridView.TabIndex = 55;
+            this.VentasdataGridView.Click += new System.EventHandler(this.VentasdataGridView_Click);
             // 
             // Codigo
             // 
@@ -464,6 +468,10 @@
             this.NCFtextBox.Size = new System.Drawing.Size(100, 20);
             this.NCFtextBox.TabIndex = 58;
             // 
+            // VentaerrorProvider
+            // 
+            this.VentaerrorProvider.ContainerControl = this;
+            // 
             // ProteinaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -505,6 +513,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta de Proteina";
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -555,5 +564,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
         private System.Windows.Forms.DataGridViewTextBoxColumn ITBS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
+        private System.Windows.Forms.ErrorProvider VentaerrorProvider;
     }
 }

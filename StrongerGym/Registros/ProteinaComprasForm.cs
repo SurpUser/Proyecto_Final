@@ -115,7 +115,7 @@ namespace StrongerGym.Registros
             {
                 for (int i = 0; i < ComprasdataGridView.RowCount; i++)
                 {
-                    compra.AgregarProteinas((int)ComprasdataGridView.Rows[i].Cells[0].Value, (int)ComprasdataGridView.Rows[i].Cells[3].Value);
+                    //compra.AgregarProteinas((int)ComprasdataGridView.Rows[i].Cells[0].Value, (int)ComprasdataGridView.Rows[i].Cells[3].Value);
                 }
                 if (compra.Insertar())
                 {
