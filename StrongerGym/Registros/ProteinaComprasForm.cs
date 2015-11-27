@@ -33,7 +33,7 @@ namespace StrongerGym.Registros
 
             itbis = Seguridad.ValidarIdDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"].ToString());
             CodigoCompratextBox.Text = compra.Listado("MAX(CompraId)+1 as CompraId", "1=1", "").Rows[0]["CompraId"].ToString();
-            NCFtextBox.Text = configuracion.Listado("NCF", "1=1", "").Rows[0]["NCF"].ToString();
+           
             ITBISlabel.Text = itbis.ToString();
         }
 
@@ -56,6 +56,7 @@ namespace StrongerGym.Registros
             if (proveedor.Buscar(Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text)))
             {
                 NombreProveedortextBox.Text = proveedor.NombreRepresentante;
+                NCFtextBox.Text = proveedor.RNC;
             }
             else
             {
@@ -68,8 +69,15 @@ namespace StrongerGym.Registros
             monto = 0.0;
             Cantidad = Convert.ToInt32(CantidadProteinatextBox.Text);
 
-            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Costo, proteina.Precio, Cantidad, proveedor, Cantidad * proteina.Costo + (itbis * proteina.Costo));
+            ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Costo, proteina.Precio, Cantidad, Cantidad * proteina.Costo + (itbis * proteina.Costo));
+            CalcularMonto();
+            
+        }
 
+        public void CalcularMonto()
+        {
+            Montolabel.Text = "";
+            monto = 0.0;
             for (int i = 0; i < ComprasdataGridView.RowCount; i++)
             {
 
@@ -82,26 +90,35 @@ namespace StrongerGym.Registros
         public void Limpiar()
         {
             ComprasdataGridView.Rows.Clear();
+            NombreProveedortextBox.Clear();
+            ProteinatextBox.Clear();
             CodigoProveedortextBox.Clear();
             CodigoProteinatextBox.Clear();
             CantidadProteinatextBox.Clear();
-            CompraUsuariotextBox.Clear();
             Montolabel.Text = "0.00";
             CodigoProveedortextBox.ReadOnly = false;
+            CompraerrorProvider.Clear();
+            NCFtextBox.Clear();
+            compra.LimpiarList();
         }
 
         public bool LlenarDatos()
         {
             if (true)
             {
-                compra.UsuarioId = 1;
+                compra.UsuarioId = LoginForm.UsuarioId;
                 compra.ProveedorId = Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text);
                 compra.ITBS = itbis;
                 compra.Fecha = FechadateTimePicker.Text;
                 compra.Monto = Convert.ToDouble(Montolabel.Text);
                 compra.NCF = NCFtextBox.Text;
                 compra.Fecha = FechadateTimePicker.Text;
+                compra.LimpiarList();
 
+                for (int i = 0; i < ComprasdataGridView.RowCount; i++)
+                {
+                    compra.AgregarProteinas((int)ComprasdataGridView.Rows[i].Cells[0].Value, (int)ComprasdataGridView.Rows[i].Cells[4].Value, (double)ComprasdataGridView.Rows[i].Cells[5].Value);
+                }
             }
             return true;
         }
@@ -114,20 +131,40 @@ namespace StrongerGym.Registros
 
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
+            CompraerrorProvider.Clear();
             if (LlenarDatos())
             {
-                for (int i = 0; i < ComprasdataGridView.RowCount; i++)
+                if (CodigoCompratextBox.Text.Length == 0)
                 {
-                    //compra.AgregarProteinas((int)ComprasdataGridView.Rows[i].Cells[0].Value, (int)ComprasdataGridView.Rows[i].Cells[3].Value);
-                }
-                if (compra.Insertar())
-                {
-                    MessageBox.Show("Guardado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Limpiar();
+                    if (compra.Insertar())
+                    {
+                        MessageBox.Show("Guardado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Limpiar();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Error al Guardar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (Seguridad.ValidarIdEntero(CodigoCompratextBox.Text) > 0)
+                    {
+                        compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+                        if (compra.Editar())
+                        {
+                            MessageBox.Show("Modificado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Limpiar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error al Modificar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        CompraerrorProvider.SetError(CodigoCompratextBox, "Codifo No Valido");
+                    }
                 }
             }
         }
@@ -137,6 +174,7 @@ namespace StrongerGym.Registros
             if (Mode)
             {
                 ComprasdataGridView.Rows.RemoveAt(ComprasdataGridView.CurrentRow.Index);
+                CalcularMonto();
             }
             else
             {
@@ -161,6 +199,8 @@ namespace StrongerGym.Registros
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            Guardarbutton.Image = Resources._1444608937_Save;
+            Guardarbutton.Text = "Guardar";
         }
 
         private void BuscarProveedorbutton_Click(object sender, EventArgs e)
@@ -171,22 +211,56 @@ namespace StrongerGym.Registros
         private void BuscarProteinabutton_Click(object sender, EventArgs e)
         {
             BuscarProteina();
-            AgregarProteinabutton.Image = Resources.Shopping_cart_add;
-            AgregarProteinabutton.Text = "Agregar";
+            Agregarbutton.Image = Resources.Shopping_cart_add;
+            Agregarbutton.Text = "Agregar";
             Mode = false;
+        }
+
+        public void LlenarForm()
+        {
+            compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            CompraerrorProvider.Clear();
+            compra.LimpiarList();
+            if (compra.CompraId > 0)
+            {
+                if (compra.Buscar(compra.CompraId))
+                {
+                    CodigoProveedortextBox.Text = compra.ProveedorId.ToString();
+                    NombreProveedortextBox.Text = compra.NombreProveedor;
+                    CompraUsuariotextBox.Text = compra.NombreUsuario;
+                    NCFtextBox.Text = compra.NCF;
+                    FechadateTimePicker.Text = compra.Fecha;
+                    itbis = compra.ITBS;
+                    Montolabel.Text = compra.Monto.ToString();
+                    foreach (var compras in compra.proteina)
+                    {
+                        ComprasdataGridView.Rows.Add(compras.ProteinaId,compras.Nombre,compras.Costo,compras.Precio,compras.Cantidad,compras.Importe);
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("La Compra No Existe", "Comfirmacion", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CodigoCompratextBox, "Codigo No Valido");
+            }
         }
 
         private void BuscarComprabutton_Click(object sender, EventArgs e)
         {
-            if (!CodigoCompratextBox.ReadOnly)
-            {
-                Guardarbutton.Image = Resources._1442108330_Modify;
-                Guardarbutton.Text = "Modificar";
-                Limpiar();
-                LlenarDatos();
-            }
+            Guardarbutton.Image = Resources._1442108330_Modify;
+            Guardarbutton.Text = "Modificar";
+            LlenarForm();          
+        }
 
-            CodigoCompratextBox.ReadOnly = false;
+        private void ComprasdataGridView_Click(object sender, EventArgs e)
+        {
+            Mode = true;
+            Agregarbutton.Image = Resources._1442108658_trash;
+            Agregarbutton.Text = "Eliminar";
         }
     }
 }

@@ -63,11 +63,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Consultas\AcercaDeForm.cs">
+    <Compile Include="Consultas\AboutBox1.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Consultas\AcercaDeForm.Designer.cs">
-      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    <Compile Include="Consultas\AboutBox1.Designer.cs">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
     </Compile>
     <Compile Include="Consultas\CarnetClientesForm.cs">
       <SubType>Form</SubType>
@@ -110,6 +110,12 @@
     </Compile>
     <Compile Include="Consultas\TipoProteinaConsultarForm.Designer.cs">
       <DependentUpon>TipoProteinaConsultarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Consultas\VentasConsultaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Consultas\VentasConsultaForm.Designer.cs">
+      <DependentUpon>VentasConsultaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Registros\CiudadRegistroForm.cs">
       <SubType>Form</SubType>
@@ -183,6 +189,12 @@
       <DependentUpon>CarnetClientesCrystalReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\VentasCrystalReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VentasCrystalReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="StrongerGymForms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,8 +215,8 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Consultas\AcercaDeForm.resx">
-      <DependentUpon>AcercaDeForm.cs</DependentUpon>
+    <EmbeddedResource Include="Consultas\AboutBox1.resx">
+      <DependentUpon>AboutBox1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\CarnetClientesForm.resx">
       <DependentUpon>CarnetClientesForm.cs</DependentUpon>
@@ -226,6 +238,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Consultas\TipoProteinaConsultarForm.resx">
       <DependentUpon>TipoProteinaConsultarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Consultas\VentasConsultaForm.resx">
+      <DependentUpon>VentasConsultaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registros\CiudadRegistroForm.resx">
       <DependentUpon>CiudadRegistroForm.cs</DependentUpon>
@@ -266,6 +281,10 @@
     <EmbeddedResource Include="Reportes\CarnetClientesCrystalReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>CarnetClientesCrystalReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\VentasCrystalReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VentasCrystalReport.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="StrongerGymForms.resx">
       <DependentUpon>StrongerGymForms.cs</DependentUpon>
@@ -361,6 +380,7 @@
     <None Include="Resources\Printer.png" />
     <None Include="Resources\1447982246_invoice.png" />
     <None Include="Resources\Shopping-cart-add.png" />
+    <None Include="Resources\fc-programs.jpg" />
     <Content Include="ScriptStrongerGym\StrongerQuery.sql" />
   </ItemGroup>
   <ItemGroup>

@@ -19,7 +19,7 @@ create table Proveedores(
 ProveedorId int primary key identity(1,1),
 CiudadId int References Ciudades(CiudadId),
 NombreEmpresa varchar(50),
-RNC varchar(15),--12-15
+RNC varchar(15),
 Direccion varchar(100),
 Telefono varchar(14),
 Celular varchar(14),
@@ -72,13 +72,11 @@ go
 create table Compras(
 CompraId int primary key identity(1,1),
 ProveedorId int References Proveedores(ProveedorId),
-ProteinaId int References Proteinas(ProteinaId),
 UsuarioId int References Usuarios(UsuarioId),
 ITBS float,
 Monto float,
 NCF varchar(50),
-Fecha varchar(11),
-Cantidad int,
+Fecha varchar(11)
 );
 go
 create table ComprasProteinas(
@@ -86,7 +84,7 @@ CompraDetalleId int primary key identity(1,1),
 CompraId int References Compras(CompraId),
 ProteinaId int References Proteinas(ProteinaId),
 Cantidad int,
-Costo float
+SubTotal float,
 );
 go
 create table Ventas(
@@ -115,10 +113,9 @@ Semana int,
 Mes int,
 Ano int,
 ITBIS float,
-NCF varchar(20)
+NCF varchar(20),
+RutaFotos varchar(200)
 );
-
-drop table Configuraciones
 
 select * from Configuraciones
 
@@ -133,6 +130,8 @@ select * from Ventas where VentaId = 3;
 select * from VentasProteinas
 
 select * from Cuotas
+
+select * from ComprasProteinas
 
 
 select u.UsuarioId,u.Nombre,c.ClienteId,c.Nombre,v.NCF,v.Fecha,v.TotalVenta from Ventas v inner join Usuarios u
@@ -152,6 +151,10 @@ delete from TiposProteinas where TipoProteinaId = 3
 --select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;
 
 --select * from Ciudades;
+
+select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, c.ITBS as ITBS, c.Monto as Monto, c.NCF as NCF, c.Fecha as Fecha from Compras c inner join Proveedores pr on pr.ProveedorId = c.ProveedorId inner join Usuarios u on u.UsuarioId = c.UsuarioId where CompraId = 1
+
+select cd.ProteinaId as ProteinaId, p.Nombre as Nombre, p.Costo as Costo, cd.Cantidad as Cantidad, p.Precio as Precios, cd.SubTotal as SubTotal from ComprasProteinas cd inner join Compras c on cd.CompraId = c.CompraId inner join Proteinas p on cd.ProteinaId = p.ProteinaId where c.CompraId =  3
 
 insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','ZgBjADEAMAAxADAA','10/11/2015','Administrativa');
 

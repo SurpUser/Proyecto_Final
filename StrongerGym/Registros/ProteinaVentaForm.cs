@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using BLL;
 using StrongerGym.R;
 using StrongerGym.Properties;
+using StrongerGym.Consultas;
+using StrongerGym.Reportes;
 
 namespace StrongerGym.Registros
 {
@@ -33,7 +35,7 @@ namespace StrongerGym.Registros
             VentaUsuariotextBox.Text = LoginForm.NombreUsuario;
 
             itbis = Seguridad.ValidarIdDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"].ToString());
-            CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
+            //CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
             NCFtextBox.Text = configuracion.Listado("NCF","1=1","").Rows[0]["NCF"].ToString();
             ITBISlabel.Text = itbis.ToString();
         }
@@ -80,7 +82,9 @@ namespace StrongerGym.Registros
 
                 monto += (double)VentasdataGridView.Rows[i].Cells[5].Value;
             }
-           
+            CodigoProteinatextBox.Clear();
+            CantidadProteinatextBox.Clear();
+            ProteinatextBox.Clear();
             Montolabel.Text = monto.ToString();
         }
 
@@ -103,6 +107,8 @@ namespace StrongerGym.Registros
             VentasdataGridView.Rows.Clear();
             CodigoClientetextBox.Clear();
             CodigoProteinatextBox.Clear();
+            NombreClientetextBox.Clear();
+            ProteinatextBox.Clear();
             CantidadProteinatextBox.Clear();
             Montolabel.Text = "0.00";
             CodigoClientetextBox.ReadOnly = false;
@@ -151,7 +157,7 @@ namespace StrongerGym.Registros
         {
             if (LlenarDatos())
             {
-                if (CodigoVentatextBox.Text.Length < 0)
+                if (CodigoVentatextBox.Text.Length == 0)
                 {
                     if (venta.Insertar())
                     {
@@ -246,7 +252,11 @@ namespace StrongerGym.Registros
 
         private void Facturarbutton_Click(object sender, EventArgs e)
         {
-
+            VentasConsultaForm ventas = new VentasConsultaForm();
+            VentasCrystalReport rpt = new VentasCrystalReport();
+            rpt.SetParameterValue("VentaId",3);
+            ventas.VentascrystalReportViewer.ReportSource = rpt;
+            ventas.ShowDialog();
         }
 
         private void VentasdataGridView_Click(object sender, EventArgs e)

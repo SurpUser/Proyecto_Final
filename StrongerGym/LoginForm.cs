@@ -17,6 +17,8 @@ namespace StrongerGym.R
         int intentos = 0;
         Usuarios usuario = new Usuarios();
         public static string NombreUsuario { get; set; }
+        public static int UsuarioId { get; set; }
+
         public LoginForm()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace StrongerGym.R
                     this.Visible = false;
                     StrongerGymForms sgf = new StrongerGymForms();
                     usuario.Permisos();
-
+                    UsuarioId = usuario.IdUsuario;
                     if (usuario.Area != "Administrativa")
                     {
                         sgf.registroUsuarioToolStripMenuItem.Visible = false;

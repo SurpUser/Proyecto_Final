@@ -139,8 +139,8 @@
   <data name="051-512" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\051-512.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1447982246_invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1447982246_invoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,11 +148,17 @@
   <data name="1444608937_Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1444608937_Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Preview" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Preview.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Protein-Powder-type" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Protein-Powder-type.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Protein-Powder-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Protein-Powder-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Shopping-cart-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Shopping-cart-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1442108115_Add" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1442108115_Add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -165,9 +171,6 @@
   </data>
   <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1447982246_invoice" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1447982246_invoice.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="lock-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,7 +208,7 @@
   <data name="Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Shopping-cart-add" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Shopping-cart-add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fc-programs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fc-programs.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
