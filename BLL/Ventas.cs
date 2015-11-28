@@ -130,9 +130,8 @@ namespace BLL
                     retorno = conexion.Ejecutar(comando.ToString());
                 }
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
                 retorno = false;
             }
 

@@ -71,7 +71,7 @@ namespace BLL
             {
                 retorno = conexion.Ejecutar(string.Format("update Configuraciones set Dia = {0}, Semana = {1}, Mes = {2}, Ano = {3}, ITBIS = {4}, NCF = '{5}' where ConfiguracionId = {6}", this.Dia, this.Semana ,this.Mes, this.Ano,this.ITBIS, this.NCF, this.ConfiguracionId));
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 retorno = false;
             }

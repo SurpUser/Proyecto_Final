@@ -73,8 +73,10 @@
             this.label6 = new System.Windows.Forms.Label();
             this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.VentaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -472,6 +474,10 @@
             // 
             this.VentaerrorProvider.ContainerControl = this;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // ProteinaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -514,6 +520,7 @@
             this.Text = "Venta de Proteina";
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -565,5 +572,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ITBS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.ErrorProvider VentaerrorProvider;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

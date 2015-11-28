@@ -25,6 +25,7 @@ namespace StrongerGym.Registros
         double monto = 0.0;
         double itbis = 0.0;
         bool Mode = false;
+        bool retorno = false;
 
         public ProteinaComprasForm()
         {
@@ -39,7 +40,17 @@ namespace StrongerGym.Registros
 
         public void BuscarProteina()
         {
-            proteina.ProteinaId = Seguridad.ValidarIdEntero(CodigoProteinatextBox.Text);
+            CompraerrorProvider.Clear();
+
+            if (CodigoProteinatextBox.Text.Length > 0)
+            {
+                proteina.ProteinaId = Seguridad.ValidarIdEntero(CodigoProteinatextBox.Text);
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CodigoProteinatextBox, "Ingrese Un Codigo de Proteina");
+                retorno = false;
+            }
 
             if (proteina.Buscar(proteina.ProteinaId))
             {
@@ -53,7 +64,20 @@ namespace StrongerGym.Registros
 
         public void BuscarProveedor()
         {
-            if (proveedor.Buscar(Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text)))
+            int Convertido = 0;
+            CompraerrorProvider.Clear();
+
+            if (CodigoProveedortextBox.Text.Length > 0)
+            {
+                Convertido = Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text);
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CodigoProveedortextBox, "Ingrese Un Codigo de Proveedor");
+                retorno = false;
+            }
+
+            if (proveedor.Buscar(Convertido))
             {
                 NombreProveedortextBox.Text = proveedor.NombreRepresentante;
                 NCFtextBox.Text = proveedor.RNC;
@@ -67,8 +91,18 @@ namespace StrongerGym.Registros
         {
             Montolabel.Text = "";
             monto = 0.0;
-            Cantidad = Convert.ToInt32(CantidadProteinatextBox.Text);
+            CompraerrorProvider.Clear();
 
+            if (CantidadProteinatextBox.Text.Length > 0)
+            {
+                Cantidad = Convert.ToInt32(CantidadProteinatextBox.Text);
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CantidadProteinatextBox, "Ingrese Una Cantidad");
+                retorno = false;
+            }
+           
             ComprasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Costo, proteina.Precio, Cantidad, Cantidad * proteina.Costo + (itbis * proteina.Costo));
             CalcularMonto();
             
@@ -106,11 +140,23 @@ namespace StrongerGym.Registros
         {
             if (true)
             {
+                CompraerrorProvider.Clear();
+
                 compra.UsuarioId = LoginForm.UsuarioId;
-                compra.ProveedorId = Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text);
+
+                if (CodigoProveedortextBox.Text.Length > 0)
+                {
+                    compra.ProveedorId = Seguridad.ValidarIdEntero(CodigoProveedortextBox.Text);
+                }
+                else
+                {
+                    CompraerrorProvider.SetError(CodigoProveedortextBox, "Ingrese Un Codigo de Proveedor");
+                    retorno = false;
+                }
+                
                 compra.ITBS = itbis;
                 compra.Fecha = FechadateTimePicker.Text;
-                compra.Monto = Convert.ToDouble(Montolabel.Text);
+                compra.Monto = Seguridad.ValidarIdDouble(Montolabel.Text);
                 compra.NCF = NCFtextBox.Text;
                 compra.Fecha = FechadateTimePicker.Text;
                 compra.LimpiarList();
@@ -132,6 +178,7 @@ namespace StrongerGym.Registros
         private void Guardarbutton_Click(object sender, EventArgs e)
         {
             CompraerrorProvider.Clear();
+
             if (LlenarDatos())
             {
                 if (CodigoCompratextBox.Text.Length == 0)
@@ -150,7 +197,18 @@ namespace StrongerGym.Registros
                 {
                     if (Seguridad.ValidarIdEntero(CodigoCompratextBox.Text) > 0)
                     {
-                        compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+                        CompraerrorProvider.Clear();
+
+                        if (CodigoCompratextBox.Text.Length > 0)
+                        {
+                            compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+                        }
+                        else
+                        {
+                            CompraerrorProvider.SetError(CodigoCompratextBox, "Ingrese Un Codigo de Compra");
+                            retorno = false;
+                        }
+
                         if (compra.Editar())
                         {
                             MessageBox.Show("Modificado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -184,7 +242,18 @@ namespace StrongerGym.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            CompraerrorProvider.Clear();
+
+            if (CodigoCompratextBox.Text.Length > 0)
+            {
+                compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CodigoCompratextBox, "Ingrese Un Codigo de Compra");
+                retorno = false;
+            }
+           
             if (compra.Eliminar())
             {
                 MessageBox.Show("Eliminado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -218,7 +287,18 @@ namespace StrongerGym.Registros
 
         public void LlenarForm()
         {
-            compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            CompraerrorProvider.Clear();
+
+            if (CodigoCompratextBox.Text.Length > 0)
+            {
+                compra.CompraId = Seguridad.ValidarIdEntero(CodigoCompratextBox.Text);
+            }
+            else
+            {
+                CompraerrorProvider.SetError(CodigoCompratextBox, "Ingrese Un Codigo de Compra");
+                retorno = false;
+            }
+
             CompraerrorProvider.Clear();
             compra.LimpiarList();
             if (compra.CompraId > 0)

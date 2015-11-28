@@ -117,23 +117,23 @@ namespace StrongerGym.R
                 retorno = false;
             }
 
-            if (AlturatextBox.Text.Length > 0)
+            if (Seguridad.ValidarIdDouble(AlturatextBox.Text) > 0)
             {
-                cliente.Altura =Seguridad.ValidarIdDouble(AlturatextBox.Text);
+                cliente.Altura = Seguridad.ValidarIdDouble(AlturatextBox.Text);
             }
             else
             {
-                ClienteerrorProvider.SetError(AlturatextBox, "Ingrese una Altura");
+                ClienteerrorProvider.SetError(AlturatextBox, "Ingrese una Altura Valido");
                 retorno = false;
             }
 
-            if (PesotextBox.Text.Length > 0)
+            if (Seguridad.ValidarIdDouble(PesotextBox.Text) > 0)
             {
                 cliente.Peso = Seguridad.ValidarIdDouble(PesotextBox.Text);
             }
             else
             {
-                ClienteerrorProvider.SetError(PesotextBox, "Ingrese un Peso");
+                ClienteerrorProvider.SetError(PesotextBox, "Ingrese un Peso Valido");
                 retorno = false;
             }
 
