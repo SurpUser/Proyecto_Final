@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CodigoCompratextBox = new System.Windows.Forms.TextBox();
@@ -44,9 +45,15 @@
             this.Guardarbutton = new System.Windows.Forms.Button();
             this.Facturarbutton = new System.Windows.Forms.Button();
             this.ComprasdataGridView = new System.Windows.Forms.DataGridView();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SubT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BuscarComprabutton = new System.Windows.Forms.Button();
             this.BuscarProveedorbutton = new System.Windows.Forms.Button();
-            this.AgregarProteinabutton = new System.Windows.Forms.Button();
+            this.BuscarProteinabutton = new System.Windows.Forms.Button();
             this.CompraUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.NombreProveedortextBox = new System.Windows.Forms.TextBox();
@@ -60,13 +67,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CantidadProteinatextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cost = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CompraerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ComprasdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CompraerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -91,7 +94,6 @@
             // 
             this.CodigoCompratextBox.Location = new System.Drawing.Point(120, 60);
             this.CodigoCompratextBox.Name = "CodigoCompratextBox";
-            this.CodigoCompratextBox.ReadOnly = true;
             this.CodigoCompratextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoCompratextBox.TabIndex = 2;
             // 
@@ -238,6 +240,44 @@
             this.ComprasdataGridView.ReadOnly = true;
             this.ComprasdataGridView.Size = new System.Drawing.Size(723, 225);
             this.ComprasdataGridView.TabIndex = 56;
+            this.ComprasdataGridView.Click += new System.EventHandler(this.ComprasdataGridView_Click);
+            // 
+            // Codigo
+            // 
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            // 
+            // Nombres
+            // 
+            this.Nombres.HeaderText = "Nombre";
+            this.Nombres.Name = "Nombres";
+            this.Nombres.ReadOnly = true;
+            this.Nombres.Width = 180;
+            // 
+            // Cost
+            // 
+            this.Cost.HeaderText = "Costo";
+            this.Cost.Name = "Cost";
+            this.Cost.ReadOnly = true;
+            // 
+            // Precios
+            // 
+            this.Precios.HeaderText = "Precio";
+            this.Precios.Name = "Precios";
+            this.Precios.ReadOnly = true;
+            // 
+            // Cant
+            // 
+            this.Cant.HeaderText = "Cantidad";
+            this.Cant.Name = "Cant";
+            this.Cant.ReadOnly = true;
+            // 
+            // SubT
+            // 
+            this.SubT.HeaderText = "SubTotal";
+            this.SubT.Name = "SubT";
+            this.SubT.ReadOnly = true;
             // 
             // BuscarComprabutton
             // 
@@ -263,17 +303,17 @@
             this.BuscarProveedorbutton.UseVisualStyleBackColor = true;
             this.BuscarProveedorbutton.Click += new System.EventHandler(this.BuscarProveedorbutton_Click);
             // 
-            // AgregarProteinabutton
+            // BuscarProteinabutton
             // 
-            this.AgregarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.AgregarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.AgregarProteinabutton.Location = new System.Drawing.Point(226, 112);
-            this.AgregarProteinabutton.Name = "AgregarProteinabutton";
-            this.AgregarProteinabutton.Size = new System.Drawing.Size(33, 27);
-            this.AgregarProteinabutton.TabIndex = 60;
-            this.AgregarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.AgregarProteinabutton.UseVisualStyleBackColor = true;
-            this.AgregarProteinabutton.Click += new System.EventHandler(this.BuscarProteinabutton_Click);
+            this.BuscarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarProteinabutton.Location = new System.Drawing.Point(226, 112);
+            this.BuscarProteinabutton.Name = "BuscarProteinabutton";
+            this.BuscarProteinabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarProteinabutton.TabIndex = 60;
+            this.BuscarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarProteinabutton.UseVisualStyleBackColor = true;
+            this.BuscarProteinabutton.Click += new System.EventHandler(this.BuscarProteinabutton_Click);
             // 
             // CompraUsuariotextBox
             // 
@@ -390,42 +430,9 @@
             this.label7.TabIndex = 69;
             this.label7.Text = "Cantidad:";
             // 
-            // Codigo
+            // CompraerrorProvider
             // 
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            // 
-            // Nombres
-            // 
-            this.Nombres.HeaderText = "Nombre";
-            this.Nombres.Name = "Nombres";
-            this.Nombres.ReadOnly = true;
-            this.Nombres.Width = 180;
-            // 
-            // Cost
-            // 
-            this.Cost.HeaderText = "Costo";
-            this.Cost.Name = "Cost";
-            this.Cost.ReadOnly = true;
-            // 
-            // Precios
-            // 
-            this.Precios.HeaderText = "Precio";
-            this.Precios.Name = "Precios";
-            this.Precios.ReadOnly = true;
-            // 
-            // Cant
-            // 
-            this.Cant.HeaderText = "Cantidad";
-            this.Cant.Name = "Cant";
-            this.Cant.ReadOnly = true;
-            // 
-            // SubT
-            // 
-            this.SubT.HeaderText = "SubTotal";
-            this.SubT.Name = "SubT";
-            this.SubT.ReadOnly = true;
+            this.CompraerrorProvider.ContainerControl = this;
             // 
             // ProteinaComprasForm
             // 
@@ -445,7 +452,7 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.CompraUsuariotextBox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.AgregarProteinabutton);
+            this.Controls.Add(this.BuscarProteinabutton);
             this.Controls.Add(this.BuscarProveedorbutton);
             this.Controls.Add(this.BuscarComprabutton);
             this.Controls.Add(this.ComprasdataGridView);
@@ -469,6 +476,7 @@
             this.Text = "Compra de Proteina";
             this.Load += new System.EventHandler(this.ProteinaComprasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ComprasdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CompraerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -494,7 +502,7 @@
         private System.Windows.Forms.DataGridView ComprasdataGridView;
         private System.Windows.Forms.Button BuscarComprabutton;
         private System.Windows.Forms.Button BuscarProveedorbutton;
-        private System.Windows.Forms.Button AgregarProteinabutton;
+        private System.Windows.Forms.Button BuscarProteinabutton;
         public System.Windows.Forms.TextBox CompraUsuariotextBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox NombreProveedortextBox;
@@ -514,5 +522,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Precios;
         private System.Windows.Forms.DataGridViewTextBoxColumn Cant;
         private System.Windows.Forms.DataGridViewTextBoxColumn SubT;
+        private System.Windows.Forms.ErrorProvider CompraerrorProvider;
     }
 }

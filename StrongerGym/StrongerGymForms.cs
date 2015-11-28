@@ -123,9 +123,9 @@ namespace StrongerGym
 
         private void strongerGymToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AcercaDeForm acerca = new AcercaDeForm();
-            acerca.MdiParent = this;
-            acerca.Show();
+            AcercaDeStrongerGymAboutBox stronger = new AcercaDeStrongerGymAboutBox();
+            stronger.MdiParent = this;
+            stronger.Show();
         }
 
         private void ventaToolStripMenuItem_Click(object sender, EventArgs e)

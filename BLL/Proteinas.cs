@@ -33,7 +33,7 @@ namespace BLL
             this.Cantidad = 0;
             this.Importe = 0.0;
         }
-
+        //llenar form de ventas...
         public Proteinas(int ProteinaID, string Nombre, double Precio, int Cantidad,double Importe)
         {
             this.ProteinaId = ProteinaID;
@@ -42,7 +42,17 @@ namespace BLL
             this.Cantidad = Cantidad;
             this.Importe = Importe;
         }
-
+        //llenar Form Compras...
+        public Proteinas(int ProteinaId, string Nombre, double Costo, double Precio, int Cantidad, double SubTota)
+        {
+            this.ProteinaId = ProteinaId;
+            this.Nombre = Nombre;
+            this.Costo = Costo;
+            this.Precio = Precio;
+            this.Cantidad = Cantidad;
+            this.Importe = SubTota;
+        }
+        //Ventas y Compras para insertar
         public Proteinas(int ProteinaId,int Cantidad,double Importe)
         {
             this.ProteinaId = ProteinaId;

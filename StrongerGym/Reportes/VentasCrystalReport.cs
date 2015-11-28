@@ -16,14 +16,14 @@ namespace StrongerGym.Reportes {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class CarnetClientesCrystalReport : ReportClass {
+    public class VentasCrystalReport : ReportClass {
         
-        public CarnetClientesCrystalReport() {
+        public VentasCrystalReport() {
         }
         
         public override string ResourceName {
             get {
-                return "CarnetClientesCrystalReport.rpt";
+                return "VentasCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace StrongerGym.Reportes {
         
         public override string FullResourceName {
             get {
-                return "StrongerGym.Reportes.CarnetClientesCrystalReport.rpt";
+                return "StrongerGym.Reportes.VentasCrystalReport.rpt";
             }
             set {
                 // Do nothing
@@ -90,49 +90,17 @@ namespace StrongerGym.Reportes {
         
         [Browsable(false)]
         [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Codigo {
+        public CrystalDecisions.Shared.IParameterField Parameter_VentaId {
             get {
                 return this.DataDefinition.ParameterFields[0];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Imagen {
-            get {
-                return this.DataDefinition.ParameterFields[1];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Nombre {
-            get {
-                return this.DataDefinition.ParameterFields[2];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Direccion {
-            get {
-                return this.DataDefinition.ParameterFields[3];
-            }
-        }
-        
-        [Browsable(false)]
-        [DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public CrystalDecisions.Shared.IParameterField Parameter_Telefono {
-            get {
-                return this.DataDefinition.ParameterFields[4];
             }
         }
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedCarnetClientesCrystalReport : Component, ICachedReport {
+    public class CachedVentasCrystalReport : Component, ICachedReport {
         
-        public CachedCarnetClientesCrystalReport() {
+        public CachedVentasCrystalReport() {
         }
         
         [Browsable(false)]
@@ -169,7 +137,7 @@ namespace StrongerGym.Reportes {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            CarnetClientesCrystalReport rpt = new CarnetClientesCrystalReport();
+            VentasCrystalReport rpt = new VentasCrystalReport();
             rpt.Site = this.Site;
             return rpt;
         }

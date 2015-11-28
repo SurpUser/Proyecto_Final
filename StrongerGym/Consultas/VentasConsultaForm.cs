@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace StrongerGym.Consultas
 {
-    public partial class AcercaDeForm : Form
+    public partial class VentasConsultaForm : Form
     {
-        public AcercaDeForm()
+        public VentasConsultaForm()
         {
             InitializeComponent();
         }

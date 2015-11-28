@@ -46,8 +46,21 @@ namespace StrongerGym.R
         {
             CarnetClientesForm carnet = new CarnetClientesForm();
             CarnetClientesCrystalReport ccr = new CarnetClientesCrystalReport();
-            carnet.ClientescrystalReportViewer.ReportSource = ccr;
-            carnet.ShowDialog();
+            if (Seguridad.ValidarIdEntero(CodigotextBox.Text) > 0)
+            {
+                ccr.SetParameterValue("Codigo", Seguridad.ValidarIdEntero(CodigotextBox.Text));
+                ccr.SetParameterValue("Imagen", cliente.Imagen);
+                ccr.SetParameterValue("Nombre",cliente.Nombre);
+                ccr.SetParameterValue("Direccion",cliente.Direccion);
+                ccr.SetParameterValue("Telefono",cliente.Telefono);
+                carnet.ClientescrystalReportViewer.ReportSource = ccr;
+                carnet.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Id No Valido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            
         }
     }
 }
