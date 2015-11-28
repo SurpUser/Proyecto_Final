@@ -104,8 +104,7 @@ VentaDetalleId int primary key identity(1,1),
 UsuarioId int References Usuarios(UsuarioId),
 ProteinaId int References Proteinas(ProteinaId),
 VentaId int References Ventas(VentaId),
-Cantidad int,
-Importe float
+Cantidad int
 );
 go
 create table Configuraciones(
@@ -128,19 +127,15 @@ select * from Clientes
 
 select * from Proteinas
 
-select * from Ventas where VentaId = 3;
+select * from Ventas where VentaId = 10;
 
 select * from VentasProteinas
 
 select * from Cuotas
 
-
-select u.UsuarioId,u.Nombre,c.ClienteId,c.Nombre,v.NCF,v.Fecha,v.TotalVenta from Ventas v inner join Usuarios u
-on u.UsuarioId = v.UsuarioId inner join Clientes c on c.ClienteId = v.ClienteId where VentaId = 3
-
-select vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad,vd.Importe from VentasProteinas vd inner join 
-Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId where v.VentaId = 3;
-
+select vd.UsuarioId, vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad from VentasProteinas vd inner join 
+Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId
+ where v.VentaId = 4;
 --select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
 --select * from TiposProteinas
