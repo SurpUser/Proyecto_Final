@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConfiguracoinForm));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.AnotextBox = new System.Windows.Forms.TextBox();
             this.MestextBox = new System.Windows.Forms.TextBox();
@@ -71,6 +72,7 @@
             // AnotextBox
             // 
             this.AnotextBox.Location = new System.Drawing.Point(241, 55);
+            this.AnotextBox.MaxLength = 10;
             this.AnotextBox.Name = "AnotextBox";
             this.AnotextBox.Size = new System.Drawing.Size(92, 20);
             this.AnotextBox.TabIndex = 7;
@@ -78,6 +80,7 @@
             // MestextBox
             // 
             this.MestextBox.Location = new System.Drawing.Point(241, 20);
+            this.MestextBox.MaxLength = 10;
             this.MestextBox.Name = "MestextBox";
             this.MestextBox.Size = new System.Drawing.Size(92, 20);
             this.MestextBox.TabIndex = 6;
@@ -85,6 +88,7 @@
             // SemanatextBox
             // 
             this.SemanatextBox.Location = new System.Drawing.Point(80, 57);
+            this.SemanatextBox.MaxLength = 10;
             this.SemanatextBox.Name = "SemanatextBox";
             this.SemanatextBox.Size = new System.Drawing.Size(85, 20);
             this.SemanatextBox.TabIndex = 5;
@@ -119,6 +123,7 @@
             // DiatextBox
             // 
             this.DiatextBox.Location = new System.Drawing.Point(80, 20);
+            this.DiatextBox.MaxLength = 10;
             this.DiatextBox.Name = "DiatextBox";
             this.DiatextBox.Size = new System.Drawing.Size(85, 20);
             this.DiatextBox.TabIndex = 1;
@@ -183,6 +188,7 @@
             // NCFtextBox
             // 
             this.NCFtextBox.Location = new System.Drawing.Point(241, 18);
+            this.NCFtextBox.MaxLength = 15;
             this.NCFtextBox.Name = "NCFtextBox";
             this.NCFtextBox.Size = new System.Drawing.Size(92, 20);
             this.NCFtextBox.TabIndex = 2;
@@ -190,6 +196,7 @@
             // ITBIStextBox
             // 
             this.ITBIStextBox.Location = new System.Drawing.Point(80, 18);
+            this.ITBIStextBox.MaxLength = 4;
             this.ITBIStextBox.Name = "ITBIStextBox";
             this.ITBIStextBox.Size = new System.Drawing.Size(85, 20);
             this.ITBIStextBox.TabIndex = 1;
@@ -216,6 +223,7 @@
             this.Controls.Add(this.Cancelarbutton);
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.groupBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConfiguracoinForm";

@@ -213,9 +213,29 @@ namespace StrongerGym.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap about_faq_help_hint_info_information_4_32 {
+            get {
+                object obj = ResourceManager.GetObject("about_faq_help_hint_info_information-4-32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatar {
             get {
                 object obj = ResourceManager.GetObject("avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap basket___32 {
+            get {
+                object obj = ResourceManager.GetObject("basket_--32", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

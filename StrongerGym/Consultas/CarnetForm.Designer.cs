@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarnetForm));
             this.CodigotextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.DirecciontextBox = new System.Windows.Forms.TextBox();
@@ -159,6 +160,7 @@
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.CodigotextBox);
             this.Controls.Add(this.CarnetpictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CarnetForm";

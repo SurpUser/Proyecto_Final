@@ -21,13 +21,6 @@ namespace StrongerGym
             InitializeComponent();
         }
 
-        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            ConsultarForm c = new ConsultarForm();
-            c.MdiParent = this;
-            c.Show();
-        }
-
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Visible = false;
@@ -40,13 +33,6 @@ namespace StrongerGym
             CarnetForm carnet = new CarnetForm();
             carnet.MdiParent = this;
             carnet.Show();
-        }
-
-        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
-        {
-            RegistroForm registro = new RegistroForm();
-            registro.MdiParent = this;
-            registro.Show();
         }
 
         private void salirToolStripMenuItem1_Click(object sender, EventArgs e)
@@ -70,97 +56,105 @@ namespace StrongerGym
 
         protected override void OnClosed(EventArgs e)
         {
-            //DialogResult rs2 = MessageBox.Show("Desea Salir", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            //if (rs2 == DialogResult.Yes)
-            //{
-                Application.Exit();
-            //}
+             Application.Exit();
         }
 
-        private void generalToolStripMenuItem_Click(object sender, EventArgs e)
+        private void strongerGymToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ConfiguracoinForm configuracion = new ConfiguracoinForm();
-            configuracion.MdiParent = this;
-            configuracion.Show();
+            AcercaDe acerca = new AcercaDe();
+            acerca.ShowDialog();
         }
 
-        private void registroToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            CiudadRegistroForm ciudad = new CiudadRegistroForm();
-            ciudad.MdiParent = this;
-            ciudad.Show();
-        }
-
-        private void registroToolStripMenuItem1_Click(object sender, EventArgs e)
+        //----------------------------------------------------------------------------
+        private void RegistroProteinastoolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProteinaRegistrosForm proteina = new ProteinaRegistrosForm();
             proteina.MdiParent = this;
             proteina.Show();
         }
 
-        private void registroToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            TipoProteinaRegistroForm tipoProteina = new TipoProteinaRegistroForm();
-            tipoProteina.MdiParent = this;
-            tipoProteina.Show();
-        }
-
-
-
-        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProteinaComprasForm compra = new ProteinaComprasForm();
-            compra.MdiParent = this;
-            compra.Show();
-        }
-
-        private void registroToolStripMenuItem3_Click(object sender, EventArgs e)
-        {
-            ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
-            proveedore.MdiParent = this;
-            proveedore.Show();
-        }
-
-        private void strongerGymToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AcercaDeStrongerGymAboutBox stronger = new AcercaDeStrongerGymAboutBox();
-            stronger.MdiParent = this;
-            stronger.Show();
-        }
-
-        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            ProteinaVentaForm venta = new ProteinaVentaForm();
-            venta.MdiParent = this;
-            venta.Show();
-        }
-
-        private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
+        private void ConsultaProteinastoolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProteinaConsultarForm Proteinaconsultar = new ProteinaConsultarForm();
             Proteinaconsultar.MdiParent = this;
             Proteinaconsultar.Show();
         }
 
-        private void consultaToolStripMenuItem2_Click(object sender, EventArgs e)
+        private void RegistroTipotoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TipoProteinaRegistroForm tipoProteina = new TipoProteinaRegistroForm();
+            tipoProteina.MdiParent = this;
+            tipoProteina.Show();
+        }
+
+        private void ConsultaTipotoolStripMenuItem_Click(object sender, EventArgs e)
         {
             TipoProteinaConsultarForm TiposProteinaconsultar = new TipoProteinaConsultarForm();
             TiposProteinaconsultar.MdiParent = this;
             TiposProteinaconsultar.Show();
         }
 
-        private void consultaToolStripMenuItem3_Click(object sender, EventArgs e)
+        private void RegistroProveedorestoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ProveedoreRegistrosForm proveedore = new ProveedoreRegistrosForm();
+            proveedore.MdiParent = this;
+            proveedore.Show();
+        }
+
+        private void ConsultaProveedorestoolStripMenuItem_Click(object sender, EventArgs e)
         {
             ProveedoreConsultarForm Proveedorconsultar = new ProveedoreConsultarForm();
             Proveedorconsultar.MdiParent = this;
             Proveedorconsultar.Show();
         }
 
-        private void consultaToolStripMenuItem4_Click(object sender, EventArgs e)
+        private void RegistroCiudadestoolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CiudadRegistroForm ciudad = new CiudadRegistroForm();
+            ciudad.MdiParent = this;
+            ciudad.Show();
+        }
+
+        private void ConsultaCiudadestoolStripMenuItem_Click(object sender, EventArgs e)
         {
             CiudadConsultarForm Ciudadconsultar = new CiudadConsultarForm();
             Ciudadconsultar.MdiParent = this;
             Ciudadconsultar.Show();
+        }
+
+        private void CompratoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProteinaComprasForm compra = new ProteinaComprasForm();
+            compra.MdiParent = this;
+            compra.Show();
+        }
+
+        private void VentatoolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            ProteinaVentaForm venta = new ProteinaVentaForm();
+            venta.MdiParent = this;
+            venta.Show();
+        }
+
+        private void registrarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            RegistroForm usuario = new RegistroForm();
+            usuario.MdiParent = this;
+            usuario.Show();
+        }
+
+        private void consultarToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            ConsultarForm usuario = new ConsultarForm();
+            usuario.MdiParent = this;
+            usuario.Show();
+        }
+
+        private void configuracionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ConfiguracoinForm configuracion = new ConfiguracoinForm();
+            configuracion.MdiParent = this;
+            configuracion.Show();
         }
     }
 }

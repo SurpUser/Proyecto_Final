@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HacerFotoForm));
             this.videoSourcePlayer1 = new AForge.Controls.VideoSourcePlayer();
             this.CamarascomboBox = new System.Windows.Forms.ComboBox();
             this.HacerFotobutton = new System.Windows.Forms.Button();
@@ -92,6 +93,7 @@
             this.Controls.Add(this.HacerFotobutton);
             this.Controls.Add(this.CamarascomboBox);
             this.Controls.Add(this.videoSourcePlayer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "HacerFotoForm";

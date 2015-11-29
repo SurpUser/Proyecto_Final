@@ -45,8 +45,8 @@ namespace StrongerGym.Registros
             RNCtextBox.Clear();
             CiudadescomboBox.SelectedIndex = 0;
             DirecciontextBox.Clear();
-            TelefonotextBox.Clear();
-            CelulartextBox.Clear();
+            TelefonomaskedTextBox.Clear();
+            CelularmaskedTextBox.Clear();
             EmailtextBox.Clear();
             ProveedorerrorProvider.Clear();
         }
@@ -102,22 +102,22 @@ namespace StrongerGym.Registros
                 ProveedorerrorProvider.SetError(DirecciontextBox, "Ingrese Una Direccion");
                 retorno = false;
             }
-            if (TelefonotextBox.Text.Length > 0)
+            if (TelefonomaskedTextBox.Text.Length >= 14)
             {
-                proveedor.Telefono = TelefonotextBox.Text;
+                proveedor.Telefono = TelefonomaskedTextBox.Text;
             }
             else
             {
-                ProveedorerrorProvider.SetError(TelefonotextBox, "Ingrese Un Telefono");
+                ProveedorerrorProvider.SetError(TelefonomaskedTextBox, "Ingrese Un Telefono");
                 retorno = false;
             }
-            if (CelulartextBox.Text.Length > 0)
+            if (CelularmaskedTextBox.Text.Length >= 14)
             {
-                proveedor.Celular = CelulartextBox.Text;
+                proveedor.Celular = CelularmaskedTextBox.Text;
             }
             else
             {
-                ProveedorerrorProvider.SetError(CelulartextBox, "Ingrese Un Celular");
+                ProveedorerrorProvider.SetError(CelularmaskedTextBox, "Ingrese Un Celular");
                 retorno = false;
             }
             proveedor.CiudadId = (int)CiudadescomboBox.SelectedValue;
@@ -214,8 +214,8 @@ namespace StrongerGym.Registros
                     RNCtextBox.Text = proveedor.RNC;
                     DirecciontextBox.Text = proveedor.Direccion;
                     CiudadescomboBox.Text = proveedor.CiudadNombre;
-                    TelefonotextBox.Text = proveedor.Telefono;
-                    CelulartextBox.Text = proveedor.Celular;
+                    TelefonomaskedTextBox.Text = proveedor.Telefono;
+                    CelularmaskedTextBox.Text = proveedor.Celular;
                     EmailtextBox.Text = proveedor.Email;
 
                 }

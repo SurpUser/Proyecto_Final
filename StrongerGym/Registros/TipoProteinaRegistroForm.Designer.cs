@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TipoProteinaRegistroForm));
             this.TipoProteinaIdtextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.Eliminarbutton = new System.Windows.Forms.Button();
@@ -44,6 +45,7 @@
             // TipoProteinaIdtextBox
             // 
             this.TipoProteinaIdtextBox.Location = new System.Drawing.Point(26, 39);
+            this.TipoProteinaIdtextBox.MaxLength = 10;
             this.TipoProteinaIdtextBox.Name = "TipoProteinaIdtextBox";
             this.TipoProteinaIdtextBox.Size = new System.Drawing.Size(173, 20);
             this.TipoProteinaIdtextBox.TabIndex = 0;
@@ -51,6 +53,7 @@
             // NombretextBox
             // 
             this.NombretextBox.Location = new System.Drawing.Point(26, 94);
+            this.NombretextBox.MaxLength = 35;
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(254, 20);
             this.NombretextBox.TabIndex = 0;
@@ -142,6 +145,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.TipoProteinaIdtextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TipoProteinaRegistroForm";

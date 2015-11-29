@@ -12,6 +12,9 @@ using StrongerGym.R;
 using StrongerGym.Properties;
 using StrongerGym.Consultas;
 using StrongerGym.Reportes;
+using System.Xml;
+using System.IO;
+using System.Xml.Serialization;
 
 namespace StrongerGym.Registros
 {
@@ -27,7 +30,6 @@ namespace StrongerGym.Registros
         double monto = 0.0;
         double itbis = 0.0;
         bool Mode = false;
-        bool retorno = false;
 
         public ProteinaVentaForm()
         {
@@ -35,7 +37,6 @@ namespace StrongerGym.Registros
             VentaUsuariotextBox.Text = LoginForm.NombreUsuario;
 
             itbis = Seguridad.ValidarIdDouble(configuracion.Listado(" * ", " 1=1 ", "").Rows[0]["ITBIS"].ToString());
-            //CodigoVentatextBox.Text = venta.Listado("MAX(VentaId)+1 as VentaId", "1=1", "").Rows[0]["VentaId"].ToString();
             NCFtextBox.Text = configuracion.Listado("NCF","1=1","").Rows[0]["NCF"].ToString();
             ITBISlabel.Text = itbis.ToString();
         }
@@ -56,7 +57,6 @@ namespace StrongerGym.Registros
             else
             {
                 VentaerrorProvider.SetError(CodigoProteinatextBox, "Ingrese Un Codigo de Proteina");
-                retorno = false;
             }
            
             if (proteina.Buscar(proteina.ProteinaId))
@@ -81,7 +81,6 @@ namespace StrongerGym.Registros
             else
             {
                 VentaerrorProvider.SetError(CodigoClientetextBox, "Ingrese Un Codigo de Cliente");
-                retorno = false;
             }
 
             if (cliente.Buscar(Convertido))
@@ -93,6 +92,20 @@ namespace StrongerGym.Registros
                     MessageBox.Show("Codigo No Existe", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
         }
+
+        public void CalcularMonto()
+        {
+            Montolabel.Text = "";
+            monto = 0.0;
+            VentaerrorProvider.Clear();
+            for (int i = 0; i < VentasdataGridView.RowCount; i++)
+            {
+
+                monto += (double)VentasdataGridView.Rows[i].Cells[5].Value;
+            }
+            Montolabel.Text = monto.ToString();
+        }
+
         public void AgregarProducto()
         {
             Montolabel.Text = "";
@@ -102,25 +115,19 @@ namespace StrongerGym.Registros
             if (CantidadProteinatextBox.Text.Length > 0)
             {
                 Cantidades = Convert.ToInt32(CantidadProteinatextBox.Text);
+
+                VentasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre, proteina.Precio, Cantidades, itbis, Cantidades * proteina.Precio + (itbis * proteina.Precio));
+
+                CalcularMonto();
             }
             else
             {
                 VentaerrorProvider.SetError(CantidadProteinatextBox, "Ingrese Una Cantidad");
-                retorno = false;
             }          
-
-            VentasdataGridView.Rows.Add(proteina.ProteinaId, proteina.Nombre,proteina.Precio,Cantidades,itbis, Cantidades * proteina.Precio + (itbis*proteina.Precio));
-
-            for (int i = 0; i < VentasdataGridView.RowCount; i++)
-            {
-
-                monto += (double)VentasdataGridView.Rows[i].Cells[5].Value;
-            }
 
             CodigoProteinatextBox.Clear();
             CantidadProteinatextBox.Clear();
             ProteinatextBox.Clear();
-            Montolabel.Text = monto.ToString();
         }
 
         private void AgregarProductobutton_Click(object sender, EventArgs e)
@@ -128,10 +135,12 @@ namespace StrongerGym.Registros
             if (Mode)
             {
                 VentasdataGridView.Rows.RemoveAt(VentasdataGridView.CurrentRow.Index);
+                CalcularMonto();
             }
             else
             {
                 AgregarProducto();
+                
             }
             
         }
@@ -152,47 +161,51 @@ namespace StrongerGym.Registros
 
         public bool LlenarDatos()
         {
-            if (true)
+            bool retorno = false;
+            VentaerrorProvider.Clear();
+
+            venta.UsuarioId = LoginForm.UsuarioId; ;
+
+            if (CodigoClientetextBox.Text.Length > 0)
             {
-                VentaerrorProvider.Clear();
-
-                venta.UsuarioId = 1;
-
-                if (CodigoClientetextBox.Text.Length > 0)
-                {
-                    venta.ClienteId = Seguridad.ValidarIdEntero(CodigoClientetextBox.Text);
-                }
-                else
-                {
-                    VentaerrorProvider.SetError(CodigoClientetextBox, "Ingrese Un Codigo de Cliente");
-                    retorno = false;
-                }
-                
-                venta.ITBS = itbis;
-                venta.Fecha = FechadateTimePicker.Text;
-
-                venta.TotalVenta = Seguridad.ValidarIdDouble(Montolabel.Text);
-
-                venta.NCF = NCFtextBox.Text;
-
-                venta.LimpiarList();
-                for (int i = 0; i < VentasdataGridView.RowCount; i++)
-                {
-                    venta.AgregarProteinas((int)VentasdataGridView.Rows[i].Cells[0].Value, (int)VentasdataGridView.Rows[i].Cells[3].Value, (double)VentasdataGridView.Rows[i].Cells[5].Value);
-                }
+                venta.ClienteId = Seguridad.ValidarIdEntero(CodigoClientetextBox.Text);
+                retorno = true;
             }
-            return true;
+            else
+            {
+                VentaerrorProvider.SetError(CodigoClientetextBox, "Ingrese Un Codigo de Cliente");
+                retorno = false;
+            }
+                
+            venta.ITBS = itbis;
+            venta.Fecha = FechadateTimePicker.Text;
+
+            venta.TotalVenta = Seguridad.ValidarIdDouble(Montolabel.Text);
+
+            venta.NCF = NCFtextBox.Text;
+
+            venta.LimpiarList();
+            for (int i = 0; i < VentasdataGridView.RowCount; i++)
+            {
+                venta.AgregarProteinas((int)VentasdataGridView.Rows[i].Cells[0].Value, (int)VentasdataGridView.Rows[i].Cells[3].Value, (double)VentasdataGridView.Rows[i].Cells[5].Value);
+            }
+            return retorno;
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
             Limpiar();
+            CodigoVentatextBox.Clear();
+            Guardarbutton.Image = Resources._1444608937_Save;
+            Guardarbutton.Text = "Guardar";
+
+            AgregarProteinabutton.Image = Resources.Shopping_cart_add;
+            AgregarProteinabutton.Text = "Agregar";
         }
 
         private void BuscarClientebutton_Click(object sender, EventArgs e)
         {
             BuscarCliente();
-            CodigoClientetextBox.ReadOnly = true;
         }
 
         private void BuscarProductobutton_Click(object sender, EventArgs e)
@@ -244,15 +257,23 @@ namespace StrongerGym.Registros
 
         private void Eliminarbutton_Click(object sender, EventArgs e)
         {
-            venta.VentaId = Seguridad.ValidarIdEntero(CodigoVentatextBox.Text);
-            if (venta.Eliminar())
+            VentaerrorProvider.Clear();
+            if (Seguridad.ValidarIdEntero(CodigoVentatextBox.Text) > 0)
             {
-                MessageBox.Show("Eliminado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Limpiar();
+                venta.VentaId = Seguridad.ValidarIdEntero(CodigoVentatextBox.Text);
+                if (venta.Eliminar())
+                {
+                    MessageBox.Show("Eliminado Correctamente", "Confirmar", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
+                }
+                else
+                {
+                    MessageBox.Show("Error al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Error al Eliminar", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                VentaerrorProvider.SetError(CodigoVentatextBox,"Codigo No Valido");
             }
         }
 
@@ -267,7 +288,6 @@ namespace StrongerGym.Registros
             else
             {
                 VentaerrorProvider.SetError(CodigoVentatextBox, "Ingrese Un Codigo de Venta");
-                retorno = false;
             }          
             
             if (venta.VentaId > 0)
@@ -285,7 +305,8 @@ namespace StrongerGym.Registros
                     {
                         VentasdataGridView.Rows.Add(venta.ProteinaId,venta.Nombre,venta.Precio,venta.Cantidad, itbis,venta.Importe);
                     }
-
+                    Guardarbutton.Image = Resources._1442108330_Modify;
+                    Guardarbutton.Text = "Modificar";
                 }
                 else
                 {
@@ -299,29 +320,13 @@ namespace StrongerGym.Registros
         }
         private void BuscarVentabutton_Click(object sender, EventArgs e)
         {
-            if (!CodigoVentatextBox.ReadOnly)
-            {
-                Guardarbutton.Image = Resources._1442108330_Modify;
-                Guardarbutton.Text = "Modificar";
                 Limpiar();
                 LlenarForm();
-            }
-            
-            CodigoVentatextBox.ReadOnly = false;
-        }
-
-        private void Facturarbutton_Click(object sender, EventArgs e)
-        {
-            VentasConsultaForm ventas = new VentasConsultaForm();
-            VentasCrystalReport rpt = new VentasCrystalReport();
-            rpt.SetParameterValue("VentaId",3);
-            ventas.VentascrystalReportViewer.ReportSource = rpt;
-            ventas.ShowDialog();
         }
 
         private void VentasdataGridView_Click(object sender, EventArgs e)
         {
-            AgregarProteinabutton.Image = Resources._1442108658_trash;
+            AgregarProteinabutton.Image = Resources.basket___32;
             AgregarProteinabutton.Text = "Eliminar";
             Mode = true;
         }

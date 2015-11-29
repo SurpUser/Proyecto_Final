@@ -245,7 +245,7 @@
             // 
             // Aceptarbutton
             // 
-            this.Aceptarbutton.Location = new System.Drawing.Point(104, 124);
+            this.Aceptarbutton.Location = new System.Drawing.Point(6, 127);
             this.Aceptarbutton.Name = "Aceptarbutton";
             this.Aceptarbutton.Size = new System.Drawing.Size(75, 23);
             this.Aceptarbutton.TabIndex = 14;

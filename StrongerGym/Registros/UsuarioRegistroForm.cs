@@ -127,7 +127,7 @@ namespace StrongerGym.Recursos
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             
-            if (IdUsuariotextBox.Text.Length > 0)
+            if (Seguridad.ValidarIdEntero(IdUsuariotextBox.Text) > 0)
             {
                 if (usuario.Buscar(Seguridad.ValidarIdEntero(IdUsuariotextBox.Text)))
                 {

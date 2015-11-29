@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ConsultaUsuarioForm));
             this.label1 = new System.Windows.Forms.Label();
             this.BucarcomboBox = new System.Windows.Forms.ComboBox();
             this.BuscartextBox = new System.Windows.Forms.TextBox();
@@ -70,9 +71,11 @@
             // ConsultadataGridView
             // 
             this.ConsultadataGridView.AllowUserToAddRows = false;
+            this.ConsultadataGridView.AllowUserToDeleteRows = false;
             this.ConsultadataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultadataGridView.Location = new System.Drawing.Point(14, 118);
             this.ConsultadataGridView.Name = "ConsultadataGridView";
+            this.ConsultadataGridView.ReadOnly = true;
             this.ConsultadataGridView.Size = new System.Drawing.Size(542, 244);
             this.ConsultadataGridView.TabIndex = 4;
             // 
@@ -109,6 +112,7 @@
             this.Controls.Add(this.BuscartextBox);
             this.Controls.Add(this.BucarcomboBox);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ConsultaUsuarioForm";

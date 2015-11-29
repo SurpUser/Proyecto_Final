@@ -9,12 +9,14 @@ namespace BLL
 {
     public class Cuotas : ClaseMaestra
     {
+
+        ConexionDB conexion = new ConexionDB();
+
         public int CuotaId { get; set; }
         public int ClienteId { get; set; }
         public string FechaCuota { get; set; }
         public double MontoCuota { get; set; }
         public string FechaVencimiento { get; set; }
-        ConexionDB conexion = new ConexionDB();
 
         public override bool Buscar(int IdBuscado)
         {
@@ -42,7 +44,7 @@ namespace BLL
             bool retorno = false;
             try
             {
-                retorno = conexion.Ejecutar(String.Format("update Cuotas set ClienteId = {0}, FechaCuota = '{1}',MontoCuota = {2},FechaVence = '{3}' where ClienteId = {0}",this.ClienteId,this.FechaCuota,this.MontoCuota,this.FechaVencimiento));
+                retorno = conexion.Ejecutar(String.Format("update Cuotas set FechaCuota = '{0}',MontoCuota = {1},FechaVence = '{2}' where ClienteId ={3}", this.FechaCuota,this.MontoCuota,this.FechaVencimiento,this.ClienteId));
             }
             catch (Exception)
             {
@@ -74,7 +76,7 @@ namespace BLL
 
             try
             {
-                    retorno = conexion.Ejecutar(String.Format("insert into Cuotas (ClienteId,FechaCuota,MontoCuota,FechaVence) values ({0},'{1}',{2},'{3}')", this.ClienteId,this.FechaCuota,this.MontoCuota,this.FechaVencimiento));
+                 retorno = conexion.Ejecutar(String.Format("insert into Cuotas (ClienteId,FechaCuota,MontoCuota,FechaVence) values ({0},'{1}',{2},'{3}')", this.ClienteId,this.FechaCuota,this.MontoCuota,this.FechaVencimiento));
             }
             catch (Exception)
             {

@@ -33,6 +33,7 @@ namespace StrongerGym.Recursos
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroUsuarioForm));
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.ContrasenatextBox = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -59,6 +60,7 @@ namespace StrongerGym.Recursos
             // NombretextBox
             // 
             this.NombretextBox.Location = new System.Drawing.Point(259, 71);
+            this.NombretextBox.MaxLength = 35;
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(266, 20);
             this.NombretextBox.TabIndex = 0;
@@ -66,6 +68,7 @@ namespace StrongerGym.Recursos
             // ContrasenatextBox
             // 
             this.ContrasenatextBox.Location = new System.Drawing.Point(259, 109);
+            this.ContrasenatextBox.MaxLength = 28;
             this.ContrasenatextBox.Name = "ContrasenatextBox";
             this.ContrasenatextBox.Size = new System.Drawing.Size(266, 20);
             this.ContrasenatextBox.TabIndex = 0;
@@ -122,6 +125,7 @@ namespace StrongerGym.Recursos
             // IdUsuariotextBox
             // 
             this.IdUsuariotextBox.Location = new System.Drawing.Point(259, 32);
+            this.IdUsuariotextBox.MaxLength = 10;
             this.IdUsuariotextBox.Name = "IdUsuariotextBox";
             this.IdUsuariotextBox.Size = new System.Drawing.Size(227, 20);
             this.IdUsuariotextBox.TabIndex = 6;
@@ -253,6 +257,7 @@ namespace StrongerGym.Recursos
             this.Controls.Add(this.LoginportadapictureBox);
             this.Controls.Add(this.ContrasenatextBox);
             this.Controls.Add(this.NombretextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroUsuarioForm";

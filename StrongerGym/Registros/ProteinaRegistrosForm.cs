@@ -108,6 +108,7 @@ namespace StrongerGym.Registros
             {
                 if (LlenarDatos())
                 {
+                    proteina.ProteinaId = Seguridad.ValidarIdEntero(ProteinaIdtextBox.Text);
                     if (proteina.Editar())
                     {
                         MessageBox.Show("Modificado Correctamente", "Confirmacion", MessageBoxButtons.OK, MessageBoxIcon.Information);

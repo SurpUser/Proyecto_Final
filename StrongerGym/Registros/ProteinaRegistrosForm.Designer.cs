@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProteinaRegistrosForm));
             this.ProteinaIdtextBox = new System.Windows.Forms.TextBox();
             this.NombretextBox = new System.Windows.Forms.TextBox();
             this.PreciotextBox = new System.Windows.Forms.TextBox();
@@ -50,6 +51,7 @@
             // ProteinaIdtextBox
             // 
             this.ProteinaIdtextBox.Location = new System.Drawing.Point(16, 34);
+            this.ProteinaIdtextBox.MaxLength = 10;
             this.ProteinaIdtextBox.Name = "ProteinaIdtextBox";
             this.ProteinaIdtextBox.Size = new System.Drawing.Size(184, 20);
             this.ProteinaIdtextBox.TabIndex = 0;
@@ -57,6 +59,7 @@
             // NombretextBox
             // 
             this.NombretextBox.Location = new System.Drawing.Point(16, 83);
+            this.NombretextBox.MaxLength = 35;
             this.NombretextBox.Name = "NombretextBox";
             this.NombretextBox.Size = new System.Drawing.Size(265, 20);
             this.NombretextBox.TabIndex = 0;
@@ -64,6 +67,7 @@
             // PreciotextBox
             // 
             this.PreciotextBox.Location = new System.Drawing.Point(16, 123);
+            this.PreciotextBox.MaxLength = 10;
             this.PreciotextBox.Name = "PreciotextBox";
             this.PreciotextBox.Size = new System.Drawing.Size(265, 20);
             this.PreciotextBox.TabIndex = 0;
@@ -98,6 +102,7 @@
             // CostotextBox
             // 
             this.CostotextBox.Location = new System.Drawing.Point(16, 163);
+            this.CostotextBox.MaxLength = 10;
             this.CostotextBox.Name = "CostotextBox";
             this.CostotextBox.Size = new System.Drawing.Size(265, 20);
             this.CostotextBox.TabIndex = 0;
@@ -204,6 +209,7 @@
             this.Controls.Add(this.PreciotextBox);
             this.Controls.Add(this.NombretextBox);
             this.Controls.Add(this.ProteinaIdtextBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "ProteinaRegistrosForm";

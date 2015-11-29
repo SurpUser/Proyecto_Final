@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegistroForm));
             this.label11 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.ClienteIdtextBox = new System.Windows.Forms.TextBox();
@@ -51,20 +52,20 @@
             this.ImagenopenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.HacerFotobutton = new System.Windows.Forms.Button();
             this.SubirFotobutton = new System.Windows.Forms.Button();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.ClientepictureBox = new System.Windows.Forms.PictureBox();
             this.Pesolabel = new System.Windows.Forms.Label();
             this.Alturalabel = new System.Windows.Forms.Label();
-            this.Buscarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
             this.TelefonomaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CelularmaskedTextBox = new System.Windows.Forms.MaskedTextBox();
             this.CiudadcomboBox = new System.Windows.Forms.ComboBox();
             this.ClienteerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.ClientepictureBox = new System.Windows.Forms.PictureBox();
             this.SexogroupBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // label11
@@ -88,7 +89,7 @@
             // ClienteIdtextBox
             // 
             this.ClienteIdtextBox.Location = new System.Drawing.Point(495, 85);
-            this.ClienteIdtextBox.MaxLength = 4;
+            this.ClienteIdtextBox.MaxLength = 10;
             this.ClienteIdtextBox.Name = "ClienteIdtextBox";
             this.ClienteIdtextBox.Size = new System.Drawing.Size(121, 20);
             this.ClienteIdtextBox.TabIndex = 23;
@@ -227,6 +228,7 @@
             // PesotextBox
             // 
             this.PesotextBox.Location = new System.Drawing.Point(263, 244);
+            this.PesotextBox.MaxLength = 3;
             this.PesotextBox.Name = "PesotextBox";
             this.PesotextBox.Size = new System.Drawing.Size(48, 20);
             this.PesotextBox.TabIndex = 41;
@@ -234,6 +236,7 @@
             // AlturatextBox
             // 
             this.AlturatextBox.Location = new System.Drawing.Point(368, 244);
+            this.AlturatextBox.MaxLength = 3;
             this.AlturatextBox.Name = "AlturatextBox";
             this.AlturatextBox.Size = new System.Drawing.Size(49, 20);
             this.AlturatextBox.TabIndex = 42;
@@ -261,6 +264,78 @@
             this.SubirFotobutton.Text = "Subir Foto";
             this.SubirFotobutton.UseVisualStyleBackColor = true;
             this.SubirFotobutton.Click += new System.EventHandler(this.SubirFotobutton_Click);
+            // 
+            // Pesolabel
+            // 
+            this.Pesolabel.AutoSize = true;
+            this.Pesolabel.Location = new System.Drawing.Point(317, 251);
+            this.Pesolabel.Name = "Pesolabel";
+            this.Pesolabel.Size = new System.Drawing.Size(35, 13);
+            this.Pesolabel.TabIndex = 50;
+            this.Pesolabel.Text = "Libras";
+            // 
+            // Alturalabel
+            // 
+            this.Alturalabel.AutoSize = true;
+            this.Alturalabel.Location = new System.Drawing.Point(419, 251);
+            this.Alturalabel.Name = "Alturalabel";
+            this.Alturalabel.Size = new System.Drawing.Size(39, 13);
+            this.Alturalabel.TabIndex = 50;
+            this.Alturalabel.Text = "Metros";
+            // 
+            // TelefonomaskedTextBox
+            // 
+            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(263, 165);
+            this.TelefonomaskedTextBox.Mask = "(999) 000-0000";
+            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
+            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(195, 20);
+            this.TelefonomaskedTextBox.TabIndex = 53;
+            // 
+            // CelularmaskedTextBox
+            // 
+            this.CelularmaskedTextBox.Location = new System.Drawing.Point(263, 205);
+            this.CelularmaskedTextBox.Mask = "(999) 000-0000";
+            this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
+            this.CelularmaskedTextBox.Size = new System.Drawing.Size(194, 20);
+            this.CelularmaskedTextBox.TabIndex = 54;
+            // 
+            // CiudadcomboBox
+            // 
+            this.CiudadcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CiudadcomboBox.FormattingEnabled = true;
+            this.CiudadcomboBox.Location = new System.Drawing.Point(495, 121);
+            this.CiudadcomboBox.Name = "CiudadcomboBox";
+            this.CiudadcomboBox.Size = new System.Drawing.Size(160, 21);
+            this.CiudadcomboBox.TabIndex = 55;
+            // 
+            // ClienteerrorProvider
+            // 
+            this.ClienteerrorProvider.ContainerControl = this;
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(420, 284);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
+            this.Guardarbutton.TabIndex = 52;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Buscarbutton.Location = new System.Drawing.Point(622, 78);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(33, 32);
+            this.Buscarbutton.TabIndex = 51;
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -299,78 +374,6 @@
             this.ClientepictureBox.TabIndex = 14;
             this.ClientepictureBox.TabStop = false;
             // 
-            // Pesolabel
-            // 
-            this.Pesolabel.AutoSize = true;
-            this.Pesolabel.Location = new System.Drawing.Point(317, 251);
-            this.Pesolabel.Name = "Pesolabel";
-            this.Pesolabel.Size = new System.Drawing.Size(35, 13);
-            this.Pesolabel.TabIndex = 50;
-            this.Pesolabel.Text = "Libras";
-            // 
-            // Alturalabel
-            // 
-            this.Alturalabel.AutoSize = true;
-            this.Alturalabel.Location = new System.Drawing.Point(419, 251);
-            this.Alturalabel.Name = "Alturalabel";
-            this.Alturalabel.Size = new System.Drawing.Size(39, 13);
-            this.Alturalabel.TabIndex = 50;
-            this.Alturalabel.Text = "Metros";
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.Buscarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Buscarbutton.Location = new System.Drawing.Point(622, 78);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(33, 32);
-            this.Buscarbutton.TabIndex = 51;
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(420, 284);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(85, 44);
-            this.Guardarbutton.TabIndex = 52;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // TelefonomaskedTextBox
-            // 
-            this.TelefonomaskedTextBox.Location = new System.Drawing.Point(263, 165);
-            this.TelefonomaskedTextBox.Mask = "(999) 000-0000";
-            this.TelefonomaskedTextBox.Name = "TelefonomaskedTextBox";
-            this.TelefonomaskedTextBox.Size = new System.Drawing.Size(195, 20);
-            this.TelefonomaskedTextBox.TabIndex = 53;
-            // 
-            // CelularmaskedTextBox
-            // 
-            this.CelularmaskedTextBox.Location = new System.Drawing.Point(263, 205);
-            this.CelularmaskedTextBox.Mask = "(999) 000-0000";
-            this.CelularmaskedTextBox.Name = "CelularmaskedTextBox";
-            this.CelularmaskedTextBox.Size = new System.Drawing.Size(194, 20);
-            this.CelularmaskedTextBox.TabIndex = 54;
-            // 
-            // CiudadcomboBox
-            // 
-            this.CiudadcomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CiudadcomboBox.FormattingEnabled = true;
-            this.CiudadcomboBox.Location = new System.Drawing.Point(495, 121);
-            this.CiudadcomboBox.Name = "CiudadcomboBox";
-            this.CiudadcomboBox.Size = new System.Drawing.Size(160, 21);
-            this.CiudadcomboBox.TabIndex = 55;
-            // 
-            // ClienteerrorProvider
-            // 
-            this.ClienteerrorProvider.ContainerControl = this;
-            // 
             // RegistroForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +408,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ClientepictureBox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "RegistroForm";
@@ -412,8 +416,8 @@
             this.Text = "Registro";
             this.SexogroupBox.ResumeLayout(false);
             this.SexogroupBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteerrorProvider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ClientepictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

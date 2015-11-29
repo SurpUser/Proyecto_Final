@@ -102,7 +102,8 @@ VentaDetalleId int primary key identity(1,1),
 UsuarioId int References Usuarios(UsuarioId),
 ProteinaId int References Proteinas(ProteinaId),
 VentaId int References Ventas(VentaId),
-Cantidad int
+Cantidad int,
+Importe float
 );
 go
 create table Configuraciones(
@@ -112,8 +113,7 @@ Semana int,
 Mes int,
 Ano int,
 ITBIS float,
-NCF varchar(20),
-RutaFotos varchar(200)
+NCF varchar(20)
 );
 
 select * from Configuraciones
@@ -132,29 +132,38 @@ select * from Cuotas
 
 select * from ComprasProteinas
 
+select * from TiposProteinas
+
+select * from Proveedores
+
+select * from Ciudades;
+
+select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
 select u.UsuarioId,u.Nombre,c.ClienteId,c.Nombre,v.NCF,v.Fecha,v.TotalVenta from Ventas v inner join Usuarios u
-on u.UsuarioId = v.UsuarioId inner join Clientes c on c.ClienteId = v.ClienteId where VentaId = 3
+on u.UsuarioId = v.UsuarioId inner join Clientes c on c.ClienteId = v.ClienteId where VentaId = 1;
 
 select vd.ProteinaId,p.Nombre,p.Precio,vd.Cantidad,vd.Importe from VentasProteinas vd inner join 
-Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId where v.VentaId = 3;
+Ventas v on vd.VentaId = v.VentaId inner join Proteinas p on vd.ProteinaId = p.ProteinaId where v.VentaId = 1;
 
---select Area,COUNT(Area) as Cantidad from Usuarios group by Area
 
---select * from TiposProteinas
+select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario,
+c.ITBS as ITBS, c.Monto as Monto, c.NCF as NCF, c.Fecha as Fecha from Compras c inner join Proveedores pr 
+on pr.ProveedorId = c.ProveedorId inner join Usuarios u on u.UsuarioId = c.UsuarioId where CompraId = 1
 
-delete from TiposProteinas where TipoProteinaId = 3
+select cd.ProteinaId as ProteinaId, p.Nombre as Nombre, p.Costo as Costo, cd.Cantidad as Cantidad, p.Precio as Precios, 
+cd.SubTotal as SubTotal from ComprasProteinas cd inner join Compras c on cd.CompraId = c.CompraId inner join Proteinas p 
+on cd.ProteinaId = p.ProteinaId where c.CompraId =  1
 
---select * from Proveedores
+--la Contraseña esta cifrada, la que debe ingresar en el login es: fc1010
+insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','ZgBjADEAMAAxADAA','29/11/2015','Administrativa');
 
---select p.NombreEmpresa,c.Nombre from Proveedores p inner join Ciudades c on p.ciudadId = c.CiudadId where p.ProveedorId = 1;
+insert into Ciudades(Nombre) values('Tenares');
 
---select * from Ciudades;
+insert into TiposProteinas(Nombre) values('Definicion');
 
-select pr.ProveedorId as ProveedorId, pr.NombreRepresentante as NombreProveedor ,u.UsuarioId as UsuarioId, u.Nombre as NombreUsuario, c.ITBS as ITBS, c.Monto as Monto, c.NCF as NCF, c.Fecha as Fecha from Compras c inner join Proveedores pr on pr.ProveedorId = c.ProveedorId inner join Usuarios u on u.UsuarioId = c.UsuarioId where CompraId = 1
+insert into Configuraciones(Dia,Semana,Mes,Ano,ITBIS,NCF) values(50,320,3500,41500,0.18,'A010010010100000001');
 
-select cd.ProteinaId as ProteinaId, p.Nombre as Nombre, p.Costo as Costo, cd.Cantidad as Cantidad, p.Precio as Precios, cd.SubTotal as SubTotal from ComprasProteinas cd inner join Compras c on cd.CompraId = c.CompraId inner join Proteinas p on cd.ProteinaId = p.ProteinaId where c.CompraId =  3
 
-insert into Usuarios(Nombre,Contrasena,FechaInicio,Area) values('Francis','ZgBjADEAMAAxADAA','10/11/2015','Administrativa');
 
---update Proveedores set CiudadId = 3,NombreEmpresa='FCPrograms',NombreRepresentante='Francis',RNC='3-23-12874-3',Direccion='Calle julia javier',Telefono='902-323-4354',Celular='323-434-5465',Email='info@fcprograms.com' where ProveedorId = 1;
+

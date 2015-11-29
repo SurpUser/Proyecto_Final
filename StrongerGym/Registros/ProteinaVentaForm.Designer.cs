@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProteinaVentaForm));
             this.label9 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,7 +48,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.VentaUsuariotextBox = new System.Windows.Forms.TextBox();
             this.AgregarProteinabutton = new System.Windows.Forms.Button();
-            this.Facturarbutton = new System.Windows.Forms.Button();
             this.Eliminarbutton = new System.Windows.Forms.Button();
             this.Nuevobutton = new System.Windows.Forms.Button();
             this.Guardarbutton = new System.Windows.Forms.Button();
@@ -73,10 +73,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.VentaerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label9
@@ -110,6 +108,7 @@
             // CantidadProteinatextBox
             // 
             this.CantidadProteinatextBox.Location = new System.Drawing.Point(535, 119);
+            this.CantidadProteinatextBox.MaxLength = 10;
             this.CantidadProteinatextBox.Name = "CantidadProteinatextBox";
             this.CantidadProteinatextBox.Size = new System.Drawing.Size(100, 20);
             this.CantidadProteinatextBox.TabIndex = 4;
@@ -168,6 +167,7 @@
             // CodigoProteinatextBox
             // 
             this.CodigoProteinatextBox.Location = new System.Drawing.Point(100, 119);
+            this.CodigoProteinatextBox.MaxLength = 10;
             this.CodigoProteinatextBox.Name = "CodigoProteinatextBox";
             this.CodigoProteinatextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoProteinatextBox.TabIndex = 2;
@@ -175,6 +175,7 @@
             // CodigoClientetextBox
             // 
             this.CodigoClientetextBox.Location = new System.Drawing.Point(100, 92);
+            this.CodigoClientetextBox.MaxLength = 10;
             this.CodigoClientetextBox.Name = "CodigoClientetextBox";
             this.CodigoClientetextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoClientetextBox.TabIndex = 0;
@@ -191,8 +192,8 @@
             // CodigoVentatextBox
             // 
             this.CodigoVentatextBox.Location = new System.Drawing.Point(100, 61);
+            this.CodigoVentatextBox.MaxLength = 10;
             this.CodigoVentatextBox.Name = "CodigoVentatextBox";
-            this.CodigoVentatextBox.ReadOnly = true;
             this.CodigoVentatextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoVentatextBox.TabIndex = 26;
             // 
@@ -243,19 +244,6 @@
             this.AgregarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.AgregarProteinabutton.UseVisualStyleBackColor = true;
             this.AgregarProteinabutton.Click += new System.EventHandler(this.AgregarProductobutton_Click);
-            // 
-            // Facturarbutton
-            // 
-            this.Facturarbutton.Image = global::StrongerGym.Properties.Resources._1447982246_invoice;
-            this.Facturarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Facturarbutton.Location = new System.Drawing.Point(316, 388);
-            this.Facturarbutton.Name = "Facturarbutton";
-            this.Facturarbutton.Size = new System.Drawing.Size(86, 44);
-            this.Facturarbutton.TabIndex = 9;
-            this.Facturarbutton.Text = "Facturar";
-            this.Facturarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Facturarbutton.UseVisualStyleBackColor = true;
-            this.Facturarbutton.Click += new System.EventHandler(this.Facturarbutton_Click);
             // 
             // Eliminarbutton
             // 
@@ -474,10 +462,6 @@
             // 
             this.VentaerrorProvider.ContainerControl = this;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // ProteinaVentaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -496,7 +480,6 @@
             this.Controls.Add(this.AgregarProteinabutton);
             this.Controls.Add(this.VentaUsuariotextBox);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.Facturarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
@@ -515,12 +498,12 @@
             this.Controls.Add(this.CodigoVentatextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProteinaVentaForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Venta de Proteina";
             ((System.ComponentModel.ISupportInitialize)(this.VentasdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.VentaerrorProvider)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -546,7 +529,6 @@
         private System.Windows.Forms.TextBox CodigoVentatextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Facturarbutton;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button AgregarProteinabutton;
         private System.Windows.Forms.Label label12;
@@ -572,6 +554,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ITBS;
         private System.Windows.Forms.DataGridViewTextBoxColumn Importe;
         private System.Windows.Forms.ErrorProvider VentaerrorProvider;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

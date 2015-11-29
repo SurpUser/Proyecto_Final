@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProteinaComprasForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CodigoCompratextBox = new System.Windows.Forms.TextBox();
@@ -40,10 +41,6 @@
             this.Montolabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Facturarbutton = new System.Windows.Forms.Button();
             this.ComprasdataGridView = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombres = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -51,9 +48,6 @@
             this.Precios = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SubT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.BuscarComprabutton = new System.Windows.Forms.Button();
-            this.BuscarProveedorbutton = new System.Windows.Forms.Button();
-            this.BuscarProteinabutton = new System.Windows.Forms.Button();
             this.CompraUsuariotextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.NombreProveedortextBox = new System.Windows.Forms.TextBox();
@@ -62,12 +56,18 @@
             this.ProteinatextBox = new System.Windows.Forms.TextBox();
             this.NCFtextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.Agregarbutton = new System.Windows.Forms.Button();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.CantidadProteinatextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CompraerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Agregarbutton = new System.Windows.Forms.Button();
+            this.BuscarProteinabutton = new System.Windows.Forms.Button();
+            this.BuscarProveedorbutton = new System.Windows.Forms.Button();
+            this.BuscarComprabutton = new System.Windows.Forms.Button();
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ComprasdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompraerrorProvider)).BeginInit();
             this.SuspendLayout();
@@ -93,6 +93,7 @@
             // CodigoCompratextBox
             // 
             this.CodigoCompratextBox.Location = new System.Drawing.Point(120, 60);
+            this.CodigoCompratextBox.MaxLength = 10;
             this.CodigoCompratextBox.Name = "CodigoCompratextBox";
             this.CodigoCompratextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoCompratextBox.TabIndex = 2;
@@ -109,6 +110,7 @@
             // CodigoProveedortextBox
             // 
             this.CodigoProveedortextBox.Location = new System.Drawing.Point(120, 88);
+            this.CodigoProveedortextBox.MaxLength = 10;
             this.CodigoProveedortextBox.Name = "CodigoProveedortextBox";
             this.CodigoProveedortextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoProveedortextBox.TabIndex = 4;
@@ -116,6 +118,7 @@
             // CodigoProteinatextBox
             // 
             this.CodigoProteinatextBox.Location = new System.Drawing.Point(120, 116);
+            this.CodigoProteinatextBox.MaxLength = 10;
             this.CodigoProteinatextBox.Name = "CodigoProteinatextBox";
             this.CodigoProteinatextBox.Size = new System.Drawing.Size(100, 20);
             this.CodigoProteinatextBox.TabIndex = 5;
@@ -172,57 +175,6 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Compras de Proteina";
             // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
-            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Eliminarbutton.Location = new System.Drawing.Point(224, 390);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
-            this.Eliminarbutton.TabIndex = 23;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Nuevobutton.Location = new System.Drawing.Point(34, 390);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(80, 44);
-            this.Nuevobutton.TabIndex = 21;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
-            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Guardarbutton.Location = new System.Drawing.Point(129, 390);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(80, 44);
-            this.Guardarbutton.TabIndex = 22;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Facturarbutton
-            // 
-            this.Facturarbutton.Image = global::StrongerGym.Properties.Resources._1447982246_invoice;
-            this.Facturarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Facturarbutton.Location = new System.Drawing.Point(319, 390);
-            this.Facturarbutton.Name = "Facturarbutton";
-            this.Facturarbutton.Size = new System.Drawing.Size(86, 44);
-            this.Facturarbutton.TabIndex = 48;
-            this.Facturarbutton.Text = "Facturar";
-            this.Facturarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Facturarbutton.UseVisualStyleBackColor = true;
-            // 
             // ComprasdataGridView
             // 
             this.ComprasdataGridView.AllowUserToAddRows = false;
@@ -278,42 +230,6 @@
             this.SubT.HeaderText = "SubTotal";
             this.SubT.Name = "SubT";
             this.SubT.ReadOnly = true;
-            // 
-            // BuscarComprabutton
-            // 
-            this.BuscarComprabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarComprabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarComprabutton.Location = new System.Drawing.Point(226, 56);
-            this.BuscarComprabutton.Name = "BuscarComprabutton";
-            this.BuscarComprabutton.Size = new System.Drawing.Size(33, 27);
-            this.BuscarComprabutton.TabIndex = 58;
-            this.BuscarComprabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarComprabutton.UseVisualStyleBackColor = true;
-            this.BuscarComprabutton.Click += new System.EventHandler(this.BuscarComprabutton_Click);
-            // 
-            // BuscarProveedorbutton
-            // 
-            this.BuscarProveedorbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarProveedorbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarProveedorbutton.Location = new System.Drawing.Point(226, 84);
-            this.BuscarProveedorbutton.Name = "BuscarProveedorbutton";
-            this.BuscarProveedorbutton.Size = new System.Drawing.Size(33, 27);
-            this.BuscarProveedorbutton.TabIndex = 59;
-            this.BuscarProveedorbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarProveedorbutton.UseVisualStyleBackColor = true;
-            this.BuscarProveedorbutton.Click += new System.EventHandler(this.BuscarProveedorbutton_Click);
-            // 
-            // BuscarProteinabutton
-            // 
-            this.BuscarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
-            this.BuscarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BuscarProteinabutton.Location = new System.Drawing.Point(226, 112);
-            this.BuscarProteinabutton.Name = "BuscarProteinabutton";
-            this.BuscarProteinabutton.Size = new System.Drawing.Size(33, 27);
-            this.BuscarProteinabutton.TabIndex = 60;
-            this.BuscarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BuscarProteinabutton.UseVisualStyleBackColor = true;
-            this.BuscarProteinabutton.Click += new System.EventHandler(this.BuscarProteinabutton_Click);
             // 
             // CompraUsuariotextBox
             // 
@@ -383,19 +299,6 @@
             this.label6.TabIndex = 72;
             this.label6.Text = "NCF";
             // 
-            // Agregarbutton
-            // 
-            this.Agregarbutton.Image = global::StrongerGym.Properties.Resources.Shopping_cart_add;
-            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.Agregarbutton.Location = new System.Drawing.Point(649, 106);
-            this.Agregarbutton.Name = "Agregarbutton";
-            this.Agregarbutton.Size = new System.Drawing.Size(87, 37);
-            this.Agregarbutton.TabIndex = 68;
-            this.Agregarbutton.Text = "Agregar";
-            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Agregarbutton.UseVisualStyleBackColor = true;
-            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
-            // 
             // FechadateTimePicker
             // 
             this.FechadateTimePicker.CustomFormat = "dd/MM/yyyy";
@@ -417,6 +320,7 @@
             // CantidadProteinatextBox
             // 
             this.CantidadProteinatextBox.Location = new System.Drawing.Point(543, 115);
+            this.CantidadProteinatextBox.MaxLength = 10;
             this.CantidadProteinatextBox.Name = "CantidadProteinatextBox";
             this.CantidadProteinatextBox.Size = new System.Drawing.Size(100, 20);
             this.CantidadProteinatextBox.TabIndex = 67;
@@ -433,6 +337,94 @@
             // CompraerrorProvider
             // 
             this.CompraerrorProvider.ContainerControl = this;
+            // 
+            // Agregarbutton
+            // 
+            this.Agregarbutton.Image = global::StrongerGym.Properties.Resources.Shopping_cart_add;
+            this.Agregarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Agregarbutton.Location = new System.Drawing.Point(649, 106);
+            this.Agregarbutton.Name = "Agregarbutton";
+            this.Agregarbutton.Size = new System.Drawing.Size(87, 37);
+            this.Agregarbutton.TabIndex = 68;
+            this.Agregarbutton.Text = "Agregar";
+            this.Agregarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Agregarbutton.UseVisualStyleBackColor = true;
+            this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
+            // 
+            // BuscarProteinabutton
+            // 
+            this.BuscarProteinabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarProteinabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarProteinabutton.Location = new System.Drawing.Point(226, 112);
+            this.BuscarProteinabutton.Name = "BuscarProteinabutton";
+            this.BuscarProteinabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarProteinabutton.TabIndex = 60;
+            this.BuscarProteinabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarProteinabutton.UseVisualStyleBackColor = true;
+            this.BuscarProteinabutton.Click += new System.EventHandler(this.BuscarProteinabutton_Click);
+            // 
+            // BuscarProveedorbutton
+            // 
+            this.BuscarProveedorbutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarProveedorbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarProveedorbutton.Location = new System.Drawing.Point(226, 84);
+            this.BuscarProveedorbutton.Name = "BuscarProveedorbutton";
+            this.BuscarProveedorbutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarProveedorbutton.TabIndex = 59;
+            this.BuscarProveedorbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarProveedorbutton.UseVisualStyleBackColor = true;
+            this.BuscarProveedorbutton.Click += new System.EventHandler(this.BuscarProveedorbutton_Click);
+            // 
+            // BuscarComprabutton
+            // 
+            this.BuscarComprabutton.Image = global::StrongerGym.Properties.Resources._1445977332_search_magnifying_glass_find;
+            this.BuscarComprabutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BuscarComprabutton.Location = new System.Drawing.Point(226, 56);
+            this.BuscarComprabutton.Name = "BuscarComprabutton";
+            this.BuscarComprabutton.Size = new System.Drawing.Size(33, 27);
+            this.BuscarComprabutton.TabIndex = 58;
+            this.BuscarComprabutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BuscarComprabutton.UseVisualStyleBackColor = true;
+            this.BuscarComprabutton.Click += new System.EventHandler(this.BuscarComprabutton_Click);
+            // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.Image = global::StrongerGym.Properties.Resources._1442108658_trash;
+            this.Eliminarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Eliminarbutton.Location = new System.Drawing.Point(224, 390);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(80, 44);
+            this.Eliminarbutton.TabIndex = 23;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.Image = global::StrongerGym.Properties.Resources._1442108115_Add;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Nuevobutton.Location = new System.Drawing.Point(34, 390);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(80, 44);
+            this.Nuevobutton.TabIndex = 21;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.Image = global::StrongerGym.Properties.Resources._1444608937_Save;
+            this.Guardarbutton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Guardarbutton.Location = new System.Drawing.Point(129, 390);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(80, 44);
+            this.Guardarbutton.TabIndex = 22;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
             // 
             // ProteinaComprasForm
             // 
@@ -456,7 +448,6 @@
             this.Controls.Add(this.BuscarProveedorbutton);
             this.Controls.Add(this.BuscarComprabutton);
             this.Controls.Add(this.ComprasdataGridView);
-            this.Controls.Add(this.Facturarbutton);
             this.Controls.Add(this.Eliminarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Guardarbutton);
@@ -471,10 +462,10 @@
             this.Controls.Add(this.CodigoCompratextBox);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ProteinaComprasForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Compra de Proteina";
-            this.Load += new System.EventHandler(this.ProteinaComprasForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ComprasdataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.CompraerrorProvider)).EndInit();
             this.ResumeLayout(false);
@@ -498,7 +489,6 @@
         private System.Windows.Forms.Button Eliminarbutton;
         private System.Windows.Forms.Button Nuevobutton;
         private System.Windows.Forms.Button Guardarbutton;
-        private System.Windows.Forms.Button Facturarbutton;
         private System.Windows.Forms.DataGridView ComprasdataGridView;
         private System.Windows.Forms.Button BuscarComprabutton;
         private System.Windows.Forms.Button BuscarProveedorbutton;

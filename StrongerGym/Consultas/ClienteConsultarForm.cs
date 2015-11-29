@@ -71,6 +71,7 @@ namespace StrongerGym.R
 
         public void Limpiar()
         {
+            ClienteIdtextBox.Clear();
             NombretextBox.Clear();
             DirecciontextBox.Clear();
             TelefonomaskedTextBox.Clear();
@@ -93,6 +94,7 @@ namespace StrongerGym.R
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
             int Dias;
+            CantidadtextBox.Clear();
             if (cliente.Buscar(Seguridad.ValidarIdEntero(ClienteIdtextBox.Text)))
             {
                 LlenarFormulario();
@@ -156,6 +158,7 @@ namespace StrongerGym.R
                 }
                 else
                 {
+                    LlenarCuota();
                     cuota.ClienteId = Seguridad.ValidarIdEntero(ClienteIdtextBox.Text);
                     if (cuota.Editar())
                     {

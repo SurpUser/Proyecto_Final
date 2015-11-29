@@ -130,8 +130,8 @@
   <data name="Shopping-basket" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shopping-basket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="1134781-gimnasio-stronger-gym-20140330071511707" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fc-programs" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fc-programs.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="price-sale-cart-shopping-list-ecommerce-tag-18-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\price-sale-cart-shopping-list-ecommerce-tag-18-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,6 +172,9 @@
   <data name="1442108773_Gnome-Application-Exit-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1442108773_Gnome-Application-Exit-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="1134781-gimnasio-stronger-gym-20140330071511707" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1134781-gimnasio-stronger-gym-20140330071511707.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="lock-128" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\lock-128.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -183,6 +186,9 @@
   </data>
   <data name="1447893716_mypc_config" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1447893716_mypc_config.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="about_faq_help_hint_info_information-4-32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\about_faq_help_hint_info_information-4-32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1441466_615720135173929_289418604_n" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1441466_615720135173929_289418604_n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,7 +214,7 @@
   <data name="Gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fc-programs" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fc-programs.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="basket_--32" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\basket_--32.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
